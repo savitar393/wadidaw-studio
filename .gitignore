@@ -1,2 +1,7 @@
 data/raw/
 .venv/
+*.log
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
