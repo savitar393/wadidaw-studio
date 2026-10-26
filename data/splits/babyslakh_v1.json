@@ -1,0 +1,92 @@
+{
+  "dataset": "BabySlakh 16k",
+  "seed": 2026,
+  "splits": {
+    "train": [
+      {
+        "index": 14,
+        "song": "Track00015"
+      },
+      {
+        "index": 18,
+        "song": "Track00019"
+      },
+      {
+        "index": 0,
+        "song": "Track00001"
+      },
+      {
+        "index": 9,
+        "song": "Track00010"
+      },
+      {
+        "index": 13,
+        "song": "Track00014"
+      },
+      {
+        "index": 1,
+        "song": "Track00002"
+      },
+      {
+        "index": 6,
+        "song": "Track00007"
+      },
+      {
+        "index": 15,
+        "song": "Track00016"
+      },
+      {
+        "index": 2,
+        "song": "Track00003"
+      },
+      {
+        "index": 12,
+        "song": "Track00013"
+      },
+      {
+        "index": 11,
+        "song": "Track00012"
+      },
+      {
+        "index": 8,
+        "song": "Track00009"
+      }
+    ],
+    "validation": [
+      {
+        "index": 17,
+        "song": "Track00018"
+      },
+      {
+        "index": 16,
+        "song": "Track00017"
+      },
+      {
+        "index": 3,
+        "song": "Track00004"
+      },
+      {
+        "index": 5,
+        "song": "Track00006"
+      }
+    ],
+    "test": [
+      {
+        "index": 19,
+        "song": "Track00020"
+      },
+      {
+        "index": 7,
+        "song": "Track00008"
+      },
+      {
+        "index": 4,
+        "song": "Track00005"
+      },
+      {
+        "index": 10,
+        "song": "Track00011"
+      }
+    ]
+  }
+}
