@@ -14,7 +14,7 @@ DATASET = ROOT / "data/raw/babyslakh/babyslakh_16k"
 class MusicMixingEnv(gym.Env):
     metadata = {"render_modes": []}
 
-    def __init__(self, duration_seconds=8, song_index=0):
+    def __init__(self, duration_seconds=8, song_index=0, excerpt_fraction=0.5):
         super().__init__()
 
         song_dirs = sorted(
@@ -60,7 +60,17 @@ class MusicMixingEnv(gym.Env):
         if frames < 2:
             raise ValueError("Audio excerpt is too short.")
 
-        start = (common_frames - frames) // 2
+        if not np.isfinite(excerpt_fraction):
+            raise ValueError("Excerpt fraction must be finite.")
+
+        if not 0.0 <= excerpt_fraction <= 1.0:
+            raise ValueError("Excerpt fraction must be in [0, 1].")
+
+        max_start = common_frames - frames
+
+        start = int(round(max_start * excerpt_fraction))
+
+        self.excerpt_start_seconds = start / self.sample_rate
         candidates = []
 
         for path in files:
