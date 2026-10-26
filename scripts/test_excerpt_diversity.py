@@ -39,7 +39,7 @@ def main():
 
                 obs, info = env.reset(seed=42)
 
-                assert obs.shape == (101)
+                assert obs.shape == (101,)
                 assert env.observation_space.contains(obs)
 
                 # Record the zero-gain mix spectrum.
