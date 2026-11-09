@@ -1,0 +1,3762 @@
+[
+  {
+    "id": "validation_0001_ex00_p01",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 20.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex00.npy",
+    "g0_db": [
+      1.3524,
+      1.612,
+      0.6559,
+      -1.7306
+    ],
+    "loudness_raw_db": [
+      -32.2415,
+      -23.8265,
+      -17.6773,
+      -26.6821
+    ],
+    "loudness_db": [
+      -30.8891,
+      -22.2145,
+      -17.0214,
+      -28.4127
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "gains_db": [
+      9.0047,
+      -2.6699,
+      -9.863,
+      3.5283
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "campurkan agar vokal cukup menonjol, perkusi drum di posisi netral, nada bass turun tipis, melodi pengiring tetap seimbang",
+    "prompt_template": "validation_vocal_subtle_lift_v1_f0"
+  },
+  {
+    "id": "validation_0001_ex00_p02",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 20.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex00.npy",
+    "g0_db": [
+      1.3524,
+      1.612,
+      0.6559,
+      -1.7306
+    ],
+    "loudness_raw_db": [
+      -32.2415,
+      -23.8265,
+      -17.6773,
+      -26.6821
+    ],
+    "loudness_db": [
+      -30.8891,
+      -22.2145,
+      -17.0214,
+      -28.4127
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "gains_db": [
+      9.0047,
+      -2.6699,
+      -9.863,
+      3.5283
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "fokuskan mix supaya nyanyian utama dinaikkan lebih jelas, bass sedikit ke belakang, instrumen pendukung di posisi netral",
+    "prompt_template": "validation_vocal_subtle_lift_v1_f1"
+  },
+  {
+    "id": "validation_0001_ex00_p03",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 20.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex00.npy",
+    "g0_db": [
+      1.3524,
+      1.612,
+      0.6559,
+      -1.7306
+    ],
+    "loudness_raw_db": [
+      -32.2415,
+      -23.8265,
+      -17.6773,
+      -26.6821
+    ],
+    "loudness_db": [
+      -30.8891,
+      -22.2145,
+      -17.0214,
+      -28.4127
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "gains_db": [
+      9.0047,
+      -2.6699,
+      -9.863,
+      3.5283
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "sesuaikan level dengan drum tetap seimbang, jalur vokal lebih ke depan, harmoni pengiring stabil di tengah, frekuensi bass agak diredam",
+    "prompt_template": "validation_vocal_subtle_lift_v1_f2"
+  },
+  {
+    "id": "validation_0001_ex00_p04",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 20.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex00.npy",
+    "g0_db": [
+      1.3524,
+      1.612,
+      0.6559,
+      -1.7306
+    ],
+    "loudness_raw_db": [
+      -32.2415,
+      -23.8265,
+      -17.6773,
+      -26.6821
+    ],
+    "loudness_db": [
+      -30.8891,
+      -22.2145,
+      -17.0214,
+      -28.4127
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "gains_db": [
+      9.0047,
+      -2.6699,
+      -9.863,
+      3.5283
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "untuk bagian ini, vokal cukup menonjol, perkusi drum di posisi netral, nada bass turun tipis",
+    "prompt_template": "validation_vocal_subtle_lift_v1_f3"
+  },
+  {
+    "id": "validation_0001_ex01_p01",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 32.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex01.npy",
+    "g0_db": [
+      1.6877,
+      -1.1502,
+      -1.7632,
+      2.0992
+    ],
+    "loudness_raw_db": [
+      -26.8723,
+      -22.5731,
+      -17.7666,
+      -26.7807
+    ],
+    "loudness_db": [
+      -25.1846,
+      -23.7233,
+      -19.5298,
+      -24.6815
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "gains_db": [
+      6.9048,
+      -2.5565,
+      -3.75,
+      -0.5983
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "campurkan agar vokal sangat menonjol di depan, perkusi drum dikurangi levelnya, nada bass stabil di tengah, melodi pengiring sedikit ke belakang",
+    "prompt_template": "validation_vocal_warm_ballad_v1_f0"
+  },
+  {
+    "id": "validation_0001_ex01_p02",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 32.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex01.npy",
+    "g0_db": [
+      1.6877,
+      -1.1502,
+      -1.7632,
+      2.0992
+    ],
+    "loudness_raw_db": [
+      -26.8723,
+      -22.5731,
+      -17.7666,
+      -26.7807
+    ],
+    "loudness_db": [
+      -25.1846,
+      -23.7233,
+      -19.5298,
+      -24.6815
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "gains_db": [
+      6.9048,
+      -2.5565,
+      -3.75,
+      -0.5983
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "fokuskan mix supaya nyanyian utama paling kuat terdengar, bass tetap seimbang, beat drum lebih ke belakang, instrumen pendukung agak diredam",
+    "prompt_template": "validation_vocal_warm_ballad_v1_f1"
+  },
+  {
+    "id": "validation_0001_ex01_p03",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 32.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex01.npy",
+    "g0_db": [
+      1.6877,
+      -1.1502,
+      -1.7632,
+      2.0992
+    ],
+    "loudness_raw_db": [
+      -26.8723,
+      -22.5731,
+      -17.7666,
+      -26.7807
+    ],
+    "loudness_db": [
+      -25.1846,
+      -23.7233,
+      -19.5298,
+      -24.6815
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "gains_db": [
+      6.9048,
+      -2.5565,
+      -3.75,
+      -0.5983
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "sesuaikan level dengan drum cukup mundur, jalur vokal sangat mendominasi, harmoni pengiring turun tipis, frekuensi bass di posisi netral",
+    "prompt_template": "validation_vocal_warm_ballad_v1_f2"
+  },
+  {
+    "id": "validation_0001_ex01_p04",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 32.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex01.npy",
+    "g0_db": [
+      1.6877,
+      -1.1502,
+      -1.7632,
+      2.0992
+    ],
+    "loudness_raw_db": [
+      -26.8723,
+      -22.5731,
+      -17.7666,
+      -26.7807
+    ],
+    "loudness_db": [
+      -25.1846,
+      -23.7233,
+      -19.5298,
+      -24.6815
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "gains_db": [
+      6.9048,
+      -2.5565,
+      -3.75,
+      -0.5983
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "untuk bagian ini, vokal sangat menonjol di depan, nada bass stabil di tengah, perkusi drum dikurangi levelnya, melodi pengiring sedikit ke belakang",
+    "prompt_template": "validation_vocal_warm_ballad_v1_f3"
+  },
+  {
+    "id": "validation_0001_ex02_p01",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 44.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex02.npy",
+    "g0_db": [
+      -0.3778,
+      2.7794,
+      0.0999,
+      1.4243
+    ],
+    "loudness_raw_db": [
+      -26.427,
+      -23.0552,
+      -17.5559,
+      -27.2142
+    ],
+    "loudness_db": [
+      -26.8048,
+      -20.2758,
+      -17.456,
+      -25.7899
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "gains_db": [
+      6.9732,
+      -2.5558,
+      -7.3757,
+      2.9583
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "campurkan agar vokal cukup menonjol, perkusi drum di posisi netral, nada bass turun tipis, melodi pengiring tetap seimbang",
+    "prompt_template": "validation_vocal_subtle_lift_v1_f0"
+  },
+  {
+    "id": "validation_0001_ex02_p02",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 44.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex02.npy",
+    "g0_db": [
+      -0.3778,
+      2.7794,
+      0.0999,
+      1.4243
+    ],
+    "loudness_raw_db": [
+      -26.427,
+      -23.0552,
+      -17.5559,
+      -27.2142
+    ],
+    "loudness_db": [
+      -26.8048,
+      -20.2758,
+      -17.456,
+      -25.7899
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "gains_db": [
+      6.9732,
+      -2.5558,
+      -7.3757,
+      2.9583
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "fokuskan mix supaya nyanyian utama dinaikkan lebih jelas, bass sedikit ke belakang, instrumen pendukung di posisi netral",
+    "prompt_template": "validation_vocal_subtle_lift_v1_f1"
+  },
+  {
+    "id": "validation_0001_ex02_p03",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 44.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex02.npy",
+    "g0_db": [
+      -0.3778,
+      2.7794,
+      0.0999,
+      1.4243
+    ],
+    "loudness_raw_db": [
+      -26.427,
+      -23.0552,
+      -17.5559,
+      -27.2142
+    ],
+    "loudness_db": [
+      -26.8048,
+      -20.2758,
+      -17.456,
+      -25.7899
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "gains_db": [
+      6.9732,
+      -2.5558,
+      -7.3757,
+      2.9583
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "sesuaikan level dengan drum tetap seimbang, jalur vokal lebih ke depan, harmoni pengiring stabil di tengah, frekuensi bass agak diredam",
+    "prompt_template": "validation_vocal_subtle_lift_v1_f2"
+  },
+  {
+    "id": "validation_0001_ex02_p04",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 44.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex02.npy",
+    "g0_db": [
+      -0.3778,
+      2.7794,
+      0.0999,
+      1.4243
+    ],
+    "loudness_raw_db": [
+      -26.427,
+      -23.0552,
+      -17.5559,
+      -27.2142
+    ],
+    "loudness_db": [
+      -26.8048,
+      -20.2758,
+      -17.456,
+      -25.7899
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "gains_db": [
+      6.9732,
+      -2.5558,
+      -7.3757,
+      2.9583
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "untuk bagian ini, nada bass turun tipis, melodi pengiring tetap seimbang, vokal cukup menonjol",
+    "prompt_template": "validation_vocal_subtle_lift_v1_f3"
+  },
+  {
+    "id": "validation_0001_ex03_p01",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 56.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex03.npy",
+    "g0_db": [
+      1.78,
+      1.273,
+      0.4219,
+      0.9034
+    ],
+    "loudness_raw_db": [
+      -26.183,
+      -22.9807,
+      -17.6355,
+      -26.795
+    ],
+    "loudness_db": [
+      -24.403,
+      -21.7077,
+      -17.2136,
+      -25.8916
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "gains_db": [
+      5.599,
+      -5.0963,
+      -6.5904,
+      6.0876
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "campurkan agar vokal cukup menonjol, perkusi drum paling pelan, nada bass turun tipis, melodi pengiring agak lebih maju",
+    "prompt_template": "validation_vocal_intimate_acoustic_v1_f0"
+  },
+  {
+    "id": "validation_0001_ex03_p02",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 56.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex03.npy",
+    "g0_db": [
+      1.78,
+      1.273,
+      0.4219,
+      0.9034
+    ],
+    "loudness_raw_db": [
+      -26.183,
+      -22.9807,
+      -17.6355,
+      -26.795
+    ],
+    "loudness_db": [
+      -24.403,
+      -21.7077,
+      -17.2136,
+      -25.8916
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "gains_db": [
+      5.599,
+      -5.0963,
+      -6.5904,
+      6.0876
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "fokuskan mix supaya nyanyian utama dinaikkan lebih jelas, bass sedikit ke belakang, beat drum ditekan kuat ke belakang, instrumen pendukung sedikit diperjelas",
+    "prompt_template": "validation_vocal_intimate_acoustic_v1_f1"
+  },
+  {
+    "id": "validation_0001_ex03_p03",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 56.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex03.npy",
+    "g0_db": [
+      1.78,
+      1.273,
+      0.4219,
+      0.9034
+    ],
+    "loudness_raw_db": [
+      -26.183,
+      -22.9807,
+      -17.6355,
+      -26.795
+    ],
+    "loudness_db": [
+      -24.403,
+      -21.7077,
+      -17.2136,
+      -25.8916
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "gains_db": [
+      5.599,
+      -5.0963,
+      -6.5904,
+      6.0876
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "sesuaikan level dengan drum sangat jauh di belakang, jalur vokal lebih ke depan, harmoni pengiring naik tipis, frekuensi bass agak diredam",
+    "prompt_template": "validation_vocal_intimate_acoustic_v1_f2"
+  },
+  {
+    "id": "validation_0001_ex03_p04",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 56.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex03.npy",
+    "g0_db": [
+      1.78,
+      1.273,
+      0.4219,
+      0.9034
+    ],
+    "loudness_raw_db": [
+      -26.183,
+      -22.9807,
+      -17.6355,
+      -26.795
+    ],
+    "loudness_db": [
+      -24.403,
+      -21.7077,
+      -17.2136,
+      -25.8916
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "gains_db": [
+      5.599,
+      -5.0963,
+      -6.5904,
+      6.0876
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "untuk bagian ini, melodi pengiring agak lebih maju, nada bass turun tipis, perkusi drum paling pelan, vokal cukup menonjol",
+    "prompt_template": "validation_vocal_intimate_acoustic_v1_f3"
+  },
+  {
+    "id": "validation_0001_ex04_p01",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 68.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex04.npy",
+    "g0_db": [
+      -2.4495,
+      -0.4064,
+      -1.7555,
+      2.243
+    ],
+    "loudness_raw_db": [
+      -26.133,
+      -22.3011,
+      -17.7648,
+      -26.6939
+    ],
+    "loudness_db": [
+      -28.5825,
+      -22.7075,
+      -19.5203,
+      -24.4509
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "gains_db": [
+      3.7672,
+      2.8921,
+      -3.295,
+      -3.3644
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "campurkan agar vokal tetap seimbang, perkusi drum paling kuat terdengar, nada bass naik tipis, melodi pengiring cukup mundur",
+    "prompt_template": "validation_drums_punchy_rock_v1_f0"
+  },
+  {
+    "id": "validation_0001_ex04_p02",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 68.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex04.npy",
+    "g0_db": [
+      -2.4495,
+      -0.4064,
+      -1.7555,
+      2.243
+    ],
+    "loudness_raw_db": [
+      -26.133,
+      -22.3011,
+      -17.7648,
+      -26.6939
+    ],
+    "loudness_db": [
+      -28.5825,
+      -22.7075,
+      -19.5203,
+      -24.4509
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "gains_db": [
+      3.7672,
+      2.8921,
+      -3.295,
+      -3.3644
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "fokuskan mix supaya nyanyian utama di posisi netral, bass agak lebih maju, beat drum sangat mendominasi, instrumen pendukung dikurangi levelnya",
+    "prompt_template": "validation_drums_punchy_rock_v1_f1"
+  },
+  {
+    "id": "validation_0001_ex04_p03",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 68.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex04.npy",
+    "g0_db": [
+      -2.4495,
+      -0.4064,
+      -1.7555,
+      2.243
+    ],
+    "loudness_raw_db": [
+      -26.133,
+      -22.3011,
+      -17.7648,
+      -26.6939
+    ],
+    "loudness_db": [
+      -28.5825,
+      -22.7075,
+      -19.5203,
+      -24.4509
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "gains_db": [
+      3.7672,
+      2.8921,
+      -3.295,
+      -3.3644
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "sesuaikan level dengan drum sangat menonjol di depan, jalur vokal stabil di tengah, harmoni pengiring lebih ke belakang, frekuensi bass sedikit diperjelas",
+    "prompt_template": "validation_drums_punchy_rock_v1_f2"
+  },
+  {
+    "id": "validation_0001_ex04_p04",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 68.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex04.npy",
+    "g0_db": [
+      -2.4495,
+      -0.4064,
+      -1.7555,
+      2.243
+    ],
+    "loudness_raw_db": [
+      -26.133,
+      -22.3011,
+      -17.7648,
+      -26.6939
+    ],
+    "loudness_db": [
+      -28.5825,
+      -22.7075,
+      -19.5203,
+      -24.4509
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "gains_db": [
+      3.7672,
+      2.8921,
+      -3.295,
+      -3.3644
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "untuk bagian ini, perkusi drum paling kuat terdengar, vokal tetap seimbang, nada bass naik tipis, melodi pengiring cukup mundur",
+    "prompt_template": "validation_drums_punchy_rock_v1_f3"
+  },
+  {
+    "id": "validation_0001_ex05_p01",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 82.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex05.npy",
+    "g0_db": [
+      2.8353,
+      -0.9969,
+      1.1611,
+      -1.5296
+    ],
+    "loudness_raw_db": [
+      -26.2303,
+      -22.9493,
+      -17.8628,
+      -24.3495
+    ],
+    "loudness_db": [
+      -23.395,
+      -23.9462,
+      -16.7017,
+      -25.8791
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "gains_db": [
+      -1.3355,
+      4.2157,
+      -3.0288,
+      0.1486
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "campurkan agar vokal sedikit ke belakang, perkusi drum dinaikkan lebih jelas, nada bass lebih ke depan, melodi pengiring cukup mundur",
+    "prompt_template": "validation_drums_bass_groove_v1_f0"
+  },
+  {
+    "id": "validation_0001_ex05_p02",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 82.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex05.npy",
+    "g0_db": [
+      2.8353,
+      -0.9969,
+      1.1611,
+      -1.5296
+    ],
+    "loudness_raw_db": [
+      -26.2303,
+      -22.9493,
+      -17.8628,
+      -24.3495
+    ],
+    "loudness_db": [
+      -23.395,
+      -23.9462,
+      -16.7017,
+      -25.8791
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "gains_db": [
+      -1.3355,
+      4.2157,
+      -3.0288,
+      0.1486
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "fokuskan mix supaya nyanyian utama agak diredam, bass cukup menonjol, beat drum lebih ke depan, instrumen pendukung dikurangi levelnya",
+    "prompt_template": "validation_drums_bass_groove_v1_f1"
+  },
+  {
+    "id": "validation_0001_ex05_p03",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 82.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex05.npy",
+    "g0_db": [
+      2.8353,
+      -0.9969,
+      1.1611,
+      -1.5296
+    ],
+    "loudness_raw_db": [
+      -26.2303,
+      -22.9493,
+      -17.8628,
+      -24.3495
+    ],
+    "loudness_db": [
+      -23.395,
+      -23.9462,
+      -16.7017,
+      -25.8791
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "gains_db": [
+      -1.3355,
+      4.2157,
+      -3.0288,
+      0.1486
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "sesuaikan level dengan drum cukup menonjol, jalur vokal turun tipis, harmoni pengiring lebih ke belakang, frekuensi bass dinaikkan lebih jelas",
+    "prompt_template": "validation_drums_bass_groove_v1_f2"
+  },
+  {
+    "id": "validation_0001_ex05_p04",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 82.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex05.npy",
+    "g0_db": [
+      2.8353,
+      -0.9969,
+      1.1611,
+      -1.5296
+    ],
+    "loudness_raw_db": [
+      -26.2303,
+      -22.9493,
+      -17.8628,
+      -24.3495
+    ],
+    "loudness_db": [
+      -23.395,
+      -23.9462,
+      -16.7017,
+      -25.8791
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "gains_db": [
+      -1.3355,
+      4.2157,
+      -3.0288,
+      0.1486
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "untuk bagian ini, vokal sedikit ke belakang, perkusi drum dinaikkan lebih jelas, nada bass lebih ke depan, melodi pengiring cukup mundur",
+    "prompt_template": "validation_drums_bass_groove_v1_f3"
+  },
+  {
+    "id": "validation_0001_ex06_p01",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 94.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex06.npy",
+    "g0_db": [
+      -0.6463,
+      -2.133,
+      0.2164,
+      2.2033
+    ],
+    "loudness_raw_db": [
+      -26.2873,
+      -22.4616,
+      -17.5991,
+      -24.5181
+    ],
+    "loudness_db": [
+      -26.9336,
+      -24.5946,
+      -17.3827,
+      -22.3148
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "gains_db": [
+      3.1272,
+      2.7881,
+      -1.4237,
+      -4.4916
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "campurkan agar vokal tetap seimbang, perkusi drum sedikit diperjelas, nada bass sangat mendominasi, melodi pengiring cukup mundur",
+    "prompt_template": "validation_bass_heavy_modern_v1_f0"
+  },
+  {
+    "id": "validation_0001_ex06_p02",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 94.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex06.npy",
+    "g0_db": [
+      -0.6463,
+      -2.133,
+      0.2164,
+      2.2033
+    ],
+    "loudness_raw_db": [
+      -26.2873,
+      -22.4616,
+      -17.5991,
+      -24.5181
+    ],
+    "loudness_db": [
+      -26.9336,
+      -24.5946,
+      -17.3827,
+      -22.3148
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "gains_db": [
+      3.1272,
+      2.7881,
+      -1.4237,
+      -4.4916
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "fokuskan mix supaya nyanyian utama di posisi netral, bass sangat menonjol di depan, beat drum naik tipis, instrumen pendukung dikurangi levelnya",
+    "prompt_template": "validation_bass_heavy_modern_v1_f1"
+  },
+  {
+    "id": "validation_0001_ex06_p03",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 94.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex06.npy",
+    "g0_db": [
+      -0.6463,
+      -2.133,
+      0.2164,
+      2.2033
+    ],
+    "loudness_raw_db": [
+      -26.2873,
+      -22.4616,
+      -17.5991,
+      -24.5181
+    ],
+    "loudness_db": [
+      -26.9336,
+      -24.5946,
+      -17.3827,
+      -22.3148
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "gains_db": [
+      3.1272,
+      2.7881,
+      -1.4237,
+      -4.4916
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "sesuaikan level dengan drum agak lebih maju, jalur vokal stabil di tengah, harmoni pengiring lebih ke belakang, frekuensi bass paling kuat terdengar",
+    "prompt_template": "validation_bass_heavy_modern_v1_f2"
+  },
+  {
+    "id": "validation_0001_ex06_p04",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 94.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex06.npy",
+    "g0_db": [
+      -0.6463,
+      -2.133,
+      0.2164,
+      2.2033
+    ],
+    "loudness_raw_db": [
+      -26.2873,
+      -22.4616,
+      -17.5991,
+      -24.5181
+    ],
+    "loudness_db": [
+      -26.9336,
+      -24.5946,
+      -17.3827,
+      -22.3148
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "gains_db": [
+      3.1272,
+      2.7881,
+      -1.4237,
+      -4.4916
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "untuk bagian ini, vokal tetap seimbang, nada bass sangat mendominasi, perkusi drum sedikit diperjelas, melodi pengiring cukup mundur",
+    "prompt_template": "validation_bass_heavy_modern_v1_f3"
+  },
+  {
+    "id": "validation_0001_ex07_p01",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 106.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex07.npy",
+    "g0_db": [
+      0.0048,
+      -2.5938,
+      -2.6356,
+      2.1706
+    ],
+    "loudness_raw_db": [
+      -25.8391,
+      -23.3042,
+      -17.7827,
+      -24.4135
+    ],
+    "loudness_db": [
+      -25.8343,
+      -25.898,
+      -20.4183,
+      -22.2429
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "gains_db": [
+      4.2359,
+      0.2996,
+      -0.1801,
+      -4.3555
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "campurkan agar vokal agak lebih maju, perkusi drum agak diredam, nada bass lebih ke depan, melodi pengiring cukup mundur",
+    "prompt_template": "validation_bass_warm_foundation_v1_f0"
+  },
+  {
+    "id": "validation_0001_ex07_p02",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 106.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex07.npy",
+    "g0_db": [
+      0.0048,
+      -2.5938,
+      -2.6356,
+      2.1706
+    ],
+    "loudness_raw_db": [
+      -25.8391,
+      -23.3042,
+      -17.7827,
+      -24.4135
+    ],
+    "loudness_db": [
+      -25.8343,
+      -25.898,
+      -20.4183,
+      -22.2429
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "gains_db": [
+      4.2359,
+      0.2996,
+      -0.1801,
+      -4.3555
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "fokuskan mix supaya nyanyian utama sedikit diperjelas, bass cukup menonjol, beat drum turun tipis, instrumen pendukung dikurangi levelnya",
+    "prompt_template": "validation_bass_warm_foundation_v1_f1"
+  },
+  {
+    "id": "validation_0001_ex07_p03",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 106.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex07.npy",
+    "g0_db": [
+      0.0048,
+      -2.5938,
+      -2.6356,
+      2.1706
+    ],
+    "loudness_raw_db": [
+      -25.8391,
+      -23.3042,
+      -17.7827,
+      -24.4135
+    ],
+    "loudness_db": [
+      -25.8343,
+      -25.898,
+      -20.4183,
+      -22.2429
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "gains_db": [
+      4.2359,
+      0.2996,
+      -0.1801,
+      -4.3555
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "sesuaikan level dengan drum sedikit ke belakang, jalur vokal naik tipis, harmoni pengiring lebih ke belakang, frekuensi bass dinaikkan lebih jelas",
+    "prompt_template": "validation_bass_warm_foundation_v1_f2"
+  },
+  {
+    "id": "validation_0001_ex07_p04",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 106.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex07.npy",
+    "g0_db": [
+      0.0048,
+      -2.5938,
+      -2.6356,
+      2.1706
+    ],
+    "loudness_raw_db": [
+      -25.8391,
+      -23.3042,
+      -17.7827,
+      -24.4135
+    ],
+    "loudness_db": [
+      -25.8343,
+      -25.898,
+      -20.4183,
+      -22.2429
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "gains_db": [
+      4.2359,
+      0.2996,
+      -0.1801,
+      -4.3555
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "untuk bagian ini, perkusi drum agak diredam, vokal agak lebih maju, melodi pengiring cukup mundur, nada bass lebih ke depan",
+    "prompt_template": "validation_bass_warm_foundation_v1_f3"
+  },
+  {
+    "id": "validation_0001_ex08_p01",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 118.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex08.npy",
+    "g0_db": [
+      -2.0296,
+      -1.9481,
+      2.7248,
+      1.118
+    ],
+    "loudness_raw_db": [
+      -29.368,
+      -22.38,
+      -17.5432,
+      -22.6884
+    ],
+    "loudness_db": [
+      -31.3976,
+      -24.3281,
+      -14.8184,
+      -21.5704
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "gains_db": [
+      4.869,
+      0.7995,
+      -8.7102,
+      3.0418
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "campurkan agar vokal cukup mundur, perkusi drum di posisi netral, nada bass stabil di tengah, melodi pengiring sangat menonjol di depan",
+    "prompt_template": "validation_instrumental_forward_v1_f0"
+  },
+  {
+    "id": "validation_0001_ex08_p02",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 118.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex08.npy",
+    "g0_db": [
+      -2.0296,
+      -1.9481,
+      2.7248,
+      1.118
+    ],
+    "loudness_raw_db": [
+      -29.368,
+      -22.38,
+      -17.5432,
+      -22.6884
+    ],
+    "loudness_db": [
+      -31.3976,
+      -24.3281,
+      -14.8184,
+      -21.5704
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "gains_db": [
+      4.869,
+      0.7995,
+      -8.7102,
+      3.0418
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "fokuskan mix supaya nyanyian utama dikurangi levelnya, bass tetap seimbang, instrumen pendukung paling kuat terdengar",
+    "prompt_template": "validation_instrumental_forward_v1_f1"
+  },
+  {
+    "id": "validation_0001_ex08_p03",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 118.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex08.npy",
+    "g0_db": [
+      -2.0296,
+      -1.9481,
+      2.7248,
+      1.118
+    ],
+    "loudness_raw_db": [
+      -29.368,
+      -22.38,
+      -17.5432,
+      -22.6884
+    ],
+    "loudness_db": [
+      -31.3976,
+      -24.3281,
+      -14.8184,
+      -21.5704
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "gains_db": [
+      4.869,
+      0.7995,
+      -8.7102,
+      3.0418
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "sesuaikan level dengan drum tetap seimbang, jalur vokal lebih ke belakang, harmoni pengiring sangat mendominasi, frekuensi bass di posisi netral",
+    "prompt_template": "validation_instrumental_forward_v1_f2"
+  },
+  {
+    "id": "validation_0001_ex08_p04",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 118.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex08.npy",
+    "g0_db": [
+      -2.0296,
+      -1.9481,
+      2.7248,
+      1.118
+    ],
+    "loudness_raw_db": [
+      -29.368,
+      -22.38,
+      -17.5432,
+      -22.6884
+    ],
+    "loudness_db": [
+      -31.3976,
+      -24.3281,
+      -14.8184,
+      -21.5704
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "gains_db": [
+      4.869,
+      0.7995,
+      -8.7102,
+      3.0418
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "untuk bagian ini, perkusi drum di posisi netral, vokal cukup mundur, melodi pengiring sangat menonjol di depan",
+    "prompt_template": "validation_instrumental_forward_v1_f3"
+  },
+  {
+    "id": "validation_0001_ex09_p01",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 130.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex09.npy",
+    "g0_db": [
+      2.7118,
+      -0.9941,
+      -2.8639,
+      -0.0103
+    ],
+    "loudness_raw_db": [
+      -42.5627,
+      -21.7345,
+      -17.7593,
+      -22.2785
+    ],
+    "loudness_db": [
+      -39.8509,
+      -22.7286,
+      -20.6232,
+      -22.2888
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "gains_db": [
+      9.978,
+      -4.1442,
+      -6.2497,
+      0.4159
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "campurkan agar vokal cukup mundur, perkusi drum di posisi netral, nada bass stabil di tengah, melodi pengiring sangat menonjol di depan",
+    "prompt_template": "validation_instrumental_forward_v1_f0"
+  },
+  {
+    "id": "validation_0001_ex09_p02",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 130.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex09.npy",
+    "g0_db": [
+      2.7118,
+      -0.9941,
+      -2.8639,
+      -0.0103
+    ],
+    "loudness_raw_db": [
+      -42.5627,
+      -21.7345,
+      -17.7593,
+      -22.2785
+    ],
+    "loudness_db": [
+      -39.8509,
+      -22.7286,
+      -20.6232,
+      -22.2888
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "gains_db": [
+      9.978,
+      -4.1442,
+      -6.2497,
+      0.4159
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "fokuskan mix supaya nyanyian utama dikurangi levelnya, bass tetap seimbang, instrumen pendukung paling kuat terdengar",
+    "prompt_template": "validation_instrumental_forward_v1_f1"
+  },
+  {
+    "id": "validation_0001_ex09_p03",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 130.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex09.npy",
+    "g0_db": [
+      2.7118,
+      -0.9941,
+      -2.8639,
+      -0.0103
+    ],
+    "loudness_raw_db": [
+      -42.5627,
+      -21.7345,
+      -17.7593,
+      -22.2785
+    ],
+    "loudness_db": [
+      -39.8509,
+      -22.7286,
+      -20.6232,
+      -22.2888
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "gains_db": [
+      9.978,
+      -4.1442,
+      -6.2497,
+      0.4159
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "sesuaikan level dengan drum tetap seimbang, jalur vokal lebih ke belakang, harmoni pengiring sangat mendominasi, frekuensi bass di posisi netral",
+    "prompt_template": "validation_instrumental_forward_v1_f2"
+  },
+  {
+    "id": "validation_0001_ex09_p04",
+    "song": "Aimee Norwich - Child",
+    "artist": "Aimee Norwich",
+    "split": "validation",
+    "excerpt_start_sec": 130.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0001_ex09.npy",
+    "g0_db": [
+      2.7118,
+      -0.9941,
+      -2.8639,
+      -0.0103
+    ],
+    "loudness_raw_db": [
+      -42.5627,
+      -21.7345,
+      -17.7593,
+      -22.2785
+    ],
+    "loudness_db": [
+      -39.8509,
+      -22.7286,
+      -20.6232,
+      -22.2888
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "gains_db": [
+      9.978,
+      -4.1442,
+      -6.2497,
+      0.4159
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "untuk bagian ini, nada bass stabil di tengah, melodi pengiring sangat menonjol di depan, vokal cukup mundur",
+    "prompt_template": "validation_instrumental_forward_v1_f3"
+  },
+  {
+    "id": "validation_0002_ex00_p01",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 24.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex00.npy",
+    "g0_db": [
+      -1.2836,
+      -2.0921,
+      2.928,
+      -0.1823
+    ],
+    "loudness_raw_db": [
+      -34.0313,
+      -26.4296,
+      -28.1566,
+      -25.6514
+    ],
+    "loudness_db": [
+      -35.3149,
+      -28.5217,
+      -25.2286,
+      -25.8337
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "gains_db": [
+      6.5902,
+      -0.203,
+      -3.4961,
+      -2.891
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "campurkan agar vokal tetap seimbang, perkusi drum di posisi netral, nada bass stabil di tengah, melodi pengiring tetap seimbang",
+    "prompt_template": "validation_balanced_reference_v1_f0"
+  },
+  {
+    "id": "validation_0002_ex00_p02",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 24.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex00.npy",
+    "g0_db": [
+      -1.2836,
+      -2.0921,
+      2.928,
+      -0.1823
+    ],
+    "loudness_raw_db": [
+      -34.0313,
+      -26.4296,
+      -28.1566,
+      -25.6514
+    ],
+    "loudness_db": [
+      -35.3149,
+      -28.5217,
+      -25.2286,
+      -25.8337
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "gains_db": [
+      6.5902,
+      -0.203,
+      -3.4961,
+      -2.891
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "fokuskan mix supaya nyanyian utama di posisi netral, bass tetap seimbang, instrumen pendukung di posisi netral",
+    "prompt_template": "validation_balanced_reference_v1_f1"
+  },
+  {
+    "id": "validation_0002_ex00_p03",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 24.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex00.npy",
+    "g0_db": [
+      -1.2836,
+      -2.0921,
+      2.928,
+      -0.1823
+    ],
+    "loudness_raw_db": [
+      -34.0313,
+      -26.4296,
+      -28.1566,
+      -25.6514
+    ],
+    "loudness_db": [
+      -35.3149,
+      -28.5217,
+      -25.2286,
+      -25.8337
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "gains_db": [
+      6.5902,
+      -0.203,
+      -3.4961,
+      -2.891
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "sesuaikan level dengan drum tetap seimbang, jalur vokal stabil di tengah, harmoni pengiring stabil di tengah, frekuensi bass di posisi netral",
+    "prompt_template": "validation_balanced_reference_v1_f2"
+  },
+  {
+    "id": "validation_0002_ex00_p04",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 24.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex00.npy",
+    "g0_db": [
+      -1.2836,
+      -2.0921,
+      2.928,
+      -0.1823
+    ],
+    "loudness_raw_db": [
+      -34.0313,
+      -26.4296,
+      -28.1566,
+      -25.6514
+    ],
+    "loudness_db": [
+      -35.3149,
+      -28.5217,
+      -25.2286,
+      -25.8337
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "gains_db": [
+      6.5902,
+      -0.203,
+      -3.4961,
+      -2.891
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "untuk bagian ini, vokal tetap seimbang, perkusi drum di posisi netral, melodi pengiring tetap seimbang",
+    "prompt_template": "validation_balanced_reference_v1_f3"
+  },
+  {
+    "id": "validation_0002_ex01_p01",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 38.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex01.npy",
+    "g0_db": [
+      -1.4258,
+      1.572,
+      2.6746,
+      1.549
+    ],
+    "loudness_raw_db": [
+      -25.9557,
+      -26.6949,
+      -28.3039,
+      -25.5609
+    ],
+    "loudness_db": [
+      -27.3815,
+      -25.1229,
+      -25.6293,
+      -24.0119
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "gains_db": [
+      4.8451,
+      2.5865,
+      -2.9071,
+      -4.5245
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "campurkan agar vokal cukup menonjol, perkusi drum dinaikkan lebih jelas, nada bass lebih ke belakang, melodi pengiring cukup mundur",
+    "prompt_template": "validation_vocal_drum_duet_v1_f0"
+  },
+  {
+    "id": "validation_0002_ex01_p02",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 38.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex01.npy",
+    "g0_db": [
+      -1.4258,
+      1.572,
+      2.6746,
+      1.549
+    ],
+    "loudness_raw_db": [
+      -25.9557,
+      -26.6949,
+      -28.3039,
+      -25.5609
+    ],
+    "loudness_db": [
+      -27.3815,
+      -25.1229,
+      -25.6293,
+      -24.0119
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "gains_db": [
+      4.8451,
+      2.5865,
+      -2.9071,
+      -4.5245
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "fokuskan mix supaya nyanyian utama dinaikkan lebih jelas, bass cukup mundur, beat drum lebih ke depan, instrumen pendukung dikurangi levelnya",
+    "prompt_template": "validation_vocal_drum_duet_v1_f1"
+  },
+  {
+    "id": "validation_0002_ex01_p03",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 38.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex01.npy",
+    "g0_db": [
+      -1.4258,
+      1.572,
+      2.6746,
+      1.549
+    ],
+    "loudness_raw_db": [
+      -25.9557,
+      -26.6949,
+      -28.3039,
+      -25.5609
+    ],
+    "loudness_db": [
+      -27.3815,
+      -25.1229,
+      -25.6293,
+      -24.0119
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "gains_db": [
+      4.8451,
+      2.5865,
+      -2.9071,
+      -4.5245
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "sesuaikan level dengan drum cukup menonjol, jalur vokal lebih ke depan, harmoni pengiring lebih ke belakang, frekuensi bass dikurangi levelnya",
+    "prompt_template": "validation_vocal_drum_duet_v1_f2"
+  },
+  {
+    "id": "validation_0002_ex01_p04",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 38.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex01.npy",
+    "g0_db": [
+      -1.4258,
+      1.572,
+      2.6746,
+      1.549
+    ],
+    "loudness_raw_db": [
+      -25.9557,
+      -26.6949,
+      -28.3039,
+      -25.5609
+    ],
+    "loudness_db": [
+      -27.3815,
+      -25.1229,
+      -25.6293,
+      -24.0119
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "gains_db": [
+      4.8451,
+      2.5865,
+      -2.9071,
+      -4.5245
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "untuk bagian ini, perkusi drum dinaikkan lebih jelas, nada bass lebih ke belakang, vokal cukup menonjol, melodi pengiring cukup mundur",
+    "prompt_template": "validation_vocal_drum_duet_v1_f3"
+  },
+  {
+    "id": "validation_0002_ex02_p01",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 54.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex02.npy",
+    "g0_db": [
+      2.3499,
+      -2.3896,
+      1.1068,
+      0.0745
+    ],
+    "loudness_raw_db": [
+      -23.2812,
+      -25.572,
+      -28.4216,
+      -26.4607
+    ],
+    "loudness_db": [
+      -20.9313,
+      -27.9616,
+      -27.3148,
+      -26.3862
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "gains_db": [
+      -1.4672,
+      -0.4368,
+      -1.0836,
+      2.9877
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "campurkan agar vokal cukup menonjol, perkusi drum dikurangi levelnya, nada bass lebih ke belakang, melodi pengiring agak lebih maju",
+    "prompt_template": "validation_rhythm_tucked_back_v1_f0"
+  },
+  {
+    "id": "validation_0002_ex02_p02",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 54.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex02.npy",
+    "g0_db": [
+      2.3499,
+      -2.3896,
+      1.1068,
+      0.0745
+    ],
+    "loudness_raw_db": [
+      -23.2812,
+      -25.572,
+      -28.4216,
+      -26.4607
+    ],
+    "loudness_db": [
+      -20.9313,
+      -27.9616,
+      -27.3148,
+      -26.3862
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "gains_db": [
+      -1.4672,
+      -0.4368,
+      -1.0836,
+      2.9877
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "fokuskan mix supaya nyanyian utama dinaikkan lebih jelas, bass cukup mundur, beat drum lebih ke belakang, instrumen pendukung sedikit diperjelas",
+    "prompt_template": "validation_rhythm_tucked_back_v1_f1"
+  },
+  {
+    "id": "validation_0002_ex02_p03",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 54.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex02.npy",
+    "g0_db": [
+      2.3499,
+      -2.3896,
+      1.1068,
+      0.0745
+    ],
+    "loudness_raw_db": [
+      -23.2812,
+      -25.572,
+      -28.4216,
+      -26.4607
+    ],
+    "loudness_db": [
+      -20.9313,
+      -27.9616,
+      -27.3148,
+      -26.3862
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "gains_db": [
+      -1.4672,
+      -0.4368,
+      -1.0836,
+      2.9877
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "sesuaikan level dengan drum cukup mundur, jalur vokal lebih ke depan, harmoni pengiring naik tipis, frekuensi bass dikurangi levelnya",
+    "prompt_template": "validation_rhythm_tucked_back_v1_f2"
+  },
+  {
+    "id": "validation_0002_ex02_p04",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 54.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex02.npy",
+    "g0_db": [
+      2.3499,
+      -2.3896,
+      1.1068,
+      0.0745
+    ],
+    "loudness_raw_db": [
+      -23.2812,
+      -25.572,
+      -28.4216,
+      -26.4607
+    ],
+    "loudness_db": [
+      -20.9313,
+      -27.9616,
+      -27.3148,
+      -26.3862
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "gains_db": [
+      -1.4672,
+      -0.4368,
+      -1.0836,
+      2.9877
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "untuk bagian ini, nada bass lebih ke belakang, melodi pengiring agak lebih maju, vokal cukup menonjol, perkusi drum dikurangi levelnya",
+    "prompt_template": "validation_rhythm_tucked_back_v1_f3"
+  },
+  {
+    "id": "validation_0002_ex03_p01",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 68.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex03.npy",
+    "g0_db": [
+      0.8345,
+      -0.4954,
+      -2.5256,
+      -0.8671
+    ],
+    "loudness_raw_db": [
+      -23.4021,
+      -26.8733,
+      -28.5312,
+      -24.0504
+    ],
+    "loudness_db": [
+      -22.5676,
+      -27.3687,
+      -31.0568,
+      -24.9175
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "gains_db": [
+      -1.66,
+      3.141,
+      -0.1708,
+      -1.3102
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "campurkan agar vokal agak lebih maju, perkusi drum sedikit diperjelas, nada bass ditekan kuat ke belakang, melodi pengiring tetap seimbang",
+    "prompt_template": "validation_bass_tucked_clean_v1_f0"
+  },
+  {
+    "id": "validation_0002_ex03_p02",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 68.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex03.npy",
+    "g0_db": [
+      0.8345,
+      -0.4954,
+      -2.5256,
+      -0.8671
+    ],
+    "loudness_raw_db": [
+      -23.4021,
+      -26.8733,
+      -28.5312,
+      -24.0504
+    ],
+    "loudness_db": [
+      -22.5676,
+      -27.3687,
+      -31.0568,
+      -24.9175
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "gains_db": [
+      -1.66,
+      3.141,
+      -0.1708,
+      -1.3102
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "fokuskan mix supaya nyanyian utama sedikit diperjelas, bass sangat jauh di belakang, beat drum naik tipis",
+    "prompt_template": "validation_bass_tucked_clean_v1_f1"
+  },
+  {
+    "id": "validation_0002_ex03_p03",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 68.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex03.npy",
+    "g0_db": [
+      0.8345,
+      -0.4954,
+      -2.5256,
+      -0.8671
+    ],
+    "loudness_raw_db": [
+      -23.4021,
+      -26.8733,
+      -28.5312,
+      -24.0504
+    ],
+    "loudness_db": [
+      -22.5676,
+      -27.3687,
+      -31.0568,
+      -24.9175
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "gains_db": [
+      -1.66,
+      3.141,
+      -0.1708,
+      -1.3102
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "sesuaikan level dengan drum agak lebih maju, jalur vokal naik tipis, harmoni pengiring stabil di tengah, frekuensi bass paling pelan",
+    "prompt_template": "validation_bass_tucked_clean_v1_f2"
+  },
+  {
+    "id": "validation_0002_ex03_p04",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 68.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex03.npy",
+    "g0_db": [
+      0.8345,
+      -0.4954,
+      -2.5256,
+      -0.8671
+    ],
+    "loudness_raw_db": [
+      -23.4021,
+      -26.8733,
+      -28.5312,
+      -24.0504
+    ],
+    "loudness_db": [
+      -22.5676,
+      -27.3687,
+      -31.0568,
+      -24.9175
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "gains_db": [
+      -1.66,
+      3.141,
+      -0.1708,
+      -1.3102
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "untuk bagian ini, nada bass ditekan kuat ke belakang, melodi pengiring tetap seimbang, vokal agak lebih maju, perkusi drum sedikit diperjelas",
+    "prompt_template": "validation_bass_tucked_clean_v1_f3"
+  },
+  {
+    "id": "validation_0002_ex04_p01",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 82.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex04.npy",
+    "g0_db": [
+      -1.9791,
+      -0.1978,
+      1.3741,
+      0.3093
+    ],
+    "loudness_raw_db": [
+      -26.7488,
+      -25.4726,
+      -28.5301,
+      -23.7501
+    ],
+    "loudness_db": [
+      -28.7279,
+      -25.6704,
+      -27.156,
+      -23.4408
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "gains_db": [
+      4.7291,
+      -5.3283,
+      1.1572,
+      -0.558
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "campurkan agar vokal agak lebih maju, perkusi drum paling pelan, nada bass stabil di tengah, melodi pengiring agak lebih maju",
+    "prompt_template": "validation_drums_tucked_soft_v1_f0"
+  },
+  {
+    "id": "validation_0002_ex04_p02",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 82.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex04.npy",
+    "g0_db": [
+      -1.9791,
+      -0.1978,
+      1.3741,
+      0.3093
+    ],
+    "loudness_raw_db": [
+      -26.7488,
+      -25.4726,
+      -28.5301,
+      -23.7501
+    ],
+    "loudness_db": [
+      -28.7279,
+      -25.6704,
+      -27.156,
+      -23.4408
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "gains_db": [
+      4.7291,
+      -5.3283,
+      1.1572,
+      -0.558
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "fokuskan mix supaya nyanyian utama sedikit diperjelas, bass tetap seimbang, beat drum ditekan kuat ke belakang, instrumen pendukung sedikit diperjelas",
+    "prompt_template": "validation_drums_tucked_soft_v1_f1"
+  },
+  {
+    "id": "validation_0002_ex04_p03",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 82.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex04.npy",
+    "g0_db": [
+      -1.9791,
+      -0.1978,
+      1.3741,
+      0.3093
+    ],
+    "loudness_raw_db": [
+      -26.7488,
+      -25.4726,
+      -28.5301,
+      -23.7501
+    ],
+    "loudness_db": [
+      -28.7279,
+      -25.6704,
+      -27.156,
+      -23.4408
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "gains_db": [
+      4.7291,
+      -5.3283,
+      1.1572,
+      -0.558
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "sesuaikan level dengan drum sangat jauh di belakang, jalur vokal naik tipis, harmoni pengiring naik tipis, frekuensi bass di posisi netral",
+    "prompt_template": "validation_drums_tucked_soft_v1_f2"
+  },
+  {
+    "id": "validation_0002_ex04_p04",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 82.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex04.npy",
+    "g0_db": [
+      -1.9791,
+      -0.1978,
+      1.3741,
+      0.3093
+    ],
+    "loudness_raw_db": [
+      -26.7488,
+      -25.4726,
+      -28.5301,
+      -23.7501
+    ],
+    "loudness_db": [
+      -28.7279,
+      -25.6704,
+      -27.156,
+      -23.4408
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "gains_db": [
+      4.7291,
+      -5.3283,
+      1.1572,
+      -0.558
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "untuk bagian ini, nada bass stabil di tengah, perkusi drum paling pelan, melodi pengiring agak lebih maju, vokal agak lebih maju",
+    "prompt_template": "validation_drums_tucked_soft_v1_f3"
+  },
+  {
+    "id": "validation_0002_ex05_p01",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 122.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex05.npy",
+    "g0_db": [
+      0.2509,
+      1.6664,
+      2.463,
+      -1.735
+    ],
+    "loudness_raw_db": [
+      -22.2619,
+      -26.1257,
+      -28.3569,
+      -23.2704
+    ],
+    "loudness_db": [
+      -22.011,
+      -24.4593,
+      -25.8939,
+      -25.0054
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "gains_db": [
+      -0.8314,
+      2.6169,
+      3.0515,
+      -4.837
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "campurkan agar vokal agak lebih maju, perkusi drum dinaikkan lebih jelas, nada bass naik tipis, melodi pengiring sangat jauh di belakang",
+    "prompt_template": "validation_full_band_energetic_v1_f0"
+  },
+  {
+    "id": "validation_0002_ex05_p02",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 122.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex05.npy",
+    "g0_db": [
+      0.2509,
+      1.6664,
+      2.463,
+      -1.735
+    ],
+    "loudness_raw_db": [
+      -22.2619,
+      -26.1257,
+      -28.3569,
+      -23.2704
+    ],
+    "loudness_db": [
+      -22.011,
+      -24.4593,
+      -25.8939,
+      -25.0054
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "gains_db": [
+      -0.8314,
+      2.6169,
+      3.0515,
+      -4.837
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "fokuskan mix supaya nyanyian utama sedikit diperjelas, bass agak lebih maju, beat drum lebih ke depan, instrumen pendukung paling pelan",
+    "prompt_template": "validation_full_band_energetic_v1_f1"
+  },
+  {
+    "id": "validation_0002_ex05_p03",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 122.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex05.npy",
+    "g0_db": [
+      0.2509,
+      1.6664,
+      2.463,
+      -1.735
+    ],
+    "loudness_raw_db": [
+      -22.2619,
+      -26.1257,
+      -28.3569,
+      -23.2704
+    ],
+    "loudness_db": [
+      -22.011,
+      -24.4593,
+      -25.8939,
+      -25.0054
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "gains_db": [
+      -0.8314,
+      2.6169,
+      3.0515,
+      -4.837
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "sesuaikan level dengan drum cukup menonjol, jalur vokal naik tipis, harmoni pengiring ditekan kuat ke belakang, frekuensi bass sedikit diperjelas",
+    "prompt_template": "validation_full_band_energetic_v1_f2"
+  },
+  {
+    "id": "validation_0002_ex05_p04",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 122.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex05.npy",
+    "g0_db": [
+      0.2509,
+      1.6664,
+      2.463,
+      -1.735
+    ],
+    "loudness_raw_db": [
+      -22.2619,
+      -26.1257,
+      -28.3569,
+      -23.2704
+    ],
+    "loudness_db": [
+      -22.011,
+      -24.4593,
+      -25.8939,
+      -25.0054
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "gains_db": [
+      -0.8314,
+      2.6169,
+      3.0515,
+      -4.837
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "untuk bagian ini, vokal agak lebih maju, perkusi drum dinaikkan lebih jelas, nada bass naik tipis, melodi pengiring sangat jauh di belakang",
+    "prompt_template": "validation_full_band_energetic_v1_f3"
+  },
+  {
+    "id": "validation_0002_ex06_p01",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 136.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex06.npy",
+    "g0_db": [
+      1.7808,
+      -1.5365,
+      -1.9831,
+      2.1561
+    ],
+    "loudness_raw_db": [
+      -22.4236,
+      -27.7229,
+      -28.5169,
+      -24.4225
+    ],
+    "loudness_db": [
+      -20.6428,
+      -29.2594,
+      -30.5,
+      -22.2664
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "gains_db": [
+      -0.0243,
+      3.5922,
+      2.8329,
+      -6.4008
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "campurkan agar vokal sangat menonjol di depan, perkusi drum di posisi netral, nada bass turun tipis, melodi pengiring cukup mundur",
+    "prompt_template": "validation_vocal_forward_v1_f0"
+  },
+  {
+    "id": "validation_0002_ex06_p02",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 136.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex06.npy",
+    "g0_db": [
+      1.7808,
+      -1.5365,
+      -1.9831,
+      2.1561
+    ],
+    "loudness_raw_db": [
+      -22.4236,
+      -27.7229,
+      -28.5169,
+      -24.4225
+    ],
+    "loudness_db": [
+      -20.6428,
+      -29.2594,
+      -30.5,
+      -22.2664
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "gains_db": [
+      -0.0243,
+      3.5922,
+      2.8329,
+      -6.4008
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "fokuskan mix supaya nyanyian utama paling kuat terdengar, bass sedikit ke belakang, instrumen pendukung dikurangi levelnya",
+    "prompt_template": "validation_vocal_forward_v1_f1"
+  },
+  {
+    "id": "validation_0002_ex06_p03",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 136.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex06.npy",
+    "g0_db": [
+      1.7808,
+      -1.5365,
+      -1.9831,
+      2.1561
+    ],
+    "loudness_raw_db": [
+      -22.4236,
+      -27.7229,
+      -28.5169,
+      -24.4225
+    ],
+    "loudness_db": [
+      -20.6428,
+      -29.2594,
+      -30.5,
+      -22.2664
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "gains_db": [
+      -0.0243,
+      3.5922,
+      2.8329,
+      -6.4008
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "sesuaikan level dengan drum tetap seimbang, jalur vokal sangat mendominasi, harmoni pengiring lebih ke belakang, frekuensi bass agak diredam",
+    "prompt_template": "validation_vocal_forward_v1_f2"
+  },
+  {
+    "id": "validation_0002_ex06_p04",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 136.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex06.npy",
+    "g0_db": [
+      1.7808,
+      -1.5365,
+      -1.9831,
+      2.1561
+    ],
+    "loudness_raw_db": [
+      -22.4236,
+      -27.7229,
+      -28.5169,
+      -24.4225
+    ],
+    "loudness_db": [
+      -20.6428,
+      -29.2594,
+      -30.5,
+      -22.2664
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "gains_db": [
+      -0.0243,
+      3.5922,
+      2.8329,
+      -6.4008
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "untuk bagian ini, melodi pengiring cukup mundur, vokal sangat menonjol di depan, nada bass turun tipis",
+    "prompt_template": "validation_vocal_forward_v1_f3"
+  },
+  {
+    "id": "validation_0002_ex07_p01",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 172.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex07.npy",
+    "g0_db": [
+      -0.7832,
+      -2.9329,
+      -1.811,
+      -1.9028
+    ],
+    "loudness_raw_db": [
+      -23.0224,
+      -28.7553,
+      -31.8708,
+      -26.0294
+    ],
+    "loudness_db": [
+      -23.8056,
+      -31.6882,
+      -33.6818,
+      -27.9322
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "gains_db": [
+      -0.4713,
+      -0.5888,
+      4.4049,
+      -3.3448
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "campurkan agar vokal sangat menonjol di depan, perkusi drum dikurangi levelnya, nada bass stabil di tengah, melodi pengiring sedikit ke belakang",
+    "prompt_template": "validation_vocal_warm_ballad_v1_f0"
+  },
+  {
+    "id": "validation_0002_ex07_p02",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 172.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex07.npy",
+    "g0_db": [
+      -0.7832,
+      -2.9329,
+      -1.811,
+      -1.9028
+    ],
+    "loudness_raw_db": [
+      -23.0224,
+      -28.7553,
+      -31.8708,
+      -26.0294
+    ],
+    "loudness_db": [
+      -23.8056,
+      -31.6882,
+      -33.6818,
+      -27.9322
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "gains_db": [
+      -0.4713,
+      -0.5888,
+      4.4049,
+      -3.3448
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "fokuskan mix supaya nyanyian utama paling kuat terdengar, bass tetap seimbang, beat drum lebih ke belakang, instrumen pendukung agak diredam",
+    "prompt_template": "validation_vocal_warm_ballad_v1_f1"
+  },
+  {
+    "id": "validation_0002_ex07_p03",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 172.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex07.npy",
+    "g0_db": [
+      -0.7832,
+      -2.9329,
+      -1.811,
+      -1.9028
+    ],
+    "loudness_raw_db": [
+      -23.0224,
+      -28.7553,
+      -31.8708,
+      -26.0294
+    ],
+    "loudness_db": [
+      -23.8056,
+      -31.6882,
+      -33.6818,
+      -27.9322
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "gains_db": [
+      -0.4713,
+      -0.5888,
+      4.4049,
+      -3.3448
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "sesuaikan level dengan drum cukup mundur, jalur vokal sangat mendominasi, harmoni pengiring turun tipis, frekuensi bass di posisi netral",
+    "prompt_template": "validation_vocal_warm_ballad_v1_f2"
+  },
+  {
+    "id": "validation_0002_ex07_p04",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 172.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex07.npy",
+    "g0_db": [
+      -0.7832,
+      -2.9329,
+      -1.811,
+      -1.9028
+    ],
+    "loudness_raw_db": [
+      -23.0224,
+      -28.7553,
+      -31.8708,
+      -26.0294
+    ],
+    "loudness_db": [
+      -23.8056,
+      -31.6882,
+      -33.6818,
+      -27.9322
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "gains_db": [
+      -0.4713,
+      -0.5888,
+      4.4049,
+      -3.3448
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "untuk bagian ini, melodi pengiring sedikit ke belakang, perkusi drum dikurangi levelnya, vokal sangat menonjol di depan",
+    "prompt_template": "validation_vocal_warm_ballad_v1_f3"
+  },
+  {
+    "id": "validation_0002_ex08_p01",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 188.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex08.npy",
+    "g0_db": [
+      -2.9355,
+      0.3783,
+      1.8518,
+      0.7758
+    ],
+    "loudness_raw_db": [
+      -22.468,
+      -27.3901,
+      -28.0118,
+      -26.2677
+    ],
+    "loudness_db": [
+      -25.4035,
+      -27.0118,
+      -26.16,
+      -25.4919
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "gains_db": [
+      2.1367,
+      0.745,
+      -2.1068,
+      -0.7749
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "campurkan agar vokal cukup menonjol, perkusi drum di posisi netral, nada bass turun tipis, melodi pengiring tetap seimbang",
+    "prompt_template": "validation_vocal_subtle_lift_v1_f0"
+  },
+  {
+    "id": "validation_0002_ex08_p02",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 188.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex08.npy",
+    "g0_db": [
+      -2.9355,
+      0.3783,
+      1.8518,
+      0.7758
+    ],
+    "loudness_raw_db": [
+      -22.468,
+      -27.3901,
+      -28.0118,
+      -26.2677
+    ],
+    "loudness_db": [
+      -25.4035,
+      -27.0118,
+      -26.16,
+      -25.4919
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "gains_db": [
+      2.1367,
+      0.745,
+      -2.1068,
+      -0.7749
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "fokuskan mix supaya nyanyian utama dinaikkan lebih jelas, bass sedikit ke belakang, instrumen pendukung di posisi netral",
+    "prompt_template": "validation_vocal_subtle_lift_v1_f1"
+  },
+  {
+    "id": "validation_0002_ex08_p03",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 188.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex08.npy",
+    "g0_db": [
+      -2.9355,
+      0.3783,
+      1.8518,
+      0.7758
+    ],
+    "loudness_raw_db": [
+      -22.468,
+      -27.3901,
+      -28.0118,
+      -26.2677
+    ],
+    "loudness_db": [
+      -25.4035,
+      -27.0118,
+      -26.16,
+      -25.4919
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "gains_db": [
+      2.1367,
+      0.745,
+      -2.1068,
+      -0.7749
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "sesuaikan level dengan drum tetap seimbang, jalur vokal lebih ke depan, harmoni pengiring stabil di tengah, frekuensi bass agak diredam",
+    "prompt_template": "validation_vocal_subtle_lift_v1_f2"
+  },
+  {
+    "id": "validation_0002_ex08_p04",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 188.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex08.npy",
+    "g0_db": [
+      -2.9355,
+      0.3783,
+      1.8518,
+      0.7758
+    ],
+    "loudness_raw_db": [
+      -22.468,
+      -27.3901,
+      -28.0118,
+      -26.2677
+    ],
+    "loudness_db": [
+      -25.4035,
+      -27.0118,
+      -26.16,
+      -25.4919
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "gains_db": [
+      2.1367,
+      0.745,
+      -2.1068,
+      -0.7749
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "untuk bagian ini, nada bass turun tipis, perkusi drum di posisi netral, vokal cukup menonjol",
+    "prompt_template": "validation_vocal_subtle_lift_v1_f3"
+  },
+  {
+    "id": "validation_0002_ex09_p01",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 202.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex09.npy",
+    "g0_db": [
+      -0.2593,
+      1.1186,
+      2.9818,
+      -1.4223
+    ],
+    "loudness_raw_db": [
+      -27.0313,
+      -34.5251,
+      -32.1977,
+      -30.9248
+    ],
+    "loudness_db": [
+      -27.2906,
+      -33.4065,
+      -29.2159,
+      -32.3471
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "gains_db": [
+      0.2255,
+      -1.6585,
+      -2.8491,
+      4.2821
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "campurkan agar vokal cukup menonjol, perkusi drum paling pelan, nada bass turun tipis, melodi pengiring agak lebih maju",
+    "prompt_template": "validation_vocal_intimate_acoustic_v1_f0"
+  },
+  {
+    "id": "validation_0002_ex09_p02",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 202.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex09.npy",
+    "g0_db": [
+      -0.2593,
+      1.1186,
+      2.9818,
+      -1.4223
+    ],
+    "loudness_raw_db": [
+      -27.0313,
+      -34.5251,
+      -32.1977,
+      -30.9248
+    ],
+    "loudness_db": [
+      -27.2906,
+      -33.4065,
+      -29.2159,
+      -32.3471
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "gains_db": [
+      0.2255,
+      -1.6585,
+      -2.8491,
+      4.2821
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "fokuskan mix supaya nyanyian utama dinaikkan lebih jelas, bass sedikit ke belakang, beat drum ditekan kuat ke belakang, instrumen pendukung sedikit diperjelas",
+    "prompt_template": "validation_vocal_intimate_acoustic_v1_f1"
+  },
+  {
+    "id": "validation_0002_ex09_p03",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 202.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex09.npy",
+    "g0_db": [
+      -0.2593,
+      1.1186,
+      2.9818,
+      -1.4223
+    ],
+    "loudness_raw_db": [
+      -27.0313,
+      -34.5251,
+      -32.1977,
+      -30.9248
+    ],
+    "loudness_db": [
+      -27.2906,
+      -33.4065,
+      -29.2159,
+      -32.3471
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "gains_db": [
+      0.2255,
+      -1.6585,
+      -2.8491,
+      4.2821
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "sesuaikan level dengan drum sangat jauh di belakang, jalur vokal lebih ke depan, harmoni pengiring naik tipis, frekuensi bass agak diredam",
+    "prompt_template": "validation_vocal_intimate_acoustic_v1_f2"
+  },
+  {
+    "id": "validation_0002_ex09_p04",
+    "song": "Angela Thomas Wade - Milk Cow Blues",
+    "artist": "Angela Thomas Wade",
+    "split": "validation",
+    "excerpt_start_sec": 202.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/validation/validation_0002_ex09.npy",
+    "g0_db": [
+      -0.2593,
+      1.1186,
+      2.9818,
+      -1.4223
+    ],
+    "loudness_raw_db": [
+      -27.0313,
+      -34.5251,
+      -32.1977,
+      -30.9248
+    ],
+    "loudness_db": [
+      -27.2906,
+      -33.4065,
+      -29.2159,
+      -32.3471
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "gains_db": [
+      0.2255,
+      -1.6585,
+      -2.8491,
+      4.2821
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "untuk bagian ini, nada bass turun tipis, melodi pengiring agak lebih maju, vokal cukup menonjol, perkusi drum paling pelan",
+    "prompt_template": "validation_vocal_intimate_acoustic_v1_f3"
+  }
+]

@@ -1,76 +1,48 @@
-import json
+"""Create the MUSDB18-HQ split manifest (80/20/50) and Indonesian prompt banks."""
+
+from __future__ import annotations
+
+import argparse
 from pathlib import Path
 
-import numpy as np
-
-from wadidaw.music_env import DATASET
+from wadidaw.data.musdb import (
+    MUSDB_ROOT,
+    SPLIT_MANIFEST_PATH,
+    create_musdb_split_manifest,
+)
+from wadidaw.data.prompts import save_prompt_banks
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DESTINATION = ROOT / "data" / "splits" / "babyslakh_v1.json"
+PROMPTS_DIR = ROOT / "data" / "prompts"
 
 
-def main():
-    song_dirs = sorted(
-        path
-        for path in DATASET.rglob("stems")
-        if path.is_dir()
-        and path.parent.name.startswith("Track")
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Generate MUSDB18-HQ song splits (80/20/50) and Indonesian prompt banks."
     )
+    parser.add_argument("--musdb-root", type=Path, default=MUSDB_ROOT)
+    parser.add_argument("--output", type=Path, default=SPLIT_MANIFEST_PATH)
+    parser.add_argument("--prompts-dir", type=Path, default=PROMPTS_DIR)
+    parser.add_argument("--seed", type=int, default=2026)
+    parser.add_argument("--overwrite", action="store_true")
+    args = parser.parse_args()
 
-    if len(song_dirs) != 20:
-        raise RuntimeError(
-            f"Expected 20 BabySlakh songs, found {len(song_dirs)}"
-        )
-
-    # Fixed split seed: reproducible across runs.
-    rng = np.random.default_rng(2026)
-    indices = rng.permutation(len(song_dirs))
-
-    groups = {
-        "train": indices[:12],
-        "validation": indices[12:16],
-        "test": indices[16:20],
-    }
-
-    manifest = {
-        "dataset": "BabySlakh 16k",
-        "seed": 2026,
-        "splits": {
-            split: [
-                {
-                    "index": int(i),
-                    "song": song_dirs[int(i)].parent.name,
-                }
-                for i in members
-            ]
-            for split, members in groups.items()
-        },
-    }
-
-    DESTINATION.parent.mkdir(
-        parents=True, exist_ok=True
+    manifest = create_musdb_split_manifest(
+        musdb_root=args.musdb_root,
+        output_path=args.output,
+        seed=args.seed,
+        overwrite=args.overwrite,
     )
-
-    if DESTINATION.exists():
-        existing = json.loads(
-            DESTINATION.read_text()
-        )
-        if existing != manifest:
-            raise RuntimeError(
-                "An incompatible split manifest already exists."
-            )
-    else:
-        DESTINATION.write_text(
-            json.dumps(manifest, indent=2) + "\n"
-        )
 
     for split, members in manifest["splits"].items():
-        names = [item["song"] for item in members]
-        print(f"{split.upper()} ({len(names)} songs)")
-        print(" ", ", ".join(names))
+        artists = {item["artist"] for item in members}
+        print(f"{split.upper():10s}: {len(members):3d} songs ({len(artists):2d} unique artists)")
 
-    print("\nSplit manifest:", DESTINATION)
+    prompt_paths = save_prompt_banks(args.prompts_dir)
+    print("\nSaved split manifest:", args.output)
+    for key, path in prompt_paths.items():
+        print(f"Saved prompt bank [{key}]: {path}")
 
 
 if __name__ == "__main__":

@@ -1,7 +1,9 @@
 data/raw/
+data/cache/
 .venv/
 *.log
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
+dokumentasi.md

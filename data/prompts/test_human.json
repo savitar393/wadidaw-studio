@@ -1,0 +1,3602 @@
+[
+  {
+    "id": "human_test_001",
+    "prompt": "Saat melakukan gain staging, redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring.",
+    "raw_levels_db": [
+      2,
+      -5,
+      0,
+      2
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "profile_hint": "drums_tucked_soft_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_002",
+    "prompt": "Di mix ini, bersihkan frekuensi bawah dengan membuat bass paling belakang, sedangkan vokal dan drum sedikit diangkat.",
+    "raw_levels_db": [
+      2,
+      2,
+      -5,
+      0
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "profile_hint": "bass_tucked_clean_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_003",
+    "prompt": "Sebagai referensi akhir, pastikan vokal tidak tenggelam dan terasa lebih kuat, drum sedikit lebih maju, tetapi instrumen lain lebih mundur.",
+    "raw_levels_db": [
+      3,
+      2,
+      0,
+      -3
+    ],
+    "balance_target": [
+      2.5,
+      1.5,
+      -0.5,
+      -3.5
+    ],
+    "profile_hint": "vocal_subtle_lift_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_004",
+    "prompt": "Saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural.",
+    "raw_levels_db": [
+      5,
+      -3,
+      0,
+      -2
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "profile_hint": "vocal_subtle_lift_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_005",
+    "prompt": "Kurangi level vokal agak ke belakang agar alunan bass yang lebih maju dan drum yang seimbang lebih terdengar. Jangan sampai ada instrumen yang memicu clipping.",
+    "raw_levels_db": [
+      -2,
+      0,
+      3,
+      0
+    ],
+    "balance_target": [
+      -2.25,
+      -0.25,
+      2.75,
+      -0.25
+    ],
+    "profile_hint": "vocal_intimate_acoustic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_006",
+    "prompt": "Tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang. Pastikan transisi antar stem terdengar rapi.",
+    "raw_levels_db": [
+      5,
+      0,
+      -2,
+      -3
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "profile_hint": "vocal_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_007",
+    "prompt": "Saat melakukan gain staging, buat bass lebih maju sebagai fondasi, vokal sedikit diangkat, namun drum agak ditahan dan iringan lebih mundur.",
+    "raw_levels_db": [
+      2,
+      -2,
+      3,
+      -3
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "profile_hint": "bass_warm_foundation_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_008",
+    "prompt": "Sebagai referensi akhir, saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural.",
+    "raw_levels_db": [
+      5,
+      -3,
+      0,
+      -2
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "profile_hint": "vocal_subtle_lift_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_009",
+    "prompt": "Suara penyanyi sedikit lebih maju saja, bass jangan terlalu dominan, sisanya biarkan proporsional.",
+    "raw_levels_db": [
+      2,
+      0,
+      -2,
+      0
+    ],
+    "balance_target": [
+      2.0,
+      0.0,
+      -2.0,
+      0.0
+    ],
+    "profile_hint": "vocal_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_010",
+    "prompt": "Tonjolkan vokal dan drum secara bersamaan ke depan, lalu kecilkan bass serta musik pengiring. Jangan sampai ada instrumen yang memicu clipping.",
+    "raw_levels_db": [
+      3,
+      3,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "profile_hint": "vocal_drum_duet_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_011",
+    "prompt": "Tolong atur fader supaya naikkan melodi pengiring agar lebih terasa di permukaan, sementara vokal dan drum sedikit dikurangi.",
+    "raw_levels_db": [
+      -2,
+      -2,
+      0,
+      3
+    ],
+    "balance_target": [
+      -1.75,
+      -1.75,
+      0.25,
+      3.25
+    ],
+    "profile_hint": "backing_melody_focus_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_012",
+    "prompt": "Redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring. Jangan sampai ada instrumen yang memicu clipping.",
+    "raw_levels_db": [
+      2,
+      -5,
+      0,
+      2
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "profile_hint": "drums_tucked_soft_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_013",
+    "prompt": "Sesuai arahan produser, ketukan drum dinaikkan lebih jelas, vokal tetap seimbang, namun bass dan pengiring agak ditahan.",
+    "raw_levels_db": [
+      0,
+      3,
+      -2,
+      -2
+    ],
+    "balance_target": [
+      0.25,
+      3.25,
+      -1.75,
+      -1.75
+    ],
+    "profile_hint": "vocal_warm_ballad_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_014",
+    "prompt": "Jaga seluruh elemen mulai dari vokal, drum, bass, hingga instrumen lainnya agar terdengar seimbang natural.",
+    "raw_levels_db": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "profile_hint": "balanced_reference_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_015",
+    "prompt": "Kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan. Jangan sampai ada instrumen yang memicu clipping.",
+    "raw_levels_db": [
+      3,
+      -3,
+      -3,
+      2
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "profile_hint": "rhythm_tucked_back_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_016",
+    "prompt": "Di mix ini, tonjolkan low-end bass hingga paling dominan, drum sedikit lebih terasa, dan instrumen pengiring dikecilkan.",
+    "raw_levels_db": [
+      0,
+      2,
+      5,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "profile_hint": "bass_heavy_modern_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_017",
+    "prompt": "Di mix ini, buat bass lebih maju sebagai fondasi, vokal sedikit diangkat, namun drum agak ditahan dan iringan lebih mundur.",
+    "raw_levels_db": [
+      2,
+      -2,
+      3,
+      -3
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "profile_hint": "bass_warm_foundation_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_018",
+    "prompt": "Untuk bagian lagu ini, bersihkan frekuensi bawah dengan membuat bass paling belakang, sedangkan vokal dan drum sedikit diangkat.",
+    "raw_levels_db": [
+      2,
+      2,
+      -5,
+      0
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "profile_hint": "bass_tucked_clean_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_019",
+    "prompt": "Untuk bagian lagu ini, saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural.",
+    "raw_levels_db": [
+      5,
+      -3,
+      0,
+      -2
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "profile_hint": "vocal_subtle_lift_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_020",
+    "prompt": "Tolong atur fader supaya buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur.",
+    "raw_levels_db": [
+      3,
+      -5,
+      -2,
+      2
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "profile_hint": "vocal_intimate_acoustic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_021",
+    "prompt": "Naikkan melodi pengiring agar lebih terasa di permukaan, sementara vokal dan drum sedikit dikurangi.",
+    "raw_levels_db": [
+      -2,
+      -2,
+      0,
+      3
+    ],
+    "balance_target": [
+      -1.75,
+      -1.75,
+      0.25,
+      3.25
+    ],
+    "profile_hint": "backing_melody_focus_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_022",
+    "prompt": "Kurangi level vokal agak ke belakang agar alunan bass yang lebih maju dan drum yang seimbang lebih terdengar.",
+    "raw_levels_db": [
+      -2,
+      0,
+      3,
+      0
+    ],
+    "balance_target": [
+      -2.25,
+      -0.25,
+      2.75,
+      -0.25
+    ],
+    "profile_hint": "vocal_intimate_acoustic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_023",
+    "prompt": "Ketukan drum dinaikkan lebih jelas, vokal tetap seimbang, namun bass dan pengiring agak ditahan. Pastikan transisi antar stem terdengar rapi.",
+    "raw_levels_db": [
+      0,
+      3,
+      -2,
+      -2
+    ],
+    "balance_target": [
+      0.25,
+      3.25,
+      -1.75,
+      -1.75
+    ],
+    "profile_hint": "vocal_warm_ballad_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_024",
+    "prompt": "Ketukan drum dinaikkan lebih jelas, vokal tetap seimbang, namun bass dan pengiring agak ditahan.",
+    "raw_levels_db": [
+      0,
+      3,
+      -2,
+      -2
+    ],
+    "balance_target": [
+      0.25,
+      3.25,
+      -1.75,
+      -1.75
+    ],
+    "profile_hint": "vocal_warm_ballad_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_025",
+    "prompt": "Sebagai referensi akhir, buat bass lebih maju sebagai fondasi, vokal sedikit diangkat, namun drum agak ditahan dan iringan lebih mundur.",
+    "raw_levels_db": [
+      2,
+      -2,
+      3,
+      -3
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "profile_hint": "bass_warm_foundation_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_026",
+    "prompt": "Redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring. Pertahankan kejernihan keseluruhan campuran.",
+    "raw_levels_db": [
+      2,
+      -5,
+      0,
+      2
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "profile_hint": "drums_tucked_soft_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_027",
+    "prompt": "Di mix ini, jaga seluruh elemen mulai dari vokal, drum, bass, hingga instrumen lainnya agar terdengar seimbang natural.",
+    "raw_levels_db": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "profile_hint": "balanced_reference_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_028",
+    "prompt": "Untuk bagian lagu ini, tonjolkan vokal dan drum secara bersamaan ke depan, lalu kecilkan bass serta musik pengiring.",
+    "raw_levels_db": [
+      3,
+      3,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "profile_hint": "vocal_drum_duet_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_029",
+    "prompt": "Saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural. Pastikan transisi antar stem terdengar rapi.",
+    "raw_levels_db": [
+      5,
+      -3,
+      0,
+      -2
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "profile_hint": "vocal_subtle_lift_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_030",
+    "prompt": "Sebagai referensi akhir, tonjolkan low-end bass hingga paling dominan, drum sedikit lebih terasa, dan instrumen pengiring dikecilkan.",
+    "raw_levels_db": [
+      0,
+      2,
+      5,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "profile_hint": "bass_heavy_modern_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_031",
+    "prompt": "Fokuskan groove pada drum dan bass yang sama-sama lebih kuat, sementara vokal agak mundur dan iringan dikurangi. Jangan sampai ada instrumen yang memicu clipping.",
+    "raw_levels_db": [
+      -2,
+      3,
+      3,
+      -3
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "profile_hint": "drums_bass_groove_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_032",
+    "prompt": "Ketukan drum dinaikkan lebih jelas, vokal tetap seimbang, namun bass dan pengiring agak ditahan. Jangan sampai ada instrumen yang memicu clipping.",
+    "raw_levels_db": [
+      0,
+      3,
+      -2,
+      -2
+    ],
+    "balance_target": [
+      0.25,
+      3.25,
+      -1.75,
+      -1.75
+    ],
+    "profile_hint": "vocal_warm_ballad_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_033",
+    "prompt": "Bersihkan frekuensi bawah dengan membuat bass paling belakang, sedangkan vokal dan drum sedikit diangkat. Pastikan transisi antar stem terdengar rapi.",
+    "raw_levels_db": [
+      2,
+      2,
+      -5,
+      0
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "profile_hint": "bass_tucked_clean_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_034",
+    "prompt": "Jaga seluruh elemen mulai dari vokal, drum, bass, hingga instrumen lainnya agar terdengar seimbang natural. Pertahankan kejernihan keseluruhan campuran.",
+    "raw_levels_db": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "profile_hint": "balanced_reference_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_035",
+    "prompt": "Saat melakukan gain staging, jaga seluruh elemen mulai dari vokal, drum, bass, hingga instrumen lainnya agar terdengar seimbang natural.",
+    "raw_levels_db": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "profile_hint": "balanced_reference_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_036",
+    "prompt": "Biarkan instrumen pengiring menjadi fokus utama paling depan, vokal ditarik mundur, sedangkan drum dan bass tetap seimbang. Pastikan transisi antar stem terdengar rapi.",
+    "raw_levels_db": [
+      -3,
+      0,
+      0,
+      5
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "profile_hint": "instrumental_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_037",
+    "prompt": "Sesuai arahan produser, biarkan instrumen pengiring menjadi fokus utama paling depan, vokal ditarik mundur, sedangkan drum dan bass tetap seimbang.",
+    "raw_levels_db": [
+      -3,
+      0,
+      0,
+      5
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "profile_hint": "instrumental_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_038",
+    "prompt": "Di mix ini, naikkan melodi pengiring agar lebih terasa di permukaan, sementara vokal dan drum sedikit dikurangi.",
+    "raw_levels_db": [
+      -2,
+      -2,
+      0,
+      3
+    ],
+    "balance_target": [
+      -1.75,
+      -1.75,
+      0.25,
+      3.25
+    ],
+    "profile_hint": "backing_melody_focus_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_039",
+    "prompt": "Tolong atur fader supaya tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang.",
+    "raw_levels_db": [
+      5,
+      0,
+      -2,
+      -3
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "profile_hint": "vocal_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_040",
+    "prompt": "Tonjolkan vokal dan drum secara bersamaan ke depan, lalu kecilkan bass serta musik pengiring.",
+    "raw_levels_db": [
+      3,
+      3,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "profile_hint": "vocal_drum_duet_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_041",
+    "prompt": "Berikan energi rock dengan drum paling depan dan jelas, bass sedikit diangkat, sementara instrumen lainnya ditarik mundur. Pertahankan kejernihan keseluruhan campuran.",
+    "raw_levels_db": [
+      0,
+      5,
+      2,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "profile_hint": "drums_punchy_rock_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_042",
+    "prompt": "Di mix ini, vokal dibuat lebih maju dan jelas, sedangkan iringan musik serta bass ditarik lebih mundur.",
+    "raw_levels_db": [
+      3,
+      0,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.75,
+      0.75,
+      -2.25,
+      -2.25
+    ],
+    "profile_hint": "vocal_warm_ballad_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_043",
+    "prompt": "Di mix ini, saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural.",
+    "raw_levels_db": [
+      5,
+      -3,
+      0,
+      -2
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "profile_hint": "vocal_subtle_lift_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_044",
+    "prompt": "Di mix ini, pastikan vokal tidak tenggelam dan terasa lebih kuat, drum sedikit lebih maju, tetapi instrumen lain lebih mundur.",
+    "raw_levels_db": [
+      3,
+      2,
+      0,
+      -3
+    ],
+    "balance_target": [
+      2.5,
+      1.5,
+      -0.5,
+      -3.5
+    ],
+    "profile_hint": "vocal_subtle_lift_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_045",
+    "prompt": "Saat melakukan gain staging, biarkan instrumen pengiring menjadi fokus utama paling depan, vokal ditarik mundur, sedangkan drum dan bass tetap seimbang.",
+    "raw_levels_db": [
+      -3,
+      0,
+      0,
+      5
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "profile_hint": "instrumental_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_046",
+    "prompt": "Tolong atur fader supaya bersihkan frekuensi bawah dengan membuat bass paling belakang, sedangkan vokal dan drum sedikit diangkat.",
+    "raw_levels_db": [
+      2,
+      2,
+      -5,
+      0
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "profile_hint": "bass_tucked_clean_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_047",
+    "prompt": "Untuk bagian lagu ini, pastikan vokal tidak tenggelam dan terasa lebih kuat, drum sedikit lebih maju, tetapi instrumen lain lebih mundur.",
+    "raw_levels_db": [
+      3,
+      2,
+      0,
+      -3
+    ],
+    "balance_target": [
+      2.5,
+      1.5,
+      -0.5,
+      -3.5
+    ],
+    "profile_hint": "vocal_subtle_lift_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_048",
+    "prompt": "Sesuai arahan produser, berikan energi rock dengan drum paling depan dan jelas, bass sedikit diangkat, sementara instrumen lainnya ditarik mundur.",
+    "raw_levels_db": [
+      0,
+      5,
+      2,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "profile_hint": "drums_punchy_rock_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_049",
+    "prompt": "Kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan.",
+    "raw_levels_db": [
+      3,
+      -3,
+      -3,
+      2
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "profile_hint": "rhythm_tucked_back_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_050",
+    "prompt": "Fokuskan groove pada drum dan bass yang sama-sama lebih kuat, sementara vokal agak mundur dan iringan dikurangi. Pertahankan kejernihan keseluruhan campuran.",
+    "raw_levels_db": [
+      -2,
+      3,
+      3,
+      -3
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "profile_hint": "drums_bass_groove_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_051",
+    "prompt": "Sesuai arahan produser, bersihkan frekuensi bawah dengan membuat bass paling belakang, sedangkan vokal dan drum sedikit diangkat.",
+    "raw_levels_db": [
+      2,
+      2,
+      -5,
+      0
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "profile_hint": "bass_tucked_clean_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_052",
+    "prompt": "Saat melakukan gain staging, tonjolkan vokal dan drum secara bersamaan ke depan, lalu kecilkan bass serta musik pengiring.",
+    "raw_levels_db": [
+      3,
+      3,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "profile_hint": "vocal_drum_duet_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_053",
+    "prompt": "Saat melakukan gain staging, berikan energi rock dengan drum paling depan dan jelas, bass sedikit diangkat, sementara instrumen lainnya ditarik mundur.",
+    "raw_levels_db": [
+      0,
+      5,
+      2,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "profile_hint": "drums_punchy_rock_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_054",
+    "prompt": "Suara penyanyi sedikit lebih maju saja, bass jangan terlalu dominan, sisanya biarkan proporsional. Jangan sampai ada instrumen yang memicu clipping.",
+    "raw_levels_db": [
+      2,
+      0,
+      -2,
+      0
+    ],
+    "balance_target": [
+      2.0,
+      0.0,
+      -2.0,
+      0.0
+    ],
+    "profile_hint": "vocal_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_055",
+    "prompt": "Saat melakukan gain staging, buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
+    "raw_levels_db": [
+      2,
+      3,
+      2,
+      -5
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "profile_hint": "full_band_energetic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_056",
+    "prompt": "Di mix ini, buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur.",
+    "raw_levels_db": [
+      3,
+      -5,
+      -2,
+      2
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "profile_hint": "vocal_intimate_acoustic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_057",
+    "prompt": "Redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring. Pastikan transisi antar stem terdengar rapi.",
+    "raw_levels_db": [
+      2,
+      -5,
+      0,
+      2
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "profile_hint": "drums_tucked_soft_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_058",
+    "prompt": "Di mix ini, suara penyanyi sedikit lebih maju saja, bass jangan terlalu dominan, sisanya biarkan proporsional.",
+    "raw_levels_db": [
+      2,
+      0,
+      -2,
+      0
+    ],
+    "balance_target": [
+      2.0,
+      0.0,
+      -2.0,
+      0.0
+    ],
+    "profile_hint": "vocal_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_059",
+    "prompt": "Pastikan vokal tidak tenggelam dan terasa lebih kuat, drum sedikit lebih maju, tetapi instrumen lain lebih mundur.",
+    "raw_levels_db": [
+      3,
+      2,
+      0,
+      -3
+    ],
+    "balance_target": [
+      2.5,
+      1.5,
+      -0.5,
+      -3.5
+    ],
+    "profile_hint": "vocal_subtle_lift_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_060",
+    "prompt": "Tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang. Pertahankan kejernihan keseluruhan campuran.",
+    "raw_levels_db": [
+      5,
+      0,
+      -2,
+      -3
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "profile_hint": "vocal_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_061",
+    "prompt": "Pastikan vokal tidak tenggelam dan terasa lebih kuat, drum sedikit lebih maju, tetapi instrumen lain lebih mundur. Pertahankan kejernihan keseluruhan campuran.",
+    "raw_levels_db": [
+      3,
+      2,
+      0,
+      -3
+    ],
+    "balance_target": [
+      2.5,
+      1.5,
+      -0.5,
+      -3.5
+    ],
+    "profile_hint": "vocal_subtle_lift_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_062",
+    "prompt": "Buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur. Pertahankan kejernihan keseluruhan campuran.",
+    "raw_levels_db": [
+      3,
+      -5,
+      -2,
+      2
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "profile_hint": "vocal_intimate_acoustic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_063",
+    "prompt": "Vokal dibuat lebih maju dan jelas, sedangkan iringan musik serta bass ditarik lebih mundur. Pertahankan kejernihan keseluruhan campuran.",
+    "raw_levels_db": [
+      3,
+      0,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.75,
+      0.75,
+      -2.25,
+      -2.25
+    ],
+    "profile_hint": "vocal_warm_ballad_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_064",
+    "prompt": "Saat melakukan gain staging, kurangi level vokal agak ke belakang agar alunan bass yang lebih maju dan drum yang seimbang lebih terdengar.",
+    "raw_levels_db": [
+      -2,
+      0,
+      3,
+      0
+    ],
+    "balance_target": [
+      -2.25,
+      -0.25,
+      2.75,
+      -0.25
+    ],
+    "profile_hint": "vocal_intimate_acoustic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_065",
+    "prompt": "Jaga seluruh elemen mulai dari vokal, drum, bass, hingga instrumen lainnya agar terdengar seimbang natural. Pastikan transisi antar stem terdengar rapi.",
+    "raw_levels_db": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "profile_hint": "balanced_reference_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_066",
+    "prompt": "Saat melakukan gain staging, ketukan drum dinaikkan lebih jelas, vokal tetap seimbang, namun bass dan pengiring agak ditahan.",
+    "raw_levels_db": [
+      0,
+      3,
+      -2,
+      -2
+    ],
+    "balance_target": [
+      0.25,
+      3.25,
+      -1.75,
+      -1.75
+    ],
+    "profile_hint": "vocal_warm_ballad_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_067",
+    "prompt": "Suara penyanyi sedikit lebih maju saja, bass jangan terlalu dominan, sisanya biarkan proporsional. Pastikan transisi antar stem terdengar rapi.",
+    "raw_levels_db": [
+      2,
+      0,
+      -2,
+      0
+    ],
+    "balance_target": [
+      2.0,
+      0.0,
+      -2.0,
+      0.0
+    ],
+    "profile_hint": "vocal_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_068",
+    "prompt": "Pastikan vokal tidak tenggelam dan terasa lebih kuat, drum sedikit lebih maju, tetapi instrumen lain lebih mundur. Pastikan transisi antar stem terdengar rapi.",
+    "raw_levels_db": [
+      3,
+      2,
+      0,
+      -3
+    ],
+    "balance_target": [
+      2.5,
+      1.5,
+      -0.5,
+      -3.5
+    ],
+    "profile_hint": "vocal_subtle_lift_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_069",
+    "prompt": "Saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural. Pertahankan kejernihan keseluruhan campuran.",
+    "raw_levels_db": [
+      5,
+      -3,
+      0,
+      -2
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "profile_hint": "vocal_subtle_lift_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_070",
+    "prompt": "Tolong atur fader supaya kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan.",
+    "raw_levels_db": [
+      3,
+      -3,
+      -3,
+      2
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "profile_hint": "rhythm_tucked_back_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_071",
+    "prompt": "Sebagai referensi akhir, naikkan melodi pengiring agar lebih terasa di permukaan, sementara vokal dan drum sedikit dikurangi.",
+    "raw_levels_db": [
+      -2,
+      -2,
+      0,
+      3
+    ],
+    "balance_target": [
+      -1.75,
+      -1.75,
+      0.25,
+      3.25
+    ],
+    "profile_hint": "backing_melody_focus_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_072",
+    "prompt": "Sesuai arahan produser, tonjolkan low-end bass hingga paling dominan, drum sedikit lebih terasa, dan instrumen pengiring dikecilkan.",
+    "raw_levels_db": [
+      0,
+      2,
+      5,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "profile_hint": "bass_heavy_modern_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_073",
+    "prompt": "Tolong atur fader supaya buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
+    "raw_levels_db": [
+      2,
+      3,
+      2,
+      -5
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "profile_hint": "full_band_energetic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_074",
+    "prompt": "Redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring.",
+    "raw_levels_db": [
+      2,
+      -5,
+      0,
+      2
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "profile_hint": "drums_tucked_soft_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_075",
+    "prompt": "Buat bass lebih maju sebagai fondasi, vokal sedikit diangkat, namun drum agak ditahan dan iringan lebih mundur. Pertahankan kejernihan keseluruhan campuran.",
+    "raw_levels_db": [
+      2,
+      -2,
+      3,
+      -3
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "profile_hint": "bass_warm_foundation_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_076",
+    "prompt": "Sebagai referensi akhir, redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring.",
+    "raw_levels_db": [
+      2,
+      -5,
+      0,
+      2
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "profile_hint": "drums_tucked_soft_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_077",
+    "prompt": "Sebagai referensi akhir, berikan energi rock dengan drum paling depan dan jelas, bass sedikit diangkat, sementara instrumen lainnya ditarik mundur.",
+    "raw_levels_db": [
+      0,
+      5,
+      2,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "profile_hint": "drums_punchy_rock_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_078",
+    "prompt": "Di mix ini, fokuskan groove pada drum dan bass yang sama-sama lebih kuat, sementara vokal agak mundur dan iringan dikurangi.",
+    "raw_levels_db": [
+      -2,
+      3,
+      3,
+      -3
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "profile_hint": "drums_bass_groove_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_079",
+    "prompt": "Vokal dibuat lebih maju dan jelas, sedangkan iringan musik serta bass ditarik lebih mundur.",
+    "raw_levels_db": [
+      3,
+      0,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.75,
+      0.75,
+      -2.25,
+      -2.25
+    ],
+    "profile_hint": "vocal_warm_ballad_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_080",
+    "prompt": "Kurangi level vokal agak ke belakang agar alunan bass yang lebih maju dan drum yang seimbang lebih terdengar. Pertahankan kejernihan keseluruhan campuran.",
+    "raw_levels_db": [
+      -2,
+      0,
+      3,
+      0
+    ],
+    "balance_target": [
+      -2.25,
+      -0.25,
+      2.75,
+      -0.25
+    ],
+    "profile_hint": "vocal_intimate_acoustic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_081",
+    "prompt": "Di mix ini, berikan energi rock dengan drum paling depan dan jelas, bass sedikit diangkat, sementara instrumen lainnya ditarik mundur.",
+    "raw_levels_db": [
+      0,
+      5,
+      2,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "profile_hint": "drums_punchy_rock_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_082",
+    "prompt": "Di mix ini, tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang.",
+    "raw_levels_db": [
+      5,
+      0,
+      -2,
+      -3
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "profile_hint": "vocal_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_083",
+    "prompt": "Sesuai arahan produser, saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural.",
+    "raw_levels_db": [
+      5,
+      -3,
+      0,
+      -2
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "profile_hint": "vocal_subtle_lift_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_084",
+    "prompt": "Buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
+    "raw_levels_db": [
+      2,
+      3,
+      2,
+      -5
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "profile_hint": "full_band_energetic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_085",
+    "prompt": "Tolong atur fader supaya redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring.",
+    "raw_levels_db": [
+      2,
+      -5,
+      0,
+      2
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "profile_hint": "drums_tucked_soft_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_086",
+    "prompt": "Sesuai arahan produser, tonjolkan vokal dan drum secara bersamaan ke depan, lalu kecilkan bass serta musik pengiring.",
+    "raw_levels_db": [
+      3,
+      3,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "profile_hint": "vocal_drum_duet_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_087",
+    "prompt": "Tolong atur fader supaya vokal dibuat lebih maju dan jelas, sedangkan iringan musik serta bass ditarik lebih mundur.",
+    "raw_levels_db": [
+      3,
+      0,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.75,
+      0.75,
+      -2.25,
+      -2.25
+    ],
+    "profile_hint": "vocal_warm_ballad_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_088",
+    "prompt": "Sebagai referensi akhir, biarkan instrumen pengiring menjadi fokus utama paling depan, vokal ditarik mundur, sedangkan drum dan bass tetap seimbang.",
+    "raw_levels_db": [
+      -3,
+      0,
+      0,
+      5
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "profile_hint": "instrumental_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_089",
+    "prompt": "Tolong atur fader supaya tonjolkan low-end bass hingga paling dominan, drum sedikit lebih terasa, dan instrumen pengiring dikecilkan.",
+    "raw_levels_db": [
+      0,
+      2,
+      5,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "profile_hint": "bass_heavy_modern_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_090",
+    "prompt": "Fokuskan groove pada drum dan bass yang sama-sama lebih kuat, sementara vokal agak mundur dan iringan dikurangi.",
+    "raw_levels_db": [
+      -2,
+      3,
+      3,
+      -3
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "profile_hint": "drums_bass_groove_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_091",
+    "prompt": "Di mix ini, redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring.",
+    "raw_levels_db": [
+      2,
+      -5,
+      0,
+      2
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "profile_hint": "drums_tucked_soft_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_092",
+    "prompt": "Vokal dibuat lebih maju dan jelas, sedangkan iringan musik serta bass ditarik lebih mundur. Jangan sampai ada instrumen yang memicu clipping.",
+    "raw_levels_db": [
+      3,
+      0,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.75,
+      0.75,
+      -2.25,
+      -2.25
+    ],
+    "profile_hint": "vocal_warm_ballad_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_093",
+    "prompt": "Berikan energi rock dengan drum paling depan dan jelas, bass sedikit diangkat, sementara instrumen lainnya ditarik mundur. Jangan sampai ada instrumen yang memicu clipping.",
+    "raw_levels_db": [
+      0,
+      5,
+      2,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "profile_hint": "drums_punchy_rock_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_094",
+    "prompt": "Sesuai arahan produser, suara penyanyi sedikit lebih maju saja, bass jangan terlalu dominan, sisanya biarkan proporsional.",
+    "raw_levels_db": [
+      2,
+      0,
+      -2,
+      0
+    ],
+    "balance_target": [
+      2.0,
+      0.0,
+      -2.0,
+      0.0
+    ],
+    "profile_hint": "vocal_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_095",
+    "prompt": "Sebagai referensi akhir, kurangi level vokal agak ke belakang agar alunan bass yang lebih maju dan drum yang seimbang lebih terdengar.",
+    "raw_levels_db": [
+      -2,
+      0,
+      3,
+      0
+    ],
+    "balance_target": [
+      -2.25,
+      -0.25,
+      2.75,
+      -0.25
+    ],
+    "profile_hint": "vocal_intimate_acoustic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_096",
+    "prompt": "Buat bass lebih maju sebagai fondasi, vokal sedikit diangkat, namun drum agak ditahan dan iringan lebih mundur.",
+    "raw_levels_db": [
+      2,
+      -2,
+      3,
+      -3
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "profile_hint": "bass_warm_foundation_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_097",
+    "prompt": "Biarkan instrumen pengiring menjadi fokus utama paling depan, vokal ditarik mundur, sedangkan drum dan bass tetap seimbang. Pertahankan kejernihan keseluruhan campuran.",
+    "raw_levels_db": [
+      -3,
+      0,
+      0,
+      5
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "profile_hint": "instrumental_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_098",
+    "prompt": "Sebagai referensi akhir, kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan.",
+    "raw_levels_db": [
+      3,
+      -3,
+      -3,
+      2
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "profile_hint": "rhythm_tucked_back_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_099",
+    "prompt": "Untuk bagian lagu ini, fokuskan groove pada drum dan bass yang sama-sama lebih kuat, sementara vokal agak mundur dan iringan dikurangi.",
+    "raw_levels_db": [
+      -2,
+      3,
+      3,
+      -3
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "profile_hint": "drums_bass_groove_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_100",
+    "prompt": "Sebagai referensi akhir, suara penyanyi sedikit lebih maju saja, bass jangan terlalu dominan, sisanya biarkan proporsional.",
+    "raw_levels_db": [
+      2,
+      0,
+      -2,
+      0
+    ],
+    "balance_target": [
+      2.0,
+      0.0,
+      -2.0,
+      0.0
+    ],
+    "profile_hint": "vocal_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_101",
+    "prompt": "Buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur.",
+    "raw_levels_db": [
+      3,
+      -5,
+      -2,
+      2
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "profile_hint": "vocal_intimate_acoustic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_102",
+    "prompt": "Untuk bagian lagu ini, buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
+    "raw_levels_db": [
+      2,
+      3,
+      2,
+      -5
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "profile_hint": "full_band_energetic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_103",
+    "prompt": "Tonjolkan vokal dan drum secara bersamaan ke depan, lalu kecilkan bass serta musik pengiring. Pastikan transisi antar stem terdengar rapi.",
+    "raw_levels_db": [
+      3,
+      3,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "profile_hint": "vocal_drum_duet_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_104",
+    "prompt": "Tolong atur fader supaya kurangi level vokal agak ke belakang agar alunan bass yang lebih maju dan drum yang seimbang lebih terdengar.",
+    "raw_levels_db": [
+      -2,
+      0,
+      3,
+      0
+    ],
+    "balance_target": [
+      -2.25,
+      -0.25,
+      2.75,
+      -0.25
+    ],
+    "profile_hint": "vocal_intimate_acoustic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_105",
+    "prompt": "Sebagai referensi akhir, tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang.",
+    "raw_levels_db": [
+      5,
+      0,
+      -2,
+      -3
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "profile_hint": "vocal_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_106",
+    "prompt": "Untuk bagian lagu ini, redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring.",
+    "raw_levels_db": [
+      2,
+      -5,
+      0,
+      2
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "profile_hint": "drums_tucked_soft_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_107",
+    "prompt": "Untuk bagian lagu ini, naikkan melodi pengiring agar lebih terasa di permukaan, sementara vokal dan drum sedikit dikurangi.",
+    "raw_levels_db": [
+      -2,
+      -2,
+      0,
+      3
+    ],
+    "balance_target": [
+      -1.75,
+      -1.75,
+      0.25,
+      3.25
+    ],
+    "profile_hint": "backing_melody_focus_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_108",
+    "prompt": "Sebagai referensi akhir, vokal dibuat lebih maju dan jelas, sedangkan iringan musik serta bass ditarik lebih mundur.",
+    "raw_levels_db": [
+      3,
+      0,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.75,
+      0.75,
+      -2.25,
+      -2.25
+    ],
+    "profile_hint": "vocal_warm_ballad_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_109",
+    "prompt": "Biarkan instrumen pengiring menjadi fokus utama paling depan, vokal ditarik mundur, sedangkan drum dan bass tetap seimbang.",
+    "raw_levels_db": [
+      -3,
+      0,
+      0,
+      5
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "profile_hint": "instrumental_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_110",
+    "prompt": "Tolong atur fader supaya fokuskan groove pada drum dan bass yang sama-sama lebih kuat, sementara vokal agak mundur dan iringan dikurangi.",
+    "raw_levels_db": [
+      -2,
+      3,
+      3,
+      -3
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "profile_hint": "drums_bass_groove_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_111",
+    "prompt": "Sesuai arahan produser, redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring.",
+    "raw_levels_db": [
+      2,
+      -5,
+      0,
+      2
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "profile_hint": "drums_tucked_soft_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_112",
+    "prompt": "Tolong atur fader supaya tonjolkan vokal dan drum secara bersamaan ke depan, lalu kecilkan bass serta musik pengiring.",
+    "raw_levels_db": [
+      3,
+      3,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "profile_hint": "vocal_drum_duet_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_113",
+    "prompt": "Vokal dibuat lebih maju dan jelas, sedangkan iringan musik serta bass ditarik lebih mundur. Pastikan transisi antar stem terdengar rapi.",
+    "raw_levels_db": [
+      3,
+      0,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.75,
+      0.75,
+      -2.25,
+      -2.25
+    ],
+    "profile_hint": "vocal_warm_ballad_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_114",
+    "prompt": "Tolong atur fader supaya ketukan drum dinaikkan lebih jelas, vokal tetap seimbang, namun bass dan pengiring agak ditahan.",
+    "raw_levels_db": [
+      0,
+      3,
+      -2,
+      -2
+    ],
+    "balance_target": [
+      0.25,
+      3.25,
+      -1.75,
+      -1.75
+    ],
+    "profile_hint": "vocal_warm_ballad_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_115",
+    "prompt": "Sebagai referensi akhir, jaga seluruh elemen mulai dari vokal, drum, bass, hingga instrumen lainnya agar terdengar seimbang natural.",
+    "raw_levels_db": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "profile_hint": "balanced_reference_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_116",
+    "prompt": "Untuk bagian lagu ini, biarkan instrumen pengiring menjadi fokus utama paling depan, vokal ditarik mundur, sedangkan drum dan bass tetap seimbang.",
+    "raw_levels_db": [
+      -3,
+      0,
+      0,
+      5
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "profile_hint": "instrumental_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_117",
+    "prompt": "Saat melakukan gain staging, pastikan vokal tidak tenggelam dan terasa lebih kuat, drum sedikit lebih maju, tetapi instrumen lain lebih mundur.",
+    "raw_levels_db": [
+      3,
+      2,
+      0,
+      -3
+    ],
+    "balance_target": [
+      2.5,
+      1.5,
+      -0.5,
+      -3.5
+    ],
+    "profile_hint": "vocal_subtle_lift_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_118",
+    "prompt": "Sesuai arahan produser, pastikan vokal tidak tenggelam dan terasa lebih kuat, drum sedikit lebih maju, tetapi instrumen lain lebih mundur.",
+    "raw_levels_db": [
+      3,
+      2,
+      0,
+      -3
+    ],
+    "balance_target": [
+      2.5,
+      1.5,
+      -0.5,
+      -3.5
+    ],
+    "profile_hint": "vocal_subtle_lift_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_119",
+    "prompt": "Tolong atur fader supaya suara penyanyi sedikit lebih maju saja, bass jangan terlalu dominan, sisanya biarkan proporsional.",
+    "raw_levels_db": [
+      2,
+      0,
+      -2,
+      0
+    ],
+    "balance_target": [
+      2.0,
+      0.0,
+      -2.0,
+      0.0
+    ],
+    "profile_hint": "vocal_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_120",
+    "prompt": "Buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang. Pertahankan kejernihan keseluruhan campuran.",
+    "raw_levels_db": [
+      2,
+      3,
+      2,
+      -5
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "profile_hint": "full_band_energetic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_121",
+    "prompt": "Kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan. Pastikan transisi antar stem terdengar rapi.",
+    "raw_levels_db": [
+      3,
+      -3,
+      -3,
+      2
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "profile_hint": "rhythm_tucked_back_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_122",
+    "prompt": "Buat bass lebih maju sebagai fondasi, vokal sedikit diangkat, namun drum agak ditahan dan iringan lebih mundur. Pastikan transisi antar stem terdengar rapi.",
+    "raw_levels_db": [
+      2,
+      -2,
+      3,
+      -3
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "profile_hint": "bass_warm_foundation_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_123",
+    "prompt": "Saat melakukan gain staging, vokal dibuat lebih maju dan jelas, sedangkan iringan musik serta bass ditarik lebih mundur.",
+    "raw_levels_db": [
+      3,
+      0,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.75,
+      0.75,
+      -2.25,
+      -2.25
+    ],
+    "profile_hint": "vocal_warm_ballad_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_124",
+    "prompt": "Untuk bagian lagu ini, jaga seluruh elemen mulai dari vokal, drum, bass, hingga instrumen lainnya agar terdengar seimbang natural.",
+    "raw_levels_db": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "profile_hint": "balanced_reference_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_125",
+    "prompt": "Tonjolkan low-end bass hingga paling dominan, drum sedikit lebih terasa, dan instrumen pengiring dikecilkan. Pertahankan kejernihan keseluruhan campuran.",
+    "raw_levels_db": [
+      0,
+      2,
+      5,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "profile_hint": "bass_heavy_modern_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_126",
+    "prompt": "Kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan. Pertahankan kejernihan keseluruhan campuran.",
+    "raw_levels_db": [
+      3,
+      -3,
+      -3,
+      2
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "profile_hint": "rhythm_tucked_back_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_127",
+    "prompt": "Sesuai arahan produser, buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur.",
+    "raw_levels_db": [
+      3,
+      -5,
+      -2,
+      2
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "profile_hint": "vocal_intimate_acoustic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_128",
+    "prompt": "Sesuai arahan produser, fokuskan groove pada drum dan bass yang sama-sama lebih kuat, sementara vokal agak mundur dan iringan dikurangi.",
+    "raw_levels_db": [
+      -2,
+      3,
+      3,
+      -3
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "profile_hint": "drums_bass_groove_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_129",
+    "prompt": "Bersihkan frekuensi bawah dengan membuat bass paling belakang, sedangkan vokal dan drum sedikit diangkat. Pertahankan kejernihan keseluruhan campuran.",
+    "raw_levels_db": [
+      2,
+      2,
+      -5,
+      0
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "profile_hint": "bass_tucked_clean_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_130",
+    "prompt": "Saat melakukan gain staging, tonjolkan low-end bass hingga paling dominan, drum sedikit lebih terasa, dan instrumen pengiring dikecilkan.",
+    "raw_levels_db": [
+      0,
+      2,
+      5,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "profile_hint": "bass_heavy_modern_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_131",
+    "prompt": "Sesuai arahan produser, jaga seluruh elemen mulai dari vokal, drum, bass, hingga instrumen lainnya agar terdengar seimbang natural.",
+    "raw_levels_db": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "profile_hint": "balanced_reference_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_132",
+    "prompt": "Buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur. Pastikan transisi antar stem terdengar rapi.",
+    "raw_levels_db": [
+      3,
+      -5,
+      -2,
+      2
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "profile_hint": "vocal_intimate_acoustic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_133",
+    "prompt": "Di mix ini, kurangi level vokal agak ke belakang agar alunan bass yang lebih maju dan drum yang seimbang lebih terdengar.",
+    "raw_levels_db": [
+      -2,
+      0,
+      3,
+      0
+    ],
+    "balance_target": [
+      -2.25,
+      -0.25,
+      2.75,
+      -0.25
+    ],
+    "profile_hint": "vocal_intimate_acoustic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_134",
+    "prompt": "Untuk bagian lagu ini, vokal dibuat lebih maju dan jelas, sedangkan iringan musik serta bass ditarik lebih mundur.",
+    "raw_levels_db": [
+      3,
+      0,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.75,
+      0.75,
+      -2.25,
+      -2.25
+    ],
+    "profile_hint": "vocal_warm_ballad_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_135",
+    "prompt": "Jaga seluruh elemen mulai dari vokal, drum, bass, hingga instrumen lainnya agar terdengar seimbang natural. Jangan sampai ada instrumen yang memicu clipping.",
+    "raw_levels_db": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "profile_hint": "balanced_reference_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_136",
+    "prompt": "Sesuai arahan produser, vokal dibuat lebih maju dan jelas, sedangkan iringan musik serta bass ditarik lebih mundur.",
+    "raw_levels_db": [
+      3,
+      0,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.75,
+      0.75,
+      -2.25,
+      -2.25
+    ],
+    "profile_hint": "vocal_warm_ballad_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_137",
+    "prompt": "Naikkan melodi pengiring agar lebih terasa di permukaan, sementara vokal dan drum sedikit dikurangi. Jangan sampai ada instrumen yang memicu clipping.",
+    "raw_levels_db": [
+      -2,
+      -2,
+      0,
+      3
+    ],
+    "balance_target": [
+      -1.75,
+      -1.75,
+      0.25,
+      3.25
+    ],
+    "profile_hint": "backing_melody_focus_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_138",
+    "prompt": "Saat melakukan gain staging, buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur.",
+    "raw_levels_db": [
+      3,
+      -5,
+      -2,
+      2
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "profile_hint": "vocal_intimate_acoustic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_139",
+    "prompt": "Saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural. Jangan sampai ada instrumen yang memicu clipping.",
+    "raw_levels_db": [
+      5,
+      -3,
+      0,
+      -2
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "profile_hint": "vocal_subtle_lift_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_140",
+    "prompt": "Ketukan drum dinaikkan lebih jelas, vokal tetap seimbang, namun bass dan pengiring agak ditahan. Pertahankan kejernihan keseluruhan campuran.",
+    "raw_levels_db": [
+      0,
+      3,
+      -2,
+      -2
+    ],
+    "balance_target": [
+      0.25,
+      3.25,
+      -1.75,
+      -1.75
+    ],
+    "profile_hint": "vocal_warm_ballad_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_141",
+    "prompt": "Saat melakukan gain staging, kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan.",
+    "raw_levels_db": [
+      3,
+      -3,
+      -3,
+      2
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "profile_hint": "rhythm_tucked_back_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_142",
+    "prompt": "Saat melakukan gain staging, suara penyanyi sedikit lebih maju saja, bass jangan terlalu dominan, sisanya biarkan proporsional.",
+    "raw_levels_db": [
+      2,
+      0,
+      -2,
+      0
+    ],
+    "balance_target": [
+      2.0,
+      0.0,
+      -2.0,
+      0.0
+    ],
+    "profile_hint": "vocal_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_143",
+    "prompt": "Tonjolkan low-end bass hingga paling dominan, drum sedikit lebih terasa, dan instrumen pengiring dikecilkan. Jangan sampai ada instrumen yang memicu clipping.",
+    "raw_levels_db": [
+      0,
+      2,
+      5,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "profile_hint": "bass_heavy_modern_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_144",
+    "prompt": "Naikkan melodi pengiring agar lebih terasa di permukaan, sementara vokal dan drum sedikit dikurangi. Pastikan transisi antar stem terdengar rapi.",
+    "raw_levels_db": [
+      -2,
+      -2,
+      0,
+      3
+    ],
+    "balance_target": [
+      -1.75,
+      -1.75,
+      0.25,
+      3.25
+    ],
+    "profile_hint": "backing_melody_focus_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_145",
+    "prompt": "Untuk bagian lagu ini, kurangi level vokal agak ke belakang agar alunan bass yang lebih maju dan drum yang seimbang lebih terdengar.",
+    "raw_levels_db": [
+      -2,
+      0,
+      3,
+      0
+    ],
+    "balance_target": [
+      -2.25,
+      -0.25,
+      2.75,
+      -0.25
+    ],
+    "profile_hint": "vocal_intimate_acoustic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_146",
+    "prompt": "Biarkan instrumen pengiring menjadi fokus utama paling depan, vokal ditarik mundur, sedangkan drum dan bass tetap seimbang. Jangan sampai ada instrumen yang memicu clipping.",
+    "raw_levels_db": [
+      -3,
+      0,
+      0,
+      5
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "profile_hint": "instrumental_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_147",
+    "prompt": "Untuk bagian lagu ini, kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan.",
+    "raw_levels_db": [
+      3,
+      -3,
+      -3,
+      2
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "profile_hint": "rhythm_tucked_back_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_148",
+    "prompt": "Buat bass lebih maju sebagai fondasi, vokal sedikit diangkat, namun drum agak ditahan dan iringan lebih mundur. Jangan sampai ada instrumen yang memicu clipping.",
+    "raw_levels_db": [
+      2,
+      -2,
+      3,
+      -3
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "profile_hint": "bass_warm_foundation_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_149",
+    "prompt": "Sesuai arahan produser, tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang.",
+    "raw_levels_db": [
+      5,
+      0,
+      -2,
+      -3
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "profile_hint": "vocal_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_150",
+    "prompt": "Untuk bagian lagu ini, ketukan drum dinaikkan lebih jelas, vokal tetap seimbang, namun bass dan pengiring agak ditahan.",
+    "raw_levels_db": [
+      0,
+      3,
+      -2,
+      -2
+    ],
+    "balance_target": [
+      0.25,
+      3.25,
+      -1.75,
+      -1.75
+    ],
+    "profile_hint": "vocal_warm_ballad_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_151",
+    "prompt": "Berikan energi rock dengan drum paling depan dan jelas, bass sedikit diangkat, sementara instrumen lainnya ditarik mundur. Pastikan transisi antar stem terdengar rapi.",
+    "raw_levels_db": [
+      0,
+      5,
+      2,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "profile_hint": "drums_punchy_rock_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_152",
+    "prompt": "Buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang. Pastikan transisi antar stem terdengar rapi.",
+    "raw_levels_db": [
+      2,
+      3,
+      2,
+      -5
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "profile_hint": "full_band_energetic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_153",
+    "prompt": "Sesuai arahan produser, buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
+    "raw_levels_db": [
+      2,
+      3,
+      2,
+      -5
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "profile_hint": "full_band_energetic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_154",
+    "prompt": "Tolong atur fader supaya buat bass lebih maju sebagai fondasi, vokal sedikit diangkat, namun drum agak ditahan dan iringan lebih mundur.",
+    "raw_levels_db": [
+      2,
+      -2,
+      3,
+      -3
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "profile_hint": "bass_warm_foundation_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_155",
+    "prompt": "Tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang. Jangan sampai ada instrumen yang memicu clipping.",
+    "raw_levels_db": [
+      5,
+      0,
+      -2,
+      -3
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "profile_hint": "vocal_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_156",
+    "prompt": "Di mix ini, tonjolkan vokal dan drum secara bersamaan ke depan, lalu kecilkan bass serta musik pengiring.",
+    "raw_levels_db": [
+      3,
+      3,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "profile_hint": "vocal_drum_duet_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_157",
+    "prompt": "Sesuai arahan produser, buat bass lebih maju sebagai fondasi, vokal sedikit diangkat, namun drum agak ditahan dan iringan lebih mundur.",
+    "raw_levels_db": [
+      2,
+      -2,
+      3,
+      -3
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "profile_hint": "bass_warm_foundation_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_158",
+    "prompt": "Suara penyanyi sedikit lebih maju saja, bass jangan terlalu dominan, sisanya biarkan proporsional. Pertahankan kejernihan keseluruhan campuran.",
+    "raw_levels_db": [
+      2,
+      0,
+      -2,
+      0
+    ],
+    "balance_target": [
+      2.0,
+      0.0,
+      -2.0,
+      0.0
+    ],
+    "profile_hint": "vocal_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_159",
+    "prompt": "Tolong atur fader supaya berikan energi rock dengan drum paling depan dan jelas, bass sedikit diangkat, sementara instrumen lainnya ditarik mundur.",
+    "raw_levels_db": [
+      0,
+      5,
+      2,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "profile_hint": "drums_punchy_rock_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_160",
+    "prompt": "Tonjolkan low-end bass hingga paling dominan, drum sedikit lebih terasa, dan instrumen pengiring dikecilkan.",
+    "raw_levels_db": [
+      0,
+      2,
+      5,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "profile_hint": "bass_heavy_modern_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_161",
+    "prompt": "Sebagai referensi akhir, buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur.",
+    "raw_levels_db": [
+      3,
+      -5,
+      -2,
+      2
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "profile_hint": "vocal_intimate_acoustic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_162",
+    "prompt": "Di mix ini, biarkan instrumen pengiring menjadi fokus utama paling depan, vokal ditarik mundur, sedangkan drum dan bass tetap seimbang.",
+    "raw_levels_db": [
+      -3,
+      0,
+      0,
+      5
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "profile_hint": "instrumental_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_163",
+    "prompt": "Saat melakukan gain staging, fokuskan groove pada drum dan bass yang sama-sama lebih kuat, sementara vokal agak mundur dan iringan dikurangi.",
+    "raw_levels_db": [
+      -2,
+      3,
+      3,
+      -3
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "profile_hint": "drums_bass_groove_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_164",
+    "prompt": "Sesuai arahan produser, naikkan melodi pengiring agar lebih terasa di permukaan, sementara vokal dan drum sedikit dikurangi.",
+    "raw_levels_db": [
+      -2,
+      -2,
+      0,
+      3
+    ],
+    "balance_target": [
+      -1.75,
+      -1.75,
+      0.25,
+      3.25
+    ],
+    "profile_hint": "backing_melody_focus_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_165",
+    "prompt": "Fokuskan groove pada drum dan bass yang sama-sama lebih kuat, sementara vokal agak mundur dan iringan dikurangi. Pastikan transisi antar stem terdengar rapi.",
+    "raw_levels_db": [
+      -2,
+      3,
+      3,
+      -3
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "profile_hint": "drums_bass_groove_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_166",
+    "prompt": "Sesuai arahan produser, kurangi level vokal agak ke belakang agar alunan bass yang lebih maju dan drum yang seimbang lebih terdengar.",
+    "raw_levels_db": [
+      -2,
+      0,
+      3,
+      0
+    ],
+    "balance_target": [
+      -2.25,
+      -0.25,
+      2.75,
+      -0.25
+    ],
+    "profile_hint": "vocal_intimate_acoustic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_167",
+    "prompt": "Sebagai referensi akhir, buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
+    "raw_levels_db": [
+      2,
+      3,
+      2,
+      -5
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "profile_hint": "full_band_energetic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_168",
+    "prompt": "Sesuai arahan produser, kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan.",
+    "raw_levels_db": [
+      3,
+      -3,
+      -3,
+      2
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "profile_hint": "rhythm_tucked_back_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_169",
+    "prompt": "Sebagai referensi akhir, bersihkan frekuensi bawah dengan membuat bass paling belakang, sedangkan vokal dan drum sedikit diangkat.",
+    "raw_levels_db": [
+      2,
+      2,
+      -5,
+      0
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "profile_hint": "bass_tucked_clean_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_170",
+    "prompt": "Pastikan vokal tidak tenggelam dan terasa lebih kuat, drum sedikit lebih maju, tetapi instrumen lain lebih mundur. Jangan sampai ada instrumen yang memicu clipping.",
+    "raw_levels_db": [
+      3,
+      2,
+      0,
+      -3
+    ],
+    "balance_target": [
+      2.5,
+      1.5,
+      -0.5,
+      -3.5
+    ],
+    "profile_hint": "vocal_subtle_lift_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_171",
+    "prompt": "Naikkan melodi pengiring agar lebih terasa di permukaan, sementara vokal dan drum sedikit dikurangi. Pertahankan kejernihan keseluruhan campuran.",
+    "raw_levels_db": [
+      -2,
+      -2,
+      0,
+      3
+    ],
+    "balance_target": [
+      -1.75,
+      -1.75,
+      0.25,
+      3.25
+    ],
+    "profile_hint": "backing_melody_focus_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_172",
+    "prompt": "Tonjolkan vokal dan drum secara bersamaan ke depan, lalu kecilkan bass serta musik pengiring. Pertahankan kejernihan keseluruhan campuran.",
+    "raw_levels_db": [
+      3,
+      3,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "profile_hint": "vocal_drum_duet_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_173",
+    "prompt": "Saat melakukan gain staging, saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural.",
+    "raw_levels_db": [
+      5,
+      -3,
+      0,
+      -2
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "profile_hint": "vocal_subtle_lift_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_174",
+    "prompt": "Sebagai referensi akhir, fokuskan groove pada drum dan bass yang sama-sama lebih kuat, sementara vokal agak mundur dan iringan dikurangi.",
+    "raw_levels_db": [
+      -2,
+      3,
+      3,
+      -3
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "profile_hint": "drums_bass_groove_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_175",
+    "prompt": "Untuk bagian lagu ini, buat bass lebih maju sebagai fondasi, vokal sedikit diangkat, namun drum agak ditahan dan iringan lebih mundur.",
+    "raw_levels_db": [
+      2,
+      -2,
+      3,
+      -3
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "profile_hint": "bass_warm_foundation_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_176",
+    "prompt": "Tonjolkan low-end bass hingga paling dominan, drum sedikit lebih terasa, dan instrumen pengiring dikecilkan. Pastikan transisi antar stem terdengar rapi.",
+    "raw_levels_db": [
+      0,
+      2,
+      5,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "profile_hint": "bass_heavy_modern_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_177",
+    "prompt": "Untuk bagian lagu ini, tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang.",
+    "raw_levels_db": [
+      5,
+      0,
+      -2,
+      -3
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "profile_hint": "vocal_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_178",
+    "prompt": "Untuk bagian lagu ini, suara penyanyi sedikit lebih maju saja, bass jangan terlalu dominan, sisanya biarkan proporsional.",
+    "raw_levels_db": [
+      2,
+      0,
+      -2,
+      0
+    ],
+    "balance_target": [
+      2.0,
+      0.0,
+      -2.0,
+      0.0
+    ],
+    "profile_hint": "vocal_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_179",
+    "prompt": "Saat melakukan gain staging, bersihkan frekuensi bawah dengan membuat bass paling belakang, sedangkan vokal dan drum sedikit diangkat.",
+    "raw_levels_db": [
+      2,
+      2,
+      -5,
+      0
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "profile_hint": "bass_tucked_clean_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_180",
+    "prompt": "Di mix ini, ketukan drum dinaikkan lebih jelas, vokal tetap seimbang, namun bass dan pengiring agak ditahan.",
+    "raw_levels_db": [
+      0,
+      3,
+      -2,
+      -2
+    ],
+    "balance_target": [
+      0.25,
+      3.25,
+      -1.75,
+      -1.75
+    ],
+    "profile_hint": "vocal_warm_ballad_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_181",
+    "prompt": "Tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang.",
+    "raw_levels_db": [
+      5,
+      0,
+      -2,
+      -3
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "profile_hint": "vocal_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_182",
+    "prompt": "Untuk bagian lagu ini, berikan energi rock dengan drum paling depan dan jelas, bass sedikit diangkat, sementara instrumen lainnya ditarik mundur.",
+    "raw_levels_db": [
+      0,
+      5,
+      2,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "profile_hint": "drums_punchy_rock_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_183",
+    "prompt": "Bersihkan frekuensi bawah dengan membuat bass paling belakang, sedangkan vokal dan drum sedikit diangkat. Jangan sampai ada instrumen yang memicu clipping.",
+    "raw_levels_db": [
+      2,
+      2,
+      -5,
+      0
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "profile_hint": "bass_tucked_clean_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_184",
+    "prompt": "Tolong atur fader supaya pastikan vokal tidak tenggelam dan terasa lebih kuat, drum sedikit lebih maju, tetapi instrumen lain lebih mundur.",
+    "raw_levels_db": [
+      3,
+      2,
+      0,
+      -3
+    ],
+    "balance_target": [
+      2.5,
+      1.5,
+      -0.5,
+      -3.5
+    ],
+    "profile_hint": "vocal_subtle_lift_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_185",
+    "prompt": "Saat melakukan gain staging, naikkan melodi pengiring agar lebih terasa di permukaan, sementara vokal dan drum sedikit dikurangi.",
+    "raw_levels_db": [
+      -2,
+      -2,
+      0,
+      3
+    ],
+    "balance_target": [
+      -1.75,
+      -1.75,
+      0.25,
+      3.25
+    ],
+    "profile_hint": "backing_melody_focus_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_186",
+    "prompt": "Bersihkan frekuensi bawah dengan membuat bass paling belakang, sedangkan vokal dan drum sedikit diangkat.",
+    "raw_levels_db": [
+      2,
+      2,
+      -5,
+      0
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "profile_hint": "bass_tucked_clean_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_187",
+    "prompt": "Tolong atur fader supaya saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural.",
+    "raw_levels_db": [
+      5,
+      -3,
+      0,
+      -2
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "profile_hint": "vocal_subtle_lift_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_188",
+    "prompt": "Kurangi level vokal agak ke belakang agar alunan bass yang lebih maju dan drum yang seimbang lebih terdengar. Pastikan transisi antar stem terdengar rapi.",
+    "raw_levels_db": [
+      -2,
+      0,
+      3,
+      0
+    ],
+    "balance_target": [
+      -2.25,
+      -0.25,
+      2.75,
+      -0.25
+    ],
+    "profile_hint": "vocal_intimate_acoustic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_189",
+    "prompt": "Untuk bagian lagu ini, buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur.",
+    "raw_levels_db": [
+      3,
+      -5,
+      -2,
+      2
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "profile_hint": "vocal_intimate_acoustic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_190",
+    "prompt": "Tolong atur fader supaya biarkan instrumen pengiring menjadi fokus utama paling depan, vokal ditarik mundur, sedangkan drum dan bass tetap seimbang.",
+    "raw_levels_db": [
+      -3,
+      0,
+      0,
+      5
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "profile_hint": "instrumental_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_191",
+    "prompt": "Sebagai referensi akhir, ketukan drum dinaikkan lebih jelas, vokal tetap seimbang, namun bass dan pengiring agak ditahan.",
+    "raw_levels_db": [
+      0,
+      3,
+      -2,
+      -2
+    ],
+    "balance_target": [
+      0.25,
+      3.25,
+      -1.75,
+      -1.75
+    ],
+    "profile_hint": "vocal_warm_ballad_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_192",
+    "prompt": "Di mix ini, kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan.",
+    "raw_levels_db": [
+      3,
+      -3,
+      -3,
+      2
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "profile_hint": "rhythm_tucked_back_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_193",
+    "prompt": "Saat melakukan gain staging, tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang.",
+    "raw_levels_db": [
+      5,
+      0,
+      -2,
+      -3
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "profile_hint": "vocal_forward_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_194",
+    "prompt": "Untuk bagian lagu ini, tonjolkan low-end bass hingga paling dominan, drum sedikit lebih terasa, dan instrumen pengiring dikecilkan.",
+    "raw_levels_db": [
+      0,
+      2,
+      5,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "profile_hint": "bass_heavy_modern_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_195",
+    "prompt": "Di mix ini, buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
+    "raw_levels_db": [
+      2,
+      3,
+      2,
+      -5
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "profile_hint": "full_band_energetic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_196",
+    "prompt": "Buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang. Jangan sampai ada instrumen yang memicu clipping.",
+    "raw_levels_db": [
+      2,
+      3,
+      2,
+      -5
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "profile_hint": "full_band_energetic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_197",
+    "prompt": "Buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur. Jangan sampai ada instrumen yang memicu clipping.",
+    "raw_levels_db": [
+      3,
+      -5,
+      -2,
+      2
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "profile_hint": "vocal_intimate_acoustic_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_198",
+    "prompt": "Sebagai referensi akhir, tonjolkan vokal dan drum secara bersamaan ke depan, lalu kecilkan bass serta musik pengiring.",
+    "raw_levels_db": [
+      3,
+      3,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "profile_hint": "vocal_drum_duet_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_199",
+    "prompt": "Berikan energi rock dengan drum paling depan dan jelas, bass sedikit diangkat, sementara instrumen lainnya ditarik mundur.",
+    "raw_levels_db": [
+      0,
+      5,
+      2,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "profile_hint": "drums_punchy_rock_v1",
+    "source": "human_curated_indonesian_v1"
+  },
+  {
+    "id": "human_test_200",
+    "prompt": "Tolong atur fader supaya jaga seluruh elemen mulai dari vokal, drum, bass, hingga instrumen lainnya agar terdengar seimbang natural.",
+    "raw_levels_db": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "profile_hint": "balanced_reference_v1",
+    "source": "human_curated_indonesian_v1"
+  }
+]

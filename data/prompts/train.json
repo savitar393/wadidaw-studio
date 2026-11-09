@@ -1,0 +1,1090 @@
+[
+  {
+    "profile": "vocal_forward_v1",
+    "raw_levels_db": [
+      5,
+      0,
+      -2,
+      -3
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "prompt": "vokal paling menonjol, ketukan drum natural, lini bass sedikit diturunkan, instrumen pengiring lebih mundur",
+    "prompt_template": "train_vocal_forward_v1_f0"
+  },
+  {
+    "profile": "vocal_forward_v1",
+    "raw_levels_db": [
+      5,
+      0,
+      -2,
+      -3
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "prompt": "buat suara vokal sangat maju, bass agak mundur, iringan musik diturunkan",
+    "prompt_template": "train_vocal_forward_v1_f1"
+  },
+  {
+    "profile": "vocal_forward_v1",
+    "raw_levels_db": [
+      5,
+      0,
+      -2,
+      -3
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "prompt": "atur campuran dengan drum seimbang, vokal utama dibuat paling dominan, instrumen lain dibuat lebih pelan, suara bass jangan terlalu dominan",
+    "prompt_template": "train_vocal_forward_v1_f2"
+  },
+  {
+    "profile": "vocal_forward_v1",
+    "raw_levels_db": [
+      5,
+      0,
+      -2,
+      -3
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "prompt": "tolong pastikan instrumen pengiring lebih mundur, ketukan drum natural, vokal paling menonjol, lini bass sedikit diturunkan",
+    "prompt_template": "train_vocal_forward_v1_f3"
+  },
+  {
+    "profile": "vocal_warm_ballad_v1",
+    "raw_levels_db": [
+      5,
+      -3,
+      0,
+      -2
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "prompt": "vokal paling menonjol, ketukan drum diturunkan, lini bass proporsional, instrumen pengiring agak mundur",
+    "prompt_template": "train_vocal_warm_ballad_v1_f0"
+  },
+  {
+    "profile": "vocal_warm_ballad_v1",
+    "raw_levels_db": [
+      5,
+      -3,
+      0,
+      -2
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "prompt": "buat suara vokal sangat maju, bass seimbang, ritme drum dibuat lebih pelan, iringan musik jangan terlalu dominan",
+    "prompt_template": "train_vocal_warm_ballad_v1_f1"
+  },
+  {
+    "profile": "vocal_warm_ballad_v1",
+    "raw_levels_db": [
+      5,
+      -3,
+      0,
+      -2
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "prompt": "atur campuran dengan drum lebih mundur, vokal utama dibuat paling dominan, instrumen lain sedikit diturunkan, suara bass natural",
+    "prompt_template": "train_vocal_warm_ballad_v1_f2"
+  },
+  {
+    "profile": "vocal_warm_ballad_v1",
+    "raw_levels_db": [
+      5,
+      -3,
+      0,
+      -2
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "prompt": "tolong pastikan vokal paling menonjol, ketukan drum diturunkan, instrumen pengiring agak mundur",
+    "prompt_template": "train_vocal_warm_ballad_v1_f3"
+  },
+  {
+    "profile": "vocal_subtle_lift_v1",
+    "raw_levels_db": [
+      3,
+      0,
+      -2,
+      0
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "prompt": "vokal lebih maju, ketukan drum natural, lini bass sedikit diturunkan, instrumen pengiring seimbang",
+    "prompt_template": "train_vocal_subtle_lift_v1_f0"
+  },
+  {
+    "profile": "vocal_subtle_lift_v1",
+    "raw_levels_db": [
+      3,
+      0,
+      -2,
+      0
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "prompt": "buat suara vokal lebih menonjol, bass agak mundur, iringan musik natural",
+    "prompt_template": "train_vocal_subtle_lift_v1_f1"
+  },
+  {
+    "profile": "vocal_subtle_lift_v1",
+    "raw_levels_db": [
+      3,
+      0,
+      -2,
+      0
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "prompt": "atur campuran dengan drum seimbang, vokal utama ditonjolkan, instrumen lain proporsional, suara bass jangan terlalu dominan",
+    "prompt_template": "train_vocal_subtle_lift_v1_f2"
+  },
+  {
+    "profile": "vocal_subtle_lift_v1",
+    "raw_levels_db": [
+      3,
+      0,
+      -2,
+      0
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "prompt": "tolong pastikan instrumen pengiring seimbang, ketukan drum natural, lini bass sedikit diturunkan, vokal lebih maju",
+    "prompt_template": "train_vocal_subtle_lift_v1_f3"
+  },
+  {
+    "profile": "vocal_intimate_acoustic_v1",
+    "raw_levels_db": [
+      3,
+      -5,
+      -2,
+      2
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "prompt": "vokal lebih maju, ketukan drum sangat mundur, lini bass sedikit diturunkan, instrumen pengiring sedikit lebih maju",
+    "prompt_template": "train_vocal_intimate_acoustic_v1_f0"
+  },
+  {
+    "profile": "vocal_intimate_acoustic_v1",
+    "raw_levels_db": [
+      3,
+      -5,
+      -2,
+      2
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "prompt": "buat suara vokal lebih menonjol, bass agak mundur, ritme drum jauh di latar belakang, iringan musik agak menonjol",
+    "prompt_template": "train_vocal_intimate_acoustic_v1_f1"
+  },
+  {
+    "profile": "vocal_intimate_acoustic_v1",
+    "raw_levels_db": [
+      3,
+      -5,
+      -2,
+      2
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "prompt": "atur campuran dengan drum paling mundur, vokal utama ditonjolkan, instrumen lain sedikit dinaikkan, suara bass jangan terlalu dominan",
+    "prompt_template": "train_vocal_intimate_acoustic_v1_f2"
+  },
+  {
+    "profile": "vocal_intimate_acoustic_v1",
+    "raw_levels_db": [
+      3,
+      -5,
+      -2,
+      2
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "prompt": "tolong pastikan vokal lebih maju, instrumen pengiring sedikit lebih maju, lini bass sedikit diturunkan, ketukan drum sangat mundur",
+    "prompt_template": "train_vocal_intimate_acoustic_v1_f3"
+  },
+  {
+    "profile": "drums_punchy_rock_v1",
+    "raw_levels_db": [
+      0,
+      5,
+      2,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "prompt": "vokal seimbang, ketukan drum sangat maju, lini bass sedikit dinaikkan, instrumen pengiring lebih mundur",
+    "prompt_template": "train_drums_punchy_rock_v1_f0"
+  },
+  {
+    "profile": "drums_punchy_rock_v1",
+    "raw_levels_db": [
+      0,
+      5,
+      2,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "prompt": "buat suara vokal natural, bass sedikit lebih maju, ritme drum dibuat paling dominan, iringan musik diturunkan",
+    "prompt_template": "train_drums_punchy_rock_v1_f1"
+  },
+  {
+    "profile": "drums_punchy_rock_v1",
+    "raw_levels_db": [
+      0,
+      5,
+      2,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "prompt": "atur campuran dengan drum paling menonjol, vokal utama proporsional, instrumen lain dibuat lebih pelan, suara bass agak menonjol",
+    "prompt_template": "train_drums_punchy_rock_v1_f2"
+  },
+  {
+    "profile": "drums_punchy_rock_v1",
+    "raw_levels_db": [
+      0,
+      5,
+      2,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "prompt": "tolong pastikan lini bass sedikit dinaikkan, instrumen pengiring lebih mundur, ketukan drum sangat maju",
+    "prompt_template": "train_drums_punchy_rock_v1_f3"
+  },
+  {
+    "profile": "drums_bass_groove_v1",
+    "raw_levels_db": [
+      -2,
+      3,
+      3,
+      -3
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "prompt": "vokal agak mundur, ketukan drum lebih menonjol, lini bass ditonjolkan, instrumen pengiring lebih mundur",
+    "prompt_template": "train_drums_bass_groove_v1_f0"
+  },
+  {
+    "profile": "drums_bass_groove_v1",
+    "raw_levels_db": [
+      -2,
+      3,
+      3,
+      -3
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "prompt": "buat suara vokal jangan terlalu dominan, bass lebih maju, ritme drum ditonjolkan, iringan musik diturunkan",
+    "prompt_template": "train_drums_bass_groove_v1_f1"
+  },
+  {
+    "profile": "drums_bass_groove_v1",
+    "raw_levels_db": [
+      -2,
+      3,
+      3,
+      -3
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "prompt": "atur campuran dengan drum lebih maju, vokal utama sedikit diturunkan, instrumen lain dibuat lebih pelan, suara bass lebih menonjol",
+    "prompt_template": "train_drums_bass_groove_v1_f2"
+  },
+  {
+    "profile": "drums_bass_groove_v1",
+    "raw_levels_db": [
+      -2,
+      3,
+      3,
+      -3
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "prompt": "tolong pastikan vokal agak mundur, ketukan drum lebih menonjol, instrumen pengiring lebih mundur, lini bass ditonjolkan",
+    "prompt_template": "train_drums_bass_groove_v1_f3"
+  },
+  {
+    "profile": "bass_heavy_modern_v1",
+    "raw_levels_db": [
+      0,
+      2,
+      5,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "prompt": "vokal seimbang, ketukan drum agak menonjol, lini bass dibuat paling dominan, instrumen pengiring lebih mundur",
+    "prompt_template": "train_bass_heavy_modern_v1_f0"
+  },
+  {
+    "profile": "bass_heavy_modern_v1",
+    "raw_levels_db": [
+      0,
+      2,
+      5,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "prompt": "buat suara vokal natural, bass paling menonjol, ritme drum sedikit dinaikkan, iringan musik diturunkan",
+    "prompt_template": "train_bass_heavy_modern_v1_f1"
+  },
+  {
+    "profile": "bass_heavy_modern_v1",
+    "raw_levels_db": [
+      0,
+      2,
+      5,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "prompt": "atur campuran dengan drum sedikit lebih maju, vokal utama proporsional, instrumen lain dibuat lebih pelan, suara bass sangat maju",
+    "prompt_template": "train_bass_heavy_modern_v1_f2"
+  },
+  {
+    "profile": "bass_heavy_modern_v1",
+    "raw_levels_db": [
+      0,
+      2,
+      5,
+      -3
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "prompt": "tolong pastikan instrumen pengiring lebih mundur, vokal seimbang, lini bass dibuat paling dominan, ketukan drum agak menonjol",
+    "prompt_template": "train_bass_heavy_modern_v1_f3"
+  },
+  {
+    "profile": "bass_warm_foundation_v1",
+    "raw_levels_db": [
+      2,
+      -2,
+      3,
+      -3
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "prompt": "vokal sedikit lebih maju, ketukan drum jangan terlalu dominan, lini bass ditonjolkan, instrumen pengiring lebih mundur",
+    "prompt_template": "train_bass_warm_foundation_v1_f0"
+  },
+  {
+    "profile": "bass_warm_foundation_v1",
+    "raw_levels_db": [
+      2,
+      -2,
+      3,
+      -3
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "prompt": "buat suara vokal agak menonjol, bass lebih maju, ritme drum sedikit diturunkan, iringan musik diturunkan",
+    "prompt_template": "train_bass_warm_foundation_v1_f1"
+  },
+  {
+    "profile": "bass_warm_foundation_v1",
+    "raw_levels_db": [
+      2,
+      -2,
+      3,
+      -3
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "prompt": "atur campuran dengan drum agak mundur, vokal utama sedikit dinaikkan, instrumen lain dibuat lebih pelan, suara bass lebih menonjol",
+    "prompt_template": "train_bass_warm_foundation_v1_f2"
+  },
+  {
+    "profile": "bass_warm_foundation_v1",
+    "raw_levels_db": [
+      2,
+      -2,
+      3,
+      -3
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "prompt": "tolong pastikan vokal sedikit lebih maju, lini bass ditonjolkan, ketukan drum jangan terlalu dominan, instrumen pengiring lebih mundur",
+    "prompt_template": "train_bass_warm_foundation_v1_f3"
+  },
+  {
+    "profile": "instrumental_forward_v1",
+    "raw_levels_db": [
+      -3,
+      0,
+      0,
+      5
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "prompt": "vokal lebih mundur, ketukan drum natural, lini bass proporsional, instrumen pengiring paling menonjol",
+    "prompt_template": "train_instrumental_forward_v1_f0"
+  },
+  {
+    "profile": "instrumental_forward_v1",
+    "raw_levels_db": [
+      -3,
+      0,
+      0,
+      5
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "prompt": "buat suara vokal diturunkan, bass seimbang, iringan musik sangat maju",
+    "prompt_template": "train_instrumental_forward_v1_f1"
+  },
+  {
+    "profile": "instrumental_forward_v1",
+    "raw_levels_db": [
+      -3,
+      0,
+      0,
+      5
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "prompt": "atur campuran dengan drum seimbang, vokal utama dibuat lebih pelan, instrumen lain dibuat paling dominan, suara bass natural",
+    "prompt_template": "train_instrumental_forward_v1_f2"
+  },
+  {
+    "profile": "instrumental_forward_v1",
+    "raw_levels_db": [
+      -3,
+      0,
+      0,
+      5
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "prompt": "tolong pastikan vokal lebih mundur, instrumen pengiring paling menonjol, ketukan drum natural",
+    "prompt_template": "train_instrumental_forward_v1_f3"
+  },
+  {
+    "profile": "backing_melody_focus_v1",
+    "raw_levels_db": [
+      -2,
+      -2,
+      0,
+      3
+    ],
+    "balance_target": [
+      -1.75,
+      -1.75,
+      0.25,
+      3.25
+    ],
+    "prompt": "vokal agak mundur, ketukan drum jangan terlalu dominan, lini bass proporsional, instrumen pengiring lebih maju",
+    "prompt_template": "train_backing_melody_focus_v1_f0"
+  },
+  {
+    "profile": "backing_melody_focus_v1",
+    "raw_levels_db": [
+      -2,
+      -2,
+      0,
+      3
+    ],
+    "balance_target": [
+      -1.75,
+      -1.75,
+      0.25,
+      3.25
+    ],
+    "prompt": "buat suara vokal jangan terlalu dominan, bass seimbang, ritme drum sedikit diturunkan, iringan musik lebih menonjol",
+    "prompt_template": "train_backing_melody_focus_v1_f1"
+  },
+  {
+    "profile": "backing_melody_focus_v1",
+    "raw_levels_db": [
+      -2,
+      -2,
+      0,
+      3
+    ],
+    "balance_target": [
+      -1.75,
+      -1.75,
+      0.25,
+      3.25
+    ],
+    "prompt": "atur campuran dengan drum agak mundur, vokal utama sedikit diturunkan, instrumen lain ditonjolkan, suara bass natural",
+    "prompt_template": "train_backing_melody_focus_v1_f2"
+  },
+  {
+    "profile": "backing_melody_focus_v1",
+    "raw_levels_db": [
+      -2,
+      -2,
+      0,
+      3
+    ],
+    "balance_target": [
+      -1.75,
+      -1.75,
+      0.25,
+      3.25
+    ],
+    "prompt": "tolong pastikan lini bass proporsional, instrumen pengiring lebih maju, vokal agak mundur, ketukan drum jangan terlalu dominan",
+    "prompt_template": "train_backing_melody_focus_v1_f3"
+  },
+  {
+    "profile": "balanced_reference_v1",
+    "raw_levels_db": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "prompt": "vokal seimbang, ketukan drum natural, lini bass proporsional, instrumen pengiring seimbang",
+    "prompt_template": "train_balanced_reference_v1_f0"
+  },
+  {
+    "profile": "balanced_reference_v1",
+    "raw_levels_db": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "prompt": "buat suara vokal natural, bass seimbang, iringan musik natural",
+    "prompt_template": "train_balanced_reference_v1_f1"
+  },
+  {
+    "profile": "balanced_reference_v1",
+    "raw_levels_db": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "prompt": "atur campuran dengan drum seimbang, vokal utama proporsional, instrumen lain proporsional, suara bass natural",
+    "prompt_template": "train_balanced_reference_v1_f2"
+  },
+  {
+    "profile": "balanced_reference_v1",
+    "raw_levels_db": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "prompt": "tolong pastikan lini bass proporsional, ketukan drum natural, vokal seimbang",
+    "prompt_template": "train_balanced_reference_v1_f3"
+  },
+  {
+    "profile": "vocal_drum_duet_v1",
+    "raw_levels_db": [
+      3,
+      3,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "prompt": "vokal lebih maju, ketukan drum lebih menonjol, lini bass dibuat lebih pelan, instrumen pengiring lebih mundur",
+    "prompt_template": "train_vocal_drum_duet_v1_f0"
+  },
+  {
+    "profile": "vocal_drum_duet_v1",
+    "raw_levels_db": [
+      3,
+      3,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "prompt": "buat suara vokal lebih menonjol, bass lebih mundur, ritme drum ditonjolkan, iringan musik diturunkan",
+    "prompt_template": "train_vocal_drum_duet_v1_f1"
+  },
+  {
+    "profile": "vocal_drum_duet_v1",
+    "raw_levels_db": [
+      3,
+      3,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "prompt": "atur campuran dengan drum lebih maju, vokal utama ditonjolkan, instrumen lain dibuat lebih pelan, suara bass diturunkan",
+    "prompt_template": "train_vocal_drum_duet_v1_f2"
+  },
+  {
+    "profile": "vocal_drum_duet_v1",
+    "raw_levels_db": [
+      3,
+      3,
+      -3,
+      -3
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "prompt": "tolong pastikan instrumen pengiring lebih mundur, ketukan drum lebih menonjol, vokal lebih maju, lini bass dibuat lebih pelan",
+    "prompt_template": "train_vocal_drum_duet_v1_f3"
+  },
+  {
+    "profile": "rhythm_tucked_back_v1",
+    "raw_levels_db": [
+      3,
+      -3,
+      -3,
+      2
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "prompt": "vokal lebih maju, ketukan drum diturunkan, lini bass dibuat lebih pelan, instrumen pengiring sedikit lebih maju",
+    "prompt_template": "train_rhythm_tucked_back_v1_f0"
+  },
+  {
+    "profile": "rhythm_tucked_back_v1",
+    "raw_levels_db": [
+      3,
+      -3,
+      -3,
+      2
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "prompt": "buat suara vokal lebih menonjol, bass lebih mundur, ritme drum dibuat lebih pelan, iringan musik agak menonjol",
+    "prompt_template": "train_rhythm_tucked_back_v1_f1"
+  },
+  {
+    "profile": "rhythm_tucked_back_v1",
+    "raw_levels_db": [
+      3,
+      -3,
+      -3,
+      2
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "prompt": "atur campuran dengan drum lebih mundur, vokal utama ditonjolkan, instrumen lain sedikit dinaikkan, suara bass diturunkan",
+    "prompt_template": "train_rhythm_tucked_back_v1_f2"
+  },
+  {
+    "profile": "rhythm_tucked_back_v1",
+    "raw_levels_db": [
+      3,
+      -3,
+      -3,
+      2
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "prompt": "tolong pastikan lini bass dibuat lebih pelan, vokal lebih maju, ketukan drum diturunkan, instrumen pengiring sedikit lebih maju",
+    "prompt_template": "train_rhythm_tucked_back_v1_f3"
+  },
+  {
+    "profile": "bass_tucked_clean_v1",
+    "raw_levels_db": [
+      2,
+      2,
+      -5,
+      0
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "prompt": "vokal sedikit lebih maju, ketukan drum agak menonjol, lini bass jauh di latar belakang, instrumen pengiring seimbang",
+    "prompt_template": "train_bass_tucked_clean_v1_f0"
+  },
+  {
+    "profile": "bass_tucked_clean_v1",
+    "raw_levels_db": [
+      2,
+      2,
+      -5,
+      0
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "prompt": "buat suara vokal agak menonjol, bass paling mundur, ritme drum sedikit dinaikkan",
+    "prompt_template": "train_bass_tucked_clean_v1_f1"
+  },
+  {
+    "profile": "bass_tucked_clean_v1",
+    "raw_levels_db": [
+      2,
+      2,
+      -5,
+      0
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "prompt": "atur campuran dengan drum sedikit lebih maju, vokal utama sedikit dinaikkan, instrumen lain proporsional, suara bass sangat mundur",
+    "prompt_template": "train_bass_tucked_clean_v1_f2"
+  },
+  {
+    "profile": "bass_tucked_clean_v1",
+    "raw_levels_db": [
+      2,
+      2,
+      -5,
+      0
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "prompt": "tolong pastikan ketukan drum agak menonjol, lini bass jauh di latar belakang, vokal sedikit lebih maju",
+    "prompt_template": "train_bass_tucked_clean_v1_f3"
+  },
+  {
+    "profile": "drums_tucked_soft_v1",
+    "raw_levels_db": [
+      2,
+      -5,
+      0,
+      2
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "prompt": "vokal sedikit lebih maju, ketukan drum sangat mundur, lini bass proporsional, instrumen pengiring sedikit lebih maju",
+    "prompt_template": "train_drums_tucked_soft_v1_f0"
+  },
+  {
+    "profile": "drums_tucked_soft_v1",
+    "raw_levels_db": [
+      2,
+      -5,
+      0,
+      2
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "prompt": "buat suara vokal agak menonjol, bass seimbang, ritme drum jauh di latar belakang, iringan musik agak menonjol",
+    "prompt_template": "train_drums_tucked_soft_v1_f1"
+  },
+  {
+    "profile": "drums_tucked_soft_v1",
+    "raw_levels_db": [
+      2,
+      -5,
+      0,
+      2
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "prompt": "atur campuran dengan drum paling mundur, vokal utama sedikit dinaikkan, instrumen lain sedikit dinaikkan, suara bass natural",
+    "prompt_template": "train_drums_tucked_soft_v1_f2"
+  },
+  {
+    "profile": "drums_tucked_soft_v1",
+    "raw_levels_db": [
+      2,
+      -5,
+      0,
+      2
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "prompt": "tolong pastikan lini bass proporsional, instrumen pengiring sedikit lebih maju, ketukan drum sangat mundur, vokal sedikit lebih maju",
+    "prompt_template": "train_drums_tucked_soft_v1_f3"
+  },
+  {
+    "profile": "full_band_energetic_v1",
+    "raw_levels_db": [
+      2,
+      3,
+      2,
+      -5
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "prompt": "vokal sedikit lebih maju, ketukan drum lebih menonjol, lini bass sedikit dinaikkan, instrumen pengiring paling mundur",
+    "prompt_template": "train_full_band_energetic_v1_f0"
+  },
+  {
+    "profile": "full_band_energetic_v1",
+    "raw_levels_db": [
+      2,
+      3,
+      2,
+      -5
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "prompt": "buat suara vokal agak menonjol, bass sedikit lebih maju, ritme drum ditonjolkan, iringan musik sangat mundur",
+    "prompt_template": "train_full_band_energetic_v1_f1"
+  },
+  {
+    "profile": "full_band_energetic_v1",
+    "raw_levels_db": [
+      2,
+      3,
+      2,
+      -5
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "prompt": "atur campuran dengan drum lebih maju, vokal utama sedikit dinaikkan, instrumen lain jauh di latar belakang, suara bass agak menonjol",
+    "prompt_template": "train_full_band_energetic_v1_f2"
+  },
+  {
+    "profile": "full_band_energetic_v1",
+    "raw_levels_db": [
+      2,
+      3,
+      2,
+      -5
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "prompt": "tolong pastikan lini bass sedikit dinaikkan, instrumen pengiring paling mundur, ketukan drum lebih menonjol, vokal sedikit lebih maju",
+    "prompt_template": "train_full_band_energetic_v1_f3"
+  }
+]

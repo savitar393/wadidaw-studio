@@ -1,0 +1,3762 @@
+[
+  {
+    "id": "test_0001_ex00_p01",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 38.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex00.npy",
+    "g0_db": [
+      2.3099,
+      1.9946,
+      2.1627,
+      0.993
+    ],
+    "loudness_raw_db": [
+      -26.8268,
+      -23.4342,
+      -40.4817,
+      -26.9923
+    ],
+    "loudness_db": [
+      -24.5169,
+      -21.4396,
+      -38.319,
+      -25.9993
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "gains_db": [
+      1.9482,
+      -6.1291,
+      8.7503,
+      -4.5694
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "arahkan keseimbangan mix agar vokal paling depan dan jelas, set drum rata dan wajar, low-end bass jangan terlalu maju, instrumen lainnya ditarik mundur",
+    "prompt_template": "test_vocal_forward_v1_f0"
+  },
+  {
+    "id": "test_0001_ex00_p02",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 38.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex00.npy",
+    "g0_db": [
+      2.3099,
+      1.9946,
+      2.1627,
+      0.993
+    ],
+    "loudness_raw_db": [
+      -26.8268,
+      -23.4342,
+      -40.4817,
+      -26.9923
+    ],
+    "loudness_db": [
+      -24.5169,
+      -21.4396,
+      -38.319,
+      -25.9993
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "gains_db": [
+      1.9482,
+      -6.1291,
+      8.7503,
+      -4.5694
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "buat karakter campuran di mana suara penyanyi sangat tegas di depan, bass agak ditahan, musik pengiring lebih lembut di belakang",
+    "prompt_template": "test_vocal_forward_v1_f1"
+  },
+  {
+    "id": "test_0001_ex00_p03",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 38.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex00.npy",
+    "g0_db": [
+      2.3099,
+      1.9946,
+      2.1627,
+      0.993
+    ],
+    "loudness_raw_db": [
+      -26.8268,
+      -23.4342,
+      -40.4817,
+      -26.9923
+    ],
+    "loudness_db": [
+      -24.5169,
+      -21.4396,
+      -38.319,
+      -25.9993
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "gains_db": [
+      1.9482,
+      -6.1291,
+      8.7503,
+      -4.5694
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "setel gain supaya drum seimbang natural, lead vokal dominan utama, elemen harmonis dikecilkan, alunan bass sedikit dikurangi",
+    "prompt_template": "test_vocal_forward_v1_f2"
+  },
+  {
+    "id": "test_0001_ex00_p04",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 38.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex00.npy",
+    "g0_db": [
+      2.3099,
+      1.9946,
+      2.1627,
+      0.993
+    ],
+    "loudness_raw_db": [
+      -26.8268,
+      -23.4342,
+      -40.4817,
+      -26.9923
+    ],
+    "loudness_db": [
+      -24.5169,
+      -21.4396,
+      -38.319,
+      -25.9993
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "gains_db": [
+      1.9482,
+      -6.1291,
+      8.7503,
+      -4.5694
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "hasilkan mix dengan set drum rata dan wajar, low-end bass jangan terlalu maju, instrumen lainnya ditarik mundur, vokal paling depan dan jelas",
+    "prompt_template": "test_vocal_forward_v1_f3"
+  },
+  {
+    "id": "test_0001_ex01_p01",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 52.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex01.npy",
+    "g0_db": [
+      2.8846,
+      -1.8631,
+      -1.589,
+      -2.2171
+    ],
+    "loudness_raw_db": [
+      -22.5541,
+      -21.1351,
+      -22.7058,
+      -25.1119
+    ],
+    "loudness_db": [
+      -19.6695,
+      -22.9982,
+      -24.2948,
+      -27.329
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "gains_db": [
+      1.0966,
+      -3.5747,
+      0.7219,
+      1.7561
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "arahkan keseimbangan mix agar vokal paling depan dan jelas, set drum lebih lembut di belakang, low-end bass proporsional tanpa tonjolan, instrumen lainnya agak ditahan",
+    "prompt_template": "test_vocal_warm_ballad_v1_f0"
+  },
+  {
+    "id": "test_0001_ex01_p02",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 52.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex01.npy",
+    "g0_db": [
+      2.8846,
+      -1.8631,
+      -1.589,
+      -2.2171
+    ],
+    "loudness_raw_db": [
+      -22.5541,
+      -21.1351,
+      -22.7058,
+      -25.1119
+    ],
+    "loudness_db": [
+      -19.6695,
+      -22.9982,
+      -24.2948,
+      -27.329
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "gains_db": [
+      1.0966,
+      -3.5747,
+      0.7219,
+      1.7561
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "buat karakter campuran di mana suara penyanyi sangat tegas di depan, bass seimbang natural, hentakan drum dikecilkan, musik pengiring sedikit dikurangi",
+    "prompt_template": "test_vocal_warm_ballad_v1_f1"
+  },
+  {
+    "id": "test_0001_ex01_p03",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 52.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex01.npy",
+    "g0_db": [
+      2.8846,
+      -1.8631,
+      -1.589,
+      -2.2171
+    ],
+    "loudness_raw_db": [
+      -22.5541,
+      -21.1351,
+      -22.7058,
+      -25.1119
+    ],
+    "loudness_db": [
+      -19.6695,
+      -22.9982,
+      -24.2948,
+      -27.329
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "gains_db": [
+      1.0966,
+      -3.5747,
+      0.7219,
+      1.7561
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "setel gain supaya drum ditarik mundur, lead vokal dominan utama, elemen harmonis jangan terlalu maju, alunan bass rata dan wajar",
+    "prompt_template": "test_vocal_warm_ballad_v1_f2"
+  },
+  {
+    "id": "test_0001_ex01_p04",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 52.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex01.npy",
+    "g0_db": [
+      2.8846,
+      -1.8631,
+      -1.589,
+      -2.2171
+    ],
+    "loudness_raw_db": [
+      -22.5541,
+      -21.1351,
+      -22.7058,
+      -25.1119
+    ],
+    "loudness_db": [
+      -19.6695,
+      -22.9982,
+      -24.2948,
+      -27.329
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "gains_db": [
+      1.0966,
+      -3.5747,
+      0.7219,
+      1.7561
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "hasilkan mix dengan instrumen lainnya agak ditahan, set drum lebih lembut di belakang, vokal paling depan dan jelas",
+    "prompt_template": "test_vocal_warm_ballad_v1_f3"
+  },
+  {
+    "id": "test_0001_ex02_p01",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 66.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex02.npy",
+    "g0_db": [
+      -0.2084,
+      -1.0152,
+      0.3465,
+      -0.8571
+    ],
+    "loudness_raw_db": [
+      -27.7035,
+      -23.2925,
+      -30.9877,
+      -26.5633
+    ],
+    "loudness_db": [
+      -27.9119,
+      -24.3077,
+      -30.6412,
+      -27.4204
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "gains_db": [
+      3.0916,
+      -3.5125,
+      0.8209,
+      -0.3999
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "arahkan keseimbangan mix agar vokal lebih ke permukaan, set drum rata dan wajar, low-end bass jangan terlalu maju, instrumen lainnya seimbang natural",
+    "prompt_template": "test_vocal_subtle_lift_v1_f0"
+  },
+  {
+    "id": "test_0001_ex02_p02",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 66.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex02.npy",
+    "g0_db": [
+      -0.2084,
+      -1.0152,
+      0.3465,
+      -0.8571
+    ],
+    "loudness_raw_db": [
+      -27.7035,
+      -23.2925,
+      -30.9877,
+      -26.5633
+    ],
+    "loudness_db": [
+      -27.9119,
+      -24.3077,
+      -30.6412,
+      -27.4204
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "gains_db": [
+      3.0916,
+      -3.5125,
+      0.8209,
+      -0.3999
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "buat karakter campuran di mana suara penyanyi diangkat lebih terasa, bass agak ditahan, musik pengiring rata dan wajar",
+    "prompt_template": "test_vocal_subtle_lift_v1_f1"
+  },
+  {
+    "id": "test_0001_ex02_p03",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 66.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex02.npy",
+    "g0_db": [
+      -0.2084,
+      -1.0152,
+      0.3465,
+      -0.8571
+    ],
+    "loudness_raw_db": [
+      -27.7035,
+      -23.2925,
+      -30.9877,
+      -26.5633
+    ],
+    "loudness_db": [
+      -27.9119,
+      -24.3077,
+      -30.6412,
+      -27.4204
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "gains_db": [
+      3.0916,
+      -3.5125,
+      0.8209,
+      -0.3999
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "setel gain supaya drum seimbang natural, lead vokal lebih kuat, elemen harmonis proporsional tanpa tonjolan, alunan bass sedikit dikurangi",
+    "prompt_template": "test_vocal_subtle_lift_v1_f2"
+  },
+  {
+    "id": "test_0001_ex02_p04",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 66.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex02.npy",
+    "g0_db": [
+      -0.2084,
+      -1.0152,
+      0.3465,
+      -0.8571
+    ],
+    "loudness_raw_db": [
+      -27.7035,
+      -23.2925,
+      -30.9877,
+      -26.5633
+    ],
+    "loudness_db": [
+      -27.9119,
+      -24.3077,
+      -30.6412,
+      -27.4204
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "gains_db": [
+      3.0916,
+      -3.5125,
+      0.8209,
+      -0.3999
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "hasilkan mix dengan instrumen lainnya seimbang natural, vokal lebih ke permukaan, low-end bass jangan terlalu maju",
+    "prompt_template": "test_vocal_subtle_lift_v1_f3"
+  },
+  {
+    "id": "test_0001_ex03_p01",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 102.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex03.npy",
+    "g0_db": [
+      0.0284,
+      2.2142,
+      2.5748,
+      -2.8341
+    ],
+    "loudness_raw_db": [
+      -22.5682,
+      -21.0913,
+      -23.033,
+      -25.2495
+    ],
+    "loudness_db": [
+      -22.5398,
+      -18.8771,
+      -20.4582,
+      -28.0836
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "gains_db": [
+      3.5501,
+      -8.1125,
+      -3.5315,
+      8.0939
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "arahkan keseimbangan mix agar vokal lebih ke permukaan, set drum sangat lembut di latar, low-end bass jangan terlalu maju, instrumen lainnya sedikit diangkat",
+    "prompt_template": "test_vocal_intimate_acoustic_v1_f0"
+  },
+  {
+    "id": "test_0001_ex03_p02",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 102.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex03.npy",
+    "g0_db": [
+      0.0284,
+      2.2142,
+      2.5748,
+      -2.8341
+    ],
+    "loudness_raw_db": [
+      -22.5682,
+      -21.0913,
+      -23.033,
+      -25.2495
+    ],
+    "loudness_db": [
+      -22.5398,
+      -18.8771,
+      -20.4582,
+      -28.0836
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "gains_db": [
+      3.5501,
+      -8.1125,
+      -3.5315,
+      8.0939
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "buat karakter campuran di mana suara penyanyi diangkat lebih terasa, bass agak ditahan, hentakan drum jauh dikecilkan, musik pengiring agak lebih terasa",
+    "prompt_template": "test_vocal_intimate_acoustic_v1_f1"
+  },
+  {
+    "id": "test_0001_ex03_p03",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 102.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex03.npy",
+    "g0_db": [
+      0.0284,
+      2.2142,
+      2.5748,
+      -2.8341
+    ],
+    "loudness_raw_db": [
+      -22.5682,
+      -21.0913,
+      -23.033,
+      -25.2495
+    ],
+    "loudness_db": [
+      -22.5398,
+      -18.8771,
+      -20.4582,
+      -28.0836
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "gains_db": [
+      3.5501,
+      -8.1125,
+      -3.5315,
+      8.0939
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "setel gain supaya drum paling belakang, lead vokal lebih kuat, elemen harmonis sedikit ke depan, alunan bass sedikit dikurangi",
+    "prompt_template": "test_vocal_intimate_acoustic_v1_f2"
+  },
+  {
+    "id": "test_0001_ex03_p04",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 102.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex03.npy",
+    "g0_db": [
+      0.0284,
+      2.2142,
+      2.5748,
+      -2.8341
+    ],
+    "loudness_raw_db": [
+      -22.5682,
+      -21.0913,
+      -23.033,
+      -25.2495
+    ],
+    "loudness_db": [
+      -22.5398,
+      -18.8771,
+      -20.4582,
+      -28.0836
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "gains_db": [
+      3.5501,
+      -8.1125,
+      -3.5315,
+      8.0939
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "hasilkan mix dengan instrumen lainnya sedikit diangkat, set drum sangat lembut di latar, vokal lebih ke permukaan, low-end bass jangan terlalu maju",
+    "prompt_template": "test_vocal_intimate_acoustic_v1_f3"
+  },
+  {
+    "id": "test_0001_ex04_p01",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 116.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex04.npy",
+    "g0_db": [
+      -1.4922,
+      2.9709,
+      1.8892,
+      -2.4833
+    ],
+    "loudness_raw_db": [
+      -24.4647,
+      -20.0612,
+      -22.3116,
+      -25.4044
+    ],
+    "loudness_db": [
+      -25.9569,
+      -17.0903,
+      -20.4224,
+      -27.8877
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "gains_db": [
+      2.1176,
+      -1.749,
+      -1.4169,
+      1.0484
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "arahkan keseimbangan mix agar vokal seimbang natural, set drum sangat tegas di depan, low-end bass sedikit ke depan, instrumen lainnya ditarik mundur",
+    "prompt_template": "test_drums_punchy_rock_v1_f0"
+  },
+  {
+    "id": "test_0001_ex04_p02",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 116.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex04.npy",
+    "g0_db": [
+      -1.4922,
+      2.9709,
+      1.8892,
+      -2.4833
+    ],
+    "loudness_raw_db": [
+      -24.4647,
+      -20.0612,
+      -22.3116,
+      -25.4044
+    ],
+    "loudness_db": [
+      -25.9569,
+      -17.0903,
+      -20.4224,
+      -27.8877
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "gains_db": [
+      2.1176,
+      -1.749,
+      -1.4169,
+      1.0484
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "buat karakter campuran di mana suara penyanyi rata dan wajar, bass sedikit diangkat, hentakan drum dominan utama, musik pengiring lebih lembut di belakang",
+    "prompt_template": "test_drums_punchy_rock_v1_f1"
+  },
+  {
+    "id": "test_0001_ex04_p03",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 116.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex04.npy",
+    "g0_db": [
+      -1.4922,
+      2.9709,
+      1.8892,
+      -2.4833
+    ],
+    "loudness_raw_db": [
+      -24.4647,
+      -20.0612,
+      -22.3116,
+      -25.4044
+    ],
+    "loudness_db": [
+      -25.9569,
+      -17.0903,
+      -20.4224,
+      -27.8877
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "gains_db": [
+      2.1176,
+      -1.749,
+      -1.4169,
+      1.0484
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "setel gain supaya drum paling depan dan jelas, lead vokal proporsional tanpa tonjolan, elemen harmonis dikecilkan, alunan bass agak lebih terasa",
+    "prompt_template": "test_drums_punchy_rock_v1_f2"
+  },
+  {
+    "id": "test_0001_ex04_p04",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 116.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex04.npy",
+    "g0_db": [
+      -1.4922,
+      2.9709,
+      1.8892,
+      -2.4833
+    ],
+    "loudness_raw_db": [
+      -24.4647,
+      -20.0612,
+      -22.3116,
+      -25.4044
+    ],
+    "loudness_db": [
+      -25.9569,
+      -17.0903,
+      -20.4224,
+      -27.8877
+    ],
+    "balance_target": [
+      -1.0,
+      4.0,
+      1.0,
+      -4.0
+    ],
+    "gains_db": [
+      2.1176,
+      -1.749,
+      -1.4169,
+      1.0484
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "hasilkan mix dengan low-end bass sedikit ke depan, vokal seimbang natural, instrumen lainnya ditarik mundur, set drum sangat tegas di depan",
+    "prompt_template": "test_drums_punchy_rock_v1_f3"
+  },
+  {
+    "id": "test_0001_ex05_p01",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 130.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex05.npy",
+    "g0_db": [
+      1.0828,
+      -1.1124,
+      -2.4835,
+      -2.9735
+    ],
+    "loudness_raw_db": [
+      -26.0707,
+      -24.1874,
+      -26.0623,
+      -23.0647
+    ],
+    "loudness_db": [
+      -24.9879,
+      -25.2998,
+      -28.5458,
+      -26.0382
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "gains_db": [
+      -3.4801,
+      1.8319,
+      5.0779,
+      -3.4297
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "arahkan keseimbangan mix agar vokal agak ditahan, set drum diangkat lebih terasa, low-end bass lebih kuat, instrumen lainnya ditarik mundur",
+    "prompt_template": "test_drums_bass_groove_v1_f0"
+  },
+  {
+    "id": "test_0001_ex05_p02",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 130.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex05.npy",
+    "g0_db": [
+      1.0828,
+      -1.1124,
+      -2.4835,
+      -2.9735
+    ],
+    "loudness_raw_db": [
+      -26.0707,
+      -24.1874,
+      -26.0623,
+      -23.0647
+    ],
+    "loudness_db": [
+      -24.9879,
+      -25.2998,
+      -28.5458,
+      -26.0382
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "gains_db": [
+      -3.4801,
+      1.8319,
+      5.0779,
+      -3.4297
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "buat karakter campuran di mana suara penyanyi sedikit dikurangi, bass lebih ke permukaan, hentakan drum lebih kuat, musik pengiring lebih lembut di belakang",
+    "prompt_template": "test_drums_bass_groove_v1_f1"
+  },
+  {
+    "id": "test_0001_ex05_p03",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 130.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex05.npy",
+    "g0_db": [
+      1.0828,
+      -1.1124,
+      -2.4835,
+      -2.9735
+    ],
+    "loudness_raw_db": [
+      -26.0707,
+      -24.1874,
+      -26.0623,
+      -23.0647
+    ],
+    "loudness_db": [
+      -24.9879,
+      -25.2998,
+      -28.5458,
+      -26.0382
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "gains_db": [
+      -3.4801,
+      1.8319,
+      5.0779,
+      -3.4297
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "setel gain supaya drum lebih ke permukaan, lead vokal jangan terlalu maju, elemen harmonis dikecilkan, alunan bass diangkat lebih terasa",
+    "prompt_template": "test_drums_bass_groove_v1_f2"
+  },
+  {
+    "id": "test_0001_ex05_p04",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 130.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex05.npy",
+    "g0_db": [
+      1.0828,
+      -1.1124,
+      -2.4835,
+      -2.9735
+    ],
+    "loudness_raw_db": [
+      -26.0707,
+      -24.1874,
+      -26.0623,
+      -23.0647
+    ],
+    "loudness_db": [
+      -24.9879,
+      -25.2998,
+      -28.5458,
+      -26.0382
+    ],
+    "balance_target": [
+      -2.25,
+      2.75,
+      2.75,
+      -3.25
+    ],
+    "gains_db": [
+      -3.4801,
+      1.8319,
+      5.0779,
+      -3.4297
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "hasilkan mix dengan instrumen lainnya ditarik mundur, set drum diangkat lebih terasa, low-end bass lebih kuat, vokal agak ditahan",
+    "prompt_template": "test_drums_bass_groove_v1_f3"
+  },
+  {
+    "id": "test_0001_ex06_p01",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 144.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex06.npy",
+    "g0_db": [
+      -1.0364,
+      -0.6243,
+      1.3224,
+      1.2312
+    ],
+    "loudness_raw_db": [
+      -23.7427,
+      -23.8513,
+      -24.8244,
+      -22.8036
+    ],
+    "loudness_db": [
+      -24.7791,
+      -24.4756,
+      -23.502,
+      -21.5724
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "gains_db": [
+      0.1968,
+      1.8934,
+      3.9197,
+      -6.0099
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "arahkan keseimbangan mix agar vokal seimbang natural, set drum agak lebih terasa, low-end bass dominan utama, instrumen lainnya ditarik mundur",
+    "prompt_template": "test_bass_heavy_modern_v1_f0"
+  },
+  {
+    "id": "test_0001_ex06_p02",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 144.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex06.npy",
+    "g0_db": [
+      -1.0364,
+      -0.6243,
+      1.3224,
+      1.2312
+    ],
+    "loudness_raw_db": [
+      -23.7427,
+      -23.8513,
+      -24.8244,
+      -22.8036
+    ],
+    "loudness_db": [
+      -24.7791,
+      -24.4756,
+      -23.502,
+      -21.5724
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "gains_db": [
+      0.1968,
+      1.8934,
+      3.9197,
+      -6.0099
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "buat karakter campuran di mana suara penyanyi rata dan wajar, bass paling depan dan jelas, hentakan drum sedikit ke depan, musik pengiring lebih lembut di belakang",
+    "prompt_template": "test_bass_heavy_modern_v1_f1"
+  },
+  {
+    "id": "test_0001_ex06_p03",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 144.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex06.npy",
+    "g0_db": [
+      -1.0364,
+      -0.6243,
+      1.3224,
+      1.2312
+    ],
+    "loudness_raw_db": [
+      -23.7427,
+      -23.8513,
+      -24.8244,
+      -22.8036
+    ],
+    "loudness_db": [
+      -24.7791,
+      -24.4756,
+      -23.502,
+      -21.5724
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "gains_db": [
+      0.1968,
+      1.8934,
+      3.9197,
+      -6.0099
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "setel gain supaya drum sedikit diangkat, lead vokal proporsional tanpa tonjolan, elemen harmonis dikecilkan, alunan bass sangat tegas di depan",
+    "prompt_template": "test_bass_heavy_modern_v1_f2"
+  },
+  {
+    "id": "test_0001_ex06_p04",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 144.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex06.npy",
+    "g0_db": [
+      -1.0364,
+      -0.6243,
+      1.3224,
+      1.2312
+    ],
+    "loudness_raw_db": [
+      -23.7427,
+      -23.8513,
+      -24.8244,
+      -22.8036
+    ],
+    "loudness_db": [
+      -24.7791,
+      -24.4756,
+      -23.502,
+      -21.5724
+    ],
+    "balance_target": [
+      -1.0,
+      1.0,
+      4.0,
+      -4.0
+    ],
+    "gains_db": [
+      0.1968,
+      1.8934,
+      3.9197,
+      -6.0099
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "hasilkan mix dengan set drum agak lebih terasa, low-end bass dominan utama, instrumen lainnya ditarik mundur",
+    "prompt_template": "test_bass_heavy_modern_v1_f3"
+  },
+  {
+    "id": "test_0001_ex07_p01",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 166.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex07.npy",
+    "g0_db": [
+      0.3406,
+      0.2111,
+      2.8474,
+      2.5864
+    ],
+    "loudness_raw_db": [
+      -21.8853,
+      -21.199,
+      -22.5411,
+      -25.336
+    ],
+    "loudness_db": [
+      -21.5447,
+      -20.9879,
+      -19.6937,
+      -22.7496
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "gains_db": [
+      2.3007,
+      -2.2561,
+      1.4497,
+      -1.4944
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "arahkan keseimbangan mix agar vokal sedikit diangkat, set drum sedikit dikurangi, low-end bass lebih kuat, instrumen lainnya ditarik mundur",
+    "prompt_template": "test_bass_warm_foundation_v1_f0"
+  },
+  {
+    "id": "test_0001_ex07_p02",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 166.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex07.npy",
+    "g0_db": [
+      0.3406,
+      0.2111,
+      2.8474,
+      2.5864
+    ],
+    "loudness_raw_db": [
+      -21.8853,
+      -21.199,
+      -22.5411,
+      -25.336
+    ],
+    "loudness_db": [
+      -21.5447,
+      -20.9879,
+      -19.6937,
+      -22.7496
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "gains_db": [
+      2.3007,
+      -2.2561,
+      1.4497,
+      -1.4944
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "buat karakter campuran di mana suara penyanyi agak lebih terasa, bass lebih ke permukaan, hentakan drum jangan terlalu maju, musik pengiring lebih lembut di belakang",
+    "prompt_template": "test_bass_warm_foundation_v1_f1"
+  },
+  {
+    "id": "test_0001_ex07_p03",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 166.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex07.npy",
+    "g0_db": [
+      0.3406,
+      0.2111,
+      2.8474,
+      2.5864
+    ],
+    "loudness_raw_db": [
+      -21.8853,
+      -21.199,
+      -22.5411,
+      -25.336
+    ],
+    "loudness_db": [
+      -21.5447,
+      -20.9879,
+      -19.6937,
+      -22.7496
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "gains_db": [
+      2.3007,
+      -2.2561,
+      1.4497,
+      -1.4944
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "setel gain supaya drum agak ditahan, lead vokal sedikit ke depan, elemen harmonis dikecilkan, alunan bass diangkat lebih terasa",
+    "prompt_template": "test_bass_warm_foundation_v1_f2"
+  },
+  {
+    "id": "test_0001_ex07_p04",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 166.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex07.npy",
+    "g0_db": [
+      0.3406,
+      0.2111,
+      2.8474,
+      2.5864
+    ],
+    "loudness_raw_db": [
+      -21.8853,
+      -21.199,
+      -22.5411,
+      -25.336
+    ],
+    "loudness_db": [
+      -21.5447,
+      -20.9879,
+      -19.6937,
+      -22.7496
+    ],
+    "balance_target": [
+      2.0,
+      -2.0,
+      3.0,
+      -3.0
+    ],
+    "gains_db": [
+      2.3007,
+      -2.2561,
+      1.4497,
+      -1.4944
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "hasilkan mix dengan vokal sedikit diangkat, instrumen lainnya ditarik mundur, low-end bass lebih kuat, set drum sedikit dikurangi",
+    "prompt_template": "test_bass_warm_foundation_v1_f3"
+  },
+  {
+    "id": "test_0001_ex08_p01",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 180.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex08.npy",
+    "g0_db": [
+      0.929,
+      -1.2394,
+      -1.6828,
+      -0.5034
+    ],
+    "loudness_raw_db": [
+      -21.3827,
+      -20.003,
+      -23.144,
+      -25.2952
+    ],
+    "loudness_db": [
+      -20.4537,
+      -21.2424,
+      -24.8268,
+      -25.7986
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "gains_db": [
+      -6.1267,
+      -2.338,
+      1.2464,
+      7.2183
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "arahkan keseimbangan mix agar vokal ditarik mundur, set drum rata dan wajar, low-end bass proporsional tanpa tonjolan, instrumen lainnya paling depan dan jelas",
+    "prompt_template": "test_instrumental_forward_v1_f0"
+  },
+  {
+    "id": "test_0001_ex08_p02",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 180.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex08.npy",
+    "g0_db": [
+      0.929,
+      -1.2394,
+      -1.6828,
+      -0.5034
+    ],
+    "loudness_raw_db": [
+      -21.3827,
+      -20.003,
+      -23.144,
+      -25.2952
+    ],
+    "loudness_db": [
+      -20.4537,
+      -21.2424,
+      -24.8268,
+      -25.7986
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "gains_db": [
+      -6.1267,
+      -2.338,
+      1.2464,
+      7.2183
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "buat karakter campuran di mana suara penyanyi lebih lembut di belakang, bass seimbang natural, musik pengiring sangat tegas di depan",
+    "prompt_template": "test_instrumental_forward_v1_f1"
+  },
+  {
+    "id": "test_0001_ex08_p03",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 180.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex08.npy",
+    "g0_db": [
+      0.929,
+      -1.2394,
+      -1.6828,
+      -0.5034
+    ],
+    "loudness_raw_db": [
+      -21.3827,
+      -20.003,
+      -23.144,
+      -25.2952
+    ],
+    "loudness_db": [
+      -20.4537,
+      -21.2424,
+      -24.8268,
+      -25.7986
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "gains_db": [
+      -6.1267,
+      -2.338,
+      1.2464,
+      7.2183
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "setel gain supaya drum seimbang natural, lead vokal dikecilkan, elemen harmonis dominan utama, alunan bass rata dan wajar",
+    "prompt_template": "test_instrumental_forward_v1_f2"
+  },
+  {
+    "id": "test_0001_ex08_p04",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 180.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex08.npy",
+    "g0_db": [
+      0.929,
+      -1.2394,
+      -1.6828,
+      -0.5034
+    ],
+    "loudness_raw_db": [
+      -21.3827,
+      -20.003,
+      -23.144,
+      -25.2952
+    ],
+    "loudness_db": [
+      -20.4537,
+      -21.2424,
+      -24.8268,
+      -25.7986
+    ],
+    "balance_target": [
+      -3.5,
+      -0.5,
+      -0.5,
+      4.5
+    ],
+    "gains_db": [
+      -6.1267,
+      -2.338,
+      1.2464,
+      7.2183
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "hasilkan mix dengan vokal ditarik mundur, instrumen lainnya paling depan dan jelas, set drum rata dan wajar",
+    "prompt_template": "test_instrumental_forward_v1_f3"
+  },
+  {
+    "id": "test_0001_ex09_p01",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 194.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex09.npy",
+    "g0_db": [
+      1.0564,
+      1.6054,
+      -2.0206,
+      -2.7897
+    ],
+    "loudness_raw_db": [
+      -31.8667,
+      -35.0153,
+      -32.8833,
+      -22.6546
+    ],
+    "loudness_db": [
+      -30.8103,
+      -33.4099,
+      -34.9039,
+      -25.4443
+    ],
+    "balance_target": [
+      -1.75,
+      -1.75,
+      0.25,
+      3.25
+    ],
+    "gains_db": [
+      -2.0818,
+      0.5178,
+      4.0118,
+      -2.4478
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "arahkan keseimbangan mix agar vokal agak ditahan, set drum sedikit dikurangi, low-end bass proporsional tanpa tonjolan, instrumen lainnya lebih ke permukaan",
+    "prompt_template": "test_backing_melody_focus_v1_f0"
+  },
+  {
+    "id": "test_0001_ex09_p02",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 194.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex09.npy",
+    "g0_db": [
+      1.0564,
+      1.6054,
+      -2.0206,
+      -2.7897
+    ],
+    "loudness_raw_db": [
+      -31.8667,
+      -35.0153,
+      -32.8833,
+      -22.6546
+    ],
+    "loudness_db": [
+      -30.8103,
+      -33.4099,
+      -34.9039,
+      -25.4443
+    ],
+    "balance_target": [
+      -1.75,
+      -1.75,
+      0.25,
+      3.25
+    ],
+    "gains_db": [
+      -2.0818,
+      0.5178,
+      4.0118,
+      -2.4478
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "buat karakter campuran di mana suara penyanyi sedikit dikurangi, bass seimbang natural, hentakan drum jangan terlalu maju, musik pengiring diangkat lebih terasa",
+    "prompt_template": "test_backing_melody_focus_v1_f1"
+  },
+  {
+    "id": "test_0001_ex09_p03",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 194.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex09.npy",
+    "g0_db": [
+      1.0564,
+      1.6054,
+      -2.0206,
+      -2.7897
+    ],
+    "loudness_raw_db": [
+      -31.8667,
+      -35.0153,
+      -32.8833,
+      -22.6546
+    ],
+    "loudness_db": [
+      -30.8103,
+      -33.4099,
+      -34.9039,
+      -25.4443
+    ],
+    "balance_target": [
+      -1.75,
+      -1.75,
+      0.25,
+      3.25
+    ],
+    "gains_db": [
+      -2.0818,
+      0.5178,
+      4.0118,
+      -2.4478
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "setel gain supaya drum agak ditahan, lead vokal jangan terlalu maju, elemen harmonis lebih kuat, alunan bass rata dan wajar",
+    "prompt_template": "test_backing_melody_focus_v1_f2"
+  },
+  {
+    "id": "test_0001_ex09_p04",
+    "song": "AM Contra - Heart Peripheral",
+    "artist": "AM Contra",
+    "split": "test",
+    "excerpt_start_sec": 194.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0001_ex09.npy",
+    "g0_db": [
+      1.0564,
+      1.6054,
+      -2.0206,
+      -2.7897
+    ],
+    "loudness_raw_db": [
+      -31.8667,
+      -35.0153,
+      -32.8833,
+      -22.6546
+    ],
+    "loudness_db": [
+      -30.8103,
+      -33.4099,
+      -34.9039,
+      -25.4443
+    ],
+    "balance_target": [
+      -1.75,
+      -1.75,
+      0.25,
+      3.25
+    ],
+    "gains_db": [
+      -2.0818,
+      0.5178,
+      4.0118,
+      -2.4478
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "hasilkan mix dengan instrumen lainnya lebih ke permukaan, low-end bass proporsional tanpa tonjolan, vokal agak ditahan, set drum sedikit dikurangi",
+    "prompt_template": "test_backing_melody_focus_v1_f3"
+  },
+  {
+    "id": "test_0002_ex00_p01",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 0.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex00.npy",
+    "g0_db": [
+      -2.7264,
+      1.7705,
+      2.239,
+      -0.1271
+    ],
+    "loudness_raw_db": [
+      -23.2444,
+      -26.8013,
+      -28.3195,
+      -29.9062
+    ],
+    "loudness_db": [
+      -25.9708,
+      -25.0308,
+      -26.0805,
+      -30.0333
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "gains_db": [
+      -0.808,
+      -1.748,
+      -0.6983,
+      3.2544
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "arahkan keseimbangan mix agar vokal seimbang natural, set drum rata dan wajar, low-end bass proporsional tanpa tonjolan, instrumen lainnya seimbang natural",
+    "prompt_template": "test_balanced_reference_v1_f0"
+  },
+  {
+    "id": "test_0002_ex00_p02",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 0.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex00.npy",
+    "g0_db": [
+      -2.7264,
+      1.7705,
+      2.239,
+      -0.1271
+    ],
+    "loudness_raw_db": [
+      -23.2444,
+      -26.8013,
+      -28.3195,
+      -29.9062
+    ],
+    "loudness_db": [
+      -25.9708,
+      -25.0308,
+      -26.0805,
+      -30.0333
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "gains_db": [
+      -0.808,
+      -1.748,
+      -0.6983,
+      3.2544
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "buat karakter campuran di mana suara penyanyi rata dan wajar, bass seimbang natural, musik pengiring rata dan wajar",
+    "prompt_template": "test_balanced_reference_v1_f1"
+  },
+  {
+    "id": "test_0002_ex00_p03",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 0.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex00.npy",
+    "g0_db": [
+      -2.7264,
+      1.7705,
+      2.239,
+      -0.1271
+    ],
+    "loudness_raw_db": [
+      -23.2444,
+      -26.8013,
+      -28.3195,
+      -29.9062
+    ],
+    "loudness_db": [
+      -25.9708,
+      -25.0308,
+      -26.0805,
+      -30.0333
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "gains_db": [
+      -0.808,
+      -1.748,
+      -0.6983,
+      3.2544
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "setel gain supaya drum seimbang natural, lead vokal proporsional tanpa tonjolan, elemen harmonis proporsional tanpa tonjolan, alunan bass rata dan wajar",
+    "prompt_template": "test_balanced_reference_v1_f2"
+  },
+  {
+    "id": "test_0002_ex00_p04",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 0.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex00.npy",
+    "g0_db": [
+      -2.7264,
+      1.7705,
+      2.239,
+      -0.1271
+    ],
+    "loudness_raw_db": [
+      -23.2444,
+      -26.8013,
+      -28.3195,
+      -29.9062
+    ],
+    "loudness_db": [
+      -25.9708,
+      -25.0308,
+      -26.0805,
+      -30.0333
+    ],
+    "balance_target": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "gains_db": [
+      -0.808,
+      -1.748,
+      -0.6983,
+      3.2544
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "hasilkan mix dengan vokal seimbang natural, instrumen lainnya seimbang natural, set drum rata dan wajar",
+    "prompt_template": "test_balanced_reference_v1_f3"
+  },
+  {
+    "id": "test_0002_ex01_p01",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 22.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex01.npy",
+    "g0_db": [
+      -0.6037,
+      2.8954,
+      1.3155,
+      2.0405
+    ],
+    "loudness_raw_db": [
+      -24.4462,
+      -28.5633,
+      -27.193,
+      -33.122
+    ],
+    "loudness_db": [
+      -25.0499,
+      -25.6679,
+      -25.8775,
+      -31.0815
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "gains_db": [
+      1.1307,
+      1.7487,
+      -4.0417,
+      1.1623
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "arahkan keseimbangan mix agar vokal lebih ke permukaan, set drum diangkat lebih terasa, low-end bass dikecilkan, instrumen lainnya ditarik mundur",
+    "prompt_template": "test_vocal_drum_duet_v1_f0"
+  },
+  {
+    "id": "test_0002_ex01_p02",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 22.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex01.npy",
+    "g0_db": [
+      -0.6037,
+      2.8954,
+      1.3155,
+      2.0405
+    ],
+    "loudness_raw_db": [
+      -24.4462,
+      -28.5633,
+      -27.193,
+      -33.122
+    ],
+    "loudness_db": [
+      -25.0499,
+      -25.6679,
+      -25.8775,
+      -31.0815
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "gains_db": [
+      1.1307,
+      1.7487,
+      -4.0417,
+      1.1623
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "buat karakter campuran di mana suara penyanyi diangkat lebih terasa, bass ditarik mundur, hentakan drum lebih kuat, musik pengiring lebih lembut di belakang",
+    "prompt_template": "test_vocal_drum_duet_v1_f1"
+  },
+  {
+    "id": "test_0002_ex01_p03",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 22.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex01.npy",
+    "g0_db": [
+      -0.6037,
+      2.8954,
+      1.3155,
+      2.0405
+    ],
+    "loudness_raw_db": [
+      -24.4462,
+      -28.5633,
+      -27.193,
+      -33.122
+    ],
+    "loudness_db": [
+      -25.0499,
+      -25.6679,
+      -25.8775,
+      -31.0815
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "gains_db": [
+      1.1307,
+      1.7487,
+      -4.0417,
+      1.1623
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "setel gain supaya drum lebih ke permukaan, lead vokal lebih kuat, elemen harmonis dikecilkan, alunan bass lebih lembut di belakang",
+    "prompt_template": "test_vocal_drum_duet_v1_f2"
+  },
+  {
+    "id": "test_0002_ex01_p04",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 22.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex01.npy",
+    "g0_db": [
+      -0.6037,
+      2.8954,
+      1.3155,
+      2.0405
+    ],
+    "loudness_raw_db": [
+      -24.4462,
+      -28.5633,
+      -27.193,
+      -33.122
+    ],
+    "loudness_db": [
+      -25.0499,
+      -25.6679,
+      -25.8775,
+      -31.0815
+    ],
+    "balance_target": [
+      3.0,
+      3.0,
+      -3.0,
+      -3.0
+    ],
+    "gains_db": [
+      1.1307,
+      1.7487,
+      -4.0417,
+      1.1623
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "hasilkan mix dengan vokal lebih ke permukaan, instrumen lainnya ditarik mundur, set drum diangkat lebih terasa, low-end bass dikecilkan",
+    "prompt_template": "test_vocal_drum_duet_v1_f3"
+  },
+  {
+    "id": "test_0002_ex02_p01",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 42.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex02.npy",
+    "g0_db": [
+      0.0527,
+      -2.6905,
+      2.0927,
+      -1.1877
+    ],
+    "loudness_raw_db": [
+      -23.5192,
+      -28.0433,
+      -24.0371,
+      -29.9761
+    ],
+    "loudness_db": [
+      -23.4665,
+      -30.7338,
+      -21.9444,
+      -31.1638
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "gains_db": [
+      -0.1106,
+      1.1567,
+      -7.6327,
+      6.5867
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "arahkan keseimbangan mix agar vokal lebih ke permukaan, set drum lebih lembut di belakang, low-end bass dikecilkan, instrumen lainnya sedikit diangkat",
+    "prompt_template": "test_rhythm_tucked_back_v1_f0"
+  },
+  {
+    "id": "test_0002_ex02_p02",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 42.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex02.npy",
+    "g0_db": [
+      0.0527,
+      -2.6905,
+      2.0927,
+      -1.1877
+    ],
+    "loudness_raw_db": [
+      -23.5192,
+      -28.0433,
+      -24.0371,
+      -29.9761
+    ],
+    "loudness_db": [
+      -23.4665,
+      -30.7338,
+      -21.9444,
+      -31.1638
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "gains_db": [
+      -0.1106,
+      1.1567,
+      -7.6327,
+      6.5867
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "buat karakter campuran di mana suara penyanyi diangkat lebih terasa, bass ditarik mundur, hentakan drum dikecilkan, musik pengiring agak lebih terasa",
+    "prompt_template": "test_rhythm_tucked_back_v1_f1"
+  },
+  {
+    "id": "test_0002_ex02_p03",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 42.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex02.npy",
+    "g0_db": [
+      0.0527,
+      -2.6905,
+      2.0927,
+      -1.1877
+    ],
+    "loudness_raw_db": [
+      -23.5192,
+      -28.0433,
+      -24.0371,
+      -29.9761
+    ],
+    "loudness_db": [
+      -23.4665,
+      -30.7338,
+      -21.9444,
+      -31.1638
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "gains_db": [
+      -0.1106,
+      1.1567,
+      -7.6327,
+      6.5867
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "setel gain supaya drum ditarik mundur, lead vokal lebih kuat, elemen harmonis sedikit ke depan, alunan bass lebih lembut di belakang",
+    "prompt_template": "test_rhythm_tucked_back_v1_f2"
+  },
+  {
+    "id": "test_0002_ex02_p04",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 42.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex02.npy",
+    "g0_db": [
+      0.0527,
+      -2.6905,
+      2.0927,
+      -1.1877
+    ],
+    "loudness_raw_db": [
+      -23.5192,
+      -28.0433,
+      -24.0371,
+      -29.9761
+    ],
+    "loudness_db": [
+      -23.4665,
+      -30.7338,
+      -21.9444,
+      -31.1638
+    ],
+    "balance_target": [
+      3.25,
+      -2.75,
+      -2.75,
+      2.25
+    ],
+    "gains_db": [
+      -0.1106,
+      1.1567,
+      -7.6327,
+      6.5867
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "hasilkan mix dengan vokal lebih ke permukaan, low-end bass dikecilkan, set drum lebih lembut di belakang, instrumen lainnya sedikit diangkat",
+    "prompt_template": "test_rhythm_tucked_back_v1_f3"
+  },
+  {
+    "id": "test_0002_ex03_p01",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 64.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex03.npy",
+    "g0_db": [
+      2.9523,
+      2.1912,
+      -1.355,
+      -0.012
+    ],
+    "loudness_raw_db": [
+      -24.6099,
+      -28.8538,
+      -29.0726,
+      -32.318
+    ],
+    "loudness_db": [
+      -21.6576,
+      -26.6626,
+      -30.4276,
+      -32.33
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "gains_db": [
+      -3.8619,
+      1.1431,
+      -2.0919,
+      4.8106
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "arahkan keseimbangan mix agar vokal sedikit diangkat, set drum agak lebih terasa, low-end bass jauh dikecilkan, instrumen lainnya seimbang natural",
+    "prompt_template": "test_bass_tucked_clean_v1_f0"
+  },
+  {
+    "id": "test_0002_ex03_p02",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 64.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex03.npy",
+    "g0_db": [
+      2.9523,
+      2.1912,
+      -1.355,
+      -0.012
+    ],
+    "loudness_raw_db": [
+      -24.6099,
+      -28.8538,
+      -29.0726,
+      -32.318
+    ],
+    "loudness_db": [
+      -21.6576,
+      -26.6626,
+      -30.4276,
+      -32.33
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "gains_db": [
+      -3.8619,
+      1.1431,
+      -2.0919,
+      4.8106
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "buat karakter campuran di mana suara penyanyi agak lebih terasa, bass paling belakang, hentakan drum sedikit ke depan",
+    "prompt_template": "test_bass_tucked_clean_v1_f1"
+  },
+  {
+    "id": "test_0002_ex03_p03",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 64.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex03.npy",
+    "g0_db": [
+      2.9523,
+      2.1912,
+      -1.355,
+      -0.012
+    ],
+    "loudness_raw_db": [
+      -24.6099,
+      -28.8538,
+      -29.0726,
+      -32.318
+    ],
+    "loudness_db": [
+      -21.6576,
+      -26.6626,
+      -30.4276,
+      -32.33
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "gains_db": [
+      -3.8619,
+      1.1431,
+      -2.0919,
+      4.8106
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "setel gain supaya drum sedikit diangkat, lead vokal sedikit ke depan, elemen harmonis proporsional tanpa tonjolan, alunan bass sangat lembut di latar",
+    "prompt_template": "test_bass_tucked_clean_v1_f2"
+  },
+  {
+    "id": "test_0002_ex03_p04",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 64.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex03.npy",
+    "g0_db": [
+      2.9523,
+      2.1912,
+      -1.355,
+      -0.012
+    ],
+    "loudness_raw_db": [
+      -24.6099,
+      -28.8538,
+      -29.0726,
+      -32.318
+    ],
+    "loudness_db": [
+      -21.6576,
+      -26.6626,
+      -30.4276,
+      -32.33
+    ],
+    "balance_target": [
+      2.25,
+      2.25,
+      -4.75,
+      0.25
+    ],
+    "gains_db": [
+      -3.8619,
+      1.1431,
+      -2.0919,
+      4.8106
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "hasilkan mix dengan instrumen lainnya seimbang natural, low-end bass jauh dikecilkan, vokal sedikit diangkat, set drum agak lebih terasa",
+    "prompt_template": "test_bass_tucked_clean_v1_f3"
+  },
+  {
+    "id": "test_0002_ex04_p01",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 86.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex04.npy",
+    "g0_db": [
+      -0.4864,
+      -0.6934,
+      -2.1048,
+      -0.3202
+    ],
+    "loudness_raw_db": [
+      -24.7316,
+      -27.5702,
+      -26.9908,
+      -32.3297
+    ],
+    "loudness_db": [
+      -25.218,
+      -28.2636,
+      -29.0956,
+      -32.6499
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "gains_db": [
+      -1.3388,
+      -5.2932,
+      0.5388,
+      6.0931
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "arahkan keseimbangan mix agar vokal sedikit diangkat, set drum sangat lembut di latar, low-end bass proporsional tanpa tonjolan, instrumen lainnya sedikit diangkat",
+    "prompt_template": "test_drums_tucked_soft_v1_f0"
+  },
+  {
+    "id": "test_0002_ex04_p02",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 86.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex04.npy",
+    "g0_db": [
+      -0.4864,
+      -0.6934,
+      -2.1048,
+      -0.3202
+    ],
+    "loudness_raw_db": [
+      -24.7316,
+      -27.5702,
+      -26.9908,
+      -32.3297
+    ],
+    "loudness_db": [
+      -25.218,
+      -28.2636,
+      -29.0956,
+      -32.6499
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "gains_db": [
+      -1.3388,
+      -5.2932,
+      0.5388,
+      6.0931
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "buat karakter campuran di mana suara penyanyi agak lebih terasa, bass seimbang natural, hentakan drum jauh dikecilkan, musik pengiring agak lebih terasa",
+    "prompt_template": "test_drums_tucked_soft_v1_f1"
+  },
+  {
+    "id": "test_0002_ex04_p03",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 86.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex04.npy",
+    "g0_db": [
+      -0.4864,
+      -0.6934,
+      -2.1048,
+      -0.3202
+    ],
+    "loudness_raw_db": [
+      -24.7316,
+      -27.5702,
+      -26.9908,
+      -32.3297
+    ],
+    "loudness_db": [
+      -25.218,
+      -28.2636,
+      -29.0956,
+      -32.6499
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "gains_db": [
+      -1.3388,
+      -5.2932,
+      0.5388,
+      6.0931
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "setel gain supaya drum paling belakang, lead vokal sedikit ke depan, elemen harmonis sedikit ke depan, alunan bass rata dan wajar",
+    "prompt_template": "test_drums_tucked_soft_v1_f2"
+  },
+  {
+    "id": "test_0002_ex04_p04",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 86.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex04.npy",
+    "g0_db": [
+      -0.4864,
+      -0.6934,
+      -2.1048,
+      -0.3202
+    ],
+    "loudness_raw_db": [
+      -24.7316,
+      -27.5702,
+      -26.9908,
+      -32.3297
+    ],
+    "loudness_db": [
+      -25.218,
+      -28.2636,
+      -29.0956,
+      -32.6499
+    ],
+    "balance_target": [
+      2.25,
+      -4.75,
+      0.25,
+      2.25
+    ],
+    "gains_db": [
+      -1.3388,
+      -5.2932,
+      0.5388,
+      6.0931
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "hasilkan mix dengan low-end bass proporsional tanpa tonjolan, set drum sangat lembut di latar, instrumen lainnya sedikit diangkat, vokal sedikit diangkat",
+    "prompt_template": "test_drums_tucked_soft_v1_f3"
+  },
+  {
+    "id": "test_0002_ex05_p01",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 106.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex05.npy",
+    "g0_db": [
+      1.3758,
+      2.1449,
+      -0.4661,
+      1.4307
+    ],
+    "loudness_raw_db": [
+      -24.469,
+      -28.2603,
+      -23.8797,
+      -29.9408
+    ],
+    "loudness_db": [
+      -23.0932,
+      -26.1154,
+      -24.3458,
+      -28.5101
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "gains_db": [
+      -0.9229,
+      3.0993,
+      0.3297,
+      -2.5061
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "arahkan keseimbangan mix agar vokal sedikit diangkat, set drum diangkat lebih terasa, low-end bass sedikit ke depan, instrumen lainnya paling belakang",
+    "prompt_template": "test_full_band_energetic_v1_f0"
+  },
+  {
+    "id": "test_0002_ex05_p02",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 106.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex05.npy",
+    "g0_db": [
+      1.3758,
+      2.1449,
+      -0.4661,
+      1.4307
+    ],
+    "loudness_raw_db": [
+      -24.469,
+      -28.2603,
+      -23.8797,
+      -29.9408
+    ],
+    "loudness_db": [
+      -23.0932,
+      -26.1154,
+      -24.3458,
+      -28.5101
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "gains_db": [
+      -0.9229,
+      3.0993,
+      0.3297,
+      -2.5061
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "buat karakter campuran di mana suara penyanyi agak lebih terasa, bass sedikit diangkat, hentakan drum lebih kuat, musik pengiring sangat lembut di latar",
+    "prompt_template": "test_full_band_energetic_v1_f1"
+  },
+  {
+    "id": "test_0002_ex05_p03",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 106.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex05.npy",
+    "g0_db": [
+      1.3758,
+      2.1449,
+      -0.4661,
+      1.4307
+    ],
+    "loudness_raw_db": [
+      -24.469,
+      -28.2603,
+      -23.8797,
+      -29.9408
+    ],
+    "loudness_db": [
+      -23.0932,
+      -26.1154,
+      -24.3458,
+      -28.5101
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "gains_db": [
+      -0.9229,
+      3.0993,
+      0.3297,
+      -2.5061
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "setel gain supaya drum lebih ke permukaan, lead vokal sedikit ke depan, elemen harmonis jauh dikecilkan, alunan bass agak lebih terasa",
+    "prompt_template": "test_full_band_energetic_v1_f2"
+  },
+  {
+    "id": "test_0002_ex05_p04",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 106.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex05.npy",
+    "g0_db": [
+      1.3758,
+      2.1449,
+      -0.4661,
+      1.4307
+    ],
+    "loudness_raw_db": [
+      -24.469,
+      -28.2603,
+      -23.8797,
+      -29.9408
+    ],
+    "loudness_db": [
+      -23.0932,
+      -26.1154,
+      -24.3458,
+      -28.5101
+    ],
+    "balance_target": [
+      1.5,
+      2.5,
+      1.5,
+      -5.5
+    ],
+    "gains_db": [
+      -0.9229,
+      3.0993,
+      0.3297,
+      -2.5061
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "hasilkan mix dengan set drum diangkat lebih terasa, low-end bass sedikit ke depan, instrumen lainnya paling belakang, vokal sedikit diangkat",
+    "prompt_template": "test_full_band_energetic_v1_f3"
+  },
+  {
+    "id": "test_0002_ex06_p01",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 128.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex06.npy",
+    "g0_db": [
+      1.7089,
+      -0.3007,
+      -1.4914,
+      -2.6758
+    ],
+    "loudness_raw_db": [
+      -23.9039,
+      -27.7356,
+      -26.9252,
+      -29.5552
+    ],
+    "loudness_db": [
+      -22.195,
+      -28.0363,
+      -28.4166,
+      -32.231
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "gains_db": [
+      -0.5247,
+      0.3166,
+      -1.3031,
+      1.5113
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "arahkan keseimbangan mix agar vokal paling depan dan jelas, set drum rata dan wajar, low-end bass jangan terlalu maju, instrumen lainnya ditarik mundur",
+    "prompt_template": "test_vocal_forward_v1_f0"
+  },
+  {
+    "id": "test_0002_ex06_p02",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 128.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex06.npy",
+    "g0_db": [
+      1.7089,
+      -0.3007,
+      -1.4914,
+      -2.6758
+    ],
+    "loudness_raw_db": [
+      -23.9039,
+      -27.7356,
+      -26.9252,
+      -29.5552
+    ],
+    "loudness_db": [
+      -22.195,
+      -28.0363,
+      -28.4166,
+      -32.231
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "gains_db": [
+      -0.5247,
+      0.3166,
+      -1.3031,
+      1.5113
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "buat karakter campuran di mana suara penyanyi sangat tegas di depan, bass agak ditahan, musik pengiring lebih lembut di belakang",
+    "prompt_template": "test_vocal_forward_v1_f1"
+  },
+  {
+    "id": "test_0002_ex06_p03",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 128.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex06.npy",
+    "g0_db": [
+      1.7089,
+      -0.3007,
+      -1.4914,
+      -2.6758
+    ],
+    "loudness_raw_db": [
+      -23.9039,
+      -27.7356,
+      -26.9252,
+      -29.5552
+    ],
+    "loudness_db": [
+      -22.195,
+      -28.0363,
+      -28.4166,
+      -32.231
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "gains_db": [
+      -0.5247,
+      0.3166,
+      -1.3031,
+      1.5113
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "setel gain supaya drum seimbang natural, lead vokal dominan utama, elemen harmonis dikecilkan, alunan bass sedikit dikurangi",
+    "prompt_template": "test_vocal_forward_v1_f2"
+  },
+  {
+    "id": "test_0002_ex06_p04",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 128.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex06.npy",
+    "g0_db": [
+      1.7089,
+      -0.3007,
+      -1.4914,
+      -2.6758
+    ],
+    "loudness_raw_db": [
+      -23.9039,
+      -27.7356,
+      -26.9252,
+      -29.5552
+    ],
+    "loudness_db": [
+      -22.195,
+      -28.0363,
+      -28.4166,
+      -32.231
+    ],
+    "balance_target": [
+      5.0,
+      0.0,
+      -2.0,
+      -3.0
+    ],
+    "gains_db": [
+      -0.5247,
+      0.3166,
+      -1.3031,
+      1.5113
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "hasilkan mix dengan low-end bass jangan terlalu maju, set drum rata dan wajar, vokal paling depan dan jelas, instrumen lainnya ditarik mundur",
+    "prompt_template": "test_vocal_forward_v1_f3"
+  },
+  {
+    "id": "test_0002_ex07_p01",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 150.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex07.npy",
+    "g0_db": [
+      -2.0728,
+      -0.7972,
+      1.2427,
+      0.298
+    ],
+    "loudness_raw_db": [
+      -23.9079,
+      -28.3169,
+      -23.3264,
+      -28.6697
+    ],
+    "loudness_db": [
+      -25.9807,
+      -29.1141,
+      -22.0837,
+      -28.3717
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "gains_db": [
+      4.5931,
+      -0.2734,
+      -4.3038,
+      -0.0159
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "arahkan keseimbangan mix agar vokal paling depan dan jelas, set drum lebih lembut di belakang, low-end bass proporsional tanpa tonjolan, instrumen lainnya agak ditahan",
+    "prompt_template": "test_vocal_warm_ballad_v1_f0"
+  },
+  {
+    "id": "test_0002_ex07_p02",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 150.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex07.npy",
+    "g0_db": [
+      -2.0728,
+      -0.7972,
+      1.2427,
+      0.298
+    ],
+    "loudness_raw_db": [
+      -23.9079,
+      -28.3169,
+      -23.3264,
+      -28.6697
+    ],
+    "loudness_db": [
+      -25.9807,
+      -29.1141,
+      -22.0837,
+      -28.3717
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "gains_db": [
+      4.5931,
+      -0.2734,
+      -4.3038,
+      -0.0159
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "buat karakter campuran di mana suara penyanyi sangat tegas di depan, bass seimbang natural, hentakan drum dikecilkan, musik pengiring sedikit dikurangi",
+    "prompt_template": "test_vocal_warm_ballad_v1_f1"
+  },
+  {
+    "id": "test_0002_ex07_p03",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 150.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex07.npy",
+    "g0_db": [
+      -2.0728,
+      -0.7972,
+      1.2427,
+      0.298
+    ],
+    "loudness_raw_db": [
+      -23.9079,
+      -28.3169,
+      -23.3264,
+      -28.6697
+    ],
+    "loudness_db": [
+      -25.9807,
+      -29.1141,
+      -22.0837,
+      -28.3717
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "gains_db": [
+      4.5931,
+      -0.2734,
+      -4.3038,
+      -0.0159
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "setel gain supaya drum ditarik mundur, lead vokal dominan utama, elemen harmonis jangan terlalu maju, alunan bass rata dan wajar",
+    "prompt_template": "test_vocal_warm_ballad_v1_f2"
+  },
+  {
+    "id": "test_0002_ex07_p04",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 150.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex07.npy",
+    "g0_db": [
+      -2.0728,
+      -0.7972,
+      1.2427,
+      0.298
+    ],
+    "loudness_raw_db": [
+      -23.9079,
+      -28.3169,
+      -23.3264,
+      -28.6697
+    ],
+    "loudness_db": [
+      -25.9807,
+      -29.1141,
+      -22.0837,
+      -28.3717
+    ],
+    "balance_target": [
+      5.0,
+      -3.0,
+      0.0,
+      -2.0
+    ],
+    "gains_db": [
+      4.5931,
+      -0.2734,
+      -4.3038,
+      -0.0159
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "hasilkan mix dengan instrumen lainnya agak ditahan, low-end bass proporsional tanpa tonjolan, vokal paling depan dan jelas, set drum lebih lembut di belakang",
+    "prompt_template": "test_vocal_warm_ballad_v1_f3"
+  },
+  {
+    "id": "test_0002_ex08_p01",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 170.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex08.npy",
+    "g0_db": [
+      2.8644,
+      0.1103,
+      1.1943,
+      2.3724
+    ],
+    "loudness_raw_db": [
+      -20.4996,
+      -27.6823,
+      -25.4651,
+      -28.5839
+    ],
+    "loudness_db": [
+      -17.6352,
+      -27.572,
+      -24.2708,
+      -26.2115
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "gains_db": [
+      -3.5372,
+      3.3996,
+      -1.9016,
+      2.0392
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "arahkan keseimbangan mix agar vokal lebih ke permukaan, set drum rata dan wajar, low-end bass jangan terlalu maju, instrumen lainnya seimbang natural",
+    "prompt_template": "test_vocal_subtle_lift_v1_f0"
+  },
+  {
+    "id": "test_0002_ex08_p02",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 170.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex08.npy",
+    "g0_db": [
+      2.8644,
+      0.1103,
+      1.1943,
+      2.3724
+    ],
+    "loudness_raw_db": [
+      -20.4996,
+      -27.6823,
+      -25.4651,
+      -28.5839
+    ],
+    "loudness_db": [
+      -17.6352,
+      -27.572,
+      -24.2708,
+      -26.2115
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "gains_db": [
+      -3.5372,
+      3.3996,
+      -1.9016,
+      2.0392
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "buat karakter campuran di mana suara penyanyi diangkat lebih terasa, bass agak ditahan, musik pengiring rata dan wajar",
+    "prompt_template": "test_vocal_subtle_lift_v1_f1"
+  },
+  {
+    "id": "test_0002_ex08_p03",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 170.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex08.npy",
+    "g0_db": [
+      2.8644,
+      0.1103,
+      1.1943,
+      2.3724
+    ],
+    "loudness_raw_db": [
+      -20.4996,
+      -27.6823,
+      -25.4651,
+      -28.5839
+    ],
+    "loudness_db": [
+      -17.6352,
+      -27.572,
+      -24.2708,
+      -26.2115
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "gains_db": [
+      -3.5372,
+      3.3996,
+      -1.9016,
+      2.0392
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "setel gain supaya drum seimbang natural, lead vokal lebih kuat, elemen harmonis proporsional tanpa tonjolan, alunan bass sedikit dikurangi",
+    "prompt_template": "test_vocal_subtle_lift_v1_f2"
+  },
+  {
+    "id": "test_0002_ex08_p04",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 170.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex08.npy",
+    "g0_db": [
+      2.8644,
+      0.1103,
+      1.1943,
+      2.3724
+    ],
+    "loudness_raw_db": [
+      -20.4996,
+      -27.6823,
+      -25.4651,
+      -28.5839
+    ],
+    "loudness_db": [
+      -17.6352,
+      -27.572,
+      -24.2708,
+      -26.2115
+    ],
+    "balance_target": [
+      2.75,
+      -0.25,
+      -2.25,
+      -0.25
+    ],
+    "gains_db": [
+      -3.5372,
+      3.3996,
+      -1.9016,
+      2.0392
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "hasilkan mix dengan vokal lebih ke permukaan, set drum rata dan wajar, low-end bass jangan terlalu maju",
+    "prompt_template": "test_vocal_subtle_lift_v1_f3"
+  },
+  {
+    "id": "test_0002_ex09_p01",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 192.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex09.npy",
+    "g0_db": [
+      -2.4528,
+      2.765,
+      1.8168,
+      -2.1881
+    ],
+    "loudness_raw_db": [
+      -20.075,
+      -29.0622,
+      -25.4316,
+      -28.3244
+    ],
+    "loudness_db": [
+      -22.5278,
+      -26.2972,
+      -23.6148,
+      -30.5125
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "gains_db": [
+      0.2897,
+      -3.9409,
+      -3.6233,
+      7.2744
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "arahkan keseimbangan mix agar vokal lebih ke permukaan, set drum sangat lembut di latar, low-end bass jangan terlalu maju, instrumen lainnya sedikit diangkat",
+    "prompt_template": "test_vocal_intimate_acoustic_v1_f0"
+  },
+  {
+    "id": "test_0002_ex09_p02",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 192.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex09.npy",
+    "g0_db": [
+      -2.4528,
+      2.765,
+      1.8168,
+      -2.1881
+    ],
+    "loudness_raw_db": [
+      -20.075,
+      -29.0622,
+      -25.4316,
+      -28.3244
+    ],
+    "loudness_db": [
+      -22.5278,
+      -26.2972,
+      -23.6148,
+      -30.5125
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "gains_db": [
+      0.2897,
+      -3.9409,
+      -3.6233,
+      7.2744
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "buat karakter campuran di mana suara penyanyi diangkat lebih terasa, bass agak ditahan, hentakan drum jauh dikecilkan, musik pengiring agak lebih terasa",
+    "prompt_template": "test_vocal_intimate_acoustic_v1_f1"
+  },
+  {
+    "id": "test_0002_ex09_p03",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 192.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex09.npy",
+    "g0_db": [
+      -2.4528,
+      2.765,
+      1.8168,
+      -2.1881
+    ],
+    "loudness_raw_db": [
+      -20.075,
+      -29.0622,
+      -25.4316,
+      -28.3244
+    ],
+    "loudness_db": [
+      -22.5278,
+      -26.2972,
+      -23.6148,
+      -30.5125
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "gains_db": [
+      0.2897,
+      -3.9409,
+      -3.6233,
+      7.2744
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "setel gain supaya drum paling belakang, lead vokal lebih kuat, elemen harmonis sedikit ke depan, alunan bass sedikit dikurangi",
+    "prompt_template": "test_vocal_intimate_acoustic_v1_f2"
+  },
+  {
+    "id": "test_0002_ex09_p04",
+    "song": "Al James - Schoolboy Facination",
+    "artist": "Al James",
+    "split": "test",
+    "excerpt_start_sec": 192.0,
+    "duration_sec": 8.0,
+    "audio_path": "data/cache/logmel/test/test_0002_ex09.npy",
+    "g0_db": [
+      -2.4528,
+      2.765,
+      1.8168,
+      -2.1881
+    ],
+    "loudness_raw_db": [
+      -20.075,
+      -29.0622,
+      -25.4316,
+      -28.3244
+    ],
+    "loudness_db": [
+      -22.5278,
+      -26.2972,
+      -23.6148,
+      -30.5125
+    ],
+    "balance_target": [
+      3.5,
+      -4.5,
+      -1.5,
+      2.5
+    ],
+    "gains_db": [
+      0.2897,
+      -3.9409,
+      -3.6233,
+      7.2744
+    ],
+    "active_mask": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "prompt": "hasilkan mix dengan low-end bass jangan terlalu maju, set drum sangat lembut di latar, vokal lebih ke permukaan, instrumen lainnya sedikit diangkat",
+    "prompt_template": "test_vocal_intimate_acoustic_v1_f3"
+  }
+]

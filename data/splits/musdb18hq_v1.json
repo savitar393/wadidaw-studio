@@ -1,0 +1,1524 @@
+{
+  "dataset": "MUSDB18-HQ",
+  "version": "musdb18hq_v1",
+  "seed": 2026,
+  "stem_names": [
+    "vocals",
+    "drums",
+    "bass",
+    "other"
+  ],
+  "counts": {
+    "train": 80,
+    "validation": 20,
+    "test": 50
+  },
+  "splits": {
+    "train": [
+      {
+        "index": 0,
+        "song": "A Classic Education - NightOwl",
+        "artist": "A Classic Education",
+        "subset": "train",
+        "relative_dir": "train/A Classic Education - NightOwl",
+        "sample_rate": 44100,
+        "frames": 7560512,
+        "duration_sec": 171.4402
+      },
+      {
+        "index": 1,
+        "song": "ANiMAL - Clinic A",
+        "artist": "ANiMAL",
+        "subset": "train",
+        "relative_dir": "train/ANiMAL - Clinic A",
+        "sample_rate": 44100,
+        "frames": 10497966,
+        "duration_sec": 238.0491
+      },
+      {
+        "index": 2,
+        "song": "ANiMAL - Easy Tiger",
+        "artist": "ANiMAL",
+        "subset": "train",
+        "relative_dir": "train/ANiMAL - Easy Tiger",
+        "sample_rate": 44100,
+        "frames": 9069513,
+        "duration_sec": 205.6579
+      },
+      {
+        "index": 3,
+        "song": "ANiMAL - Rockshow",
+        "artist": "ANiMAL",
+        "subset": "train",
+        "relative_dir": "train/ANiMAL - Rockshow",
+        "sample_rate": 44100,
+        "frames": 7307212,
+        "duration_sec": 165.6964
+      },
+      {
+        "index": 4,
+        "song": "Actions - Devil's Words",
+        "artist": "Actions",
+        "subset": "train",
+        "relative_dir": "train/Actions - Devil's Words",
+        "sample_rate": 44100,
+        "frames": 8679219,
+        "duration_sec": 196.8077
+      },
+      {
+        "index": 5,
+        "song": "Actions - One Minute Smile",
+        "artist": "Actions",
+        "subset": "train",
+        "relative_dir": "train/Actions - One Minute Smile",
+        "sample_rate": 44100,
+        "frames": 7213530,
+        "duration_sec": 163.5721
+      },
+      {
+        "index": 6,
+        "song": "Actions - South Of The Water",
+        "artist": "Actions",
+        "subset": "train",
+        "relative_dir": "train/Actions - South Of The Water",
+        "sample_rate": 44100,
+        "frames": 7797007,
+        "duration_sec": 176.8029
+      },
+      {
+        "index": 8,
+        "song": "Alexander Ross - Goodbye Bolero",
+        "artist": "Alexander Ross",
+        "subset": "train",
+        "relative_dir": "train/Alexander Ross - Goodbye Bolero",
+        "sample_rate": 44100,
+        "frames": 18469819,
+        "duration_sec": 418.8168
+      },
+      {
+        "index": 9,
+        "song": "Alexander Ross - Velvet Curtain",
+        "artist": "Alexander Ross",
+        "subset": "train",
+        "relative_dir": "train/Alexander Ross - Velvet Curtain",
+        "sample_rate": 44100,
+        "frames": 22688931,
+        "duration_sec": 514.4882
+      },
+      {
+        "index": 12,
+        "song": "Auctioneer - Our Future Faces",
+        "artist": "Auctioneer",
+        "subset": "train",
+        "relative_dir": "train/Auctioneer - Our Future Faces",
+        "sample_rate": 44100,
+        "frames": 9167616,
+        "duration_sec": 207.8824
+      },
+      {
+        "index": 14,
+        "song": "BigTroubles - Phantom",
+        "artist": "BigTroubles",
+        "subset": "train",
+        "relative_dir": "train/BigTroubles - Phantom",
+        "sample_rate": 44100,
+        "frames": 6479872,
+        "duration_sec": 146.9359
+      },
+      {
+        "index": 16,
+        "song": "Black Bloc - If You Want Success",
+        "artist": "Black Bloc",
+        "subset": "train",
+        "relative_dir": "train/Black Bloc - If You Want Success",
+        "sample_rate": 44100,
+        "frames": 17584088,
+        "duration_sec": 398.7322
+      },
+      {
+        "index": 18,
+        "song": "Chris Durban - Celebrate",
+        "artist": "Chris Durban",
+        "subset": "train",
+        "relative_dir": "train/Chris Durban - Celebrate",
+        "sample_rate": 44100,
+        "frames": 13308750,
+        "duration_sec": 301.7857
+      },
+      {
+        "index": 19,
+        "song": "Clara Berry And Wooldog - Air Traffic",
+        "artist": "Clara Berry And Wooldog",
+        "subset": "train",
+        "relative_dir": "train/Clara Berry And Wooldog - Air Traffic",
+        "sample_rate": 44100,
+        "frames": 7648954,
+        "duration_sec": 173.4457
+      },
+      {
+        "index": 20,
+        "song": "Clara Berry And Wooldog - Stella",
+        "artist": "Clara Berry And Wooldog",
+        "subset": "train",
+        "relative_dir": "train/Clara Berry And Wooldog - Stella",
+        "sample_rate": 44100,
+        "frames": 8632221,
+        "duration_sec": 195.742
+      },
+      {
+        "index": 21,
+        "song": "Clara Berry And Wooldog - Waltz For My Victims",
+        "artist": "Clara Berry And Wooldog",
+        "subset": "train",
+        "relative_dir": "train/Clara Berry And Wooldog - Waltz For My Victims",
+        "sample_rate": 44100,
+        "frames": 7736477,
+        "duration_sec": 175.4303
+      },
+      {
+        "index": 22,
+        "song": "Cnoc An Tursa - Bannockburn",
+        "artist": "Cnoc An Tursa",
+        "subset": "train",
+        "relative_dir": "train/Cnoc An Tursa - Bannockburn",
+        "sample_rate": 44100,
+        "frames": 12996309,
+        "duration_sec": 294.7009
+      },
+      {
+        "index": 26,
+        "song": "Drumtracks - Ghost Bitch",
+        "artist": "Drumtracks",
+        "subset": "train",
+        "relative_dir": "train/Drumtracks - Ghost Bitch",
+        "sample_rate": 44100,
+        "frames": 15747834,
+        "duration_sec": 357.0937
+      },
+      {
+        "index": 27,
+        "song": "Faces On Film - Waiting For Ga",
+        "artist": "Faces On Film",
+        "subset": "train",
+        "relative_dir": "train/Faces On Film - Waiting For Ga",
+        "sample_rate": 44100,
+        "frames": 11361585,
+        "duration_sec": 257.6323
+      },
+      {
+        "index": 28,
+        "song": "Fergessen - Back From The Start",
+        "artist": "Fergessen",
+        "subset": "train",
+        "relative_dir": "train/Fergessen - Back From The Start",
+        "sample_rate": 44100,
+        "frames": 7441678,
+        "duration_sec": 168.7455
+      },
+      {
+        "index": 29,
+        "song": "Fergessen - Nos Palpitants",
+        "artist": "Fergessen",
+        "subset": "train",
+        "relative_dir": "train/Fergessen - Nos Palpitants",
+        "sample_rate": 44100,
+        "frames": 8749912,
+        "duration_sec": 198.4107
+      },
+      {
+        "index": 30,
+        "song": "Fergessen - The Wind",
+        "artist": "Fergessen",
+        "subset": "train",
+        "relative_dir": "train/Fergessen - The Wind",
+        "sample_rate": 44100,
+        "frames": 8467200,
+        "duration_sec": 192.0
+      },
+      {
+        "index": 31,
+        "song": "Flags - 54",
+        "artist": "Flags",
+        "subset": "train",
+        "relative_dir": "train/Flags - 54",
+        "sample_rate": 44100,
+        "frames": 13906659,
+        "duration_sec": 315.3437
+      },
+      {
+        "index": 32,
+        "song": "Giselle - Moss",
+        "artist": "Giselle",
+        "subset": "train",
+        "relative_dir": "train/Giselle - Moss",
+        "sample_rate": 44100,
+        "frames": 8903278,
+        "duration_sec": 201.8884
+      },
+      {
+        "index": 33,
+        "song": "Grants - PunchDrunk",
+        "artist": "Grants",
+        "subset": "train",
+        "relative_dir": "train/Grants - PunchDrunk",
+        "sample_rate": 44100,
+        "frames": 9022943,
+        "duration_sec": 204.6019
+      },
+      {
+        "index": 34,
+        "song": "Helado Negro - Mitad Del Mundo",
+        "artist": "Helado Negro",
+        "subset": "train",
+        "relative_dir": "train/Helado Negro - Mitad Del Mundo",
+        "sample_rate": 44100,
+        "frames": 8019600,
+        "duration_sec": 181.8503
+      },
+      {
+        "index": 35,
+        "song": "Hezekiah Jones - Borrowed Heart",
+        "artist": "Hezekiah Jones",
+        "subset": "train",
+        "relative_dir": "train/Hezekiah Jones - Borrowed Heart",
+        "sample_rate": 44100,
+        "frames": 10653609,
+        "duration_sec": 241.5784
+      },
+      {
+        "index": 36,
+        "song": "Hollow Ground - Left Blind",
+        "artist": "Hollow Ground",
+        "subset": "train",
+        "relative_dir": "train/Hollow Ground - Left Blind",
+        "sample_rate": 44100,
+        "frames": 7024697,
+        "duration_sec": 159.2902
+      },
+      {
+        "index": 37,
+        "song": "Hop Along - Sister Cities",
+        "artist": "Hop Along",
+        "subset": "train",
+        "relative_dir": "train/Hop Along - Sister Cities",
+        "sample_rate": 44100,
+        "frames": 12498897,
+        "duration_sec": 283.4217
+      },
+      {
+        "index": 39,
+        "song": "James May - All Souls Moon",
+        "artist": "James May",
+        "subset": "train",
+        "relative_dir": "train/James May - All Souls Moon",
+        "sample_rate": 44100,
+        "frames": 9748069,
+        "duration_sec": 221.0446
+      },
+      {
+        "index": 40,
+        "song": "James May - Dont Let Go",
+        "artist": "James May",
+        "subset": "train",
+        "relative_dir": "train/James May - Dont Let Go",
+        "sample_rate": 44100,
+        "frames": 10678500,
+        "duration_sec": 242.1429
+      },
+      {
+        "index": 41,
+        "song": "James May - If You Say",
+        "artist": "James May",
+        "subset": "train",
+        "relative_dir": "train/James May - If You Say",
+        "sample_rate": 44100,
+        "frames": 11399850,
+        "duration_sec": 258.5
+      },
+      {
+        "index": 42,
+        "song": "James May - On The Line",
+        "artist": "James May",
+        "subset": "train",
+        "relative_dir": "train/James May - On The Line",
+        "sample_rate": 44100,
+        "frames": 11301609,
+        "duration_sec": 256.2723
+      },
+      {
+        "index": 43,
+        "song": "Jay Menon - Through My Eyes",
+        "artist": "Jay Menon",
+        "subset": "train",
+        "relative_dir": "train/Jay Menon - Through My Eyes",
+        "sample_rate": 44100,
+        "frames": 11173050,
+        "duration_sec": 253.3571
+      },
+      {
+        "index": 44,
+        "song": "Johnny Lokke - Promises & Lies",
+        "artist": "Johnny Lokke",
+        "subset": "train",
+        "relative_dir": "train/Johnny Lokke - Promises & Lies",
+        "sample_rate": 44100,
+        "frames": 12612600,
+        "duration_sec": 286.0
+      },
+      {
+        "index": 45,
+        "song": "Johnny Lokke - Whisper To A Scream",
+        "artist": "Johnny Lokke",
+        "subset": "train",
+        "relative_dir": "train/Johnny Lokke - Whisper To A Scream",
+        "sample_rate": 44100,
+        "frames": 11268338,
+        "duration_sec": 255.5179
+      },
+      {
+        "index": 46,
+        "song": "Jokers, Jacks & Kings - Sea Of Leaves",
+        "artist": "Jokers, Jacks & Kings",
+        "subset": "train",
+        "relative_dir": "train/Jokers, Jacks & Kings - Sea Of Leaves",
+        "sample_rate": 44100,
+        "frames": 8451844,
+        "duration_sec": 191.6518
+      },
+      {
+        "index": 47,
+        "song": "Leaf - Come Around",
+        "artist": "Leaf",
+        "subset": "train",
+        "relative_dir": "train/Leaf - Come Around",
+        "sample_rate": 44100,
+        "frames": 11667994,
+        "duration_sec": 264.5804
+      },
+      {
+        "index": 48,
+        "song": "Leaf - Summerghost",
+        "artist": "Leaf",
+        "subset": "train",
+        "relative_dir": "train/Leaf - Summerghost",
+        "sample_rate": 44100,
+        "frames": 10231200,
+        "duration_sec": 232.0
+      },
+      {
+        "index": 49,
+        "song": "Leaf - Wicked",
+        "artist": "Leaf",
+        "subset": "train",
+        "relative_dir": "train/Leaf - Wicked",
+        "sample_rate": 44100,
+        "frames": 8415225,
+        "duration_sec": 190.8214
+      },
+      {
+        "index": 51,
+        "song": "Matthew Entwistle - Dont You Ever",
+        "artist": "Matthew Entwistle",
+        "subset": "train",
+        "relative_dir": "train/Matthew Entwistle - Dont You Ever",
+        "sample_rate": 44100,
+        "frames": 5028130,
+        "duration_sec": 114.0166
+      },
+      {
+        "index": 52,
+        "song": "Meaxic - Take A Step",
+        "artist": "Meaxic",
+        "subset": "train",
+        "relative_dir": "train/Meaxic - Take A Step",
+        "sample_rate": 44100,
+        "frames": 12467701,
+        "duration_sec": 282.7143
+      },
+      {
+        "index": 53,
+        "song": "Meaxic - You Listen",
+        "artist": "Meaxic",
+        "subset": "train",
+        "relative_dir": "train/Meaxic - You Listen",
+        "sample_rate": 44100,
+        "frames": 18200666,
+        "duration_sec": 412.7135
+      },
+      {
+        "index": 54,
+        "song": "Music Delta - 80s Rock",
+        "artist": "Music Delta",
+        "subset": "train",
+        "relative_dir": "train/Music Delta - 80s Rock",
+        "sample_rate": 44100,
+        "frames": 1628160,
+        "duration_sec": 36.9197
+      },
+      {
+        "index": 55,
+        "song": "Music Delta - Beatles",
+        "artist": "Music Delta",
+        "subset": "train",
+        "relative_dir": "train/Music Delta - Beatles",
+        "sample_rate": 44100,
+        "frames": 1604072,
+        "duration_sec": 36.3735
+      },
+      {
+        "index": 56,
+        "song": "Music Delta - Britpop",
+        "artist": "Music Delta",
+        "subset": "train",
+        "relative_dir": "train/Music Delta - Britpop",
+        "sample_rate": 44100,
+        "frames": 1622389,
+        "duration_sec": 36.7889
+      },
+      {
+        "index": 57,
+        "song": "Music Delta - Country1",
+        "artist": "Music Delta",
+        "subset": "train",
+        "relative_dir": "train/Music Delta - Country1",
+        "sample_rate": 44100,
+        "frames": 1532160,
+        "duration_sec": 34.7429
+      },
+      {
+        "index": 58,
+        "song": "Music Delta - Country2",
+        "artist": "Music Delta",
+        "subset": "train",
+        "relative_dir": "train/Music Delta - Country2",
+        "sample_rate": 44100,
+        "frames": 769760,
+        "duration_sec": 17.4549
+      },
+      {
+        "index": 59,
+        "song": "Music Delta - Disco",
+        "artist": "Music Delta",
+        "subset": "train",
+        "relative_dir": "train/Music Delta - Disco",
+        "sample_rate": 44100,
+        "frames": 5502796,
+        "duration_sec": 124.78
+      },
+      {
+        "index": 60,
+        "song": "Music Delta - Gospel",
+        "artist": "Music Delta",
+        "subset": "train",
+        "relative_dir": "train/Music Delta - Gospel",
+        "sample_rate": 44100,
+        "frames": 3340015,
+        "duration_sec": 75.7373
+      },
+      {
+        "index": 61,
+        "song": "Music Delta - Grunge",
+        "artist": "Music Delta",
+        "subset": "train",
+        "relative_dir": "train/Music Delta - Grunge",
+        "sample_rate": 44100,
+        "frames": 1845768,
+        "duration_sec": 41.8541
+      },
+      {
+        "index": 62,
+        "song": "Music Delta - Hendrix",
+        "artist": "Music Delta",
+        "subset": "train",
+        "relative_dir": "train/Music Delta - Hendrix",
+        "sample_rate": 44100,
+        "frames": 875118,
+        "duration_sec": 19.8439
+      },
+      {
+        "index": 63,
+        "song": "Music Delta - Punk",
+        "artist": "Music Delta",
+        "subset": "train",
+        "relative_dir": "train/Music Delta - Punk",
+        "sample_rate": 44100,
+        "frames": 1268428,
+        "duration_sec": 28.7625
+      },
+      {
+        "index": 64,
+        "song": "Music Delta - Reggae",
+        "artist": "Music Delta",
+        "subset": "train",
+        "relative_dir": "train/Music Delta - Reggae",
+        "sample_rate": 44100,
+        "frames": 770104,
+        "duration_sec": 17.4627
+      },
+      {
+        "index": 65,
+        "song": "Music Delta - Rock",
+        "artist": "Music Delta",
+        "subset": "train",
+        "relative_dir": "train/Music Delta - Rock",
+        "sample_rate": 44100,
+        "frames": 577320,
+        "duration_sec": 13.0912
+      },
+      {
+        "index": 66,
+        "song": "Music Delta - Rockabilly",
+        "artist": "Music Delta",
+        "subset": "train",
+        "relative_dir": "train/Music Delta - Rockabilly",
+        "sample_rate": 44100,
+        "frames": 1144358,
+        "duration_sec": 25.9492
+      },
+      {
+        "index": 67,
+        "song": "Night Panther - Fire",
+        "artist": "Night Panther",
+        "subset": "train",
+        "relative_dir": "train/Night Panther - Fire",
+        "sample_rate": 44100,
+        "frames": 9393128,
+        "duration_sec": 212.9961
+      },
+      {
+        "index": 68,
+        "song": "North To Alaska - All The Same",
+        "artist": "North To Alaska",
+        "subset": "train",
+        "relative_dir": "train/North To Alaska - All The Same",
+        "sample_rate": 44100,
+        "frames": 10943100,
+        "duration_sec": 248.1429
+      },
+      {
+        "index": 69,
+        "song": "Patrick Talbot - A Reason To Leave",
+        "artist": "Patrick Talbot",
+        "subset": "train",
+        "relative_dir": "train/Patrick Talbot - A Reason To Leave",
+        "sample_rate": 44100,
+        "frames": 11454778,
+        "duration_sec": 259.7455
+      },
+      {
+        "index": 70,
+        "song": "Patrick Talbot - Set Me Free",
+        "artist": "Patrick Talbot",
+        "subset": "train",
+        "relative_dir": "train/Patrick Talbot - Set Me Free",
+        "sample_rate": 44100,
+        "frames": 12788212,
+        "duration_sec": 289.9821
+      },
+      {
+        "index": 71,
+        "song": "Phre The Eon - Everybody's Falling Apart",
+        "artist": "Phre The Eon",
+        "subset": "train",
+        "relative_dir": "train/Phre The Eon - Everybody's Falling Apart",
+        "sample_rate": 44100,
+        "frames": 9896906,
+        "duration_sec": 224.4196
+      },
+      {
+        "index": 73,
+        "song": "Remember December - C U Next Time",
+        "artist": "Remember December",
+        "subset": "train",
+        "relative_dir": "train/Remember December - C U Next Time",
+        "sample_rate": 44100,
+        "frames": 10703664,
+        "duration_sec": 242.7135
+      },
+      {
+        "index": 74,
+        "song": "Secret Mountains - High Horse",
+        "artist": "Secret Mountains",
+        "subset": "train",
+        "relative_dir": "train/Secret Mountains - High Horse",
+        "sample_rate": 44100,
+        "frames": 15677568,
+        "duration_sec": 355.5004
+      },
+      {
+        "index": 75,
+        "song": "Skelpolu - Human Mistakes",
+        "artist": "Skelpolu",
+        "subset": "train",
+        "relative_dir": "train/Skelpolu - Human Mistakes",
+        "sample_rate": 44100,
+        "frames": 14318640,
+        "duration_sec": 324.6857
+      },
+      {
+        "index": 76,
+        "song": "Skelpolu - Together Alone",
+        "artist": "Skelpolu",
+        "subset": "train",
+        "relative_dir": "train/Skelpolu - Together Alone",
+        "sample_rate": 44100,
+        "frames": 14376601,
+        "duration_sec": 326.0
+      },
+      {
+        "index": 77,
+        "song": "Snowmine - Curfews",
+        "artist": "Snowmine",
+        "subset": "train",
+        "relative_dir": "train/Snowmine - Curfews",
+        "sample_rate": 44100,
+        "frames": 12136088,
+        "duration_sec": 275.1947
+      },
+      {
+        "index": 78,
+        "song": "Spike Mullings - Mike's Sulking",
+        "artist": "Spike Mullings",
+        "subset": "train",
+        "relative_dir": "train/Spike Mullings - Mike's Sulking",
+        "sample_rate": 44100,
+        "frames": 11328187,
+        "duration_sec": 256.875
+      },
+      {
+        "index": 81,
+        "song": "Strand Of Oaks - Spacestation",
+        "artist": "Strand Of Oaks",
+        "subset": "train",
+        "relative_dir": "train/Strand Of Oaks - Spacestation",
+        "sample_rate": 44100,
+        "frames": 10754304,
+        "duration_sec": 243.8618
+      },
+      {
+        "index": 82,
+        "song": "Sweet Lights - You Let Me Down",
+        "artist": "Sweet Lights",
+        "subset": "train",
+        "relative_dir": "train/Sweet Lights - You Let Me Down",
+        "sample_rate": 44100,
+        "frames": 17286400,
+        "duration_sec": 391.9819
+      },
+      {
+        "index": 84,
+        "song": "The Districts - Vermont",
+        "artist": "The Districts",
+        "subset": "train",
+        "relative_dir": "train/The Districts - Vermont",
+        "sample_rate": 44100,
+        "frames": 10061547,
+        "duration_sec": 228.153
+      },
+      {
+        "index": 85,
+        "song": "The Long Wait - Back Home To Blue",
+        "artist": "The Long Wait",
+        "subset": "train",
+        "relative_dir": "train/The Long Wait - Back Home To Blue",
+        "sample_rate": 44100,
+        "frames": 11494577,
+        "duration_sec": 260.648
+      },
+      {
+        "index": 87,
+        "song": "The So So Glos - Emergency",
+        "artist": "The So So Glos",
+        "subset": "train",
+        "relative_dir": "train/The So So Glos - Emergency",
+        "sample_rate": 44100,
+        "frames": 7364700,
+        "duration_sec": 167.0
+      },
+      {
+        "index": 89,
+        "song": "Tim Taler - Stalker",
+        "artist": "Tim Taler",
+        "subset": "train",
+        "relative_dir": "train/Tim Taler - Stalker",
+        "sample_rate": 44100,
+        "frames": 10487782,
+        "duration_sec": 237.8182
+      },
+      {
+        "index": 91,
+        "song": "Traffic Experiment - Once More (With Feeling)",
+        "artist": "Traffic Experiment",
+        "subset": "train",
+        "relative_dir": "train/Traffic Experiment - Once More (With Feeling)",
+        "sample_rate": 44100,
+        "frames": 19195080,
+        "duration_sec": 435.2626
+      },
+      {
+        "index": 92,
+        "song": "Traffic Experiment - Sirens",
+        "artist": "Traffic Experiment",
+        "subset": "train",
+        "relative_dir": "train/Traffic Experiment - Sirens",
+        "sample_rate": 44100,
+        "frames": 18586361,
+        "duration_sec": 421.4594
+      },
+      {
+        "index": 95,
+        "song": "Voelund - Comfort Lives In Belief",
+        "artist": "Voelund",
+        "subset": "train",
+        "relative_dir": "train/Voelund - Comfort Lives In Belief",
+        "sample_rate": 44100,
+        "frames": 9265200,
+        "duration_sec": 210.0952
+      },
+      {
+        "index": 96,
+        "song": "Wall Of Death - Femme",
+        "artist": "Wall Of Death",
+        "subset": "train",
+        "relative_dir": "train/Wall Of Death - Femme",
+        "sample_rate": 44100,
+        "frames": 10545019,
+        "duration_sec": 239.1161
+      },
+      {
+        "index": 97,
+        "song": "Young Griffo - Blood To Bone",
+        "artist": "Young Griffo",
+        "subset": "train",
+        "relative_dir": "train/Young Griffo - Blood To Bone",
+        "sample_rate": 44100,
+        "frames": 11227143,
+        "duration_sec": 254.5837
+      },
+      {
+        "index": 98,
+        "song": "Young Griffo - Facade",
+        "artist": "Young Griffo",
+        "subset": "train",
+        "relative_dir": "train/Young Griffo - Facade",
+        "sample_rate": 44100,
+        "frames": 7411162,
+        "duration_sec": 168.0536
+      },
+      {
+        "index": 99,
+        "song": "Young Griffo - Pennies",
+        "artist": "Young Griffo",
+        "subset": "train",
+        "relative_dir": "train/Young Griffo - Pennies",
+        "sample_rate": 44100,
+        "frames": 12259556,
+        "duration_sec": 277.9945
+      }
+    ],
+    "validation": [
+      {
+        "index": 7,
+        "song": "Aimee Norwich - Child",
+        "artist": "Aimee Norwich",
+        "subset": "train",
+        "relative_dir": "train/Aimee Norwich - Child",
+        "sample_rate": 44100,
+        "frames": 8346782,
+        "duration_sec": 189.2694
+      },
+      {
+        "index": 10,
+        "song": "Angela Thomas Wade - Milk Cow Blues",
+        "artist": "Angela Thomas Wade",
+        "subset": "train",
+        "relative_dir": "train/Angela Thomas Wade - Milk Cow Blues",
+        "sample_rate": 44100,
+        "frames": 9309038,
+        "duration_sec": 211.0893
+      },
+      {
+        "index": 11,
+        "song": "Atlantis Bound - It Was My Fault For Waiting",
+        "artist": "Atlantis Bound",
+        "subset": "train",
+        "relative_dir": "train/Atlantis Bound - It Was My Fault For Waiting",
+        "sample_rate": 44100,
+        "frames": 11829234,
+        "duration_sec": 268.2366
+      },
+      {
+        "index": 13,
+        "song": "AvaLuna - Waterduct",
+        "artist": "AvaLuna",
+        "subset": "train",
+        "relative_dir": "train/AvaLuna - Waterduct",
+        "sample_rate": 44100,
+        "frames": 11435358,
+        "duration_sec": 259.3052
+      },
+      {
+        "index": 15,
+        "song": "Bill Chudziak - Children Of No-one",
+        "artist": "Bill Chudziak",
+        "subset": "train",
+        "relative_dir": "train/Bill Chudziak - Children Of No-one",
+        "sample_rate": 44100,
+        "frames": 10184147,
+        "duration_sec": 230.933
+      },
+      {
+        "index": 17,
+        "song": "Celestial Shore - Die For Us",
+        "artist": "Celestial Shore",
+        "subset": "train",
+        "relative_dir": "train/Celestial Shore - Die For Us",
+        "sample_rate": 44100,
+        "frames": 12289523,
+        "duration_sec": 278.674
+      },
+      {
+        "index": 23,
+        "song": "Creepoid - OldTree",
+        "artist": "Creepoid",
+        "subset": "train",
+        "relative_dir": "train/Creepoid - OldTree",
+        "sample_rate": 44100,
+        "frames": 13327360,
+        "duration_sec": 302.2077
+      },
+      {
+        "index": 24,
+        "song": "Dark Ride - Burning Bridges",
+        "artist": "Dark Ride",
+        "subset": "train",
+        "relative_dir": "train/Dark Ride - Burning Bridges",
+        "sample_rate": 44100,
+        "frames": 10268606,
+        "duration_sec": 232.8482
+      },
+      {
+        "index": 25,
+        "song": "Dreamers Of The Ghetto - Heavy Love",
+        "artist": "Dreamers Of The Ghetto",
+        "subset": "train",
+        "relative_dir": "train/Dreamers Of The Ghetto - Heavy Love",
+        "sample_rate": 44100,
+        "frames": 13008896,
+        "duration_sec": 294.9863
+      },
+      {
+        "index": 38,
+        "song": "Invisible Familiars - Disturbing Wildlife",
+        "artist": "Invisible Familiars",
+        "subset": "train",
+        "relative_dir": "train/Invisible Familiars - Disturbing Wildlife",
+        "sample_rate": 44100,
+        "frames": 9644414,
+        "duration_sec": 218.6942
+      },
+      {
+        "index": 50,
+        "song": "Lushlife - Toynbee Suite",
+        "artist": "Lushlife",
+        "subset": "train",
+        "relative_dir": "train/Lushlife - Toynbee Suite",
+        "sample_rate": 44100,
+        "frames": 27719408,
+        "duration_sec": 628.558
+      },
+      {
+        "index": 72,
+        "song": "Port St Willow - Stay Even",
+        "artist": "Port St Willow",
+        "subset": "train",
+        "relative_dir": "train/Port St Willow - Stay Even",
+        "sample_rate": 44100,
+        "frames": 13980352,
+        "duration_sec": 317.0148
+      },
+      {
+        "index": 79,
+        "song": "St Vitus - Word Gets Around",
+        "artist": "St Vitus",
+        "subset": "train",
+        "relative_dir": "train/St Vitus - Word Gets Around",
+        "sample_rate": 44100,
+        "frames": 10901953,
+        "duration_sec": 247.2098
+      },
+      {
+        "index": 80,
+        "song": "Steven Clark - Bounty",
+        "artist": "Steven Clark",
+        "subset": "train",
+        "relative_dir": "train/Steven Clark - Bounty",
+        "sample_rate": 44100,
+        "frames": 12765251,
+        "duration_sec": 289.4615
+      },
+      {
+        "index": 83,
+        "song": "Swinging Steaks - Lost My Way",
+        "artist": "Swinging Steaks",
+        "subset": "train",
+        "relative_dir": "train/Swinging Steaks - Lost My Way",
+        "sample_rate": 44100,
+        "frames": 13677498,
+        "duration_sec": 310.1473
+      },
+      {
+        "index": 86,
+        "song": "The Scarlet Brand - Les Fleurs Du Mal",
+        "artist": "The Scarlet Brand",
+        "subset": "train",
+        "relative_dir": "train/The Scarlet Brand - Les Fleurs Du Mal",
+        "sample_rate": 44100,
+        "frames": 13390407,
+        "duration_sec": 303.6373
+      },
+      {
+        "index": 88,
+        "song": "The Wrong'Uns - Rothko",
+        "artist": "The Wrong'Uns",
+        "subset": "train",
+        "relative_dir": "train/The Wrong'Uns - Rothko",
+        "sample_rate": 44100,
+        "frames": 8923162,
+        "duration_sec": 202.3393
+      },
+      {
+        "index": 90,
+        "song": "Titanium - Haunted Age",
+        "artist": "Titanium",
+        "subset": "train",
+        "relative_dir": "train/Titanium - Haunted Age",
+        "sample_rate": 44100,
+        "frames": 10949536,
+        "duration_sec": 248.2888
+      },
+      {
+        "index": 93,
+        "song": "Triviul - Angelsaint",
+        "artist": "Triviul",
+        "subset": "train",
+        "relative_dir": "train/Triviul - Angelsaint",
+        "sample_rate": 44100,
+        "frames": 10447256,
+        "duration_sec": 236.8992
+      },
+      {
+        "index": 94,
+        "song": "Triviul - Dorothy",
+        "artist": "Triviul",
+        "subset": "train",
+        "relative_dir": "train/Triviul - Dorothy",
+        "sample_rate": 44100,
+        "frames": 8271302,
+        "duration_sec": 187.5579
+      }
+    ],
+    "test": [
+      {
+        "index": 0,
+        "song": "AM Contra - Heart Peripheral",
+        "artist": "AM Contra",
+        "subset": "test",
+        "relative_dir": "test/AM Contra - Heart Peripheral",
+        "sample_rate": 44100,
+        "frames": 9265664,
+        "duration_sec": 210.1058
+      },
+      {
+        "index": 1,
+        "song": "Al James - Schoolboy Facination",
+        "artist": "Al James",
+        "subset": "test",
+        "relative_dir": "test/Al James - Schoolboy Facination",
+        "sample_rate": 44100,
+        "frames": 8843231,
+        "duration_sec": 200.5268
+      },
+      {
+        "index": 2,
+        "song": "Angels In Amplifiers - I'm Alright",
+        "artist": "Angels In Amplifiers",
+        "subset": "test",
+        "relative_dir": "test/Angels In Amplifiers - I'm Alright",
+        "sample_rate": 44100,
+        "frames": 7920084,
+        "duration_sec": 179.5937
+      },
+      {
+        "index": 3,
+        "song": "Arise - Run Run Run",
+        "artist": "Arise",
+        "subset": "test",
+        "relative_dir": "test/Arise - Run Run Run",
+        "sample_rate": 44100,
+        "frames": 9675225,
+        "duration_sec": 219.3929
+      },
+      {
+        "index": 4,
+        "song": "BKS - Bulldozer",
+        "artist": "BKS",
+        "subset": "test",
+        "relative_dir": "test/BKS - Bulldozer",
+        "sample_rate": 44100,
+        "frames": 14863472,
+        "duration_sec": 337.0402
+      },
+      {
+        "index": 5,
+        "song": "BKS - Too Much",
+        "artist": "BKS",
+        "subset": "test",
+        "relative_dir": "test/BKS - Too Much",
+        "sample_rate": 44100,
+        "frames": 9707512,
+        "duration_sec": 220.125
+      },
+      {
+        "index": 6,
+        "song": "Ben Carrigan - We'll Talk About It All Tonight",
+        "artist": "Ben Carrigan",
+        "subset": "test",
+        "relative_dir": "test/Ben Carrigan - We'll Talk About It All Tonight",
+        "sample_rate": 44100,
+        "frames": 11241562,
+        "duration_sec": 254.9107
+      },
+      {
+        "index": 7,
+        "song": "Bobby Nobody - Stitch Up",
+        "artist": "Bobby Nobody",
+        "subset": "test",
+        "relative_dir": "test/Bobby Nobody - Stitch Up",
+        "sample_rate": 44100,
+        "frames": 9757125,
+        "duration_sec": 221.25
+      },
+      {
+        "index": 8,
+        "song": "Buitraker - Revo X",
+        "artist": "Buitraker",
+        "subset": "test",
+        "relative_dir": "test/Buitraker - Revo X",
+        "sample_rate": 44100,
+        "frames": 12163922,
+        "duration_sec": 275.8259
+      },
+      {
+        "index": 9,
+        "song": "Carlos Gonzalez - A Place For Us",
+        "artist": "Carlos Gonzalez",
+        "subset": "test",
+        "relative_dir": "test/Carlos Gonzalez - A Place For Us",
+        "sample_rate": 44100,
+        "frames": 11034647,
+        "duration_sec": 250.2188
+      },
+      {
+        "index": 10,
+        "song": "Cristina Vane - So Easy",
+        "artist": "Cristina Vane",
+        "subset": "test",
+        "relative_dir": "test/Cristina Vane - So Easy",
+        "sample_rate": 44100,
+        "frames": 11207306,
+        "duration_sec": 254.1339
+      },
+      {
+        "index": 11,
+        "song": "Detsky Sad - Walkie Talkie",
+        "artist": "Detsky Sad",
+        "subset": "test",
+        "relative_dir": "test/Detsky Sad - Walkie Talkie",
+        "sample_rate": 44100,
+        "frames": 8400262,
+        "duration_sec": 190.4821
+      },
+      {
+        "index": 12,
+        "song": "Enda Reilly - Cur An Long Ag Seol",
+        "artist": "Enda Reilly",
+        "subset": "test",
+        "relative_dir": "test/Enda Reilly - Cur An Long Ag Seol",
+        "sample_rate": 44100,
+        "frames": 8246503,
+        "duration_sec": 186.9955
+      },
+      {
+        "index": 13,
+        "song": "Forkupines - Semantics",
+        "artist": "Forkupines",
+        "subset": "test",
+        "relative_dir": "test/Forkupines - Semantics",
+        "sample_rate": 44100,
+        "frames": 12065091,
+        "duration_sec": 273.5848
+      },
+      {
+        "index": 14,
+        "song": "Georgia Wonder - Siren",
+        "artist": "Georgia Wonder",
+        "subset": "test",
+        "relative_dir": "test/Georgia Wonder - Siren",
+        "sample_rate": 44100,
+        "frames": 18979538,
+        "duration_sec": 430.375
+      },
+      {
+        "index": 15,
+        "song": "Girls Under Glass - We Feel Alright",
+        "artist": "Girls Under Glass",
+        "subset": "test",
+        "relative_dir": "test/Girls Under Glass - We Feel Alright",
+        "sample_rate": 44100,
+        "frames": 13992103,
+        "duration_sec": 317.2812
+      },
+      {
+        "index": 16,
+        "song": "Hollow Ground - Ill Fate",
+        "artist": "Hollow Ground",
+        "subset": "test",
+        "relative_dir": "test/Hollow Ground - Ill Fate",
+        "sample_rate": 44100,
+        "frames": 6247828,
+        "duration_sec": 141.6741
+      },
+      {
+        "index": 17,
+        "song": "James Elder & Mark M Thompson - The English Actor",
+        "artist": "James Elder & Mark M Thompson",
+        "subset": "test",
+        "relative_dir": "test/James Elder & Mark M Thompson - The English Actor",
+        "sample_rate": 44100,
+        "frames": 9061369,
+        "duration_sec": 205.4732
+      },
+      {
+        "index": 18,
+        "song": "Juliet's Rescue - Heartbeats",
+        "artist": "Juliet's Rescue",
+        "subset": "test",
+        "relative_dir": "test/Juliet's Rescue - Heartbeats",
+        "sample_rate": 44100,
+        "frames": 11803444,
+        "duration_sec": 267.6518
+      },
+      {
+        "index": 19,
+        "song": "Little Chicago's Finest - My Own",
+        "artist": "Little Chicago's Finest",
+        "subset": "test",
+        "relative_dir": "test/Little Chicago's Finest - My Own",
+        "sample_rate": 44100,
+        "frames": 12419072,
+        "duration_sec": 281.6116
+      },
+      {
+        "index": 20,
+        "song": "Louis Cressy Band - Good Time",
+        "artist": "Louis Cressy Band",
+        "subset": "test",
+        "relative_dir": "test/Louis Cressy Band - Good Time",
+        "sample_rate": 44100,
+        "frames": 12913425,
+        "duration_sec": 292.8214
+      },
+      {
+        "index": 21,
+        "song": "Lyndsey Ollard - Catching Up",
+        "artist": "Lyndsey Ollard",
+        "subset": "test",
+        "relative_dir": "test/Lyndsey Ollard - Catching Up",
+        "sample_rate": 44100,
+        "frames": 10029600,
+        "duration_sec": 227.4286
+      },
+      {
+        "index": 22,
+        "song": "M.E.R.C. Music - Knockout",
+        "artist": "M.E.R.C. Music",
+        "subset": "test",
+        "relative_dir": "test/M.E.R.C. Music - Knockout",
+        "sample_rate": 44100,
+        "frames": 11907000,
+        "duration_sec": 270.0
+      },
+      {
+        "index": 23,
+        "song": "Moosmusic - Big Dummy Shake",
+        "artist": "Moosmusic",
+        "subset": "test",
+        "relative_dir": "test/Moosmusic - Big Dummy Shake",
+        "sample_rate": 44100,
+        "frames": 8769600,
+        "duration_sec": 198.8571
+      },
+      {
+        "index": 24,
+        "song": "Motor Tapes - Shore",
+        "artist": "Motor Tapes",
+        "subset": "test",
+        "relative_dir": "test/Motor Tapes - Shore",
+        "sample_rate": 44100,
+        "frames": 10880494,
+        "duration_sec": 246.7232
+      },
+      {
+        "index": 25,
+        "song": "Mu - Too Bright",
+        "artist": "Mu",
+        "subset": "test",
+        "relative_dir": "test/Mu - Too Bright",
+        "sample_rate": 44100,
+        "frames": 12002484,
+        "duration_sec": 272.1652
+      },
+      {
+        "index": 26,
+        "song": "Nerve 9 - Pray For The Rain",
+        "artist": "Nerve 9",
+        "subset": "test",
+        "relative_dir": "test/Nerve 9 - Pray For The Rain",
+        "sample_rate": 44100,
+        "frames": 15157800,
+        "duration_sec": 343.7143
+      },
+      {
+        "index": 27,
+        "song": "PR - Happy Daze",
+        "artist": "PR",
+        "subset": "test",
+        "relative_dir": "test/PR - Happy Daze",
+        "sample_rate": 44100,
+        "frames": 7175168,
+        "duration_sec": 162.7022
+      },
+      {
+        "index": 28,
+        "song": "PR - Oh No",
+        "artist": "PR",
+        "subset": "test",
+        "relative_dir": "test/PR - Oh No",
+        "sample_rate": 44100,
+        "frames": 3360177,
+        "duration_sec": 76.1945
+      },
+      {
+        "index": 29,
+        "song": "Punkdisco - Oral Hygiene",
+        "artist": "Punkdisco",
+        "subset": "test",
+        "relative_dir": "test/Punkdisco - Oral Hygiene",
+        "sample_rate": 44100,
+        "frames": 9772481,
+        "duration_sec": 221.5982
+      },
+      {
+        "index": 30,
+        "song": "Raft Monk - Tiring",
+        "artist": "Raft Monk",
+        "subset": "test",
+        "relative_dir": "test/Raft Monk - Tiring",
+        "sample_rate": 44100,
+        "frames": 9360028,
+        "duration_sec": 212.2455
+      },
+      {
+        "index": 31,
+        "song": "Sambasevam Shanmugam - Kaathaadi",
+        "artist": "Sambasevam Shanmugam",
+        "subset": "test",
+        "relative_dir": "test/Sambasevam Shanmugam - Kaathaadi",
+        "sample_rate": 44100,
+        "frames": 14018484,
+        "duration_sec": 317.8795
+      },
+      {
+        "index": 32,
+        "song": "Secretariat - Borderline",
+        "artist": "Secretariat",
+        "subset": "test",
+        "relative_dir": "test/Secretariat - Borderline",
+        "sample_rate": 44100,
+        "frames": 12649892,
+        "duration_sec": 286.8456
+      },
+      {
+        "index": 33,
+        "song": "Secretariat - Over The Top",
+        "artist": "Secretariat",
+        "subset": "test",
+        "relative_dir": "test/Secretariat - Over The Top",
+        "sample_rate": 44100,
+        "frames": 11073328,
+        "duration_sec": 251.0959
+      },
+      {
+        "index": 34,
+        "song": "Side Effects Project - Sing With Me",
+        "artist": "Side Effects Project",
+        "subset": "test",
+        "relative_dir": "test/Side Effects Project - Sing With Me",
+        "sample_rate": 44100,
+        "frames": 10746422,
+        "duration_sec": 243.683
+      },
+      {
+        "index": 35,
+        "song": "Signe Jakobsen - What Have You Done To Me",
+        "artist": "Signe Jakobsen",
+        "subset": "test",
+        "relative_dir": "test/Signe Jakobsen - What Have You Done To Me",
+        "sample_rate": 44100,
+        "frames": 7823222,
+        "duration_sec": 177.3973
+      },
+      {
+        "index": 36,
+        "song": "Skelpolu - Resurrection",
+        "artist": "Skelpolu",
+        "subset": "test",
+        "relative_dir": "test/Skelpolu - Resurrection",
+        "sample_rate": 44100,
+        "frames": 17448735,
+        "duration_sec": 395.6629
+      },
+      {
+        "index": 37,
+        "song": "Speak Softly - Broken Man",
+        "artist": "Speak Softly",
+        "subset": "test",
+        "relative_dir": "test/Speak Softly - Broken Man",
+        "sample_rate": 44100,
+        "frames": 11164364,
+        "duration_sec": 253.1602
+      },
+      {
+        "index": 38,
+        "song": "Speak Softly - Like Horses",
+        "artist": "Speak Softly",
+        "subset": "test",
+        "relative_dir": "test/Speak Softly - Like Horses",
+        "sample_rate": 44100,
+        "frames": 13788600,
+        "duration_sec": 312.6667
+      },
+      {
+        "index": 39,
+        "song": "The Doppler Shift - Atrophy",
+        "artist": "The Doppler Shift",
+        "subset": "test",
+        "relative_dir": "test/The Doppler Shift - Atrophy",
+        "sample_rate": 44100,
+        "frames": 14616591,
+        "duration_sec": 331.442
+      },
+      {
+        "index": 40,
+        "song": "The Easton Ellises (Baumi) - SDRNR",
+        "artist": "The Easton Ellises (Baumi)",
+        "subset": "test",
+        "relative_dir": "test/The Easton Ellises (Baumi) - SDRNR",
+        "sample_rate": 44100,
+        "frames": 10349568,
+        "duration_sec": 234.6841
+      },
+      {
+        "index": 41,
+        "song": "The Easton Ellises - Falcon 69",
+        "artist": "The Easton Ellises",
+        "subset": "test",
+        "relative_dir": "test/The Easton Ellises - Falcon 69",
+        "sample_rate": 44100,
+        "frames": 10892288,
+        "duration_sec": 246.9907
+      },
+      {
+        "index": 42,
+        "song": "The Long Wait - Dark Horses",
+        "artist": "The Long Wait",
+        "subset": "test",
+        "relative_dir": "test/The Long Wait - Dark Horses",
+        "sample_rate": 44100,
+        "frames": 13482293,
+        "duration_sec": 305.7209
+      },
+      {
+        "index": 43,
+        "song": "The Mountaineering Club - Mallory",
+        "artist": "The Mountaineering Club",
+        "subset": "test",
+        "relative_dir": "test/The Mountaineering Club - Mallory",
+        "sample_rate": 44100,
+        "frames": 10780678,
+        "duration_sec": 244.4598
+      },
+      {
+        "index": 44,
+        "song": "The Sunshine Garcia Band - For I Am The Moon",
+        "artist": "The Sunshine Garcia Band",
+        "subset": "test",
+        "relative_dir": "test/The Sunshine Garcia Band - For I Am The Moon",
+        "sample_rate": 44100,
+        "frames": 14125083,
+        "duration_sec": 320.2967
+      },
+      {
+        "index": 45,
+        "song": "Timboz - Pony",
+        "artist": "Timboz",
+        "subset": "test",
+        "relative_dir": "test/Timboz - Pony",
+        "sample_rate": 44100,
+        "frames": 11159449,
+        "duration_sec": 253.0487
+      },
+      {
+        "index": 46,
+        "song": "Tom McKenzie - Directions",
+        "artist": "Tom McKenzie",
+        "subset": "test",
+        "relative_dir": "test/Tom McKenzie - Directions",
+        "sample_rate": 44100,
+        "frames": 7755103,
+        "duration_sec": 175.8527
+      },
+      {
+        "index": 47,
+        "song": "Triviul feat. The Fiend - Widow",
+        "artist": "Triviul feat. The Fiend",
+        "subset": "test",
+        "relative_dir": "test/Triviul feat. The Fiend - Widow",
+        "sample_rate": 44100,
+        "frames": 10368337,
+        "duration_sec": 235.1097
+      },
+      {
+        "index": 48,
+        "song": "We Fell From The Sky - Not You",
+        "artist": "We Fell From The Sky",
+        "subset": "test",
+        "relative_dir": "test/We Fell From The Sky - Not You",
+        "sample_rate": 44100,
+        "frames": 9168272,
+        "duration_sec": 207.8973
+      },
+      {
+        "index": 49,
+        "song": "Zeno - Signs",
+        "artist": "Zeno",
+        "subset": "test",
+        "relative_dir": "test/Zeno - Signs",
+        "sample_rate": 44100,
+        "frames": 10336331,
+        "duration_sec": 234.3839
+      }
+    ]
+  }
+}
