@@ -1,0 +1,10 @@
+model_name: m2
+description: "M2: Late Fusion Pretrained Backbone (Frozen Multi-Scale Spectral CNN14-Style + Frozen Text Encoder)"
+batch_size: 16
+epochs: 30
+patience: 5
+lr: 0.001
+weight_decay: 0.0001
+grad_clip: 1.0
+text_backend: subword
+seeds: [42, 123, 2026]

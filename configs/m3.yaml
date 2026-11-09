@@ -1,0 +1,12 @@
+model_name: m3
+description: "M3: Structured Two-Branch Main Model (Audio CNN -> L_pred, Text MLP -> r_pred, g_pred = L_ref + r_pred - L_pred)"
+batch_size: 16
+epochs: 30
+patience: 5
+lr: 0.001
+weight_decay: 0.0001
+grad_clip: 1.0
+lambda_loudness: 0.1
+lambda_balance: 0.1
+text_backend: subword
+seeds: [42, 123, 2026]

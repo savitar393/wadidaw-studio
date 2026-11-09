@@ -173,31 +173,39 @@ def build_split_samples(
     seed: int = 2026,
     perturb_g0: bool = True,
 ) -> list[dict[str, object]]:
-    """Build multimodal sample records conforming to Section 4.6 schema."""
+    """Build multimodal sample records conforming to Section 4.6 schema.
+
+    Each excerpt is paired with `n_prompts_per_excerpt` distinct mixing profiles
+    and independent `g0` perturbations so that the same audio excerpt requires
+    different target gains depending on the text prompt and input level offset.
+    """
     rng = np.random.default_rng(seed)
     samples: list[dict[str, object]] = []
 
     for ex_pos, ex in enumerate(cached_excerpts):
-        profile, targets = _choose_valid_profile_and_g0(
-            loudness_raw_db=ex["loudness_raw_db"],
-            preferred_profile_idx=ex_pos % len(MIXING_PROFILES),
-            rng=rng,
-            perturb_g0=perturb_g0,
-        )
-        paraphrases = generate_paraphrases(
-            profile=profile,
-            split=split,
-            n_paraphrases=n_prompts_per_excerpt,
-            rng=rng,
-        )
+        for p_offset in range(n_prompts_per_excerpt):
+            pref_idx = (ex_pos * n_prompts_per_excerpt + p_offset) % len(MIXING_PROFILES)
+            profile, targets = _choose_valid_profile_and_g0(
+                loudness_raw_db=ex["loudness_raw_db"],
+                preferred_profile_idx=pref_idx,
+                rng=rng,
+                perturb_g0=perturb_g0,
+            )
+            paraphrases = generate_paraphrases(
+                profile=profile,
+                split=split,
+                n_paraphrases=max(n_prompts_per_excerpt, 4),
+                rng=rng,
+            )
+            p_info = paraphrases[(ex_pos + p_offset) % len(paraphrases)]
 
-        g0_list = [round(float(x), 4) for x in targets["g0_db"]]
-        loudness_list = [round(float(x), 4) for x in targets["loudness_db"]]
-        balance_list = [round(float(x), 4) for x in targets["balance_target"]]
-        gains_list = [round(float(x), 4) for x in targets["gains_db"]]
-        active_list = [bool(x) for x in targets["active_mask"]]
+            g0_list = [round(float(x), 4) for x in targets["g0_db"]]
+            loudness_list = [round(float(x), 4) for x in targets["loudness_db"]]
+            balance_list = [round(float(x), 4) for x in targets["balance_target"]]
+            gains_list = [round(float(x), 4) for x in targets["gains_db"]]
+            active_list = [bool(x) for x in targets["active_mask"]]
 
-        for p_idx, p_info in enumerate(paraphrases, start=1):
+            p_idx = p_offset + 1
             sample_id = f"{ex['excerpt_id']}_p{p_idx:02d}"
             samples.append({
                 "id": sample_id,
@@ -289,9 +297,12 @@ class MusdbMultimodalDataset(Dataset):
         self,
         samples_or_path: Sequence[dict[str, object]] | Path | str,
         root_dir: Path | str = ROOT,
+        cache_in_memory: bool = True,
     ) -> None:
         super().__init__()
         self.root_dir = Path(root_dir)
+        self.cache_in_memory = cache_in_memory
+        self._npy_cache: dict[str, tuple[np.ndarray, np.ndarray]] = {}
         if isinstance(samples_or_path, (Path, str)):
             path = Path(samples_or_path)
             if not path.exists():
@@ -314,12 +325,23 @@ class MusdbMultimodalDataset(Dataset):
 
     def __getitem__(self, index: int) -> dict[str, object]:
         record = self.samples[index]
-        npy_path = self.root_dir / str(record["audio_path"])
-        logmel_raw_db = np.load(npy_path).astype(np.float32)
+        rel_path = str(record["audio_path"])
+        if self.cache_in_memory and rel_path in self._npy_cache:
+            raw_arr, raw_mel_power = self._npy_cache[rel_path]
+        else:
+            npy_path = self.root_dir / rel_path
+            raw_arr = np.load(npy_path)
+            raw_mel_power = np.power(
+                10.0,
+                np.clip(raw_arr.astype(np.float32), -100.0, 20.0) / 10.0,
+            ).mean(axis=-1).astype(np.float32)
+            if self.cache_in_memory:
+                self._npy_cache[rel_path] = (raw_arr, raw_mel_power)
 
+        logmel_raw_db = raw_arr.astype(np.float32)
         if logmel_raw_db.shape != (4, 64, 800):
             raise ValueError(
-                f"Expected cached log-mel shape (4, 64, 800), got {logmel_raw_db.shape} at {npy_path}"
+                f"Expected cached log-mel shape (4, 64, 800), got {logmel_raw_db.shape} at {rel_path}"
             )
 
         g0_db = np.asarray(record["g0_db"], dtype=np.float32)
@@ -330,14 +352,16 @@ class MusdbMultimodalDataset(Dataset):
         # Apply g0 perturbation only to active stems
         effective_g0 = np.where(active_mask, g0_db, 0.0).astype(np.float32)
         logmel_perturbed_db = apply_gain_to_logmel_db(logmel_raw_db, effective_g0)
-        audio_norm = normalize_logmel_for_model(logmel_perturbed_db)
+        audio_norm = (logmel_perturbed_db + 30.0) * 0.02
+        stem_mel_power = raw_mel_power * np.power(10.0, effective_g0 / 10.0)[:, None]
 
         return {
             "id": str(record["id"]),
             "song": str(record["song"]),
             "split": str(record["split"]),
-            "audio": torch.from_numpy(audio_norm),
+            "audio": torch.from_numpy(audio_norm.astype(np.float32)),
             "logmel_db": torch.from_numpy(logmel_perturbed_db),
+            "stem_mel_power": torch.from_numpy(stem_mel_power.astype(np.float32)),
             "prompt": str(record["prompt"]),
             "prompt_template": str(record["prompt_template"]),
             "g0_db": torch.from_numpy(g0_db),

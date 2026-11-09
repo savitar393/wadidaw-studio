@@ -1,7 +1,7 @@
 [
   {
     "id": "human_test_001",
-    "prompt": "Saat melakukan gain staging, redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring.",
+    "prompt": "Saat melakukan gain staging, redam hentakan drum jauh di latar belakang, lalu beri ruang sedikit untuk vokal dan instrumen pengiring.",
     "raw_levels_db": [
       2,
       -5,
@@ -55,7 +55,7 @@
   },
   {
     "id": "human_test_004",
-    "prompt": "Saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural.",
+    "prompt": "Saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, bass tetap natural, sementara pengiring agak diredam.",
     "raw_levels_db": [
       5,
       -3,
@@ -91,7 +91,7 @@
   },
   {
     "id": "human_test_006",
-    "prompt": "Tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang. Pastikan transisi antar stem terdengar rapi.",
+    "prompt": "Tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, iringan musik lebih mundur, dan biarkan drum tetap seimbang. Pastikan transisi antar stem terdengar rapi.",
     "raw_levels_db": [
       5,
       0,
@@ -127,7 +127,7 @@
   },
   {
     "id": "human_test_008",
-    "prompt": "Sebagai referensi akhir, saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural.",
+    "prompt": "Sebagai referensi akhir, saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, bass tetap natural, sementara pengiring agak diredam.",
     "raw_levels_db": [
       5,
       -3,
@@ -199,7 +199,7 @@
   },
   {
     "id": "human_test_012",
-    "prompt": "Redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring. Jangan sampai ada instrumen yang memicu clipping.",
+    "prompt": "Redam hentakan drum jauh di latar belakang, lalu beri ruang sedikit untuk vokal dan instrumen pengiring. Jangan sampai ada instrumen yang memicu clipping.",
     "raw_levels_db": [
       2,
       -5,
@@ -253,7 +253,7 @@
   },
   {
     "id": "human_test_015",
-    "prompt": "Kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan. Jangan sampai ada instrumen yang memicu clipping.",
+    "prompt": "Kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama instrumen pengiring yang sedikit diangkat. Jangan sampai ada instrumen yang memicu clipping.",
     "raw_levels_db": [
       3,
       -3,
@@ -325,7 +325,7 @@
   },
   {
     "id": "human_test_019",
-    "prompt": "Untuk bagian lagu ini, saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural.",
+    "prompt": "Untuk bagian lagu ini, saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, bass tetap natural, sementara pengiring agak diredam.",
     "raw_levels_db": [
       5,
       -3,
@@ -343,7 +343,7 @@
   },
   {
     "id": "human_test_020",
-    "prompt": "Tolong atur fader supaya buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur.",
+    "prompt": "Tolong atur fader supaya buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, bass agak mundur, tetapi drum sangat mundur.",
     "raw_levels_db": [
       3,
       -5,
@@ -451,7 +451,7 @@
   },
   {
     "id": "human_test_026",
-    "prompt": "Redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring. Pertahankan kejernihan keseluruhan campuran.",
+    "prompt": "Redam hentakan drum jauh di latar belakang, lalu beri ruang sedikit untuk vokal dan instrumen pengiring. Pertahankan kejernihan keseluruhan campuran.",
     "raw_levels_db": [
       2,
       -5,
@@ -505,7 +505,7 @@
   },
   {
     "id": "human_test_029",
-    "prompt": "Saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural. Pastikan transisi antar stem terdengar rapi.",
+    "prompt": "Saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, bass tetap natural, sementara pengiring agak diredam. Pastikan transisi antar stem terdengar rapi.",
     "raw_levels_db": [
       5,
       -3,
@@ -685,7 +685,7 @@
   },
   {
     "id": "human_test_039",
-    "prompt": "Tolong atur fader supaya tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang.",
+    "prompt": "Tolong atur fader supaya tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, iringan musik lebih mundur, dan biarkan drum tetap seimbang.",
     "raw_levels_db": [
       5,
       0,
@@ -757,7 +757,7 @@
   },
   {
     "id": "human_test_043",
-    "prompt": "Di mix ini, saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural.",
+    "prompt": "Di mix ini, saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, bass tetap natural, sementara pengiring agak diredam.",
     "raw_levels_db": [
       5,
       -3,
@@ -865,7 +865,7 @@
   },
   {
     "id": "human_test_049",
-    "prompt": "Kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan.",
+    "prompt": "Kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama instrumen pengiring yang sedikit diangkat.",
     "raw_levels_db": [
       3,
       -3,
@@ -973,7 +973,7 @@
   },
   {
     "id": "human_test_055",
-    "prompt": "Saat melakukan gain staging, buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
+    "prompt": "Saat melakukan gain staging, buat drum lebih kuat di depan, vokal dan bass sedikit diangkat, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
     "raw_levels_db": [
       2,
       3,
@@ -991,7 +991,7 @@
   },
   {
     "id": "human_test_056",
-    "prompt": "Di mix ini, buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur.",
+    "prompt": "Di mix ini, buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, bass agak mundur, tetapi drum sangat mundur.",
     "raw_levels_db": [
       3,
       -5,
@@ -1009,7 +1009,7 @@
   },
   {
     "id": "human_test_057",
-    "prompt": "Redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring. Pastikan transisi antar stem terdengar rapi.",
+    "prompt": "Redam hentakan drum jauh di latar belakang, lalu beri ruang sedikit untuk vokal dan instrumen pengiring. Pastikan transisi antar stem terdengar rapi.",
     "raw_levels_db": [
       2,
       -5,
@@ -1063,7 +1063,7 @@
   },
   {
     "id": "human_test_060",
-    "prompt": "Tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang. Pertahankan kejernihan keseluruhan campuran.",
+    "prompt": "Tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, iringan musik lebih mundur, dan biarkan drum tetap seimbang. Pertahankan kejernihan keseluruhan campuran.",
     "raw_levels_db": [
       5,
       0,
@@ -1099,7 +1099,7 @@
   },
   {
     "id": "human_test_062",
-    "prompt": "Buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur. Pertahankan kejernihan keseluruhan campuran.",
+    "prompt": "Buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, bass agak mundur, tetapi drum sangat mundur. Pertahankan kejernihan keseluruhan campuran.",
     "raw_levels_db": [
       3,
       -5,
@@ -1225,7 +1225,7 @@
   },
   {
     "id": "human_test_069",
-    "prompt": "Saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural. Pertahankan kejernihan keseluruhan campuran.",
+    "prompt": "Saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, bass tetap natural, sementara pengiring agak diredam. Pertahankan kejernihan keseluruhan campuran.",
     "raw_levels_db": [
       5,
       -3,
@@ -1243,7 +1243,7 @@
   },
   {
     "id": "human_test_070",
-    "prompt": "Tolong atur fader supaya kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan.",
+    "prompt": "Tolong atur fader supaya kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama instrumen pengiring yang sedikit diangkat.",
     "raw_levels_db": [
       3,
       -3,
@@ -1297,7 +1297,7 @@
   },
   {
     "id": "human_test_073",
-    "prompt": "Tolong atur fader supaya buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
+    "prompt": "Tolong atur fader supaya buat drum lebih kuat di depan, vokal dan bass sedikit diangkat, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
     "raw_levels_db": [
       2,
       3,
@@ -1315,7 +1315,7 @@
   },
   {
     "id": "human_test_074",
-    "prompt": "Redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring.",
+    "prompt": "Redam hentakan drum jauh di latar belakang, lalu beri ruang sedikit untuk vokal dan instrumen pengiring.",
     "raw_levels_db": [
       2,
       -5,
@@ -1351,7 +1351,7 @@
   },
   {
     "id": "human_test_076",
-    "prompt": "Sebagai referensi akhir, redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring.",
+    "prompt": "Sebagai referensi akhir, redam hentakan drum jauh di latar belakang, lalu beri ruang sedikit untuk vokal dan instrumen pengiring.",
     "raw_levels_db": [
       2,
       -5,
@@ -1459,7 +1459,7 @@
   },
   {
     "id": "human_test_082",
-    "prompt": "Di mix ini, tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang.",
+    "prompt": "Di mix ini, tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, iringan musik lebih mundur, dan biarkan drum tetap seimbang.",
     "raw_levels_db": [
       5,
       0,
@@ -1477,7 +1477,7 @@
   },
   {
     "id": "human_test_083",
-    "prompt": "Sesuai arahan produser, saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural.",
+    "prompt": "Sesuai arahan produser, saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, bass tetap natural, sementara pengiring agak diredam.",
     "raw_levels_db": [
       5,
       -3,
@@ -1495,7 +1495,7 @@
   },
   {
     "id": "human_test_084",
-    "prompt": "Buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
+    "prompt": "Buat drum lebih kuat di depan, vokal dan bass sedikit diangkat, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
     "raw_levels_db": [
       2,
       3,
@@ -1513,7 +1513,7 @@
   },
   {
     "id": "human_test_085",
-    "prompt": "Tolong atur fader supaya redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring.",
+    "prompt": "Tolong atur fader supaya redam hentakan drum jauh di latar belakang, lalu beri ruang sedikit untuk vokal dan instrumen pengiring.",
     "raw_levels_db": [
       2,
       -5,
@@ -1621,7 +1621,7 @@
   },
   {
     "id": "human_test_091",
-    "prompt": "Di mix ini, redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring.",
+    "prompt": "Di mix ini, redam hentakan drum jauh di latar belakang, lalu beri ruang sedikit untuk vokal dan instrumen pengiring.",
     "raw_levels_db": [
       2,
       -5,
@@ -1747,7 +1747,7 @@
   },
   {
     "id": "human_test_098",
-    "prompt": "Sebagai referensi akhir, kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan.",
+    "prompt": "Sebagai referensi akhir, kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama instrumen pengiring yang sedikit diangkat.",
     "raw_levels_db": [
       3,
       -3,
@@ -1801,7 +1801,7 @@
   },
   {
     "id": "human_test_101",
-    "prompt": "Buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur.",
+    "prompt": "Buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, bass agak mundur, tetapi drum sangat mundur.",
     "raw_levels_db": [
       3,
       -5,
@@ -1819,7 +1819,7 @@
   },
   {
     "id": "human_test_102",
-    "prompt": "Untuk bagian lagu ini, buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
+    "prompt": "Untuk bagian lagu ini, buat drum lebih kuat di depan, vokal dan bass sedikit diangkat, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
     "raw_levels_db": [
       2,
       3,
@@ -1873,7 +1873,7 @@
   },
   {
     "id": "human_test_105",
-    "prompt": "Sebagai referensi akhir, tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang.",
+    "prompt": "Sebagai referensi akhir, tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, iringan musik lebih mundur, dan biarkan drum tetap seimbang.",
     "raw_levels_db": [
       5,
       0,
@@ -1891,7 +1891,7 @@
   },
   {
     "id": "human_test_106",
-    "prompt": "Untuk bagian lagu ini, redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring.",
+    "prompt": "Untuk bagian lagu ini, redam hentakan drum jauh di latar belakang, lalu beri ruang sedikit untuk vokal dan instrumen pengiring.",
     "raw_levels_db": [
       2,
       -5,
@@ -1981,7 +1981,7 @@
   },
   {
     "id": "human_test_111",
-    "prompt": "Sesuai arahan produser, redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring.",
+    "prompt": "Sesuai arahan produser, redam hentakan drum jauh di latar belakang, lalu beri ruang sedikit untuk vokal dan instrumen pengiring.",
     "raw_levels_db": [
       2,
       -5,
@@ -2143,7 +2143,7 @@
   },
   {
     "id": "human_test_120",
-    "prompt": "Buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang. Pertahankan kejernihan keseluruhan campuran.",
+    "prompt": "Buat drum lebih kuat di depan, vokal dan bass sedikit diangkat, sementara elemen harmonis pengiring ditekan kuat ke belakang. Pertahankan kejernihan keseluruhan campuran.",
     "raw_levels_db": [
       2,
       3,
@@ -2161,7 +2161,7 @@
   },
   {
     "id": "human_test_121",
-    "prompt": "Kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan. Pastikan transisi antar stem terdengar rapi.",
+    "prompt": "Kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama instrumen pengiring yang sedikit diangkat. Pastikan transisi antar stem terdengar rapi.",
     "raw_levels_db": [
       3,
       -3,
@@ -2251,7 +2251,7 @@
   },
   {
     "id": "human_test_126",
-    "prompt": "Kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan. Pertahankan kejernihan keseluruhan campuran.",
+    "prompt": "Kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama instrumen pengiring yang sedikit diangkat. Pertahankan kejernihan keseluruhan campuran.",
     "raw_levels_db": [
       3,
       -3,
@@ -2269,7 +2269,7 @@
   },
   {
     "id": "human_test_127",
-    "prompt": "Sesuai arahan produser, buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur.",
+    "prompt": "Sesuai arahan produser, buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, bass agak mundur, tetapi drum sangat mundur.",
     "raw_levels_db": [
       3,
       -5,
@@ -2359,7 +2359,7 @@
   },
   {
     "id": "human_test_132",
-    "prompt": "Buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur. Pastikan transisi antar stem terdengar rapi.",
+    "prompt": "Buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, bass agak mundur, tetapi drum sangat mundur. Pastikan transisi antar stem terdengar rapi.",
     "raw_levels_db": [
       3,
       -5,
@@ -2467,7 +2467,7 @@
   },
   {
     "id": "human_test_138",
-    "prompt": "Saat melakukan gain staging, buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur.",
+    "prompt": "Saat melakukan gain staging, buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, bass agak mundur, tetapi drum sangat mundur.",
     "raw_levels_db": [
       3,
       -5,
@@ -2485,7 +2485,7 @@
   },
   {
     "id": "human_test_139",
-    "prompt": "Saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural. Jangan sampai ada instrumen yang memicu clipping.",
+    "prompt": "Saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, bass tetap natural, sementara pengiring agak diredam. Jangan sampai ada instrumen yang memicu clipping.",
     "raw_levels_db": [
       5,
       -3,
@@ -2521,7 +2521,7 @@
   },
   {
     "id": "human_test_141",
-    "prompt": "Saat melakukan gain staging, kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan.",
+    "prompt": "Saat melakukan gain staging, kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama instrumen pengiring yang sedikit diangkat.",
     "raw_levels_db": [
       3,
       -3,
@@ -2629,7 +2629,7 @@
   },
   {
     "id": "human_test_147",
-    "prompt": "Untuk bagian lagu ini, kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan.",
+    "prompt": "Untuk bagian lagu ini, kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama instrumen pengiring yang sedikit diangkat.",
     "raw_levels_db": [
       3,
       -3,
@@ -2665,7 +2665,7 @@
   },
   {
     "id": "human_test_149",
-    "prompt": "Sesuai arahan produser, tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang.",
+    "prompt": "Sesuai arahan produser, tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, iringan musik lebih mundur, dan biarkan drum tetap seimbang.",
     "raw_levels_db": [
       5,
       0,
@@ -2719,7 +2719,7 @@
   },
   {
     "id": "human_test_152",
-    "prompt": "Buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang. Pastikan transisi antar stem terdengar rapi.",
+    "prompt": "Buat drum lebih kuat di depan, vokal dan bass sedikit diangkat, sementara elemen harmonis pengiring ditekan kuat ke belakang. Pastikan transisi antar stem terdengar rapi.",
     "raw_levels_db": [
       2,
       3,
@@ -2737,7 +2737,7 @@
   },
   {
     "id": "human_test_153",
-    "prompt": "Sesuai arahan produser, buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
+    "prompt": "Sesuai arahan produser, buat drum lebih kuat di depan, vokal dan bass sedikit diangkat, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
     "raw_levels_db": [
       2,
       3,
@@ -2773,7 +2773,7 @@
   },
   {
     "id": "human_test_155",
-    "prompt": "Tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang. Jangan sampai ada instrumen yang memicu clipping.",
+    "prompt": "Tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, iringan musik lebih mundur, dan biarkan drum tetap seimbang. Jangan sampai ada instrumen yang memicu clipping.",
     "raw_levels_db": [
       5,
       0,
@@ -2881,7 +2881,7 @@
   },
   {
     "id": "human_test_161",
-    "prompt": "Sebagai referensi akhir, buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur.",
+    "prompt": "Sebagai referensi akhir, buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, bass agak mundur, tetapi drum sangat mundur.",
     "raw_levels_db": [
       3,
       -5,
@@ -2989,7 +2989,7 @@
   },
   {
     "id": "human_test_167",
-    "prompt": "Sebagai referensi akhir, buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
+    "prompt": "Sebagai referensi akhir, buat drum lebih kuat di depan, vokal dan bass sedikit diangkat, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
     "raw_levels_db": [
       2,
       3,
@@ -3007,7 +3007,7 @@
   },
   {
     "id": "human_test_168",
-    "prompt": "Sesuai arahan produser, kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan.",
+    "prompt": "Sesuai arahan produser, kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama instrumen pengiring yang sedikit diangkat.",
     "raw_levels_db": [
       3,
       -3,
@@ -3097,7 +3097,7 @@
   },
   {
     "id": "human_test_173",
-    "prompt": "Saat melakukan gain staging, saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural.",
+    "prompt": "Saat melakukan gain staging, saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, bass tetap natural, sementara pengiring agak diredam.",
     "raw_levels_db": [
       5,
       -3,
@@ -3169,7 +3169,7 @@
   },
   {
     "id": "human_test_177",
-    "prompt": "Untuk bagian lagu ini, tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang.",
+    "prompt": "Untuk bagian lagu ini, tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, iringan musik lebih mundur, dan biarkan drum tetap seimbang.",
     "raw_levels_db": [
       5,
       0,
@@ -3241,7 +3241,7 @@
   },
   {
     "id": "human_test_181",
-    "prompt": "Tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang.",
+    "prompt": "Tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, iringan musik lebih mundur, dan biarkan drum tetap seimbang.",
     "raw_levels_db": [
       5,
       0,
@@ -3349,7 +3349,7 @@
   },
   {
     "id": "human_test_187",
-    "prompt": "Tolong atur fader supaya saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural.",
+    "prompt": "Tolong atur fader supaya saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, bass tetap natural, sementara pengiring agak diredam.",
     "raw_levels_db": [
       5,
       -3,
@@ -3385,7 +3385,7 @@
   },
   {
     "id": "human_test_189",
-    "prompt": "Untuk bagian lagu ini, buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur.",
+    "prompt": "Untuk bagian lagu ini, buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, bass agak mundur, tetapi drum sangat mundur.",
     "raw_levels_db": [
       3,
       -5,
@@ -3439,7 +3439,7 @@
   },
   {
     "id": "human_test_192",
-    "prompt": "Di mix ini, kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan.",
+    "prompt": "Di mix ini, kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama instrumen pengiring yang sedikit diangkat.",
     "raw_levels_db": [
       3,
       -3,
@@ -3457,7 +3457,7 @@
   },
   {
     "id": "human_test_193",
-    "prompt": "Saat melakukan gain staging, tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang.",
+    "prompt": "Saat melakukan gain staging, tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, iringan musik lebih mundur, dan biarkan drum tetap seimbang.",
     "raw_levels_db": [
       5,
       0,
@@ -3493,7 +3493,7 @@
   },
   {
     "id": "human_test_195",
-    "prompt": "Di mix ini, buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
+    "prompt": "Di mix ini, buat drum lebih kuat di depan, vokal dan bass sedikit diangkat, sementara elemen harmonis pengiring ditekan kuat ke belakang.",
     "raw_levels_db": [
       2,
       3,
@@ -3511,7 +3511,7 @@
   },
   {
     "id": "human_test_196",
-    "prompt": "Buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang. Jangan sampai ada instrumen yang memicu clipping.",
+    "prompt": "Buat drum lebih kuat di depan, vokal dan bass sedikit diangkat, sementara elemen harmonis pengiring ditekan kuat ke belakang. Jangan sampai ada instrumen yang memicu clipping.",
     "raw_levels_db": [
       2,
       3,
@@ -3529,7 +3529,7 @@
   },
   {
     "id": "human_test_197",
-    "prompt": "Buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur. Jangan sampai ada instrumen yang memicu clipping.",
+    "prompt": "Buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, bass agak mundur, tetapi drum sangat mundur. Jangan sampai ada instrumen yang memicu clipping.",
     "raw_levels_db": [
       3,
       -5,

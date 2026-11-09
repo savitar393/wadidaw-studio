@@ -215,28 +215,87 @@ def generate_paraphrases(
 
 # Keyword lexicon for deterministic parsing & text evaluation (Section 5.5 & 8.4).
 _STEM_KEYWORDS: tuple[tuple[str, tuple[str, ...]], ...] = (
-    ("vocals", ("vokal", "penyanyi", "nyanyian", "suara utama", "lead")),
-    ("drums", ("drum", "perkusi", "ketukan", "beat", "hentakan")),
-    ("bass", ("bass", "low-end", "sub")),
-    ("other", ("instrumen", "pengiring", "iringan", "melodi", "harmoni", "pendukung", "lainnya", "lain", "gitar", "synthesizer", "kibor", "piano")),
+    ("vocals", ("vokal", "penyanyi", "nyanyian", "suara utama", "lead vokal", "jalur vokal")),
+    ("drums", ("drum", "perkusi", "ketukan", "beat", "hentakan", "set drum", "ritme drum")),
+    ("bass", ("bass", "low-end", "sub", "frekuensi bawah", "alunan bass", "lini bass", "nada bass", "frekuensi bass")),
+    ("other", ("instrumen", "pengiring", "iringan", "melodi", "harmoni", "pendukung", "lainnya", "lain", "elemen harmonis", "gitar", "synthesizer", "kibor", "piano")),
+)
+
+_META_CLAUSE_IGNORE: tuple[str, ...] = (
+    "clipping",
+    "transisi",
+    "kejernihan",
+    "gain staging",
+    "referensi akhir",
+    "arahan produser",
+    "bagian lagu ini",
 )
 
 _MODIFIER_RULES: tuple[tuple[tuple[str, ...], float], ...] = (
     # Strong positive (+5 dB)
-    (("paling menonjol", "sangat maju", "paling dominan", "sangat menonjol", "paling kuat", "sangat mendominasi", "paling depan", "sangat tegas", "dominan utama", "sangat keras"), 5.0),
+    (("paling menonjol", "sangat maju", "paling dominan", "sangat menonjol", "paling kuat", "sangat mendominasi", "paling depan", "sangat tegas", "dominan utama", "fokus utama paling depan", "sangat keras"), 5.0),
     # Strong negative (-5 dB)
     (("paling mundur", "sangat mundur", "jauh di latar", "sangat jauh", "paling pelan", "ditekan kuat", "paling belakang", "sangat lembut", "jauh dikecilkan", "sangat kecil"), -5.0),
     # Slight positive (+2 dB)
-    (("sedikit lebih maju", "agak menonjol", "sedikit dinaikkan", "agak lebih maju", "sedikit diperjelas", "naik tipis", "sedikit diangkat", "agak lebih terasa", "sedikit ke depan", "agak naik", "sedikit lebih terdengar", "sedikit naik"), 2.0),
+    (("sedikit lebih maju", "agak menonjol", "sedikit dinaikkan", "agak lebih maju", "sedikit diperjelas", "naik tipis", "sedikit diangkat", "agak lebih terasa", "sedikit ke depan", "beri ruang sedikit", "sedikit lebih terasa", "agak naik", "sedikit lebih terdengar", "sedikit naik"), 2.0),
     # Slight negative (-2 dB)
-    (("agak mundur", "jangan terlalu", "sedikit diturunkan", "sedikit ke belakang", "agak diredam", "turun tipis", "agak ditahan", "sedikit dikurangi", "sedikit lebih pelan", "agak pelan", "sedikit mundur"), -2.0),
+    (("agak mundur", "jangan terlalu", "sedikit diturunkan", "sedikit ke belakang", "agak diredam", "turun tipis", "agak ditahan", "sedikit dikurangi", "agak ke belakang", "sedikit lebih pelan", "agak pelan", "sedikit mundur"), -2.0),
     # Moderate positive (+3 dB)
-    (("lebih maju", "lebih menonjol", "ditonjolkan", "tonjolkan", "cukup menonjol", "dinaikkan", "lebih ke depan", "lebih ke permukaan", "diangkat", "lebih kuat", "lebih keras", "naikkan", "maju", "fokus utama"), 3.0),
+    (("lebih maju", "lebih menonjol", "ditonjolkan", "tonjolkan", "cukup menonjol", "dinaikkan", "lebih ke depan", "lebih ke permukaan", "diangkat", "lebih terasa", "lebih kuat", "secara bersamaan ke depan", "rapat di depan", "angkat", "lebih keras", "naikkan", "maju", "fokus utama"), 3.0),
     # Moderate negative (-3 dB)
-    (("lebih mundur", "diturunkan", "lebih pelan", "cukup mundur", "dikurangi", "lebih ke belakang", "ditarik mundur", "lebih lembut", "dikecilkan", "kurangi", "mundur", "redam"), -3.0),
+    (("lebih mundur", "diturunkan", "lebih pelan", "cukup mundur", "dikurangi", "lebih ke belakang", "ditarik mundur", "lebih lembut", "dikecilkan", "kecilkan", "kurangi", "mundur", "redam"), -3.0),
     # Neutral (0 dB)
     (("seimbang", "natural", "proporsional", "netral", "stabil", "rata", "wajar", "normal"), 0.0),
 )
+
+import re as _re
+
+_PRIMARY_CLAUSE_RE = _re.compile(
+    r"[,;.:]|\b(?:sedangkan|sementara|namun|tetapi|lalu|kemudian)\b",
+    flags=_re.IGNORECASE,
+)
+_SECONDARY_CONJ_RE = _re.compile(
+    r"\b(?:dan|serta|bersama|agar|supaya)\b",
+    flags=_re.IGNORECASE,
+)
+
+
+def _has_stem_keyword(text: str) -> bool:
+    return any(any(kw in text for kw in keywords) for _, keywords in _STEM_KEYWORDS)
+
+
+def _has_modifier_keyword(text: str) -> bool:
+    return any(any(p in text for p in phrases) for phrases, _ in _MODIFIER_RULES)
+
+
+def split_mixing_clauses(prompt: str) -> list[str]:
+    """Segment an Indonesian mixing instruction into self-contained stem–modifier clauses."""
+    primary_chunks = _PRIMARY_CLAUSE_RE.split(prompt.lower())
+    clauses: list[str] = []
+
+    for chunk in primary_chunks:
+        chunk_clean = chunk.strip()
+        if not chunk_clean or any(meta in chunk_clean for meta in _META_CLAUSE_IGNORE):
+            continue
+
+        subparts = _SECONDARY_CONJ_RE.split(chunk_clean)
+        cur = subparts[0].strip()
+        for nxt_raw in subparts[1:]:
+            nxt = nxt_raw.strip()
+            if (
+                _has_stem_keyword(cur)
+                and _has_modifier_keyword(cur)
+                and _has_stem_keyword(nxt)
+                and _has_modifier_keyword(nxt)
+            ):
+                clauses.append(cur)
+                cur = nxt
+            else:
+                cur = f"{cur} {nxt}".strip()
+        if cur:
+            clauses.append(cur)
+
+    return clauses
 
 
 def parse_prompt_to_balance(prompt: str) -> dict[str, object]:
@@ -248,8 +307,7 @@ def parse_prompt_to_balance(prompt: str) -> dict[str, object]:
     if not isinstance(prompt, str) or not prompt.strip():
         raise ValueError("Prompt must be a non-empty string.")
 
-    lowered = prompt.lower()
-    clauses = [c.strip() for c in lowered.replace(";", ",").replace(".", ",").split(",") if c.strip()]
+    clauses = split_mixing_clauses(prompt)
 
     raw_slots: dict[str, float] = {stem: 0.0 for stem in STEM_NAMES}
     mentioned: dict[str, bool] = {stem: False for stem in STEM_NAMES}
@@ -295,12 +353,12 @@ def generate_human_test_prompts(count: int = 200, seed: int = 2026) -> list[dict
 
     rng = np.random.default_rng(seed)
 
-    # 25 natural producer-style sentence patterns (completely disjoint from SENTENCE_FRAMES)
+    # 20 natural producer-style sentence patterns (completely disjoint from SENTENCE_FRAMES)
     natural_patterns: tuple[tuple[str, tuple[int, int, int, int]], ...] = (
-        ("Tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, dan biarkan drum tetap seimbang.", (5, 0, -2, -3)),
+        ("Tolong angkat suara penyanyi supaya paling menonjol di depan, bass agak ditahan sedikit, iringan musik lebih mundur, dan biarkan drum tetap seimbang.", (5, 0, -2, -3)),
         ("Vokal dibuat lebih maju dan jelas, sedangkan iringan musik serta bass ditarik lebih mundur.", (3, 0, -3, -3)),
-        ("Saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, dan bass tetap natural.", (5, -3, 0, -2)),
-        ("Buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, tetapi drum sangat mundur.", (3, -5, -2, 2)),
+        ("Saya ingin vokal terdengar paling kuat, ketukan drum cukup mundur, bass tetap natural, sementara pengiring agak diredam.", (5, -3, 0, -2)),
+        ("Buat suasana akustik yang hangat: vokal lebih menonjol, instrumen pengiring sedikit diangkat, bass agak mundur, tetapi drum sangat mundur.", (3, -5, -2, 2)),
         ("Berikan energi rock dengan drum paling depan dan jelas, bass sedikit diangkat, sementara instrumen lainnya ditarik mundur.", (0, 5, 2, -3)),
         ("Fokuskan groove pada drum dan bass yang sama-sama lebih kuat, sementara vokal agak mundur dan iringan dikurangi.", (-2, 3, 3, -3)),
         ("Tonjolkan low-end bass hingga paling dominan, drum sedikit lebih terasa, dan instrumen pengiring dikecilkan.", (0, 2, 5, -3)),
@@ -309,10 +367,10 @@ def generate_human_test_prompts(count: int = 200, seed: int = 2026) -> list[dict
         ("Naikkan melodi pengiring agar lebih terasa di permukaan, sementara vokal dan drum sedikit dikurangi.", (-2, -2, 0, 3)),
         ("Jaga seluruh elemen mulai dari vokal, drum, bass, hingga instrumen lainnya agar terdengar seimbang natural.", (0, 0, 0, 0)),
         ("Tonjolkan vokal dan drum secara bersamaan ke depan, lalu kecilkan bass serta musik pengiring.", (3, 3, -3, -3)),
-        ("Kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama sedikit iringan.", (3, -3, -3, 2)),
+        ("Kecilkan seksi ritme drum dan bass agar lebih mundur, lalu angkat vokal lebih maju bersama instrumen pengiring yang sedikit diangkat.", (3, -3, -3, 2)),
         ("Bersihkan frekuensi bawah dengan membuat bass paling belakang, sedangkan vokal dan drum sedikit diangkat.", (2, 2, -5, 0)),
-        ("Redam hentakan drum jauh di latar belakang, beri ruang sedikit untuk vokal dan instrumen pengiring.", (2, -5, 0, 2)),
-        ("Buat vokal, drum, dan bass terdengar rapat di depan, sementara elemen harmonis pengiring ditekan kuat ke belakang.", (2, 3, 2, -5)),
+        ("Redam hentakan drum jauh di latar belakang, lalu beri ruang sedikit untuk vokal dan instrumen pengiring.", (2, -5, 0, 2)),
+        ("Buat drum lebih kuat di depan, vokal dan bass sedikit diangkat, sementara elemen harmonis pengiring ditekan kuat ke belakang.", (2, 3, 2, -5)),
         ("Suara penyanyi sedikit lebih maju saja, bass jangan terlalu dominan, sisanya biarkan proporsional.", (2, 0, -2, 0)),
         ("Ketukan drum dinaikkan lebih jelas, vokal tetap seimbang, namun bass dan pengiring agak ditahan.", (0, 3, -2, -2)),
         ("Pastikan vokal tidak tenggelam dan terasa lebih kuat, drum sedikit lebih maju, tetapi instrumen lain lebih mundur.", (3, 2, 0, -3)),

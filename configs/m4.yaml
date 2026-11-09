@@ -1,0 +1,10 @@
+model_name: m4
+description: "M4: Cross-Attention Multimodal Model (Text Clause Queries over Audio Stem-Temporal Keys/Values)"
+batch_size: 16
+epochs: 30
+patience: 5
+lr: 0.001
+weight_decay: 0.0001
+grad_clip: 1.0
+text_backend: subword
+seeds: [42, 123, 2026]

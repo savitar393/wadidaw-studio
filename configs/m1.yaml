@@ -1,0 +1,13 @@
+model_name: m1
+description: "M1: Late Fusion Scratch (Shared Stem CNN + Frozen Text Encoder + Concat MLP)"
+batch_size: 16
+epochs: 30
+patience: 5
+lr: 0.001
+weight_decay: 0.0001
+grad_clip: 1.0
+text_backend: subword
+seeds: [42, 123, 2026]
+ablations:
+  - m1_audio_only
+  - m1_text_only
