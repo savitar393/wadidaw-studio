@@ -14,7 +14,7 @@ Sistem pencampuran musik (*gain staging* 4 stem) berbasis instruksi teks Bahasa 
 - **Model yang Dibandingkan (`wadidaw/models/`):**
   - **M1 (`LateFusionScratchModel`):** Shared-Stem CNN (scratch) + Text Encoder $\rightarrow$ Concat + MLP $\rightarrow g^*$ (beserta ablasi `m1_audio_only` dan `m1_text_only`).
   - **M2 (`LateFusionPretrainedModel`):** Multi-Scale Spectral Backbone (frozen) + Text Encoder $\rightarrow$ Concat + MLP $\rightarrow g^*$.
-  - **M3 (`StructuredTwoBranchModel` — Model Utama):** Audio CNN $\rightarrow \hat{L}$ (4), Text MLP $\rightarrow \hat{r}$ (4, $\sum \hat{r}_i = 0$), digabung secara analitik $\hat{g}_i = \hat{L}_{\text{ref}} + \hat{r}_i - \hat{L}_i$ dengan *multi-task auxiliary loss*.
+  - **M3 (`StructuredTwoBranchModel` — Model Utama):** Audio CNN $\rightarrow \hat{L}$ (4), Text MLP $\rightarrow \hat{r}$ (4, $\sum \hat{r}_i = 0$), digabung secara analitik $\hat{g}_i = \hat{L}\_{\text{ref}} + \hat{r}_i - \hat{L}_i$ dengan *multi-task auxiliary loss*.
   - **M4 (`CrossAttentionGainModel`):** Token klausa teks sebagai *Queries* dan token spasi-waktu stem audio sebagai *Keys/Values* melalui *Multi-Head Cross-Attention*.
   - **M5 (`FiLMConditionedModel`):** *Feature-wise Linear Modulation* ($\gamma \cdot F + \beta$) dari embedding teks terhadap peta fitur CNN.
 - **Rendering Akhir:** Menggunakan stem asli **44.1 kHz stereo** melalui [`render_stereo`](wadidaw/stereo_mixer.py).
