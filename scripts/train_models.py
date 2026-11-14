@@ -146,15 +146,30 @@ def main() -> None:
     parser.add_argument("--patience", type=int, default=5)
     parser.add_argument("--batch-size", type=int, default=16)
     parser.add_argument("--lr", type=float, default=1e-3)
-    parser.add_argument("--text-backend", choices=("subword", "huggingface"), default="subword")
+    parser.add_argument(
+        "--text-backend",
+        choices=("subword", "huggingface", "indobert"),
+        default="subword",
+    )
     parser.add_argument("--device", default="auto")
     parser.add_argument("--train-manifest", type=Path, default=SAMPLES_ROOT / "train_samples.json")
     parser.add_argument("--val-manifest", type=Path, default=SAMPLES_ROOT / "validation_samples.json")
     parser.add_argument("--test-human-manifest", type=Path, default=SAMPLES_ROOT / "test_human_samples.json")
     parser.add_argument("--test-synthetic-manifest", type=Path, default=SAMPLES_ROOT / "test_synthetic_samples.json")
+    parser.add_argument(
+        "--openl3",
+        action="store_true",
+        help="Use *_openl3_samples.json manifests produced by scripts/build_openl3_cache.py.",
+    )
     parser.add_argument("--run-prefix", default="")
     parser.add_argument("--overwrite", action="store_true")
     args = parser.parse_args()
+
+    if args.openl3:
+        args.train_manifest = SAMPLES_ROOT / "train_openl3_samples.json"
+        args.val_manifest = SAMPLES_ROOT / "validation_openl3_samples.json"
+        args.test_human_manifest = SAMPLES_ROOT / "test_human_openl3_samples.json"
+        args.test_synthetic_manifest = SAMPLES_ROOT / "test_synthetic_openl3_samples.json"
 
     OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
 

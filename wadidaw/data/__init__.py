@@ -47,6 +47,13 @@ from wadidaw.data.musdb import (
     select_active_excerpts_for_song,
     validate_split_manifest,
 )
+from wadidaw.data.openl3_features import (
+    OPENL3_EMBED_DIM,
+    OPENL3_FRAMES,
+    OPENL3_SAMPLE_RATE,
+    extract_openl3_embeddings,
+    extract_openl3_for_record,
+)
 from wadidaw.data.prompts import (
     LEVEL_PHRASES,
     LEVEL_VALUES_DB,
@@ -81,6 +88,9 @@ __all__ = [
     "MixingProfile",
     "N_FFT",
     "N_MELS",
+    "OPENL3_EMBED_DIM",
+    "OPENL3_FRAMES",
+    "OPENL3_SAMPLE_RATE",
     "SAMPLES_ROOT",
     "SAMPLE_RATE_MODEL",
     "SAMPLE_RATE_RAW",
@@ -101,6 +111,8 @@ __all__ = [
     "extract_and_cache_song_excerpts",
     "extract_logmel_stem",
     "extract_logmel_stems",
+    "extract_openl3_embeddings",
+    "extract_openl3_for_record",
     "generate_human_test_prompts",
     "generate_paraphrases",
     "load_excerpt_stems_44k",

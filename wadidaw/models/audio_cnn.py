@@ -206,6 +206,58 @@ class MultiScaleSpectralBackbone(nn.Module):
         return self.encode_stems(audio).reshape(audio.shape[0], -1)
 
 
+class OpenL3TokenProjector(nn.Module):
+    """Project cached OpenL3 embeddings into M4 audio tokens.
+
+    Input:  `(B, 4, T, openl3_dim)` embeddings, e.g. `(B, 4, 80, 512)`.
+    Output: `(B, 4, n_temporal_tokens, d_model)` tokens with stem/time identity.
+    """
+
+    def __init__(
+        self,
+        openl3_dim: int = 512,
+        d_model: int = 128,
+        n_temporal_tokens: int = 80,
+    ) -> None:
+        super().__init__()
+        self.openl3_dim = openl3_dim
+        self.d_model = d_model
+        self.n_temporal_tokens = n_temporal_tokens
+        self.proj = nn.Sequential(
+            nn.Linear(openl3_dim, d_model),
+            nn.LayerNorm(d_model),
+            nn.GELU(),
+        )
+        self.stem_type_embedding = nn.Parameter(torch.randn(1, 4, 1, d_model) * 0.02)
+        self.temporal_pos_embedding = nn.Parameter(
+            torch.randn(1, 1, n_temporal_tokens, d_model) * 0.02
+        )
+
+    def forward(self, embeddings: torch.Tensor) -> torch.Tensor:
+        if embeddings.ndim != 4 or embeddings.shape[1] != 4:
+            raise ValueError(
+                "Expected OpenL3 embeddings with shape (B, 4, T, D), "
+                f"got {tuple(embeddings.shape)}."
+            )
+        bsz, n_stems, frames, dim = embeddings.shape
+        if dim != self.openl3_dim:
+            raise ValueError(
+                f"Expected OpenL3 dimension {self.openl3_dim}, got {dim}."
+            )
+
+        x = embeddings.reshape(bsz * n_stems, frames, dim).transpose(1, 2)  # (B*4, D, T)
+        if frames != self.n_temporal_tokens:
+            x = F.interpolate(
+                x,
+                size=self.n_temporal_tokens,
+                mode="linear",
+                align_corners=False,
+            )
+        x = x.transpose(1, 2)  # (B*4, T, D)
+        tokens = self.proj(x).reshape(bsz, n_stems, self.n_temporal_tokens, self.d_model)
+        return tokens + self.stem_type_embedding + self.temporal_pos_embedding
+
+
 class StemFrameTokenizer(nn.Module):
     """Tokenize `(B, 4, 64, 800)` into temporal-stem tokens `(B, 4, T', d_model)` for M4 Cross-Attention."""
 

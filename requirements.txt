@@ -1,4 +1,4 @@
-numpy>=2.0.0
+numpy>=1.26,<2.0
 scipy>=1.13.0
 soundfile>=0.12.1
 torch>=2.2.0
@@ -7,5 +7,12 @@ streamlit>=1.35.0
 pyyaml>=6.0.1
 # Optional pretrained text encoder & loudness packages:
 # sentence-transformers>=3.0.0
-# transformers>=4.40.0
 # pyloudnorm>=0.1.1
+
+# M4-OpenL3: pretrained music/audio encoder.
+# On Linux, install libsndfile first: sudo apt install libsndfile1
+openl3>=0.4.2
+tensorflow>=2.15.0
+
+# IndoBERT text encoder for M4 (frozen by default).
+transformers>=4.40.0

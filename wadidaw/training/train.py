@@ -146,7 +146,8 @@ def train_one_run(config: TrainConfig) -> dict[str, object]:
         n_samples = 0
 
         for batch in train_loader:
-            audio = batch["audio"].to(device=device, dtype=torch.float32)
+            audio_key = getattr(model, "audio_input_key", "audio")
+            audio = batch[audio_key].to(device=device, dtype=torch.float32)
             prompts = batch["prompt"]
             g_true = batch["gains_db"].to(device=device, dtype=torch.float32)
             l_true = batch["loudness_db"].to(device=device, dtype=torch.float32)

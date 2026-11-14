@@ -2,8 +2,10 @@
 
 Implements Section 3.1, Section 7.2, Section 7.3, and Section 9.2 of dokumentasi.md:
 - Accepts 4 stereo/mono audio stems (`vocals`, `drums`, `bass`, `other`) + Indonesian text prompt.
-- Extracts 16 kHz mono log-mel features `(1, 4, 64, 800)` and active stem mask (`> -45 dBFS`).
-- Runs forward pass on a trained checkpoint (`M1`–`M5`) with automatic CPU fallback
+- Extracts 16 kHz mono log-mel features `(1, 4, 64, 800)` for scratch models, or
+  cached-style OpenL3 embeddings `(1, 4, T, 512)` for `m4_openl3` checkpoints.
+- Runs forward pass on a trained checkpoint (`M1`–`M5`, `m4_openl3`, `m4_openl3_indobert`)
+  with automatic CPU fallback
   (or falls back to the structured DSP + prompt parser if no checkpoint file is provided).
 - Renders the final stereo mix at the original sample rate (44.1 kHz) via `render_gain_staged_mix`.
 """
@@ -29,6 +31,7 @@ from wadidaw.data.features import (
     resample_to_16k_mono,
 )
 from wadidaw.data.musdb import ROOT, render_gain_staged_mix
+from wadidaw.data.openl3_features import OPENL3_FRAMES, extract_openl3_embeddings
 from wadidaw.data.prompts import STEM_NAMES, parse_prompt_to_balance
 from wadidaw.models.fusion import build_model
 
@@ -131,8 +134,10 @@ def predict_and_render_mix(
     start_frame = min(int(round(analysis_start_sec * sr)), max(0, total_frames - win_frames))
 
     stems_16k = []
+    stems_stereo_window: dict[str, np.ndarray] = {}
     for name in STEM_NAMES:
         excerpt_slice = stems_stereo[name][start_frame : start_frame + win_frames]
+        stems_stereo_window[name] = excerpt_slice
         mono_16k = resample_to_16k_mono(excerpt_slice, orig_sr=sr)
         stems_16k.append(mono_16k)
 
@@ -145,17 +150,37 @@ def predict_and_render_mix(
     parsed_prompt = parse_prompt_to_balance(prompt)
     loudness_pred_dict = None
     balance_pred_dict = None
+    pans_vec = np.zeros(4, dtype=np.float32)
     model_used = "dsp_prompt_fallback"
 
     if checkpoint_path is not None and Path(checkpoint_path).is_file():
         model, payload = load_trained_model(checkpoint_path, device=device)
         model_used = str(payload.get("model_name", "m3"))
-        audio_tensor = torch.from_numpy(audio_norm).unsqueeze(0).to(device=device, dtype=torch.float32)
         mask_tensor = torch.from_numpy(mask_np).unsqueeze(0).to(device=device)
+
+        audio_key = getattr(model, "audio_input_key", "audio")
+        if audio_key == "openl3":
+            target_frames = int(
+                getattr(getattr(model, "audio_tokenizer", None), "n_temporal_tokens", OPENL3_FRAMES)
+            )
+            openl3_arr = extract_openl3_embeddings(
+                stems_stereo=stems_stereo_window,
+                orig_sr=sr,
+                target_frames=target_frames,
+            )
+            audio_tensor = (
+                torch.from_numpy(openl3_arr).unsqueeze(0).to(device=device, dtype=torch.float32)
+            )
+        else:
+            audio_tensor = (
+                torch.from_numpy(audio_norm).unsqueeze(0).to(device=device, dtype=torch.float32)
+            )
 
         outputs = model(audio_tensor, [prompt], active_mask=mask_tensor, clamp_output=True)
         gains_vec = outputs["gains_pred"].squeeze(0).cpu().numpy()
 
+        if "pans_pred" in outputs:
+            pans_vec = outputs["pans_pred"].squeeze(0).cpu().numpy()
         if "loudness_pred" in outputs:
             l_p = outputs["loudness_pred"].squeeze(0).cpu().numpy()
             loudness_pred_dict = {name: round(float(l_p[i]), 2) for i, name in enumerate(STEM_NAMES)}
@@ -177,12 +202,14 @@ def predict_and_render_mix(
         stems_stereo=stems_stereo,
         gains_db=gains_vec,
         active_mask=mask_np,
+        pans=pans_vec,
     )
 
     return {
         "model_used": model_used,
         "prompt": prompt,
         "gains_db": render_result["effective_gains_db"],
+        "pans": render_result.get("effective_pans", {}),
         "loudness_measured_db": {name: round(float(loudness_dsp[i]), 2) for i, name in enumerate(STEM_NAMES)},
         "loudness_pred_db": loudness_pred_dict,
         "balance_pred_db": balance_pred_dict,

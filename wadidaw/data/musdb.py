@@ -345,12 +345,14 @@ def render_gain_staged_mix(
     stems_stereo: Sequence[np.ndarray] | dict[str, np.ndarray],
     gains_db: Sequence[float] | np.ndarray,
     active_mask: Sequence[bool] | np.ndarray | None = None,
+    pans: Sequence[float] | np.ndarray | None = None,
 ) -> dict[str, object]:
     """Render a stereo mix at original 44.1 kHz resolution and compute audio safety metrics.
 
-    Applies `active_mask` if provided (forcing silent stems to 0.0 dB gain as specified in A2),
-    sums the scaled stereo stems via `wadidaw.stereo_mixer.render_stereo`, and reports
-    `peak_linear`, `peak_dbfs`, and `clipping_rate`.
+    Applies ``active_mask`` if provided (forcing silent stems to 0.0 dB gain/pan),
+    optionally applies static per-stem pan positions, sums the scaled stereo stems via
+    ``wadidaw.stereo_mixer.render_stereo``, and reports ``peak_linear``, ``peak_dbfs``,
+    and ``clipping_rate``.
     """
     if isinstance(stems_stereo, dict):
         stem_arrays = [np.asarray(stems_stereo[name], dtype=np.float32) for name in STEM_NAMES]
@@ -364,15 +366,25 @@ def render_gain_staged_mix(
     if effective_gains.shape != (4,):
         raise ValueError(f"Expected 4 gain values in dB, got {effective_gains.shape}.")
 
+    effective_pans = (
+        np.zeros(4, dtype=np.float32)
+        if pans is None
+        else np.asarray(pans, dtype=np.float32).copy()
+    )
+    if effective_pans.shape != (4,):
+        raise ValueError(f"Expected 4 pan values in [-1, 1], got {effective_pans.shape}.")
+
     if active_mask is not None:
         mask = np.asarray(active_mask, dtype=bool)
         effective_gains[~mask] = 0.0
+        effective_pans[~mask] = 0.0
 
     effective_gains = np.clip(effective_gains, -18.0, 12.0)
+    effective_pans = np.clip(effective_pans, -1.0, 1.0)
 
     tensors = [torch.from_numpy(s) for s in stem_arrays]
     gains_tensor = torch.from_numpy(effective_gains)
-    pans_tensor = torch.zeros(4, dtype=torch.float32)
+    pans_tensor = torch.from_numpy(effective_pans)
 
     with torch.no_grad():
         mix_tensor = render_stereo(tensors, gains_tensor, pans_tensor)
@@ -386,6 +398,7 @@ def render_gain_staged_mix(
     return {
         "mix": mix,
         "effective_gains_db": {name: round(float(effective_gains[i]), 4) for i, name in enumerate(STEM_NAMES)},
+        "effective_pans": {name: round(float(effective_pans[i]), 4) for i, name in enumerate(STEM_NAMES)},
         "metrics": {
             "peak_linear": round(peak_linear, 6),
             "peak_dbfs": round(peak_dbfs, 4),

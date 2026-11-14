@@ -43,6 +43,7 @@ from wadidaw.data.musdb import (
     load_split_manifest,
     select_active_excerpts_for_song,
 )
+from wadidaw.data.openl3_features import OPENL3_FRAMES
 from wadidaw.data.prompts import (
     MIXING_PROFILES,
     STEM_NAMES,
@@ -355,7 +356,7 @@ class MusdbMultimodalDataset(Dataset):
         audio_norm = (logmel_perturbed_db + 30.0) * 0.02
         stem_mel_power = raw_mel_power * np.power(10.0, effective_g0 / 10.0)[:, None]
 
-        return {
+        item = {
             "id": str(record["id"]),
             "song": str(record["song"]),
             "split": str(record["split"]),
@@ -369,4 +370,28 @@ class MusdbMultimodalDataset(Dataset):
             "balance_target": torch.tensor(record["balance_target"], dtype=torch.float32),
             "gains_db": torch.tensor(record["gains_db"], dtype=torch.float32),
             "active_mask": torch.from_numpy(active_mask),
+            # Optional static panning target; defaults to centre until pan labels exist.
+            "pan_target": torch.tensor(
+                record.get("pan_target", [0.0, 0.0, 0.0, 0.0]),
+                dtype=torch.float32,
+            ),
         }
+
+        openl3_rel = record.get("openl3_path")
+        if openl3_rel:
+            openl3_arr = np.load(self.root_dir / str(openl3_rel)).astype(np.float32)
+            if openl3_arr.ndim != 3 or openl3_arr.shape[0] != 4:
+                raise ValueError(
+                    f"Expected OpenL3 shape (4, T, D) at {openl3_rel}, "
+                    f"got {openl3_arr.shape}."
+                )
+            target_frames = int(record.get("openl3_frames", OPENL3_FRAMES))
+            frames = openl3_arr.shape[1]
+            if frames > target_frames:
+                openl3_arr = openl3_arr[:, :target_frames, :]
+            elif frames < target_frames:
+                pad = np.repeat(openl3_arr[:, -1:, :], target_frames - frames, axis=1)
+                openl3_arr = np.concatenate((openl3_arr, pad), axis=1)
+            item["openl3"] = torch.from_numpy(openl3_arr)
+
+        return item

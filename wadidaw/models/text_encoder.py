@@ -21,12 +21,20 @@ from typing import Sequence
 import numpy as np
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 from wadidaw.data.prompts import split_mixing_clauses
 
 
 TEXT_EMBED_DIM: int = 384
+INDOBERT_EMBED_DIM: int = 768
+INDOBERT_MODEL_NAME: str = "indobenchmark/indobert-base-p1"
 _SUBWORD_DIM: int = 32
+
+
+def get_text_embed_dim(backend: str) -> int:
+    """Return the embedding width for a text backend."""
+    return INDOBERT_EMBED_DIM if str(backend).lower() == "indobert" else TEXT_EMBED_DIM
 
 _STEM_ROLE_LEXICON: tuple[tuple[int, tuple[str, ...]], ...] = (
     (0, ("vokal", "penyanyi", "nyanyian", "suara utama", "lead vokal", "jalur vokal", "suara vokal")),
@@ -196,7 +204,13 @@ class IndonesianSubwordTextEncoder(nn.Module):
 
 
 class TextEncoderWrapper(nn.Module):
-    """Unified frozen text encoder supporting `subword` (offline default) and `huggingface`."""
+    """Unified frozen text encoder.
+
+    Backends:
+        - ``subword``: deterministic offline Indonesian encoder (default).
+        - ``huggingface``: SentenceTransformer sentence embeddings.
+        - ``indobert``: IndoBERT token + sentence embeddings (frozen).
+    """
 
     def __init__(
         self,
@@ -206,31 +220,75 @@ class TextEncoderWrapper(nn.Module):
         max_clauses: int = 8,
     ) -> None:
         super().__init__()
-        self.backend = backend
-        self.model_name = model_name
-        self.embed_dim = embed_dim
+        self.backend = str(backend).lower()
+        self.model_name = INDOBERT_MODEL_NAME if self.backend == "indobert" else model_name
+        self.embed_dim = get_text_embed_dim(self.backend) if self.backend == "indobert" else embed_dim
         self.subword_encoder = IndonesianSubwordTextEncoder(
             embed_dim=embed_dim,
             max_clauses=max_clauses,
         )
         self._hf_model = None
-        if backend == "huggingface":
+        self._hf_tokenizer = None
+        self._indobert_model = None
+
+        if self.backend == "huggingface":
             try:
                 from sentence_transformers import SentenceTransformer  # type: ignore
 
-                self._hf_model = SentenceTransformer(model_name)
+                self._hf_model = SentenceTransformer(self.model_name)
                 for param in self._hf_model.parameters():
                     param.requires_grad_(False)
             except Exception as exc:
                 raise RuntimeError(
-                    f"HuggingFace sentence-transformers backend requested ({model_name}) "
+                    f"HuggingFace sentence-transformers backend requested ({self.model_name}) "
                     f"but unavailable: {exc}. Use backend='subword' for offline execution."
                 ) from exc
+
+        if self.backend == "indobert":
+            try:
+                from transformers import AutoModel, AutoTokenizer  # type: ignore
+
+                self._hf_tokenizer = AutoTokenizer.from_pretrained(self.model_name)
+                self._indobert_model = AutoModel.from_pretrained(self.model_name)
+                self.embed_dim = int(self._indobert_model.config.hidden_size)
+                for param in self._indobert_model.parameters():
+                    param.requires_grad_(False)
+            except Exception as exc:
+                raise RuntimeError(
+                    f"IndoBERT backend requested ({self.model_name}) but unavailable: {exc}. "
+                    "Install `transformers` and ensure the model can be downloaded."
+                ) from exc
+
+    @torch.no_grad()
+    def _encode_indobert(
+        self,
+        prompts: Sequence[str],
+        device: torch.device | str,
+    ) -> tuple[torch.Tensor, torch.Tensor]:
+        assert self._hf_tokenizer is not None
+        assert self._indobert_model is not None
+        encoded = self._hf_tokenizer(
+            list(prompts),
+            padding=True,
+            truncation=True,
+            max_length=64,
+            return_tensors="pt",
+        )
+        encoded = {key: value.to(device) for key, value in encoded.items()}
+        outputs = self._indobert_model(**encoded)
+        tokens = outputs.last_hidden_state.to(dtype=torch.float32)
+        mask = encoded["attention_mask"].to(dtype=torch.bool)
+        return tokens, mask
 
     @torch.no_grad()
     def encode_sentences(self, prompts: Sequence[str] | torch.Tensor, device: torch.device | str) -> torch.Tensor:
         if isinstance(prompts, torch.Tensor):
             return prompts.to(device=device, dtype=torch.float32)
+        if self.backend == "indobert":
+            tokens, mask = self._encode_indobert(prompts, device=device)
+            mask_f = mask.unsqueeze(-1).to(dtype=tokens.dtype)
+            pooled = (tokens * mask_f).sum(dim=1) / mask_f.sum(dim=1).clamp(min=1.0)
+            return F.normalize(pooled, dim=-1)
         if self._hf_model is not None:
             emb = self._hf_model.encode(
                 list(prompts),
@@ -245,4 +303,24 @@ class TextEncoderWrapper(nn.Module):
     def encode_tokens(self, prompts: Sequence[str] | torch.Tensor, device: torch.device | str) -> torch.Tensor:
         if isinstance(prompts, torch.Tensor) and prompts.ndim == 3:
             return prompts.to(device=device, dtype=torch.float32)
+        if self.backend == "indobert":
+            tokens, _mask = self._encode_indobert(prompts, device=device)
+            return tokens
         return self.subword_encoder.encode_tokens(prompts, device=device)
+
+    @torch.no_grad()
+    def encode_tokens_with_mask(
+        self,
+        prompts: Sequence[str] | torch.Tensor,
+        device: torch.device | str,
+    ) -> tuple[torch.Tensor, torch.Tensor]:
+        """Return token embeddings and a boolean mask for valid tokens."""
+        if isinstance(prompts, torch.Tensor) and prompts.ndim == 3:
+            tokens = prompts.to(device=device, dtype=torch.float32)
+            mask = torch.ones(tokens.shape[:2], dtype=torch.bool, device=device)
+            return tokens, mask
+        if self.backend == "indobert":
+            return self._encode_indobert(prompts, device=device)
+        tokens = self.subword_encoder.encode_tokens(prompts, device=device)
+        mask = torch.ones(tokens.shape[:2], dtype=torch.bool, device=device)
+        return tokens, mask
