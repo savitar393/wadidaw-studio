@@ -147,6 +147,24 @@ def main() -> None:
     parser.add_argument("--batch-size", type=int, default=16)
     parser.add_argument("--lr", type=float, default=1e-3)
     parser.add_argument(
+        "--grad-accum",
+        type=int,
+        default=1,
+        help="Microbatches accumulated per optimizer step "
+        "(effective batch = batch-size * grad-accum).",
+    )
+    parser.add_argument("--weight-decay", type=float, default=1e-4)
+    parser.add_argument("--dropout", type=float, default=None,
+                        help="Override model dropout (M1/M2/M3/M5).")
+    parser.add_argument("--hidden-dim", type=int, default=None,
+                        help="Override model hidden dim (M1/M2/M3/M5).")
+    parser.add_argument(
+        "--out-dir",
+        type=Path,
+        default=OUTPUTS_DIR,
+        help="Directory for the summary CSV tables (default: outputs/).",
+    )
+    parser.add_argument(
         "--text-backend",
         choices=("subword", "huggingface", "indobert"),
         default="subword",
@@ -171,7 +189,7 @@ def main() -> None:
         args.test_human_manifest = SAMPLES_ROOT / "test_human_openl3_samples.json"
         args.test_synthetic_manifest = SAMPLES_ROOT / "test_synthetic_openl3_samples.json"
 
-    OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
+    args.out_dir.mkdir(parents=True, exist_ok=True)
 
     print("Evaluating non-learning DSP baselines...")
     all_rows = evaluate_baselines_table(
@@ -179,6 +197,12 @@ def main() -> None:
         test_human_manifest=args.test_human_manifest,
         batch_size=args.batch_size * 2,
     )
+
+    model_kwargs: dict[str, object] = {}
+    if args.dropout is not None:
+        model_kwargs["dropout"] = args.dropout
+    if args.hidden_dim is not None:
+        model_kwargs["hidden_dim"] = args.hidden_dim
 
     for model_name in args.models:
         for seed in args.seeds:
@@ -192,6 +216,9 @@ def main() -> None:
                 epochs=args.epochs,
                 patience=args.patience,
                 lr=args.lr,
+                weight_decay=args.weight_decay,
+                grad_accum_steps=args.grad_accum,
+                model_kwargs=model_kwargs,
                 text_backend=args.text_backend,
                 device=args.device,
                 train_manifest=str(args.train_manifest),
@@ -232,14 +259,14 @@ def main() -> None:
                 )
 
     # Save per-run and aggregated CSV tables as specified in Section 10.3 & 15.4
-    per_seed_path = OUTPUTS_DIR / "per_seed_results.csv"
+    per_seed_path = args.out_dir / "per_seed_results.csv"
     with per_seed_path.open("w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=list(all_rows[0].keys()))
         writer.writeheader()
         writer.writerows(all_rows)
 
     summary_rows = aggregate_seed_rows(all_rows)
-    main_csv_path = OUTPUTS_DIR / "main_results.csv"
+    main_csv_path = args.out_dir / "main_results.csv"
     with main_csv_path.open("w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=list(summary_rows[0].keys()))
         writer.writeheader()
@@ -247,7 +274,7 @@ def main() -> None:
 
     m1_rows = [r for r in summary_rows if str(r["model"]).startswith("m1") or str(r["model"]).startswith("no_op") or str(r["model"]).startswith("dsp")]
     if m1_rows:
-        m1_csv_path = OUTPUTS_DIR / "m1_results.csv"
+        m1_csv_path = args.out_dir / "m1_results.csv"
         with m1_csv_path.open("w", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=list(m1_rows[0].keys()))
             writer.writeheader()

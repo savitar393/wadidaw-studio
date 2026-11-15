@@ -1,6 +1,7 @@
 model_name: m1
 description: "M1: Late Fusion Scratch (Shared Stem CNN + Frozen Text Encoder + Concat MLP)"
-batch_size: 16
+batch_size: 8
+grad_accum_steps: 8          # effective batch = 8 x 8 = 64 (matches the old batch-64 baseline)
 epochs: 30
 patience: 5
 lr: 0.001
@@ -11,3 +12,9 @@ seeds: [42, 123, 2026]
 ablations:
   - m1_audio_only
   - m1_text_only
+
+# NOTE: scripts/train_models.py currently reads CLI arguments, not this YAML file.
+# Equivalent CLI:
+#   python -m scripts.train_models --models m1 \
+#     --batch-size 8 --grad-accum 8 --epochs 30 --patience 5 \
+#     --weight-decay 0.0001 --run-prefix m1e2 --out-dir outputs/m1_v2
