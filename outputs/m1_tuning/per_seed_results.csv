@@ -1,0 +1,10 @@
+model,title,eval_split,seed,mae_db,rmse_db,bias_db,r2,pearson_r,spearman_rho,max_error_db,mae_vocals_db,mae_drums_db,mae_bass_db,mae_other_db,band_mae_db,band_mse_norm,log_spectral_distance_db,worst_band_error_db,success_rate_1db,success_rate_band_001,balance_mae_db,intent_direction_acc,instruction_adherence
+no_op,Baseline: No-Op (0 dB),validation,deterministic,3.9203,4.9197,0.0028,-0.0,0.0,0.0,17.9129,3.7113,3.7316,3.9264,4.3118,2.1894,0.055967,2.6595,3.9754,2.38,18.62,3.9231,39.25,1.88
+no_op,Baseline: No-Op (0 dB),test_human,deterministic,3.5678,4.5182,0.0093,-0.0,0.0,0.0,14.7789,3.9245,3.5495,3.3343,3.4628,1.9261,0.043445,2.3902,3.4556,2.5,25.5,3.5771,37.62,2.5
+random,Baseline: Random Gain,validation,deterministic,4.764,5.9199,0.0422,-0.448,0.0309,0.0256,22.2182,4.6083,4.5097,4.7398,5.1984,2.9515,0.096574,3.4815,5.1982,0.38,7.88,4.5321,40.03,1.0
+random,Baseline: Random Gain,test_human,deterministic,4.6548,5.7945,-0.0287,-0.6448,-0.0547,-0.0547,18.5796,4.9696,4.6597,4.3638,4.626,2.8481,0.088576,3.3838,5.0269,0.0,7.0,4.4902,35.75,0.5
+dsp_equal_loudness,Baseline: Audio-Only Equal Loudness DSP,validation,deterministic,2.3342,2.7476,-0.0152,0.6881,0.8323,0.804,6.364,2.4721,2.264,1.8963,2.7045,1.4604,0.022201,1.7649,2.5006,6.12,23.5,2.3381,21.59,5.75
+dsp_equal_loudness,Baseline: Audio-Only Equal Loudness DSP,test_human,deterministic,2.2412,2.6625,0.0045,0.6527,0.8082,0.7807,6.535,2.4109,2.0949,1.8638,2.5951,1.3911,0.020463,1.6693,2.3585,5.5,32.5,2.2505,22.88,5.0
+m1,M1 Late Fusion Scratch,validation,42,0.4363,0.59,0.0039,0.9856,0.9928,0.9933,3.3337,0.3571,0.525,0.4631,0.4,0.2535,0.000885,0.3075,0.4538,97.38,99.62,0.4386,92.28,90.88
+m1,M1 Late Fusion Scratch,test_human,42,0.5781,0.7815,0.0099,0.9701,0.985,0.9844,3.4053,0.6105,0.6799,0.473,0.5491,0.3483,0.001595,0.4235,0.6196,88.0,98.0,0.588,86.0,82.5
+m1,M1 Late Fusion Scratch,test_synthetic,42,0.4937,0.6509,0.0081,0.981,0.9906,0.9914,4.4888,0.508,0.5841,0.448,0.4347,0.3037,0.001193,0.3672,0.5289,95.6,99.35,0.495,91.15,87.9
