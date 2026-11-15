@@ -1,18 +1,14 @@
-"""Multimodal fusion models M1, M2, M4, M5 and ablation variants (`audio_only`, `text_only`).
+"""Multimodal fusion models: M1 baseline and M4 cross-attention variants.
 
-Implements Section 6.3, 6.5, 6.6, 6.7, and 6.8 of dokumentasi.md:
-- `LateFusionScratchModel` (M1): Scratch shared-stem CNN + Text Encoder -> Concat + MLP -> g* (4)
-  Supports `ablation_mode` in `("multimodal", "audio_only", "text_only")`.
-- `LateFusionPretrainedModel` (M2): Frozen/Multi-scale CNN14-style backbone + Text Encoder -> Concat + MLP -> g* (4).
-- `CrossAttentionGainModel` (M4): Audio stem-temporal tokens (Keys/Values) + Text clause tokens (Queries)
-  via Multihead Cross-Attention -> Stem-Query Pooling -> MLP -> g* (4).
-- `FiLMConditionedModel` (M5): Feature-wise Linear Modulation (gamma * feature_map + beta) conditioned
-  on the text prompt -> Pooling -> MLP -> g* (4).
+- ``LateFusionScratchModel`` (M1): scratch shared-stem CNN + text encoder,
+  concatenation, MLP -> 4 gains. Supports audio-only/text-only ablations.
+- ``CrossAttentionGainModel`` (M4): audio stem-temporal tokens + text clause
+  tokens via multi-head cross-attention -> 4 gains. Supports scratch log-mel
+  and cached OpenL3 embeddings.
 """
 
 from __future__ import annotations
 
-from pathlib import Path
 from typing import Sequence
 
 import torch
@@ -21,12 +17,10 @@ import torch.nn.functional as F
 
 from wadidaw.data.features import GAIN_MAX_DB, GAIN_MIN_DB
 from wadidaw.models.audio_cnn import (
-    MultiScaleSpectralBackbone,
     OpenL3TokenProjector,
     SharedStemAudioCNN,
     StemFrameTokenizer,
 )
-from wadidaw.models.structured import StructuredTwoBranchModel
 from wadidaw.models.text_encoder import (
     TEXT_EMBED_DIM,
     TextEncoderWrapper,
@@ -102,61 +96,6 @@ class LateFusionScratchModel(nn.Module):
 
         fused = torch.cat((a_feat, t_feat), dim=-1)
         g_pred = self.fusion_mlp(fused)
-
-        if active_mask is not None:
-            g_pred = g_pred * active_mask.to(device=device, dtype=torch.float32)
-
-        if clamp_output or not self.training:
-            g_pred = g_pred.clamp(GAIN_MIN_DB, GAIN_MAX_DB)
-
-        return {"gains_pred": g_pred}
-
-
-class LateFusionPretrainedModel(nn.Module):
-    """M2: Late Fusion with frozen multi-scale spectral backbone (CNN14-style)."""
-
-    model_code = "m2"
-
-    def __init__(
-        self,
-        audio_embed_dim: int = 128,
-        text_embed_dim: int = TEXT_EMBED_DIM,
-        hidden_dim: int = 256,
-        dropout: float = 0.15,
-        freeze_audio_backbone: bool = True,
-        pretrained_checkpoint: Path | str | None = None,
-        text_backend: str = "subword",
-    ) -> None:
-        super().__init__()
-        self.audio_encoder = MultiScaleSpectralBackbone(
-            embed_dim=audio_embed_dim,
-            freeze_backbone=freeze_audio_backbone,
-            checkpoint_path=pretrained_checkpoint,
-        )
-        self.text_encoder = TextEncoderWrapper(backend=text_backend, embed_dim=text_embed_dim)
-
-        self.fusion_mlp = nn.Sequential(
-            nn.Linear(4 * audio_embed_dim + text_embed_dim, hidden_dim),
-            nn.LayerNorm(hidden_dim),
-            nn.GELU(),
-            nn.Dropout(dropout),
-            nn.Linear(hidden_dim, hidden_dim // 2),
-            nn.GELU(),
-            nn.Linear(hidden_dim // 2, 4),
-        )
-
-    def forward(
-        self,
-        audio: torch.Tensor,
-        prompts: Sequence[str] | torch.Tensor,
-        active_mask: torch.Tensor | None = None,
-        clamp_output: bool = False,
-    ) -> dict[str, torch.Tensor]:
-        device = audio.device
-        a_flat = self.audio_encoder(audio)  # (B, 4 * audio_embed_dim)
-        t_emb = self.text_encoder.encode_sentences(prompts, device=device)  # (B, 384)
-
-        g_pred = self.fusion_mlp(torch.cat((a_flat, t_emb), dim=-1))
 
         if active_mask is not None:
             g_pred = g_pred * active_mask.to(device=device, dtype=torch.float32)
@@ -351,95 +290,18 @@ class CrossAttentionGainModel(nn.Module):
         return outputs
 
 
-class FiLMConditionedModel(nn.Module):
-    """M5: Feature-wise Linear Modulation (FiLM) conditioning model (Section 6.8)."""
-
-    model_code = "m5"
-
-    def __init__(
-        self,
-        text_embed_dim: int = TEXT_EMBED_DIM,
-        hidden_dim: int = 256,
-        dropout: float = 0.15,
-        text_backend: str = "subword",
-    ) -> None:
-        super().__init__()
-        self.text_encoder = TextEncoderWrapper(backend=text_backend, embed_dim=text_embed_dim)
-
-        self.conv1 = nn.Conv2d(4, 32, kernel_size=3, stride=(2, 2), padding=1)
-        self.conv2 = nn.Conv2d(32, 64, kernel_size=3, stride=(2, 4), padding=1)
-        self.conv3 = nn.Conv2d(64, 128, kernel_size=3, stride=(2, 4), padding=1)
-
-        # FiLM generators producing (scale, shift) for each conv stage
-        self.film1 = nn.Linear(text_embed_dim, 32 * 2)
-        self.film2 = nn.Linear(text_embed_dim, 64 * 2)
-        self.film3 = nn.Linear(text_embed_dim, 128 * 2)
-
-        # Direct stem energy skip + pooled FiLM features + text embedding -> g*
-        self.head = nn.Sequential(
-            nn.Linear(128 * 2 + 4 * 64 + text_embed_dim, hidden_dim),
-            nn.LayerNorm(hidden_dim),
-            nn.GELU(),
-            nn.Dropout(dropout),
-            nn.Linear(hidden_dim, 128),
-            nn.GELU(),
-            nn.Linear(128, 4),
-        )
-
-    @staticmethod
-    def _apply_film(feat: torch.Tensor, film_params: torch.Tensor) -> torch.Tensor:
-        gamma, beta = film_params.chunk(2, dim=-1)
-        gamma = 1.0 + 0.5 * torch.tanh(gamma).unsqueeze(-1).unsqueeze(-1)
-        beta = beta.unsqueeze(-1).unsqueeze(-1)
-        return F.gelu(feat * gamma + beta)
-
-    def forward(
-        self,
-        audio: torch.Tensor,
-        prompts: Sequence[str] | torch.Tensor,
-        active_mask: torch.Tensor | None = None,
-        clamp_output: bool = False,
-    ) -> dict[str, torch.Tensor]:
-        device = audio.device
-        bsz = audio.shape[0]
-        t_emb = self.text_encoder.encode_sentences(prompts, device=device)
-
-        audio_conv = F.avg_pool2d(audio, kernel_size=(1, 4)) if audio.shape[-1] >= 16 else audio
-        h = self._apply_film(self.conv1(audio_conv), self.film1(t_emb))
-        h = self._apply_film(self.conv2(h), self.film2(t_emb))
-        h = self._apply_film(self.conv3(h), self.film3(t_emb))
-
-        pooled_mean = h.mean(dim=(2, 3))
-        pooled_std = h.std(dim=(2, 3), unbiased=False)
-        stem_mel_means = audio.mean(dim=-1).reshape(bsz, -1)  # (B, 256)
-
-        combined = torch.cat((pooled_mean, pooled_std, stem_mel_means, t_emb), dim=-1)
-        g_pred = self.head(combined)
-
-        if active_mask is not None:
-            g_pred = g_pred * active_mask.to(device=device, dtype=torch.float32)
-
-        if clamp_output or not self.training:
-            g_pred = g_pred.clamp(GAIN_MIN_DB, GAIN_MAX_DB)
-
-        return {"gains_pred": g_pred}
-
-
 MODEL_REGISTRY: dict[str, str] = {
     "m1": "M1 Late Fusion Scratch",
     "m1_audio_only": "M1 Ablation (Audio-Only)",
     "m1_text_only": "M1 Ablation (Text-Only)",
-    "m2": "M2 Late Fusion Pretrained Backbone",
-    "m3": "M3 Structured Two-Branch (Main)",
     "m4": "M4 Cross-Attention Multimodal (Scratch)",
     "m4_openl3": "M4 Cross-Attention + OpenL3",
     "m4_openl3_indobert": "M4 Cross-Attention + OpenL3 + IndoBERT",
-    "m5": "M5 FiLM Conditioning",
 }
 
 
 def build_model(model_name: str, text_backend: str = "subword", **kwargs: object) -> nn.Module:
-    """Instantiate one of the multimodal gain staging models (`m1`..`m5` and ablations)."""
+    """Instantiate an M1 or M4 model variant."""
     key = model_name.strip().lower()
     kwargs.setdefault("text_embed_dim", get_text_embed_dim(text_backend))
 
@@ -449,10 +311,6 @@ def build_model(model_name: str, text_backend: str = "subword", **kwargs: object
         return LateFusionScratchModel(ablation_mode="audio_only", text_backend=text_backend, **kwargs)
     if key == "m1_text_only":
         return LateFusionScratchModel(ablation_mode="text_only", text_backend=text_backend, **kwargs)
-    if key == "m2":
-        return LateFusionPretrainedModel(text_backend=text_backend, **kwargs)
-    if key == "m3":
-        return StructuredTwoBranchModel(text_backend=text_backend, **kwargs)
     if key == "m4":
         return CrossAttentionGainModel(text_backend=text_backend, **kwargs)
     if key == "m4_openl3":
@@ -464,6 +322,4 @@ def build_model(model_name: str, text_backend: str = "subword", **kwargs: object
         kwargs.setdefault("n_temporal_tokens", 80)
         kwargs["text_embed_dim"] = get_text_embed_dim("indobert")
         return CrossAttentionGainModel(text_backend="indobert", **kwargs)
-    if key == "m5":
-        return FiLMConditionedModel(text_backend=text_backend, **kwargs)
     raise ValueError(f"Unknown model_name '{model_name}'. Available: {sorted(MODEL_REGISTRY.keys())}")

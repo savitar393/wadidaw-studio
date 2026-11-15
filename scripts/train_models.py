@@ -1,4 +1,4 @@
-"""Train and evaluate multimodal gain staging models (M1–M5, ablations, and DSP baselines)."""
+"""Train and evaluate M1 baseline and M4 variants, plus DSP baselines."""
 
 from __future__ import annotations
 
@@ -138,7 +138,7 @@ def main() -> None:
     parser.add_argument(
         "--models",
         nargs="+",
-        default=["m1", "m1_audio_only", "m1_text_only", "m2", "m3", "m4"],
+        default=["m1", "m1_audio_only", "m1_text_only", "m4"],
         choices=sorted(MODEL_REGISTRY.keys()),
     )
     parser.add_argument("--seeds", type=int, nargs="+", default=[42, 123, 2026])

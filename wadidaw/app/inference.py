@@ -4,8 +4,8 @@ Implements Section 3.1, Section 7.2, Section 7.3, and Section 9.2 of dokumentasi
 - Accepts 4 stereo/mono audio stems (`vocals`, `drums`, `bass`, `other`) + Indonesian text prompt.
 - Extracts 16 kHz mono log-mel features `(1, 4, 64, 800)` for scratch models, or
   cached-style OpenL3 embeddings `(1, 4, T, 512)` for `m4_openl3` checkpoints.
-- Runs forward pass on a trained checkpoint (`M1`–`M5`, `m4_openl3`, `m4_openl3_indobert`)
-  with automatic CPU fallback
+- Runs forward pass on a trained M1/M4 checkpoint (`m1`, `m4`, `m4_openl3`,
+  `m4_openl3_indobert`) with automatic CPU fallback
   (or falls back to the structured DSP + prompt parser if no checkpoint file is provided).
 - Renders the final stereo mix at the original sample rate (44.1 kHz) via `render_gain_staged_mix`.
 """
@@ -49,7 +49,7 @@ def load_trained_model(
         raise FileNotFoundError(f"Checkpoint not found: {path}")
 
     payload = torch.load(path, map_location=device, weights_only=False)
-    model_name = str(payload.get("model_name", "m3"))
+    model_name = str(payload.get("model_name", "m4"))
     text_backend = str(payload.get("text_backend", "subword"))
 
     model = build_model(model_name, text_backend=text_backend).to(device)
@@ -118,8 +118,8 @@ def predict_and_render_mix(
     Returns a dictionary matching Section 3.1 of dokumentasi.md:
         - `gains_db`: `{vocals, drums, bass, other}` in dB
         - `loudness_measured_db`: measured per-stem loudness in dBFS
-        - `loudness_pred_db`: model-predicted loudness (if M3)
-        - `balance_pred_db`: model-predicted relative balance `r` (if M3)
+        - `loudness_pred_db`: optional model-predicted loudness (if provided)
+        - `balance_pred_db`: optional model-predicted relative balance (if provided)
         - `active_mask`: `{vocals, drums, bass, other}` booleans
         - `mix`: `(frames, 2)` stereo waveform at original sample rate
         - `sample_rate`: sample rate of `mix`
@@ -155,7 +155,7 @@ def predict_and_render_mix(
 
     if checkpoint_path is not None and Path(checkpoint_path).is_file():
         model, payload = load_trained_model(checkpoint_path, device=device)
-        model_used = str(payload.get("model_name", "m3"))
+        model_used = str(payload.get("model_name", "m4"))
         mask_tensor = torch.from_numpy(mask_np).unsqueeze(0).to(device=device)
 
         audio_key = getattr(model, "audio_input_key", "audio")

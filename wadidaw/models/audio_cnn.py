@@ -1,18 +1,13 @@
-"""Audio encoders for 4-stem `(B, 4, 64, 800)` log-mel spectrograms.
+"""Audio encoders for M1 and M4.
 
-Implements Section 6.1 and Section 6.4 of dokumentasi.md:
-- `SharedStemAudioCNN`: shared Conv2D encoder per stem (`32 -> 64 -> 128`) with
-  calibrated RMS log-mean-power pooling for M1, M3, and M5.
-- `MultiScaleSpectralBackbone`: deeper CNN14-inspired residual spectral-temporal
-  feature extractor for M2.
-- `StemFrameTokenizer`: extracts per-stem temporal token sequences `(B, 4, T', D)`
-  for M4 cross-attention.
+- `SharedStemAudioCNN`: shared Conv2D encoder per stem for M1.
+- `OpenL3TokenProjector`: projects cached OpenL3 embeddings into M4 tokens.
+- `StemFrameTokenizer`: extracts per-stem temporal tokens from log-mel for M4.
 """
 
 from __future__ import annotations
 
 import math
-from pathlib import Path
 
 import torch
 import torch.nn as nn
@@ -62,7 +57,7 @@ class SharedStemAudioCNN(nn.Module):
     Input shape:  `(B, 4, 64, T)` normalized dBFS log-mel spectrogram.
     Outputs:
         - `stem_embeddings`: `(B, 4, embed_dim)` per-stem feature vectors.
-        - `loudness_pred`:   `(B, 4)` predicted stem loudness in dBFS (used in M3).
+        - `loudness_pred`:   `(B, 4)` optional predicted stem loudness in dBFS.
     """
 
     def __init__(self, embed_dim: int = 128, dropout: float = 0.1) -> None:
@@ -127,83 +122,6 @@ class SharedStemAudioCNN(nn.Module):
     def forward(self, audio: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
         """Return `(stem_embeddings, loudness_pred)` with shapes `((B, 4, D), (B, 4))`."""
         return self.encode_stems_and_loudness(audio)
-
-
-class _ResSpectralBlock(nn.Module):
-    """Residual 2D convolutional block inspired by PANNs CNN14."""
-
-    def __init__(self, in_ch: int, out_ch: int, stride: tuple[int, int] = (2, 2)) -> None:
-        super().__init__()
-        self.conv1 = nn.Conv2d(in_ch, out_ch, kernel_size=3, stride=1, padding=1, bias=False)
-        self.gn1 = nn.GroupNorm(8, out_ch)
-        self.conv2 = nn.Conv2d(out_ch, out_ch, kernel_size=3, stride=stride, padding=1, bias=False)
-        self.gn2 = nn.GroupNorm(8, out_ch)
-        self.shortcut = nn.Sequential(
-            nn.Conv2d(in_ch, out_ch, kernel_size=1, stride=stride, bias=False),
-            nn.GroupNorm(8, out_ch),
-        )
-
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
-        out = F.gelu(self.gn1(self.conv1(x)))
-        out = self.gn2(self.conv2(out))
-        return F.gelu(out + self.shortcut(x))
-
-
-class MultiScaleSpectralBackbone(nn.Module):
-    """PANNs-CNN14-style multi-resolution audio feature extractor for M2."""
-
-    def __init__(
-        self,
-        embed_dim: int = 128,
-        freeze_backbone: bool = True,
-        checkpoint_path: Path | str | None = None,
-    ) -> None:
-        super().__init__()
-        self.embed_dim = embed_dim
-
-        rng_state = torch.random.get_rng_state()
-        torch.manual_seed(202602)
-        try:
-            self.backbone = nn.Sequential(
-                _ResSpectralBlock(1, 32, stride=(2, 2)),
-                _ResSpectralBlock(32, 64, stride=(2, 2)),
-                _ResSpectralBlock(64, 128, stride=(2, 2)),
-                _ResSpectralBlock(128, 256, stride=(2, 2)),
-            )
-        finally:
-            torch.random.set_rng_state(rng_state)
-
-        if checkpoint_path is not None and Path(checkpoint_path).is_file():
-            state = torch.load(checkpoint_path, map_location="cpu", weights_only=True)
-            self.backbone.load_state_dict(state, strict=False)
-
-        if freeze_backbone:
-            for param in self.backbone.parameters():
-                param.requires_grad_(False)
-
-        self.head = nn.Sequential(
-            nn.Linear(256 * 2 + 64 * 2 + 1, embed_dim),
-            nn.LayerNorm(embed_dim),
-            nn.GELU(),
-            nn.Linear(embed_dim, embed_dim),
-            nn.GELU(),
-        )
-
-    def encode_stems(self, audio: torch.Tensor) -> torch.Tensor:
-        bsz, n_stems, n_mels, frames = audio.shape
-        x = audio.reshape(bsz * n_stems, 1, n_mels, frames)
-
-        x_conv = F.avg_pool2d(x, kernel_size=(2, 8)) if frames >= 16 else x
-        feat = self.backbone(x_conv)
-        avg_pool = feat.mean(dim=(2, 3))
-        max_pool = feat.amax(dim=(2, 3))
-
-        band_lmp_norm, broadband_lmp_db, band_std_norm = compute_calibrated_mel_stats(x)
-        concat = torch.cat((avg_pool, max_pool, band_lmp_norm, band_std_norm, broadband_lmp_db / 20.0), dim=-1)
-        return self.head(concat).reshape(bsz, n_stems, self.embed_dim)
-
-    def forward(self, audio: torch.Tensor) -> torch.Tensor:
-        return self.encode_stems(audio).reshape(audio.shape[0], -1)
 
 
 class OpenL3TokenProjector(nn.Module):

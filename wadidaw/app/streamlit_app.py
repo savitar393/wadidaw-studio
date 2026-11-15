@@ -3,7 +3,7 @@
 Implements Section 9 of dokumentasi.md:
 - Upload 4 stems (`vocals.wav`, `drums.wav`, `bass.wav`, `other.wav`) or load a test track from MUSDB18-HQ.
 - Input Indonesian mixing prompt + quick-select presets.
-- Choose a trained model checkpoint (`M3`, `M1`, `M2`, `M4`) with automatic CPU fallback.
+- Choose a trained M1/M4 checkpoint with automatic CPU fallback.
 - Display predicted per-stem gains (dB), stem loudnesses, and safety metrics (`peak_dbfs`, `clipping_rate`).
 - Preview and download `final_mix.wav`.
 """
@@ -62,7 +62,7 @@ def run_streamlit_app() -> None:
         ckpt_labels = list(ckpt_options.keys()) + ["DSP + Rule Parser (Fallback)"]
         default_idx = 0
         for idx, label in enumerate(ckpt_labels):
-            if label.startswith("m3"):
+            if label.startswith("m4"):
                 default_idx = idx
                 break
 

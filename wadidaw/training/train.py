@@ -26,8 +26,8 @@ from torch.utils.data import DataLoader
 
 from wadidaw.data.dataset import MusdbMultimodalDataset, SAMPLES_ROOT
 from wadidaw.data.musdb import ROOT
+from wadidaw.losses import compute_multimodal_loss
 from wadidaw.models.fusion import MODEL_REGISTRY, build_model
-from wadidaw.models.structured import compute_multimodal_loss
 from wadidaw.training.evaluate import evaluate_model, make_baseline_predictor
 
 
@@ -37,8 +37,8 @@ TRAINING_DIR = ROOT / "outputs" / "training"
 
 @dataclass
 class TrainConfig:
-    model_name: str = "m3"
-    run_name: str = "m3_seed42"
+    model_name: str = "m4"
+    run_name: str = "m4_seed42"
     seed: int = 42
     batch_size: int = 16
     epochs: int = 30
@@ -74,7 +74,7 @@ def resolve_device(device_str: str = "auto") -> torch.device:
 
 
 def train_one_run(config: TrainConfig) -> dict[str, object]:
-    """Train a single model run (`M1`..`M5` or ablation), evaluate on validation & test sets, and save artifacts."""
+    """Train a single M1/M4 run, evaluate on validation & test sets, and save artifacts."""
     if config.model_name not in MODEL_REGISTRY:
         raise ValueError(f"Unknown model_name '{config.model_name}'. Expected one of {sorted(MODEL_REGISTRY)}")
 
