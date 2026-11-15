@@ -15,8 +15,9 @@ from typing import Mapping, Sequence
 import numpy as np
 from scipy.signal import resample_poly
 
-from wadidaw.data.features import SAMPLE_RATE_RAW, STEM_NAMES
+from wadidaw.data.features import SAMPLE_RATE_RAW
 from wadidaw.data.musdb import load_excerpt_stems_44k
+from wadidaw.data.prompts import STEM_NAMES
 
 
 OPENL3_SAMPLE_RATE: int = 48_000
