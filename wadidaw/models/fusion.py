@@ -3,8 +3,8 @@
 Implements Section 6.3, 6.5, 6.6, 6.7, and 6.8 of dokumentasi.md:
 - `LateFusionScratchModel` (M1): Scratch shared-stem CNN + Text Encoder -> Concat + MLP -> g* (4)
   Supports `ablation_mode` in `("multimodal", "audio_only", "text_only")`.
-- `LateFusionPretrainedModel` (M2): Frozen PANNs CNN14 (pretrained) + Text Encoder -> Concat + MLP -> g* (4).
-  Supports `audio_backend` in `("panns", "cnn14")`.
+- `LateFusionPretrainedModel` (M2): Frozen YAMNet (pretrained) + Text Encoder -> Concat + MLP -> g* (4).
+  Cached audio backends: `yamnet` (default) and `panns`; legacy `cnn14`.
 - `CrossAttentionGainModel` (M4): Audio stem-temporal tokens (Keys/Values) + Text clause tokens (Queries)
   via Multihead Cross-Attention -> Stem-Query Pooling -> MLP -> g* (4).
 - `FiLMConditionedModel` (M5): Feature-wise Linear Modulation (gamma * feature_map + beta) conditioned
@@ -117,14 +117,18 @@ class LateFusionScratchModel(nn.Module):
 class LateFusionPretrainedModel(nn.Module):
     """M2: Late Fusion with a *frozen pretrained* audio encoder + frozen text encoder.
 
-    Two audio backends are supported:
+    Three audio backends are supported:
 
-    - ``audio_backend="panns"`` (recommended): consumes cached frozen PANNs CNN14
-      features of shape ``(B, 4, panns_embed_dim + 1)``.  The extra column holds
-      the per-stem broadband loudness (dBFS) so the input level `g0` stays
-      observable even though the pretrained embedding is largely gain-invariant.
+    - ``audio_backend="yamnet"`` (default recommendation): consumes cached frozen
+      YAMNet features of shape ``(B, 4, yamnet_embed_dim + 1)``.  Pooled frame
+      embeddings (mean or mean+max) plus a per-stem broadband loudness column.
+    - ``audio_backend="panns"``: consumes cached frozen PANNs CNN14 features of
+      shape ``(B, 4, panns_embed_dim + 1)`` (embedding plus loudness column).
     - ``audio_backend="cnn14"`` (legacy): runs the project's frozen
       ``MultiScaleSpectralBackbone`` on log-mel audio directly.
+
+    For cached backends the trailing loudness column keeps the input level `g0`
+    observable even though the pretrained embedding is largely gain-invariant.
     """
 
     model_code = "m2"
@@ -140,17 +144,22 @@ class LateFusionPretrainedModel(nn.Module):
         text_backend: str = "subword",
         audio_backend: str = "cnn14",
         panns_embed_dim: int = PANNS_EMBED_DIM,
+        yamnet_embed_dim: int = 2 * 1024,
         use_level_features: bool = True,
         panns_checkpoint: Path | str | None = None,
     ) -> None:
         super().__init__()
         self.audio_backend = str(audio_backend).lower()
         self.panns_embed_dim = int(panns_embed_dim)
+        self.yamnet_embed_dim = int(yamnet_embed_dim)
         self.use_level_features = bool(use_level_features)
 
-        if self.audio_backend == "panns":
-            self.audio_input_key = "panns"
-            audio_dim = 4 * self.panns_embed_dim
+        if self.audio_backend in ("panns", "yamnet"):
+            self.audio_input_key = self.audio_backend
+            self.cached_embed_dim = (
+                self.panns_embed_dim if self.audio_backend == "panns" else self.yamnet_embed_dim
+            )
+            audio_dim = 4 * self.cached_embed_dim
             if self.use_level_features:
                 audio_dim += 4
         elif self.audio_backend == "cnn14":
@@ -163,7 +172,7 @@ class LateFusionPretrainedModel(nn.Module):
             audio_dim = 4 * audio_embed_dim
         else:
             raise ValueError(
-                f"Invalid audio_backend '{audio_backend}'. Expected 'panns' or 'cnn14'."
+                f"Invalid audio_backend '{audio_backend}'. Expected 'yamnet', 'panns' or 'cnn14'."
             )
 
         self.text_encoder = TextEncoderWrapper(backend=text_backend, embed_dim=text_embed_dim)
@@ -184,18 +193,19 @@ class LateFusionPretrainedModel(nn.Module):
 
         if audio.ndim != 3 or audio.shape[1] != 4:
             raise ValueError(
-                "PANNs M2 expects cached features with shape (B, 4, D), "
-                f"got {tuple(audio.shape)}."
+                f"M2 cached-feature backend '{self.audio_backend}' expects features "
+                f"with shape (B, 4, D), got {tuple(audio.shape)}."
             )
-        emb = audio[..., : self.panns_embed_dim].reshape(audio.shape[0], -1)
+        dim = self.cached_embed_dim
+        emb = audio[..., :dim].reshape(audio.shape[0], -1)
         if not self.use_level_features:
             return emb
-        if audio.shape[-1] <= self.panns_embed_dim:
+        if audio.shape[-1] <= dim:
             raise ValueError(
-                "Cached PANNs features are missing the loudness column. Rebuild the "
-                "cache with scripts/build_panns_cache.py."
+                f"Cached {self.audio_backend} features are missing the loudness column. "
+                f"Rebuild the cache with scripts/build_{self.audio_backend}_cache.py."
             )
-        level_db = audio[..., self.panns_embed_dim]  # (B, 4)
+        level_db = audio[..., dim]  # (B, 4)
         return torch.cat((emb, level_db), dim=-1)
 
     def forward(

@@ -13,7 +13,7 @@ Sistem pencampuran musik (*gain staging* 4 stem) berbasis instruksi teks Bahasa 
   - $g_i^* = \text{clip}(L_{\text{ref}} + r_i - L_i, -18, 12)\text{ dB}$ (dengan *silence gating* `> -45 dBFS` sehingga stem hening di-mask `0 dB`).
 - **Model yang Dibandingkan (`wadidaw/models/`):**
   - **M1 (`LateFusionScratchModel`):** Shared-Stem CNN (scratch) + Text Encoder $\rightarrow$ Concat + MLP $\rightarrow g^*$ (beserta ablasi `m1_audio_only` dan `m1_text_only`).
-  - **M2 (`LateFusionPretrainedModel`):** PANNs CNN14 (frozen, AudioSet) + MiniLM (frozen) $\rightarrow$ Concat + MLP $\rightarrow g^*$. Backend `cnn14` lama tetap tersedia sebagai fallback.
+  - **M2 (`LateFusionPretrainedModel`):** YAMNet (frozen, AudioSet, 1024-d frame embeddings pooled mean+max) + MiniLM (frozen) $\rightarrow$ Concat + MLP $\rightarrow g^*$. Backend `panns` (PANNs CNN14) dan `cnn14` lama tetap tersedia.
   - **M3 (`StructuredTwoBranchModel` — Model Utama):** Audio CNN $\rightarrow \hat{L}$ (4), Text MLP $\rightarrow \hat{r}$ (4, $\sum \hat{r}_i = 0$), digabung secara analitik $\hat{g}_i = \hat{L}\_{\text{ref}} + \hat{r}_i - \hat{L}_i$ dengan *multi-task auxiliary loss*.
   - **M4 (`CrossAttentionGainModel`):** Token klausa teks sebagai *Queries* dan token spasi-waktu stem audio sebagai *Keys/Values* melalui *Multi-Head Cross-Attention*.
   - **M5 (`FiLMConditionedModel`):** *Feature-wise Linear Modulation* ($\gamma \cdot F + \beta$) dari embedding teks terhadap peta fitur CNN.
@@ -47,7 +47,8 @@ wadidaw-studio/
 ├── scripts/
 │   ├── create_song_splits.py        # Generator split manifest & bank prompt
 │   ├── build_dataset.py             # Ekstraktor cache log-mel & sampel multimodal
-│   ├── build_panns_cache.py         # Cache fitur frozen PANNs CNN14 untuk M2
+│   ├── build_panns_cache.py         # Cache fitur frozen PANNs CNN14 untuk M2 (opsional)
+│   ├── build_yamnet_cache.py        # Cache fitur frozen YAMNet untuk M2
 │   ├── train_models.py              # Script training & evaluasi M1–M5 + baseline
 │   ├── error_analysis.py            # Analisis error per stem/prompt/lagu (M2)
 │   ├── eval_clipping.py             # Evaluasi peak & clipping audio (M2)
@@ -153,25 +154,27 @@ Catatan: hasil artefak lama tetap tersimpan — `outputs/m1_v2/` (E1/E2), `outpu
 
 > **Pemetaan deliverable (brief Anggota 2 → repo):** `models/m1_late_fusion.py` ≡ `wadidaw/models/fusion.py` → `LateFusionScratchModel` (plus ablasi `m1_audio_only`/`m1_text_only`); `configs/m1.yaml`; `outputs/m1_results.csv`.
 
-#### 4e. M2 — Late Fusion Pretrained (PANNs CNN14 + MiniLM)
+#### 4e. M2 — Late Fusion Pretrained (YAMNet + MiniLM)
 
 **Pemetaan deliverable (brief Anggota 3 → repo):** `models/m2_pretrained_fusion.py` ≡ `wadidaw/models/fusion.py` → `LateFusionPretrainedModel`; hasil di `outputs/m2_final/` dan `outputs/error_analysis.md`.
 
 M2 memakai dua encoder pretrained yang **frozen**:
-- **Audio:** PANNs CNN14 (`Cnn14_mAP=0.431.pth`, diunduh otomatis ke `~/panns_data/`, ~320 MB). Fitur `(4, 2048)` di-cache sekali agar training di VRAM 4 GB cepat.
+- **Audio:** YAMNet (TF Hub `google/yamnet`, ~17 MB; input **waveform 16 kHz mono**, embedding frame 1024-d → pooled mean+max = 2048-d). Fitur `(4, 2049)` di-cache sekali agar training di VRAM 4 GB cepat. Backend alternatif `--panns` (PANNs CNN14, 2048-d) tetap tersedia untuk perbandingan.
 - **Teks:** `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2` (384-d).
 
 ```bash
-pip install sentence-transformers   # MiniLM (~470 MB, sekali)
+pip install tensorflow tensorflow-hub sentence-transformers   # sekali
+# jika handle TF Hub gagal: --yamnet-model <path-lokal-atau-handle-kaggle>
+# atau set env YAMNET_MODEL
 
-# 4e.1 Bangun cache fitur PANNs (sekali; ±10–30 menit di GPU)
-python -m scripts.build_panns_cache --device cuda
-# -> data/cache/panns/*.npy + data/prompts/*_panns_samples.json
+# 4e.1 Bangun cache fitur YAMNet (sekali; YAMNet diekstrak per excerpt unik)
+python -m scripts.build_yamnet_cache --pool mean_max
+# -> data/cache/yamnet/*.npy + data/prompts/*_yamnet_samples.json
 ```
 
 ```bash
 # 4e.2 Tuning kecil M2 (1 seed, 50 epoch, patience 8, batch 16x4 = 64)
-python -m scripts.train_models --models m2 --seeds 42 --panns \
+python -m scripts.train_models --models m2 --seeds 42 --yamnet \
   --text-backend huggingface --batch-size 16 --grad-accum 4 \
   --epochs 50 --patience 8 --run-prefix tune_m2_d015 \
   --out-dir outputs/m2_tuning
@@ -186,7 +189,7 @@ python -m scripts.compare_m1 --baseline "tune_m2_d015_m2_seed{seed}" --seeds 42 
 
 ```bash
 # 4e.3 Final 3 seed dengan konfigurasi pemenang tuning
-python -m scripts.train_models --models m2 --seeds 42 123 2026 --panns \
+python -m scripts.train_models --models m2 --seeds 42 123 2026 --yamnet \
   --text-backend huggingface --batch-size 16 --grad-accum 4 \
   --epochs 50 --patience 8 --dropout 0.15 \
   --run-prefix m2final --out-dir outputs/m2_final
@@ -194,10 +197,10 @@ python -m scripts.train_models --models m2 --seeds 42 123 2026 --panns \
 
 ```bash
 # 4e.4 Error analysis (per stem / prompt / lagu) + clipping audio
-python -m scripts.error_analysis --run-prefix m2final --panns \
+python -m scripts.error_analysis --run-prefix m2final --yamnet \
   --out-dir outputs/m2_final --report outputs/error_analysis.md
 
-python -m scripts.eval_clipping --run-prefix m2final --panns \
+python -m scripts.eval_clipping --run-prefix m2final --yamnet \
   --split test_human --out outputs/m2_final/clipping.csv
 
 # 4e.5 Ganti baris m2 di tabel tim tanpa menyentuh m1/m3–m5
@@ -206,7 +209,7 @@ python -m scripts.merge_main_results \
   --target outputs/main_results.csv --backup
 ```
 
-> i️ `--panns` mengganti manifest ke `*_panns_samples.json`. `--m2-backend cnn14` tetap tersedia sebagai fallback tanpa cache (backbone CNN14-style frozen). Tanpa `--panns`, M2 memakai backend lama dan manifest log-mel biasa.
+> i️ `--yamnet` (atau `--panns`) mengganti manifest ke `*_yamnet_samples.json` / `*_panns_samples.json` dan memilih backend audio yang sesuai. `--m2-backend {yamnet,panns,cnn14}` bisa memaksa backend tertentu; `cnn14` tetap tersedia sebagai fallback tanpa cache (backbone CNN14-style frozen pada log-mel).
 
 ### 5. Menjalankan Aplikasi Deployment Lokal (Streamlit)
 ```bash

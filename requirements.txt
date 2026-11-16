@@ -8,13 +8,16 @@ pyyaml>=6.0.1
 # Multilingual MiniLM text encoder for M2 (frozen by default).
 sentence-transformers>=3.0.0
 
+# YAMNet audio encoder for M2 (frozen, TF Hub). Only needed to build the cache.
+tensorflow>=2.15.0
+tensorflow-hub>=0.16.0
+
 # Optional loudness packages:
 # pyloudnorm>=0.1.1
 
 # M4-OpenL3: pretrained music/audio encoder.
 # On Linux, install libsndfile first: sudo apt install libsndfile1
 openl3>=0.4.2
-tensorflow>=2.15.0
 
 # IndoBERT text encoder for M4 (frozen by default).
 transformers>=4.40.0

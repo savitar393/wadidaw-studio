@@ -9,7 +9,7 @@ rate.  Three conditions are compared per sample:
 - ``no_op``     : 0 dB on every active stem
 
 Example:
-    python -m scripts.eval_clipping --run-prefix m2final --panns \
+    python -m scripts.eval_clipping --run-prefix m2final --yamnet \
         --split test_human --out outputs/m2_final/clipping.csv
 """
 
@@ -54,10 +54,10 @@ def _resolve_device(device: str) -> torch.device:
     return torch.device(device)
 
 
-def _manifest_path(split: str, panns: bool) -> Path:
+def _manifest_path(split: str, cache: str | None) -> Path:
     name = SPLIT_MANIFESTS[split]
-    if panns:
-        name = name.replace("_samples.json", "_panns_samples.json")
+    if cache:
+        name = name.replace("_samples.json", f"_{cache}_samples.json")
     return SAMPLES_ROOT / name
 
 
@@ -162,14 +162,19 @@ def main() -> None:
     parser.add_argument("--out", type=Path, default=ROOT / "outputs" / "m2_clipping.csv")
     parser.add_argument("--per-sample-out", type=Path, default=None)
     parser.add_argument("--panns", action="store_true")
+    parser.add_argument("--yamnet", action="store_true")
     parser.add_argument("--device", default="auto")
     parser.add_argument("--batch-size", type=int, default=16)
     parser.add_argument("--limit", type=int, default=None,
                         help="Evaluate only the first N samples (smoke test).")
     args = parser.parse_args()
 
+    if args.panns and args.yamnet:
+        parser.error("--panns and --yamnet cannot be combined.")
+    cache = "panns" if args.panns else ("yamnet" if args.yamnet else None)
+
     device = _resolve_device(args.device)
-    manifest = _manifest_path(args.split, args.panns)
+    manifest = _manifest_path(args.split, cache)
     if not manifest.is_file():
         raise SystemExit(f"Manifest not found: {manifest}")
 

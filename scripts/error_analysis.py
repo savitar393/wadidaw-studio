@@ -15,7 +15,7 @@ Outputs
 - ``<out-dir>/error_analysis_worst_samples.csv``
 
 Example:
-    python -m scripts.error_analysis --run-prefix m2final --panns \
+    python -m scripts.error_analysis --run-prefix m2final --yamnet \
         --out-dir outputs/m2_final
 """
 
@@ -89,10 +89,10 @@ def _resolve_device(device: str) -> torch.device:
     return torch.device(device)
 
 
-def _manifest_path(split: str, panns: bool) -> Path:
+def _manifest_path(split: str, cache: str | None) -> Path:
     name = SPLIT_MANIFESTS[split]
-    if panns:
-        name = name.replace("_samples.json", "_panns_samples.json")
+    if cache:
+        name = name.replace("_samples.json", f"_{cache}_samples.json")
     return SAMPLES_ROOT / name
 
 
@@ -444,10 +444,16 @@ def main() -> None:
     parser.add_argument("--report", type=Path, default=ROOT / "outputs" / "error_analysis.md")
     parser.add_argument("--panns", action="store_true",
                         help="Use *_panns_samples.json manifests.")
+    parser.add_argument("--yamnet", action="store_true",
+                        help="Use *_yamnet_samples.json manifests.")
     parser.add_argument("--device", default="auto")
     parser.add_argument("--batch-size", type=int, default=None,
                         help="Override the batch size stored in the run config.")
     args = parser.parse_args()
+
+    if args.panns and args.yamnet:
+        parser.error("--panns and --yamnet cannot be combined.")
+    cache = "panns" if args.panns else ("yamnet" if args.yamnet else None)
 
     device = _resolve_device(args.device)
     out_dir = args.out_dir or (ROOT / "outputs" / f"{args.run_prefix}_analysis")
@@ -471,7 +477,7 @@ def main() -> None:
         batch_size = int(args.batch_size or results.get("config", {}).get("batch_size", 16))
 
         for split in args.splits:
-            manifest = _manifest_path(split, args.panns)
+            manifest = _manifest_path(split, cache)
             if not manifest.is_file():
                 print(f"[skip] manifest not found: {manifest}")
                 continue
