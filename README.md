@@ -13,7 +13,7 @@ Sistem pencampuran musik (*gain staging* 4 stem) berbasis instruksi teks Bahasa 
   - $g_i^* = \text{clip}(L_{\text{ref}} + r_i - L_i, -18, 12)\text{ dB}$ (dengan *silence gating* `> -45 dBFS` sehingga stem hening di-mask `0 dB`).
 - **Model yang Dibandingkan (`wadidaw/models/`):**
   - **M1 (`LateFusionScratchModel`):** Shared-Stem CNN (scratch) + Text Encoder $\rightarrow$ Concat + MLP $\rightarrow g^*$ (beserta ablasi `m1_audio_only` dan `m1_text_only`).
-  - **M2 (`LateFusionPretrainedModel`):** Multi-Scale Spectral Backbone (frozen) + Text Encoder $\rightarrow$ Concat + MLP $\rightarrow g^*$.
+  - **M2 (`LateFusionPretrainedModel`):** PANNs CNN14 (frozen, AudioSet) + MiniLM (frozen) $\rightarrow$ Concat + MLP $\rightarrow g^*$. Backend `cnn14` lama tetap tersedia sebagai fallback.
   - **M3 (`StructuredTwoBranchModel` — Model Utama):** Audio CNN $\rightarrow \hat{L}$ (4), Text MLP $\rightarrow \hat{r}$ (4, $\sum \hat{r}_i = 0$), digabung secara analitik $\hat{g}_i = \hat{L}\_{\text{ref}} + \hat{r}_i - \hat{L}_i$ dengan *multi-task auxiliary loss*.
   - **M4 (`CrossAttentionGainModel`):** Token klausa teks sebagai *Queries* dan token spasi-waktu stem audio sebagai *Keys/Values* melalui *Multi-Head Cross-Attention*.
   - **M5 (`FiLMConditionedModel`):** *Feature-wise Linear Modulation* ($\gamma \cdot F + \beta$) dari embedding teks terhadap peta fitur CNN.
@@ -47,7 +47,11 @@ wadidaw-studio/
 ├── scripts/
 │   ├── create_song_splits.py        # Generator split manifest & bank prompt
 │   ├── build_dataset.py             # Ekstraktor cache log-mel & sampel multimodal
+│   ├── build_panns_cache.py         # Cache fitur frozen PANNs CNN14 untuk M2
 │   ├── train_models.py              # Script training & evaluasi M1–M5 + baseline
+│   ├── error_analysis.py            # Analisis error per stem/prompt/lagu (M2)
+│   ├── eval_clipping.py             # Evaluasi peak & clipping audio (M2)
+│   ├── merge_main_results.py        # Merge baris model ke outputs/main_results.csv
 │   ├── compare_m1.py                # Pembanding/papan peringkat run M1 (pairwise & --runs)
 │   ├── test_data_pipeline.py        # Unit test pipeline data & prompt
 │   ├── test_models_and_training.py  # Unit test model, loss, & training
@@ -147,6 +151,61 @@ python -m scripts.compare_m1 --baseline "m1e2_m1_seed{seed}" --seeds 42 \
 Catatan: hasil artefak lama tetap tersimpan — `outputs/m1_v2/` (E1/E2), `outputs/m1_tuning/`, `outputs/m1_final/`, dan `outputs/m1_results_e0.csv` (cadangan tabel E0).
 
 > **Pemetaan deliverable (brief Anggota 2 → repo):** `models/m1_late_fusion.py` ≡ `wadidaw/models/fusion.py` → `LateFusionScratchModel` (plus ablasi `m1_audio_only`/`m1_text_only`); `configs/m1.yaml`; `outputs/m1_results.csv`.
+
+#### 4e. M2 — Late Fusion Pretrained (PANNs CNN14 + MiniLM)
+
+**Pemetaan deliverable (brief Anggota 3 → repo):** `models/m2_pretrained_fusion.py` ≡ `wadidaw/models/fusion.py` → `LateFusionPretrainedModel`; hasil di `outputs/m2_final/` dan `outputs/error_analysis.md`.
+
+M2 memakai dua encoder pretrained yang **frozen**:
+- **Audio:** PANNs CNN14 (`Cnn14_mAP=0.431.pth`, diunduh otomatis ke `~/panns_data/`, ~320 MB). Fitur `(4, 2048)` di-cache sekali agar training di VRAM 4 GB cepat.
+- **Teks:** `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2` (384-d).
+
+```bash
+pip install sentence-transformers   # MiniLM (~470 MB, sekali)
+
+# 4e.1 Bangun cache fitur PANNs (sekali; ±10–30 menit di GPU)
+python -m scripts.build_panns_cache --device cuda
+# -> data/cache/panns/*.npy + data/prompts/*_panns_samples.json
+```
+
+```bash
+# 4e.2 Tuning kecil M2 (1 seed, 50 epoch, patience 8, batch 16x4 = 64)
+python -m scripts.train_models --models m2 --seeds 42 --panns \
+  --text-backend huggingface --batch-size 16 --grad-accum 4 \
+  --epochs 50 --patience 8 --run-prefix tune_m2_d015 \
+  --out-dir outputs/m2_tuning
+# varian lain: --dropout 0.0 | --dropout 0.3 | --hidden-dim 512
+#              --lr 5e-4 | --weight-decay 1e-3
+
+# Leaderboard kandidat (setelah semua run selesai; 1 seed)
+python -m scripts.compare_m1 --baseline "tune_m2_d015_m2_seed{seed}" --seeds 42 \
+  --runs "tune_m2_d0_m2_seed{seed},tune_m2_d03_m2_seed{seed},tune_m2_hid512_m2_seed{seed},tune_m2_lr5e4_m2_seed{seed},tune_m2_wd1e3_m2_seed{seed}" \
+  --out outputs/m2_tuning_leaderboard.csv
+```
+
+```bash
+# 4e.3 Final 3 seed dengan konfigurasi pemenang tuning
+python -m scripts.train_models --models m2 --seeds 42 123 2026 --panns \
+  --text-backend huggingface --batch-size 16 --grad-accum 4 \
+  --epochs 50 --patience 8 --dropout 0.15 \
+  --run-prefix m2final --out-dir outputs/m2_final
+```
+
+```bash
+# 4e.4 Error analysis (per stem / prompt / lagu) + clipping audio
+python -m scripts.error_analysis --run-prefix m2final --panns \
+  --out-dir outputs/m2_final --report outputs/error_analysis.md
+
+python -m scripts.eval_clipping --run-prefix m2final --panns \
+  --split test_human --out outputs/m2_final/clipping.csv
+
+# 4e.5 Ganti baris m2 di tabel tim tanpa menyentuh m1/m3–m5
+python -m scripts.merge_main_results \
+  --source outputs/m2_final/main_results.csv --models m2 \
+  --target outputs/main_results.csv --backup
+```
+
+> i️ `--panns` mengganti manifest ke `*_panns_samples.json`. `--m2-backend cnn14` tetap tersedia sebagai fallback tanpa cache (backbone CNN14-style frozen). Tanpa `--panns`, M2 memakai backend lama dan manifest log-mel biasa.
 
 ### 5. Menjalankan Aplikasi Deployment Lokal (Streamlit)
 ```bash

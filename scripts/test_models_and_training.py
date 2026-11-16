@@ -99,6 +99,30 @@ class MultimodalModelsAndTrainingTests(unittest.TestCase):
                 self.assertTrue(len(grad_norms) > 0)
                 self.assertTrue(any(g > 0.0 for g in grad_norms))
 
+    def test_m2_panns_cached_features_forward(self) -> None:
+        model = build_model("m2", audio_backend="panns")
+        model.train()
+        panns = torch.randn(self.batch_size, 4, 2048 + 1)
+        out = model(panns, self.prompts, active_mask=self.active_mask)
+        self.assertIn("gains_pred", out)
+        g_pred = out["gains_pred"]
+        self.assertEqual(tuple(g_pred.shape), (self.batch_size, 4))
+        self.assertTrue(torch.isfinite(g_pred).all())
+        self.assertEqual(float(g_pred[2, 0].item()), 0.0)
+
+        losses = compute_multimodal_loss(
+            outputs=out,
+            gains_true=self.gains_true,
+            active_mask=self.active_mask,
+        )
+        losses["loss"].backward()
+        grad_norms = [
+            float(p.grad.abs().sum().item())
+            for p in model.parameters()
+            if p.requires_grad and p.grad is not None
+        ]
+        self.assertTrue(any(g > 0.0 for g in grad_norms))
+
     def test_m3_structured_two_branch_physics_identities(self) -> None:
         m3 = StructuredTwoBranchModel()
         m3.eval()

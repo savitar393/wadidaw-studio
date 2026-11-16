@@ -179,6 +179,18 @@ def main() -> None:
         action="store_true",
         help="Use *_openl3_samples.json manifests produced by scripts/build_openl3_cache.py.",
     )
+    parser.add_argument(
+        "--panns",
+        action="store_true",
+        help="Use *_panns_samples.json manifests produced by scripts/build_panns_cache.py "
+             "(M2 and other models that read cached audio features).",
+    )
+    parser.add_argument(
+        "--m2-backend",
+        choices=("panns", "cnn14"),
+        default=None,
+        help="Override the M2 audio backend (default: panns when --panns is set, else cnn14).",
+    )
     parser.add_argument("--run-prefix", default="")
     parser.add_argument("--overwrite", action="store_true")
     args = parser.parse_args()
@@ -189,6 +201,22 @@ def main() -> None:
         args.test_human_manifest = SAMPLES_ROOT / "test_human_openl3_samples.json"
         args.test_synthetic_manifest = SAMPLES_ROOT / "test_synthetic_openl3_samples.json"
 
+    if args.panns:
+        if args.openl3:
+            parser.error("--panns and --openl3 cannot be combined.")
+        args.train_manifest = SAMPLES_ROOT / "train_panns_samples.json"
+        args.val_manifest = SAMPLES_ROOT / "validation_panns_samples.json"
+        args.test_human_manifest = SAMPLES_ROOT / "test_human_panns_samples.json"
+        args.test_synthetic_manifest = SAMPLES_ROOT / "test_synthetic_panns_samples.json"
+        required = (args.train_manifest, args.val_manifest)
+        missing = [str(path) for path in required if not path.is_file()]
+        if missing:
+            parser.error(
+                "--panns requires cached PANNs manifests. Missing: "
+                + ", ".join(missing)
+                + ". Run `python -m scripts.build_panns_cache` first."
+            )
+
     args.out_dir.mkdir(parents=True, exist_ok=True)
 
     print("Evaluating non-learning DSP baselines...")
@@ -198,16 +226,23 @@ def main() -> None:
         batch_size=args.batch_size * 2,
     )
 
-    model_kwargs: dict[str, object] = {}
+    base_model_kwargs: dict[str, object] = {}
     if args.dropout is not None:
-        model_kwargs["dropout"] = args.dropout
+        base_model_kwargs["dropout"] = args.dropout
     if args.hidden_dim is not None:
-        model_kwargs["hidden_dim"] = args.hidden_dim
+        base_model_kwargs["hidden_dim"] = args.hidden_dim
+
+    m2_backend = args.m2_backend
+    if m2_backend is None:
+        m2_backend = "panns" if args.panns else "cnn14"
 
     for model_name in args.models:
         for seed in args.seeds:
             prefix = f"{args.run_prefix}_" if args.run_prefix else ""
             run_name = f"{prefix}{model_name}_seed{seed}"
+            model_kwargs = dict(base_model_kwargs)
+            if model_name == "m2":
+                model_kwargs["audio_backend"] = m2_backend
             cfg = TrainConfig(
                 model_name=model_name,
                 run_name=run_name,

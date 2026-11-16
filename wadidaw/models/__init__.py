@@ -14,6 +14,7 @@ from wadidaw.models.fusion import (
     LateFusionScratchModel,
     build_model,
 )
+from wadidaw.models.panns_encoder import PANNsCnn14Encoder
 from wadidaw.models.structured import (
     StructuredTwoBranchModel,
     compute_multimodal_loss,
@@ -38,6 +39,7 @@ __all__ = [
     "MODEL_REGISTRY",
     "MultiScaleSpectralBackbone",
     "OpenL3TokenProjector",
+    "PANNsCnn14Encoder",
     "SharedStemAudioCNN",
     "StemFrameTokenizer",
     "StructuredTwoBranchModel",

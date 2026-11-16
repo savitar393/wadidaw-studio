@@ -1,10 +1,26 @@
 model_name: m2
-description: "M2: Late Fusion Pretrained Backbone (Frozen Multi-Scale Spectral CNN14-Style + Frozen Text Encoder)"
+description: >-
+  M2 Late Fusion Pretrained: frozen PANNs CNN14 (AudioSet) audio encoder +
+  frozen multilingual MiniLM text encoder -> concat + MLP -> g* (4).
+audio_backend: panns
+audio_encoder: "PANNs Cnn14 (Cnn14_mAP=0.431.pth, frozen)"
+audio_embed_dim: 2048
+panns_cache: data/cache/panns
+text_backend: huggingface
+text_encoder: "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 (frozen)"
+text_embed_dim: 384
+fusion: "concat + MLP"
 batch_size: 16
-epochs: 30
-patience: 5
+grad_accum_steps: 4        # effective batch = 64
+epochs: 50
+patience: 8
 lr: 0.001
 weight_decay: 0.0001
+dropout: 0.15
+hidden_dim: 256
 grad_clip: 1.0
-text_backend: subword
 seeds: [42, 123, 2026]
+# NOTE: configs/*.yaml are documentation only. The effective configuration is
+# provided on the CLI, e.g.:
+#   python -m scripts.train_models --models m2 --panns --text-backend huggingface \
+#     --batch-size 16 --grad-accum 4 --epochs 50 --patience 8

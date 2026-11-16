@@ -304,6 +304,7 @@ class MusdbMultimodalDataset(Dataset):
         self.root_dir = Path(root_dir)
         self.cache_in_memory = cache_in_memory
         self._npy_cache: dict[str, tuple[np.ndarray, np.ndarray]] = {}
+        self._panns_cache: dict[str, np.ndarray] = {}
         if isinstance(samples_or_path, (Path, str)):
             path = Path(samples_or_path)
             if not path.exists():
@@ -393,5 +394,27 @@ class MusdbMultimodalDataset(Dataset):
                 pad = np.repeat(openl3_arr[:, -1:, :], target_frames - frames, axis=1)
                 openl3_arr = np.concatenate((openl3_arr, pad), axis=1)
             item["openl3"] = torch.from_numpy(openl3_arr)
+
+        panns_rel = record.get("panns_path")
+        if panns_rel:
+            panns_key = str(panns_rel)
+            if panns_key not in self._panns_cache:
+                self._panns_cache[panns_key] = np.load(
+                    self.root_dir / panns_key, mmap_mode=None
+                )
+            panns_arr = self._panns_cache[panns_key]
+            panns_index = int(record.get("panns_index", index))
+            if panns_index >= len(panns_arr):
+                raise IndexError(
+                    f"panns_index {panns_index} out of range for {panns_key} "
+                    f"({len(panns_arr)} rows)."
+                )
+            row = np.asarray(panns_arr[panns_index], dtype=np.float32)
+            if row.ndim != 2 or row.shape[0] != 4:
+                raise ValueError(
+                    f"Expected cached PANNs features with shape (4, D) at row "
+                    f"{panns_index} of {panns_key}, got {row.shape}."
+                )
+            item["panns"] = torch.from_numpy(row)
 
         return item
