@@ -121,7 +121,8 @@ python -m scripts.train_models --models m1 --seeds 42 \
   --batch-size 8 --grad-accum 8 --epochs 50 --patience 8 \
   --run-prefix tune_ep50 --out-dir outputs/m1_tuning
 # varian lain: --dropout 0.0 | --dropout 0.3 | --hidden-dim 128 | --hidden-dim 512
-#              --lr 5e-4 | --weight-decay 1e-3   (epochs 30, patience 5)
+#              --lr 5e-4 | --weight-decay 1e-3   (tetap epochs 50, patience 8)
+# pemenang tuning: --dropout 0.0 (tune_drop0_ep50) -> lihat outputs/m1_tuning_leaderboard.csv
 ```
 
 > ℹ️ `train.py` menolak menimpa output yang sudah ada (`FileExistsError: Output already exists: ...`). Untuk mengulang prefix yang sama (`--run-prefix`), tambahkan `--overwrite`; kalau tidak, ganti prefix. `outputs/checkpoints/` dan `outputs/training/` selalu menampung hasil tiap prefix secara terpisah, sehingga baseline resmi (`m1_seed*`, `m1e1_*`, `m1e2_*`) aman.
@@ -130,9 +131,9 @@ python -m scripts.train_models --models m1 --seeds 42 \
 
 ```bash
 python -m scripts.train_models --models m1 m1_audio_only m1_text_only \
-  --seeds 42 123 2026 --batch-size 8 --grad-accum 8 --epochs 30 --patience 5 \
-  --run-prefix m1final --out-dir outputs/m1_final
-# outputs/m1_final/m1_results.csv  -> bisa dijadikan outputs/m1_results.csv (backup dulu yang lama)
+  --seeds 42 123 2026 --batch-size 8 --grad-accum 8 --epochs 50 --patience 8 \
+  --dropout 0.0 --run-prefix m1final --out-dir outputs/m1_final
+# outputs/m1_final/m1_results.csv  -> outputs/m1_results.csv (sudah di-merge)
 ```
 
 #### 4d. Membandingkan run M1 (`scripts/compare_m1.py`)
