@@ -1,0 +1,1223 @@
+{
+  "run_name": "tune_drop30_m1_seed42",
+  "model_name": "m1",
+  "model_title": "M1 Late Fusion Scratch",
+  "seed": 42,
+  "best_epoch": 30,
+  "total_train_sec": 218.31,
+  "trainable_params": 452358,
+  "config": {
+    "model_name": "m1",
+    "run_name": "tune_drop30_m1_seed42",
+    "seed": 42,
+    "batch_size": 8,
+    "epochs": 30,
+    "patience": 5,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "grad_clip": 1.0,
+    "grad_accum_steps": 8,
+    "model_kwargs": {
+      "dropout": 0.3
+    },
+    "lambda_loudness": 0.1,
+    "lambda_balance": 0.1,
+    "text_backend": "subword",
+    "num_workers": 0,
+    "device": "auto",
+    "use_amp": true,
+    "train_manifest": "/home/ia/EleventhMarch/5th/Machine Learning/Project/source/data/prompts/train_samples.json",
+    "val_manifest": "/home/ia/EleventhMarch/5th/Machine Learning/Project/source/data/prompts/validation_samples.json",
+    "test_human_manifest": "/home/ia/EleventhMarch/5th/Machine Learning/Project/source/data/prompts/test_human_samples.json",
+    "test_synthetic_manifest": "/home/ia/EleventhMarch/5th/Machine Learning/Project/source/data/prompts/test_synthetic_samples.json",
+    "overwrite": false
+  },
+  "versions": {
+    "python": "3.12.13",
+    "torch": "2.15.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "soundfile": "0.14.0"
+  },
+  "validation": {
+    "sample_count": 800,
+    "mae_db": 0.5152,
+    "rmse_db": 0.6902,
+    "bias_db": 0.0084,
+    "max_error_db": 3.4553,
+    "r2": 0.9803,
+    "pearson_r": 0.9905,
+    "spearman_rho": 0.9912,
+    "success_rate_1db": 93.5,
+    "mae_per_stem_db": {
+      "vocals": 0.4432,
+      "drums": 0.5791,
+      "bass": 0.5457,
+      "other": 0.4926
+    },
+    "rmse_per_stem_db": {
+      "vocals": 0.574,
+      "drums": 0.7837,
+      "bass": 0.7274,
+      "other": 0.6579
+    },
+    "band_mae_db": 0.3021,
+    "band_mse_norm": 0.001187,
+    "worst_band_error_db": 0.5368,
+    "log_spectral_distance_db": 0.3648,
+    "success_rate_band_001": 99.38,
+    "balance_mae_db": 0.5168,
+    "intent_direction_acc": 90.31,
+    "instruction_adherence": 86.25,
+    "per_song": {
+      "Aimee Norwich - Child": {
+        "sample_count": 40,
+        "mae_db": 0.3192,
+        "rmse_db": 0.4309,
+        "band_mae_db": 0.1907,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 92.5
+      },
+      "Angela Thomas Wade - Milk Cow Blues": {
+        "sample_count": 40,
+        "mae_db": 0.2816,
+        "rmse_db": 0.3633,
+        "band_mae_db": 0.1839,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 100.0
+      },
+      "Atlantis Bound - It Was My Fault For Waiting": {
+        "sample_count": 40,
+        "mae_db": 0.6019,
+        "rmse_db": 0.7691,
+        "band_mae_db": 0.3522,
+        "success_rate_1db": 95.0,
+        "instruction_adherence": 90.0
+      },
+      "AvaLuna - Waterduct": {
+        "sample_count": 40,
+        "mae_db": 0.4533,
+        "rmse_db": 0.5668,
+        "band_mae_db": 0.3415,
+        "success_rate_1db": 95.0,
+        "instruction_adherence": 92.5
+      },
+      "Bill Chudziak - Children Of No-one": {
+        "sample_count": 40,
+        "mae_db": 0.8248,
+        "rmse_db": 0.9876,
+        "band_mae_db": 0.4089,
+        "success_rate_1db": 80.0,
+        "instruction_adherence": 72.5
+      },
+      "Celestial Shore - Die For Us": {
+        "sample_count": 40,
+        "mae_db": 0.9454,
+        "rmse_db": 1.1429,
+        "band_mae_db": 0.4939,
+        "success_rate_1db": 67.5,
+        "instruction_adherence": 52.5
+      },
+      "Creepoid - OldTree": {
+        "sample_count": 40,
+        "mae_db": 0.4526,
+        "rmse_db": 0.5537,
+        "band_mae_db": 0.2906,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 92.5
+      },
+      "Dark Ride - Burning Bridges": {
+        "sample_count": 40,
+        "mae_db": 0.3498,
+        "rmse_db": 0.4658,
+        "band_mae_db": 0.2287,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 92.5
+      },
+      "Dreamers Of The Ghetto - Heavy Love": {
+        "sample_count": 40,
+        "mae_db": 0.342,
+        "rmse_db": 0.4203,
+        "band_mae_db": 0.2017,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 95.0
+      },
+      "Invisible Familiars - Disturbing Wildlife": {
+        "sample_count": 40,
+        "mae_db": 0.384,
+        "rmse_db": 0.4828,
+        "band_mae_db": 0.1873,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 90.0
+      },
+      "Lushlife - Toynbee Suite": {
+        "sample_count": 40,
+        "mae_db": 0.7437,
+        "rmse_db": 0.9432,
+        "band_mae_db": 0.4822,
+        "success_rate_1db": 82.5,
+        "instruction_adherence": 77.5
+      },
+      "Port St Willow - Stay Even": {
+        "sample_count": 40,
+        "mae_db": 0.5637,
+        "rmse_db": 0.7463,
+        "band_mae_db": 0.3522,
+        "success_rate_1db": 92.5,
+        "instruction_adherence": 85.0
+      },
+      "St Vitus - Word Gets Around": {
+        "sample_count": 40,
+        "mae_db": 0.6352,
+        "rmse_db": 0.8867,
+        "band_mae_db": 0.3815,
+        "success_rate_1db": 82.5,
+        "instruction_adherence": 77.5
+      },
+      "Steven Clark - Bounty": {
+        "sample_count": 40,
+        "mae_db": 0.4443,
+        "rmse_db": 0.6394,
+        "band_mae_db": 0.2945,
+        "success_rate_1db": 95.0,
+        "instruction_adherence": 85.0
+      },
+      "Swinging Steaks - Lost My Way": {
+        "sample_count": 40,
+        "mae_db": 0.4857,
+        "rmse_db": 0.5859,
+        "band_mae_db": 0.2924,
+        "success_rate_1db": 97.5,
+        "instruction_adherence": 82.5
+      },
+      "The Scarlet Brand - Les Fleurs Du Mal": {
+        "sample_count": 40,
+        "mae_db": 0.594,
+        "rmse_db": 0.7257,
+        "band_mae_db": 0.3005,
+        "success_rate_1db": 97.5,
+        "instruction_adherence": 82.5
+      },
+      "The Wrong'Uns - Rothko": {
+        "sample_count": 40,
+        "mae_db": 0.4919,
+        "rmse_db": 0.6579,
+        "band_mae_db": 0.333,
+        "success_rate_1db": 92.5,
+        "instruction_adherence": 85.0
+      },
+      "Titanium - Haunted Age": {
+        "sample_count": 40,
+        "mae_db": 0.4356,
+        "rmse_db": 0.6195,
+        "band_mae_db": 0.227,
+        "success_rate_1db": 97.5,
+        "instruction_adherence": 90.0
+      },
+      "Triviul - Angelsaint": {
+        "sample_count": 40,
+        "mae_db": 0.5476,
+        "rmse_db": 0.6953,
+        "band_mae_db": 0.2608,
+        "success_rate_1db": 95.0,
+        "instruction_adherence": 90.0
+      },
+      "Triviul - Dorothy": {
+        "sample_count": 40,
+        "mae_db": 0.4068,
+        "rmse_db": 0.5199,
+        "band_mae_db": 0.2381,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 100.0
+      }
+    }
+  },
+  "test_human": {
+    "sample_count": 200,
+    "mae_db": 0.6857,
+    "rmse_db": 0.9042,
+    "bias_db": 0.0102,
+    "max_error_db": 3.471,
+    "r2": 0.9599,
+    "pearson_r": 0.9798,
+    "spearman_rho": 0.979,
+    "success_rate_1db": 84.5,
+    "mae_per_stem_db": {
+      "vocals": 0.7263,
+      "drums": 0.8121,
+      "bass": 0.5748,
+      "other": 0.6297
+    },
+    "rmse_per_stem_db": {
+      "vocals": 0.9803,
+      "drums": 0.9893,
+      "bass": 0.717,
+      "other": 0.9037
+    },
+    "band_mae_db": 0.4107,
+    "band_mse_norm": 0.002144,
+    "worst_band_error_db": 0.7345,
+    "log_spectral_distance_db": 0.5001,
+    "success_rate_band_001": 97.5,
+    "balance_mae_db": 0.6961,
+    "intent_direction_acc": 84.0,
+    "instruction_adherence": 75.0,
+    "per_song": {
+      "AM Contra - Heart Peripheral": {
+        "sample_count": 10,
+        "mae_db": 0.6419,
+        "rmse_db": 0.8119,
+        "band_mae_db": 0.4454,
+        "success_rate_1db": 90.0,
+        "instruction_adherence": 80.0
+      },
+      "Al James - Schoolboy Facination": {
+        "sample_count": 10,
+        "mae_db": 0.6125,
+        "rmse_db": 0.8216,
+        "band_mae_db": 0.3695,
+        "success_rate_1db": 90.0,
+        "instruction_adherence": 90.0
+      },
+      "Angels In Amplifiers - I'm Alright": {
+        "sample_count": 10,
+        "mae_db": 0.8828,
+        "rmse_db": 1.1417,
+        "band_mae_db": 0.4293,
+        "success_rate_1db": 70.0,
+        "instruction_adherence": 60.0
+      },
+      "Arise - Run Run Run": {
+        "sample_count": 10,
+        "mae_db": 0.8198,
+        "rmse_db": 1.0646,
+        "band_mae_db": 0.5557,
+        "success_rate_1db": 80.0,
+        "instruction_adherence": 70.0
+      },
+      "BKS - Bulldozer": {
+        "sample_count": 10,
+        "mae_db": 0.4989,
+        "rmse_db": 0.6294,
+        "band_mae_db": 0.3605,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 80.0
+      },
+      "BKS - Too Much": {
+        "sample_count": 10,
+        "mae_db": 0.6708,
+        "rmse_db": 0.9701,
+        "band_mae_db": 0.4778,
+        "success_rate_1db": 80.0,
+        "instruction_adherence": 80.0
+      },
+      "Ben Carrigan - We'll Talk About It All Tonight": {
+        "sample_count": 10,
+        "mae_db": 0.667,
+        "rmse_db": 0.8822,
+        "band_mae_db": 0.3641,
+        "success_rate_1db": 80.0,
+        "instruction_adherence": 80.0
+      },
+      "Bobby Nobody - Stitch Up": {
+        "sample_count": 10,
+        "mae_db": 0.4697,
+        "rmse_db": 0.5624,
+        "band_mae_db": 0.3162,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 100.0
+      },
+      "Buitraker - Revo X": {
+        "sample_count": 10,
+        "mae_db": 0.5723,
+        "rmse_db": 0.8083,
+        "band_mae_db": 0.3782,
+        "success_rate_1db": 90.0,
+        "instruction_adherence": 80.0
+      },
+      "Carlos Gonzalez - A Place For Us": {
+        "sample_count": 10,
+        "mae_db": 0.6548,
+        "rmse_db": 0.9164,
+        "band_mae_db": 0.3743,
+        "success_rate_1db": 80.0,
+        "instruction_adherence": 70.0
+      },
+      "Cristina Vane - So Easy": {
+        "sample_count": 10,
+        "mae_db": 0.7298,
+        "rmse_db": 0.9171,
+        "band_mae_db": 0.4096,
+        "success_rate_1db": 90.0,
+        "instruction_adherence": 90.0
+      },
+      "Detsky Sad - Walkie Talkie": {
+        "sample_count": 10,
+        "mae_db": 0.9611,
+        "rmse_db": 1.2619,
+        "band_mae_db": 0.4138,
+        "success_rate_1db": 70.0,
+        "instruction_adherence": 60.0
+      },
+      "Enda Reilly - Cur An Long Ag Seol": {
+        "sample_count": 10,
+        "mae_db": 0.6478,
+        "rmse_db": 0.7606,
+        "band_mae_db": 0.5225,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 80.0
+      },
+      "Forkupines - Semantics": {
+        "sample_count": 10,
+        "mae_db": 0.8339,
+        "rmse_db": 1.019,
+        "band_mae_db": 0.3977,
+        "success_rate_1db": 80.0,
+        "instruction_adherence": 50.0
+      },
+      "Georgia Wonder - Siren": {
+        "sample_count": 10,
+        "mae_db": 0.6335,
+        "rmse_db": 0.8181,
+        "band_mae_db": 0.4272,
+        "success_rate_1db": 80.0,
+        "instruction_adherence": 80.0
+      },
+      "Girls Under Glass - We Feel Alright": {
+        "sample_count": 10,
+        "mae_db": 0.4039,
+        "rmse_db": 0.5324,
+        "band_mae_db": 0.2742,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 100.0
+      },
+      "Hollow Ground - Ill Fate": {
+        "sample_count": 10,
+        "mae_db": 0.7777,
+        "rmse_db": 1.0123,
+        "band_mae_db": 0.361,
+        "success_rate_1db": 80.0,
+        "instruction_adherence": 50.0
+      },
+      "James Elder & Mark M Thompson - The English Actor": {
+        "sample_count": 10,
+        "mae_db": 0.701,
+        "rmse_db": 0.9906,
+        "band_mae_db": 0.5622,
+        "success_rate_1db": 80.0,
+        "instruction_adherence": 70.0
+      },
+      "Juliet's Rescue - Heartbeats": {
+        "sample_count": 10,
+        "mae_db": 0.8532,
+        "rmse_db": 0.9729,
+        "band_mae_db": 0.4232,
+        "success_rate_1db": 60.0,
+        "instruction_adherence": 60.0
+      },
+      "Little Chicago's Finest - My Own": {
+        "sample_count": 10,
+        "mae_db": 0.6818,
+        "rmse_db": 0.8368,
+        "band_mae_db": 0.3508,
+        "success_rate_1db": 90.0,
+        "instruction_adherence": 70.0
+      }
+    }
+  },
+  "test_synthetic": {
+    "sample_count": 2000,
+    "mae_db": 0.5815,
+    "rmse_db": 0.7514,
+    "bias_db": 0.005,
+    "max_error_db": 4.7593,
+    "r2": 0.9747,
+    "pearson_r": 0.9879,
+    "spearman_rho": 0.9887,
+    "success_rate_1db": 92.35,
+    "mae_per_stem_db": {
+      "vocals": 0.6208,
+      "drums": 0.6723,
+      "bass": 0.5414,
+      "other": 0.4916
+    },
+    "rmse_per_stem_db": {
+      "vocals": 0.8197,
+      "drums": 0.8322,
+      "bass": 0.6941,
+      "other": 0.6419
+    },
+    "band_mae_db": 0.3571,
+    "band_mse_norm": 0.001588,
+    "worst_band_error_db": 0.6252,
+    "log_spectral_distance_db": 0.4337,
+    "success_rate_band_001": 98.75,
+    "balance_mae_db": 0.5828,
+    "intent_direction_acc": 89.06,
+    "instruction_adherence": 82.4,
+    "per_song": {
+      "AM Contra - Heart Peripheral": {
+        "sample_count": 40,
+        "mae_db": 0.5096,
+        "rmse_db": 0.6483,
+        "band_mae_db": 0.301,
+        "success_rate_1db": 97.5,
+        "instruction_adherence": 82.5
+      },
+      "Al James - Schoolboy Facination": {
+        "sample_count": 40,
+        "mae_db": 0.4483,
+        "rmse_db": 0.5359,
+        "band_mae_db": 0.2541,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 97.5
+      },
+      "Angels In Amplifiers - I'm Alright": {
+        "sample_count": 40,
+        "mae_db": 0.6187,
+        "rmse_db": 0.7307,
+        "band_mae_db": 0.2734,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 87.5
+      },
+      "Arise - Run Run Run": {
+        "sample_count": 40,
+        "mae_db": 0.6634,
+        "rmse_db": 0.8418,
+        "band_mae_db": 0.4147,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 77.5
+      },
+      "BKS - Bulldozer": {
+        "sample_count": 40,
+        "mae_db": 0.5251,
+        "rmse_db": 0.6698,
+        "band_mae_db": 0.4438,
+        "success_rate_1db": 97.5,
+        "instruction_adherence": 90.0
+      },
+      "BKS - Too Much": {
+        "sample_count": 40,
+        "mae_db": 0.3641,
+        "rmse_db": 0.4616,
+        "band_mae_db": 0.209,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 97.5
+      },
+      "Ben Carrigan - We'll Talk About It All Tonight": {
+        "sample_count": 40,
+        "mae_db": 0.35,
+        "rmse_db": 0.4276,
+        "band_mae_db": 0.2208,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 100.0
+      },
+      "Bobby Nobody - Stitch Up": {
+        "sample_count": 40,
+        "mae_db": 0.3774,
+        "rmse_db": 0.4793,
+        "band_mae_db": 0.2484,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 95.0
+      },
+      "Buitraker - Revo X": {
+        "sample_count": 40,
+        "mae_db": 0.5441,
+        "rmse_db": 0.7345,
+        "band_mae_db": 0.4529,
+        "success_rate_1db": 95.0,
+        "instruction_adherence": 87.5
+      },
+      "Carlos Gonzalez - A Place For Us": {
+        "sample_count": 40,
+        "mae_db": 0.4878,
+        "rmse_db": 0.566,
+        "band_mae_db": 0.2846,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 90.0
+      },
+      "Cristina Vane - So Easy": {
+        "sample_count": 40,
+        "mae_db": 0.6633,
+        "rmse_db": 0.8201,
+        "band_mae_db": 0.3386,
+        "success_rate_1db": 97.5,
+        "instruction_adherence": 85.0
+      },
+      "Detsky Sad - Walkie Talkie": {
+        "sample_count": 40,
+        "mae_db": 0.6937,
+        "rmse_db": 0.8204,
+        "band_mae_db": 0.2949,
+        "success_rate_1db": 92.5,
+        "instruction_adherence": 80.0
+      },
+      "Enda Reilly - Cur An Long Ag Seol": {
+        "sample_count": 40,
+        "mae_db": 0.5299,
+        "rmse_db": 0.6445,
+        "band_mae_db": 0.4478,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 87.5
+      },
+      "Forkupines - Semantics": {
+        "sample_count": 40,
+        "mae_db": 0.5874,
+        "rmse_db": 0.6995,
+        "band_mae_db": 0.2784,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 92.5
+      },
+      "Georgia Wonder - Siren": {
+        "sample_count": 40,
+        "mae_db": 0.5153,
+        "rmse_db": 0.6399,
+        "band_mae_db": 0.364,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 92.5
+      },
+      "Girls Under Glass - We Feel Alright": {
+        "sample_count": 40,
+        "mae_db": 0.3455,
+        "rmse_db": 0.4213,
+        "band_mae_db": 0.2141,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 100.0
+      },
+      "Hollow Ground - Ill Fate": {
+        "sample_count": 40,
+        "mae_db": 0.7079,
+        "rmse_db": 0.9133,
+        "band_mae_db": 0.395,
+        "success_rate_1db": 82.5,
+        "instruction_adherence": 60.0
+      },
+      "James Elder & Mark M Thompson - The English Actor": {
+        "sample_count": 40,
+        "mae_db": 0.4913,
+        "rmse_db": 0.6539,
+        "band_mae_db": 0.316,
+        "success_rate_1db": 97.5,
+        "instruction_adherence": 82.5
+      },
+      "Juliet's Rescue - Heartbeats": {
+        "sample_count": 40,
+        "mae_db": 0.874,
+        "rmse_db": 1.0433,
+        "band_mae_db": 0.4656,
+        "success_rate_1db": 75.0,
+        "instruction_adherence": 60.0
+      },
+      "Little Chicago's Finest - My Own": {
+        "sample_count": 40,
+        "mae_db": 0.6345,
+        "rmse_db": 0.7822,
+        "band_mae_db": 0.3789,
+        "success_rate_1db": 97.5,
+        "instruction_adherence": 90.0
+      },
+      "Louis Cressy Band - Good Time": {
+        "sample_count": 40,
+        "mae_db": 0.3956,
+        "rmse_db": 0.5582,
+        "band_mae_db": 0.2424,
+        "success_rate_1db": 92.5,
+        "instruction_adherence": 85.0
+      },
+      "Lyndsey Ollard - Catching Up": {
+        "sample_count": 40,
+        "mae_db": 0.4937,
+        "rmse_db": 0.6722,
+        "band_mae_db": 0.374,
+        "success_rate_1db": 95.0,
+        "instruction_adherence": 90.0
+      },
+      "M.E.R.C. Music - Knockout": {
+        "sample_count": 40,
+        "mae_db": 0.6058,
+        "rmse_db": 0.7583,
+        "band_mae_db": 0.3853,
+        "success_rate_1db": 95.0,
+        "instruction_adherence": 87.5
+      },
+      "Moosmusic - Big Dummy Shake": {
+        "sample_count": 40,
+        "mae_db": 0.4678,
+        "rmse_db": 0.5592,
+        "band_mae_db": 0.2385,
+        "success_rate_1db": 97.5,
+        "instruction_adherence": 92.5
+      },
+      "Motor Tapes - Shore": {
+        "sample_count": 40,
+        "mae_db": 0.6165,
+        "rmse_db": 0.8203,
+        "band_mae_db": 0.426,
+        "success_rate_1db": 90.0,
+        "instruction_adherence": 87.5
+      },
+      "Mu - Too Bright": {
+        "sample_count": 40,
+        "mae_db": 0.5008,
+        "rmse_db": 0.6388,
+        "band_mae_db": 0.2978,
+        "success_rate_1db": 97.5,
+        "instruction_adherence": 87.5
+      },
+      "Nerve 9 - Pray For The Rain": {
+        "sample_count": 40,
+        "mae_db": 0.447,
+        "rmse_db": 0.5491,
+        "band_mae_db": 0.2395,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 97.5
+      },
+      "PR - Happy Daze": {
+        "sample_count": 40,
+        "mae_db": 1.1591,
+        "rmse_db": 1.4468,
+        "band_mae_db": 0.7425,
+        "success_rate_1db": 40.0,
+        "instruction_adherence": 32.5
+      },
+      "PR - Oh No": {
+        "sample_count": 40,
+        "mae_db": 0.9968,
+        "rmse_db": 1.2211,
+        "band_mae_db": 0.6434,
+        "success_rate_1db": 42.5,
+        "instruction_adherence": 27.5
+      },
+      "Punkdisco - Oral Hygiene": {
+        "sample_count": 40,
+        "mae_db": 0.6965,
+        "rmse_db": 0.9018,
+        "band_mae_db": 0.4186,
+        "success_rate_1db": 77.5,
+        "instruction_adherence": 70.0
+      },
+      "Raft Monk - Tiring": {
+        "sample_count": 40,
+        "mae_db": 0.471,
+        "rmse_db": 0.5921,
+        "band_mae_db": 0.271,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 87.5
+      },
+      "Sambasevam Shanmugam - Kaathaadi": {
+        "sample_count": 40,
+        "mae_db": 0.6881,
+        "rmse_db": 0.9091,
+        "band_mae_db": 0.4322,
+        "success_rate_1db": 72.5,
+        "instruction_adherence": 65.0
+      },
+      "Secretariat - Borderline": {
+        "sample_count": 40,
+        "mae_db": 0.5323,
+        "rmse_db": 0.658,
+        "band_mae_db": 0.2748,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 85.0
+      },
+      "Secretariat - Over The Top": {
+        "sample_count": 40,
+        "mae_db": 0.4546,
+        "rmse_db": 0.5849,
+        "band_mae_db": 0.2455,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 82.5
+      },
+      "Side Effects Project - Sing With Me": {
+        "sample_count": 40,
+        "mae_db": 0.5438,
+        "rmse_db": 0.6628,
+        "band_mae_db": 0.3262,
+        "success_rate_1db": 97.5,
+        "instruction_adherence": 82.5
+      },
+      "Signe Jakobsen - What Have You Done To Me": {
+        "sample_count": 40,
+        "mae_db": 0.4026,
+        "rmse_db": 0.4938,
+        "band_mae_db": 0.2897,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 92.5
+      },
+      "Skelpolu - Resurrection": {
+        "sample_count": 40,
+        "mae_db": 0.7247,
+        "rmse_db": 0.875,
+        "band_mae_db": 0.4363,
+        "success_rate_1db": 85.0,
+        "instruction_adherence": 77.5
+      },
+      "Speak Softly - Broken Man": {
+        "sample_count": 40,
+        "mae_db": 0.7454,
+        "rmse_db": 0.8999,
+        "band_mae_db": 0.5479,
+        "success_rate_1db": 80.0,
+        "instruction_adherence": 77.5
+      },
+      "Speak Softly - Like Horses": {
+        "sample_count": 40,
+        "mae_db": 0.8088,
+        "rmse_db": 0.9375,
+        "band_mae_db": 0.6224,
+        "success_rate_1db": 80.0,
+        "instruction_adherence": 75.0
+      },
+      "The Doppler Shift - Atrophy": {
+        "sample_count": 40,
+        "mae_db": 0.5174,
+        "rmse_db": 0.6638,
+        "band_mae_db": 0.4033,
+        "success_rate_1db": 95.0,
+        "instruction_adherence": 90.0
+      },
+      "The Easton Ellises (Baumi) - SDRNR": {
+        "sample_count": 40,
+        "mae_db": 0.5207,
+        "rmse_db": 0.6323,
+        "band_mae_db": 0.2693,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 87.5
+      },
+      "The Easton Ellises - Falcon 69": {
+        "sample_count": 40,
+        "mae_db": 0.3384,
+        "rmse_db": 0.4102,
+        "band_mae_db": 0.2069,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 97.5
+      },
+      "The Long Wait - Dark Horses": {
+        "sample_count": 40,
+        "mae_db": 0.3485,
+        "rmse_db": 0.4229,
+        "band_mae_db": 0.2179,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 87.5
+      },
+      "The Mountaineering Club - Mallory": {
+        "sample_count": 40,
+        "mae_db": 0.5496,
+        "rmse_db": 0.805,
+        "band_mae_db": 0.2713,
+        "success_rate_1db": 92.5,
+        "instruction_adherence": 85.0
+      },
+      "The Sunshine Garcia Band - For I Am The Moon": {
+        "sample_count": 40,
+        "mae_db": 0.6636,
+        "rmse_db": 0.8079,
+        "band_mae_db": 0.3096,
+        "success_rate_1db": 97.5,
+        "instruction_adherence": 70.0
+      },
+      "Timboz - Pony": {
+        "sample_count": 40,
+        "mae_db": 0.7057,
+        "rmse_db": 0.8357,
+        "band_mae_db": 0.4045,
+        "success_rate_1db": 95.0,
+        "instruction_adherence": 70.0
+      },
+      "Tom McKenzie - Directions": {
+        "sample_count": 40,
+        "mae_db": 0.7695,
+        "rmse_db": 0.9439,
+        "band_mae_db": 0.7345,
+        "success_rate_1db": 90.0,
+        "instruction_adherence": 70.0
+      },
+      "Triviul feat. The Fiend - Widow": {
+        "sample_count": 40,
+        "mae_db": 0.7539,
+        "rmse_db": 0.892,
+        "band_mae_db": 0.3711,
+        "success_rate_1db": 82.5,
+        "instruction_adherence": 72.5
+      },
+      "We Fell From The Sky - Not You": {
+        "sample_count": 40,
+        "mae_db": 0.6885,
+        "rmse_db": 0.7945,
+        "band_mae_db": 0.3024,
+        "success_rate_1db": 100.0,
+        "instruction_adherence": 87.5
+      },
+      "Zeno - Signs": {
+        "sample_count": 40,
+        "mae_db": 0.5382,
+        "rmse_db": 0.7201,
+        "band_mae_db": 0.3153,
+        "success_rate_1db": 90.0,
+        "instruction_adherence": 85.0
+      }
+    }
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 13.051506,
+      "train_gain_mse": 13.051506,
+      "val_mae_db": 2.1206,
+      "val_rmse_db": 2.734,
+      "val_band_mae_db": 1.2586,
+      "val_success_1db": 12.25,
+      "val_adherence": 10.75,
+      "lr": 0.0009974,
+      "epoch_sec": 12.13
+    },
+    {
+      "epoch": 2,
+      "train_loss": 5.696898,
+      "train_gain_mse": 5.696898,
+      "val_mae_db": 1.4372,
+      "val_rmse_db": 1.8749,
+      "val_band_mae_db": 0.8719,
+      "val_success_1db": 32.88,
+      "val_adherence": 26.38,
+      "lr": 0.00098962,
+      "epoch_sec": 6.95
+    },
+    {
+      "epoch": 3,
+      "train_loss": 3.350789,
+      "train_gain_mse": 3.350789,
+      "val_mae_db": 1.4791,
+      "val_rmse_db": 1.8639,
+      "val_band_mae_db": 0.8902,
+      "val_success_1db": 20.88,
+      "val_adherence": 17.5,
+      "lr": 0.00097675,
+      "epoch_sec": 6.99
+    },
+    {
+      "epoch": 4,
+      "train_loss": 2.523297,
+      "train_gain_mse": 2.523297,
+      "val_mae_db": 1.0933,
+      "val_rmse_db": 1.3999,
+      "val_band_mae_db": 0.6973,
+      "val_success_1db": 49.25,
+      "val_adherence": 39.12,
+      "lr": 0.00095893,
+      "epoch_sec": 7.09
+    },
+    {
+      "epoch": 5,
+      "train_loss": 2.052963,
+      "train_gain_mse": 2.052963,
+      "val_mae_db": 1.0246,
+      "val_rmse_db": 1.3397,
+      "val_band_mae_db": 0.6431,
+      "val_success_1db": 55.0,
+      "val_adherence": 45.75,
+      "lr": 0.00093636,
+      "epoch_sec": 6.88
+    },
+    {
+      "epoch": 6,
+      "train_loss": 1.882514,
+      "train_gain_mse": 1.882514,
+      "val_mae_db": 1.0392,
+      "val_rmse_db": 1.3321,
+      "val_band_mae_db": 0.6204,
+      "val_success_1db": 52.12,
+      "val_adherence": 42.25,
+      "lr": 0.00090928,
+      "epoch_sec": 6.85
+    },
+    {
+      "epoch": 7,
+      "train_loss": 1.74453,
+      "train_gain_mse": 1.74453,
+      "val_mae_db": 1.0541,
+      "val_rmse_db": 1.3503,
+      "val_band_mae_db": 0.6268,
+      "val_success_1db": 51.0,
+      "val_adherence": 39.75,
+      "lr": 0.00087799,
+      "epoch_sec": 6.9
+    },
+    {
+      "epoch": 8,
+      "train_loss": 1.571626,
+      "train_gain_mse": 1.571626,
+      "val_mae_db": 0.8785,
+      "val_rmse_db": 1.1602,
+      "val_band_mae_db": 0.5463,
+      "val_success_1db": 68.38,
+      "val_adherence": 56.62,
+      "lr": 0.00084284,
+      "epoch_sec": 6.88
+    },
+    {
+      "epoch": 9,
+      "train_loss": 1.423291,
+      "train_gain_mse": 1.423291,
+      "val_mae_db": 0.8698,
+      "val_rmse_db": 1.1249,
+      "val_band_mae_db": 0.5067,
+      "val_success_1db": 68.38,
+      "val_adherence": 56.25,
+      "lr": 0.0008042,
+      "epoch_sec": 6.71
+    },
+    {
+      "epoch": 10,
+      "train_loss": 1.303936,
+      "train_gain_mse": 1.303936,
+      "val_mae_db": 0.7939,
+      "val_rmse_db": 1.0505,
+      "val_band_mae_db": 0.4715,
+      "val_success_1db": 73.88,
+      "val_adherence": 67.38,
+      "lr": 0.0007625,
+      "epoch_sec": 6.85
+    },
+    {
+      "epoch": 11,
+      "train_loss": 1.244178,
+      "train_gain_mse": 1.244178,
+      "val_mae_db": 0.71,
+      "val_rmse_db": 0.9414,
+      "val_band_mae_db": 0.4249,
+      "val_success_1db": 82.88,
+      "val_adherence": 71.38,
+      "lr": 0.0007182,
+      "epoch_sec": 6.8
+    },
+    {
+      "epoch": 12,
+      "train_loss": 1.051093,
+      "train_gain_mse": 1.051093,
+      "val_mae_db": 0.7476,
+      "val_rmse_db": 0.977,
+      "val_band_mae_db": 0.4442,
+      "val_success_1db": 78.62,
+      "val_adherence": 66.75,
+      "lr": 0.00067178,
+      "epoch_sec": 6.7
+    },
+    {
+      "epoch": 13,
+      "train_loss": 1.046762,
+      "train_gain_mse": 1.046762,
+      "val_mae_db": 0.6972,
+      "val_rmse_db": 0.9207,
+      "val_band_mae_db": 0.4136,
+      "val_success_1db": 82.5,
+      "val_adherence": 72.12,
+      "lr": 0.00062376,
+      "epoch_sec": 6.82
+    },
+    {
+      "epoch": 14,
+      "train_loss": 1.016549,
+      "train_gain_mse": 1.016549,
+      "val_mae_db": 0.6622,
+      "val_rmse_db": 0.8863,
+      "val_band_mae_db": 0.4044,
+      "val_success_1db": 83.38,
+      "val_adherence": 75.62,
+      "lr": 0.00057465,
+      "epoch_sec": 6.65
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.944042,
+      "train_gain_mse": 0.944042,
+      "val_mae_db": 0.6445,
+      "val_rmse_db": 0.8522,
+      "val_band_mae_db": 0.3989,
+      "val_success_1db": 87.38,
+      "val_adherence": 78.5,
+      "lr": 0.000525,
+      "epoch_sec": 6.94
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.867062,
+      "train_gain_mse": 0.867062,
+      "val_mae_db": 0.6702,
+      "val_rmse_db": 0.8874,
+      "val_band_mae_db": 0.3896,
+      "val_success_1db": 85.0,
+      "val_adherence": 72.62,
+      "lr": 0.00047535,
+      "epoch_sec": 6.85
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.842372,
+      "train_gain_mse": 0.842372,
+      "val_mae_db": 0.638,
+      "val_rmse_db": 0.8449,
+      "val_band_mae_db": 0.3785,
+      "val_success_1db": 85.38,
+      "val_adherence": 76.38,
+      "lr": 0.00042624,
+      "epoch_sec": 9.86
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.812486,
+      "train_gain_mse": 0.812486,
+      "val_mae_db": 0.602,
+      "val_rmse_db": 0.8047,
+      "val_band_mae_db": 0.3618,
+      "val_success_1db": 88.5,
+      "val_adherence": 80.0,
+      "lr": 0.00037822,
+      "epoch_sec": 7.08
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.757382,
+      "train_gain_mse": 0.757382,
+      "val_mae_db": 0.6315,
+      "val_rmse_db": 0.8321,
+      "val_band_mae_db": 0.3728,
+      "val_success_1db": 88.0,
+      "val_adherence": 77.88,
+      "lr": 0.0003318,
+      "epoch_sec": 7.27
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.7363,
+      "train_gain_mse": 0.7363,
+      "val_mae_db": 0.6179,
+      "val_rmse_db": 0.8209,
+      "val_band_mae_db": 0.3744,
+      "val_success_1db": 88.12,
+      "val_adherence": 79.62,
+      "lr": 0.0002875,
+      "epoch_sec": 7.19
+    },
+    {
+      "epoch": 21,
+      "train_loss": 0.723026,
+      "train_gain_mse": 0.723026,
+      "val_mae_db": 0.5857,
+      "val_rmse_db": 0.7863,
+      "val_band_mae_db": 0.3532,
+      "val_success_1db": 90.25,
+      "val_adherence": 81.88,
+      "lr": 0.0002458,
+      "epoch_sec": 7.18
+    },
+    {
+      "epoch": 22,
+      "train_loss": 0.68485,
+      "train_gain_mse": 0.68485,
+      "val_mae_db": 0.5681,
+      "val_rmse_db": 0.7631,
+      "val_band_mae_db": 0.3403,
+      "val_success_1db": 91.12,
+      "val_adherence": 84.5,
+      "lr": 0.00020716,
+      "epoch_sec": 7.22
+    },
+    {
+      "epoch": 23,
+      "train_loss": 0.646556,
+      "train_gain_mse": 0.646556,
+      "val_mae_db": 0.5553,
+      "val_rmse_db": 0.7378,
+      "val_band_mae_db": 0.3271,
+      "val_success_1db": 91.88,
+      "val_adherence": 85.5,
+      "lr": 0.00017201,
+      "epoch_sec": 7.13
+    },
+    {
+      "epoch": 24,
+      "train_loss": 0.633078,
+      "train_gain_mse": 0.633078,
+      "val_mae_db": 0.5747,
+      "val_rmse_db": 0.7682,
+      "val_band_mae_db": 0.3351,
+      "val_success_1db": 90.12,
+      "val_adherence": 82.25,
+      "lr": 0.00014072,
+      "epoch_sec": 7.22
+    },
+    {
+      "epoch": 25,
+      "train_loss": 0.600726,
+      "train_gain_mse": 0.600726,
+      "val_mae_db": 0.5381,
+      "val_rmse_db": 0.7159,
+      "val_band_mae_db": 0.3172,
+      "val_success_1db": 93.25,
+      "val_adherence": 85.25,
+      "lr": 0.00011364,
+      "epoch_sec": 7.27
+    },
+    {
+      "epoch": 26,
+      "train_loss": 0.595365,
+      "train_gain_mse": 0.595365,
+      "val_mae_db": 0.5332,
+      "val_rmse_db": 0.7096,
+      "val_band_mae_db": 0.3159,
+      "val_success_1db": 92.88,
+      "val_adherence": 86.12,
+      "lr": 9.107e-05,
+      "epoch_sec": 7.12
+    },
+    {
+      "epoch": 27,
+      "train_loss": 0.606313,
+      "train_gain_mse": 0.606313,
+      "val_mae_db": 0.5189,
+      "val_rmse_db": 0.6989,
+      "val_band_mae_db": 0.311,
+      "val_success_1db": 93.88,
+      "val_adherence": 86.12,
+      "lr": 7.325e-05,
+      "epoch_sec": 7.22
+    },
+    {
+      "epoch": 28,
+      "train_loss": 0.569384,
+      "train_gain_mse": 0.569384,
+      "val_mae_db": 0.5449,
+      "val_rmse_db": 0.7208,
+      "val_band_mae_db": 0.3173,
+      "val_success_1db": 93.0,
+      "val_adherence": 84.0,
+      "lr": 6.038e-05,
+      "epoch_sec": 7.05
+    },
+    {
+      "epoch": 29,
+      "train_loss": 0.560571,
+      "train_gain_mse": 0.560571,
+      "val_mae_db": 0.5222,
+      "val_rmse_db": 0.7056,
+      "val_band_mae_db": 0.304,
+      "val_success_1db": 93.25,
+      "val_adherence": 86.25,
+      "lr": 5.26e-05,
+      "epoch_sec": 7.19
+    },
+    {
+      "epoch": 30,
+      "train_loss": 0.543201,
+      "train_gain_mse": 0.543201,
+      "val_mae_db": 0.5152,
+      "val_rmse_db": 0.6902,
+      "val_band_mae_db": 0.3021,
+      "val_success_1db": 93.5,
+      "val_adherence": 86.25,
+      "lr": 5e-05,
+      "epoch_sec": 7.29
+    }
+  ]
+}

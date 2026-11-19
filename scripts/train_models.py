@@ -189,20 +189,53 @@ def main() -> None:
     parser.add_argument("--patience", type=int, default=5)
     parser.add_argument("--batch-size", type=int, default=16)
     parser.add_argument("--lr", type=float, default=1e-3)
-    parser.add_argument("--text-backend", choices=("subword", "huggingface"), default="subword")
+    parser.add_argument(
+        "--grad-accum",
+        type=int,
+        default=1,
+        help="Microbatches accumulated per optimizer step "
+        "(effective batch = batch-size * grad-accum).",
+    )
+    parser.add_argument("--weight-decay", type=float, default=1e-4)
+    parser.add_argument("--dropout", type=float, default=None,
+                        help="Override model dropout (M1/M2/M3/M5).")
+    parser.add_argument("--hidden-dim", type=int, default=None,
+                        help="Override model hidden dim (M1/M2/M3/M5).")
+    parser.add_argument(
+        "--out-dir",
+        type=Path,
+        default=OUTPUTS_DIR,
+        help="Directory for the summary CSV tables (default: outputs/).",
+    )
+    parser.add_argument(
+        "--text-backend",
+        choices=("subword", "huggingface", "indobert"),
+        default="subword",
+    )
     parser.add_argument("--device", default="auto")
     parser.add_argument("--train-manifest", type=Path, default=SAMPLES_ROOT / "train_samples.json")
     parser.add_argument("--val-manifest", type=Path, default=SAMPLES_ROOT / "validation_samples.json")
     parser.add_argument("--test-human-manifest", type=Path, default=SAMPLES_ROOT / "test_human_samples.json")
     parser.add_argument("--test-synthetic-manifest", type=Path, default=SAMPLES_ROOT / "test_synthetic_samples.json")
+    parser.add_argument(
+        "--openl3",
+        action="store_true",
+        help="Use *_openl3_samples.json manifests produced by scripts/build_openl3_cache.py.",
+    )
     parser.add_argument("--run-prefix", default="")
     parser.add_argument("--overwrite", action="store_true")
     args = parser.parse_args()
 
-    OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
-    per_seed_path = OUTPUTS_DIR / "per_seed_results.csv"
-    main_csv_path = OUTPUTS_DIR / "main_results.csv"
-    m1_csv_path = OUTPUTS_DIR / "m1_results.csv"
+    if args.openl3:
+        args.train_manifest = SAMPLES_ROOT / "train_openl3_samples.json"
+        args.val_manifest = SAMPLES_ROOT / "validation_openl3_samples.json"
+        args.test_human_manifest = SAMPLES_ROOT / "test_human_openl3_samples.json"
+        args.test_synthetic_manifest = SAMPLES_ROOT / "test_synthetic_openl3_samples.json"
+
+    args.out_dir.mkdir(parents=True, exist_ok=True)
+    per_seed_path = args.out_dir / "per_seed_results.csv"
+    main_csv_path = args.out_dir / "main_results.csv"
+    m1_csv_path = args.out_dir / "m1_results.csv"
 
     existing_per_seed = _load_csv_rows(per_seed_path)
     existing_baseline_models = {
@@ -223,6 +256,12 @@ def main() -> None:
     prefix = f"{args.run_prefix}_" if args.run_prefix else ""
     trained_model_keys: set[str] = set()
 
+    model_kwargs: dict[str, object] = {}
+    if args.dropout is not None:
+        model_kwargs["dropout"] = args.dropout
+    if args.hidden_dim is not None:
+        model_kwargs["hidden_dim"] = args.hidden_dim
+
     for model_name in args.models:
         result_model_key = f"{prefix}{model_name}"
         result_title = (
@@ -242,6 +281,9 @@ def main() -> None:
                 epochs=args.epochs,
                 patience=args.patience,
                 lr=args.lr,
+                weight_decay=args.weight_decay,
+                grad_accum_steps=args.grad_accum,
+                model_kwargs=model_kwargs,
                 text_backend=args.text_backend,
                 device=args.device,
                 train_manifest=str(args.train_manifest),

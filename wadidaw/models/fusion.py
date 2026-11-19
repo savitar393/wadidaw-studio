@@ -22,11 +22,16 @@ import torch.nn.functional as F
 from wadidaw.data.features import GAIN_MAX_DB, GAIN_MIN_DB
 from wadidaw.models.audio_cnn import (
     MultiScaleSpectralBackbone,
+    OpenL3TokenProjector,
     SharedStemAudioCNN,
     StemFrameTokenizer,
 )
 from wadidaw.models.structured import StructuredTwoBranchModel
-from wadidaw.models.text_encoder import TEXT_EMBED_DIM, TextEncoderWrapper
+from wadidaw.models.text_encoder import (
+    TEXT_EMBED_DIM,
+    TextEncoderWrapper,
+    get_text_embed_dim,
+)
 
 
 class LateFusionScratchModel(nn.Module):
@@ -167,6 +172,9 @@ class CrossAttentionGainModel(nn.Module):
 
     Text clause tokens act as Queries over temporal-stem audio Keys/Values, followed by
     per-stem cross-modal pooling and gain prediction.
+
+    ``audio_backend="openl3"`` expects cached OpenL3 embeddings shaped
+    ``(B, 4, T, 512)`` instead of log-mel audio ``(B, 4, 64, 800)``.
     """
 
     model_code = "m4"
@@ -179,14 +187,36 @@ class CrossAttentionGainModel(nn.Module):
         text_embed_dim: int = TEXT_EMBED_DIM,
         dropout: float = 0.15,
         text_backend: str = "subword",
+        audio_backend: str = "scratch",
+        openl3_dim: int = 512,
+        predict_pan: bool = False,
     ) -> None:
         super().__init__()
         self.d_model = d_model
-        self.audio_tokenizer = StemFrameTokenizer(
-            d_model=d_model,
-            n_temporal_tokens=n_temporal_tokens,
+        self.audio_backend = str(audio_backend).lower()
+        self.predict_pan = bool(predict_pan)
+        self.audio_input_key = "openl3" if self.audio_backend == "openl3" else "audio"
+
+        if self.audio_backend == "openl3":
+            self.audio_tokenizer = OpenL3TokenProjector(
+                openl3_dim=openl3_dim,
+                d_model=d_model,
+                n_temporal_tokens=n_temporal_tokens,
+            )
+        elif self.audio_backend == "scratch":
+            self.audio_tokenizer = StemFrameTokenizer(
+                d_model=d_model,
+                n_temporal_tokens=n_temporal_tokens,
+            )
+        else:
+            raise ValueError(
+                f"Unknown audio_backend '{audio_backend}'. Use 'scratch' or 'openl3'."
+            )
+
+        self.text_encoder = TextEncoderWrapper(
+            backend=text_backend,
+            embed_dim=get_text_embed_dim(text_backend),
         )
-        self.text_encoder = TextEncoderWrapper(backend=text_backend, embed_dim=text_embed_dim)
 
         self.text_token_proj = nn.Sequential(
             nn.Linear(text_embed_dim, d_model),
@@ -225,6 +255,20 @@ class CrossAttentionGainModel(nn.Module):
             nn.GELU(),
             nn.Linear(128, 4),
         )
+        self.pan_head = (
+            nn.Sequential(
+                nn.Linear(4 * d_model + d_model, 256),
+                nn.LayerNorm(256),
+                nn.GELU(),
+                nn.Dropout(dropout),
+                nn.Linear(256, 128),
+                nn.GELU(),
+                nn.Linear(128, 4),
+                nn.Tanh(),
+            )
+            if self.predict_pan
+            else None
+        )
 
     def forward(
         self,
@@ -238,42 +282,73 @@ class CrossAttentionGainModel(nn.Module):
 
         # Audio tokens: (B, 4, T', D) -> (B, 4*T', D)
         stem_tokens = self.audio_tokenizer(audio)
+        n_tokens = stem_tokens.shape[2]
         audio_kv = stem_tokens.reshape(bsz, -1, self.d_model)
         stem_pooled = stem_tokens.mean(dim=2)  # (B, 4, D)
 
-        # Text clause tokens: (B, L_text, 384) -> (B, L_text, D)
-        text_tok_raw = self.text_encoder.encode_tokens(prompts, device=device)
-        text_queries = self.text_token_proj(text_tok_raw)
-        text_sent = self.text_sent_proj(self.text_encoder.encode_sentences(prompts, device=device))
+        if active_mask is not None:
+            mask_f = active_mask.to(device=device, dtype=torch.float32)
+            audio_token_mask = (
+                active_mask.to(device=device, dtype=torch.bool)
+                .unsqueeze(-1)
+                .expand(-1, -1, n_tokens)
+                .reshape(bsz, -1)
+            )
+            stem_pooled = stem_pooled * mask_f.unsqueeze(-1)
+        else:
+            mask_f = None
+            audio_token_mask = torch.ones(
+                (bsz, 4 * n_tokens), dtype=torch.bool, device=device
+            )
 
-        # Step 1: Text queries attend over audio frame keys/values
+        # Text tokens and padding mask. IndoBERT returns variable-length tokens.
+        text_tok_raw, text_mask = self.text_encoder.encode_tokens_with_mask(
+            prompts, device=device
+        )
+        text_queries = self.text_token_proj(text_tok_raw)
+        text_sent = self.text_sent_proj(
+            self.text_encoder.encode_sentences(prompts, device=device)
+        )
+
+        # Step 1: Text queries attend over audio frame keys/values.
         attended_text, _ = self.text_to_audio_attn(
             query=text_queries,
             key=audio_kv,
             value=audio_kv,
+            key_padding_mask=~audio_token_mask,
             need_weights=False,
         )
         context_tokens = self.norm1(text_queries + attended_text)
+        context_tokens = context_tokens * text_mask.unsqueeze(-1).to(context_tokens.dtype)
 
-        # Step 2: Each of the 4 stems attends over the cross-modal context tokens
+        # Step 2: Each of the 4 stems attends over the cross-modal context tokens.
         attended_stems, _ = self.stem_to_context_attn(
             query=stem_pooled,
             key=context_tokens,
             value=context_tokens,
+            key_padding_mask=~text_mask,
             need_weights=False,
         )
         fused_stems = self.norm2(stem_pooled + attended_stems)  # (B, 4, D)
+        if mask_f is not None:
+            fused_stems = fused_stems * mask_f.unsqueeze(-1)
 
         combined = torch.cat((fused_stems.reshape(bsz, -1), text_sent), dim=-1)
         g_pred = self.head(combined)
+        pans_pred = self.pan_head(combined) if self.pan_head is not None else None
 
         if active_mask is not None:
             g_pred = g_pred * active_mask.to(device=device, dtype=torch.float32)
+            if pans_pred is not None:
+                pans_pred = pans_pred * active_mask.to(device=device, dtype=torch.float32)
 
         if clamp_output or not self.training:
             g_pred = g_pred.clamp(GAIN_MIN_DB, GAIN_MAX_DB)
 
-        return {"gains_pred": g_pred}
+        outputs = {"gains_pred": g_pred}
+        if pans_pred is not None:
+            outputs["pans_pred"] = pans_pred
+        return outputs
 
 
 class FiLMConditionedModel(nn.Module):
@@ -356,7 +431,9 @@ MODEL_REGISTRY: dict[str, str] = {
     "m1_text_only": "M1 Ablation (Text-Only)",
     "m2": "M2 Late Fusion Pretrained Backbone",
     "m3": "M3 Structured Two-Branch (Main)",
-    "m4": "M4 Cross-Attention Multimodal",
+    "m4": "M4 Cross-Attention Multimodal (Scratch)",
+    "m4_openl3": "M4 Cross-Attention + OpenL3",
+    "m4_openl3_indobert": "M4 Cross-Attention + OpenL3 + IndoBERT",
     "m5": "M5 FiLM Conditioning",
 }
 
@@ -364,6 +441,8 @@ MODEL_REGISTRY: dict[str, str] = {
 def build_model(model_name: str, text_backend: str = "subword", **kwargs: object) -> nn.Module:
     """Instantiate one of the multimodal gain staging models (`m1`..`m5` and ablations)."""
     key = model_name.strip().lower()
+    kwargs.setdefault("text_embed_dim", get_text_embed_dim(text_backend))
+
     if key == "m1":
         return LateFusionScratchModel(ablation_mode="multimodal", text_backend=text_backend, **kwargs)
     if key == "m1_audio_only":
@@ -376,6 +455,15 @@ def build_model(model_name: str, text_backend: str = "subword", **kwargs: object
         return StructuredTwoBranchModel(text_backend=text_backend, **kwargs)
     if key == "m4":
         return CrossAttentionGainModel(text_backend=text_backend, **kwargs)
+    if key == "m4_openl3":
+        kwargs.setdefault("audio_backend", "openl3")
+        kwargs.setdefault("n_temporal_tokens", 80)
+        return CrossAttentionGainModel(text_backend=text_backend, **kwargs)
+    if key == "m4_openl3_indobert":
+        kwargs.setdefault("audio_backend", "openl3")
+        kwargs.setdefault("n_temporal_tokens", 80)
+        kwargs["text_embed_dim"] = get_text_embed_dim("indobert")
+        return CrossAttentionGainModel(text_backend="indobert", **kwargs)
     if key == "m5":
         return FiLMConditionedModel(text_backend=text_backend, **kwargs)
     raise ValueError(f"Unknown model_name '{model_name}'. Available: {sorted(MODEL_REGISTRY.keys())}")

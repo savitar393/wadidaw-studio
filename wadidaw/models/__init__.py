@@ -2,6 +2,7 @@
 
 from wadidaw.models.audio_cnn import (
     MultiScaleSpectralBackbone,
+    OpenL3TokenProjector,
     SharedStemAudioCNN,
     StemFrameTokenizer,
 )
@@ -18,19 +19,25 @@ from wadidaw.models.structured import (
     compute_multimodal_loss,
 )
 from wadidaw.models.text_encoder import (
+    INDOBERT_EMBED_DIM,
+    INDOBERT_MODEL_NAME,
     TEXT_EMBED_DIM,
     IndonesianSubwordTextEncoder,
     TextEncoderWrapper,
+    get_text_embed_dim,
 )
 
 __all__ = [
     "CrossAttentionGainModel",
     "FiLMConditionedModel",
+    "INDOBERT_EMBED_DIM",
+    "INDOBERT_MODEL_NAME",
     "IndonesianSubwordTextEncoder",
     "LateFusionPretrainedModel",
     "LateFusionScratchModel",
     "MODEL_REGISTRY",
     "MultiScaleSpectralBackbone",
+    "OpenL3TokenProjector",
     "SharedStemAudioCNN",
     "StemFrameTokenizer",
     "StructuredTwoBranchModel",
@@ -38,4 +45,5 @@ __all__ = [
     "TextEncoderWrapper",
     "build_model",
     "compute_multimodal_loss",
+    "get_text_embed_dim",
 ]

@@ -15,7 +15,7 @@ import platform
 import random
 import time
 from copy import deepcopy
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from importlib.metadata import version
 from pathlib import Path
 
@@ -46,6 +46,8 @@ class TrainConfig:
     lr: float = 1e-3
     weight_decay: float = 1e-4
     grad_clip: float = 1.0
+    grad_accum_steps: int = 1
+    model_kwargs: dict[str, object] = field(default_factory=dict)
     lambda_loudness: float = 0.1
     lambda_balance: float = 0.1
     text_backend: str = "subword"
@@ -111,7 +113,11 @@ def train_one_run(config: TrainConfig) -> dict[str, object]:
         num_workers=config.num_workers,
     )
 
-    model = build_model(config.model_name, text_backend=config.text_backend).to(device)
+    model = build_model(
+        config.model_name,
+        text_backend=config.text_backend,
+        **config.model_kwargs,
+    ).to(device)
     trainable_params = [p for p in model.parameters() if p.requires_grad]
     optimizer = torch.optim.AdamW(
         trainable_params,
@@ -124,6 +130,7 @@ def train_one_run(config: TrainConfig) -> dict[str, object]:
         eta_min=config.lr * 0.05,
     )
     scaler = torch.amp.GradScaler("cuda", enabled=amp_enabled)
+    accum_steps = max(1, int(config.grad_accum_steps))
 
     best_val_mae = float("inf")
     best_epoch = 0
@@ -135,7 +142,10 @@ def train_one_run(config: TrainConfig) -> dict[str, object]:
 
     print(
         f"[{config.run_name}] Training {MODEL_REGISTRY[config.model_name]} on {device} "
-        f"(train={len(train_ds)}, val={len(val_ds)}, params={sum(p.numel() for p in trainable_params):,})"
+        f"(train={len(train_ds)}, val={len(val_ds)}, "
+        f"batch={config.batch_size}x{accum_steps}="
+        f"{config.batch_size * accum_steps}, "
+        f"params={sum(p.numel() for p in trainable_params):,})"
     )
 
     for epoch in range(1, config.epochs + 1):
@@ -145,15 +155,18 @@ def train_one_run(config: TrainConfig) -> dict[str, object]:
         total_gain_mse = 0.0
         n_samples = 0
 
-        for batch in train_loader:
-            audio = batch["audio"].to(device=device, dtype=torch.float32)
+        optimizer.zero_grad(set_to_none=True)
+        n_batches = len(train_loader)
+
+        for step, batch in enumerate(train_loader):
+            audio_key = getattr(model, "audio_input_key", "audio")
+            audio = batch[audio_key].to(device=device, dtype=torch.float32)
             prompts = batch["prompt"]
             g_true = batch["gains_db"].to(device=device, dtype=torch.float32)
             l_true = batch["loudness_db"].to(device=device, dtype=torch.float32)
             r_true = batch["balance_target"].to(device=device, dtype=torch.float32)
             active_mask = batch["active_mask"].to(device=device)
 
-            optimizer.zero_grad(set_to_none=True)
             with torch.amp.autocast(device_type=device.type, enabled=amp_enabled):
                 outputs = model(audio, prompts, active_mask=active_mask, clamp_output=False)
                 losses = compute_multimodal_loss(
@@ -167,12 +180,18 @@ def train_one_run(config: TrainConfig) -> dict[str, object]:
                 )
                 loss = losses["loss"]
 
-            scaler.scale(loss).backward()
-            if config.grad_clip > 0:
-                scaler.unscale_(optimizer)
-                nn.utils.clip_grad_norm_(trainable_params, max_norm=config.grad_clip)
-            scaler.step(optimizer)
-            scaler.update()
+            # Gradient accumulation: each microbatch contributes 1/accum_steps of the
+            # gradient so the update matches a single batch of batch_size * accum_steps.
+            scaler.scale(loss / accum_steps).backward()
+
+            is_last_batch = (step + 1) == n_batches
+            if (step + 1) % accum_steps == 0 or is_last_batch:
+                if config.grad_clip > 0:
+                    scaler.unscale_(optimizer)
+                    nn.utils.clip_grad_norm_(trainable_params, max_norm=config.grad_clip)
+                scaler.step(optimizer)
+                scaler.update()
+                optimizer.zero_grad(set_to_none=True)
 
             bsz = len(audio)
             total_loss += float(loss.item()) * bsz

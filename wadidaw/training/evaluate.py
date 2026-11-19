@@ -195,7 +195,8 @@ def evaluate_model(
     all_songs: list[str] = []
 
     for batch in dataloader:
-        audio = batch["audio"].to(device=device, dtype=torch.float32)
+        audio_key = getattr(model_or_fn, "audio_input_key", "audio") if is_module else "audio"
+        audio = batch[audio_key].to(device=device, dtype=torch.float32)
         prompts = batch["prompt"]
         active_mask = batch["active_mask"].to(device=device)
 
