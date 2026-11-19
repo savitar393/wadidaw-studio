@@ -190,6 +190,9 @@ def main() -> None:
         args.test_synthetic_manifest = SAMPLES_ROOT / "test_synthetic_openl3_samples.json"
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
+    per_seed_path = args.out_dir / "per_seed_results.csv"
+    main_csv_path = args.out_dir / "main_results.csv"
+    m1_csv_path = args.out_dir / "m1_results.csv"
 
     print("Evaluating non-learning DSP baselines...")
     all_rows = evaluate_baselines_table(
