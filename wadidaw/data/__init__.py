@@ -68,6 +68,13 @@ from wadidaw.data.prompts import (
     parse_prompt_to_balance,
     save_prompt_banks,
 )
+from wadidaw.data.yamnet_features import (
+    YAMNET_EMBED_DIM,
+    YAMNET_POOL_DIM,
+    YAMNET_SAMPLE_RATE,
+    extract_yamnet_embeddings,
+    extract_yamnet_for_record,
+)
 
 __all__ = [
     "ACTIVE_THRESHOLD_DB",
@@ -98,6 +105,9 @@ __all__ = [
     "SPLIT_MANIFEST_PATH",
     "STEM_LABELS",
     "STEM_NAMES",
+    "YAMNET_EMBED_DIM",
+    "YAMNET_POOL_DIM",
+    "YAMNET_SAMPLE_RATE",
     "active_stem_mask",
     "apply_gain_to_logmel_db",
     "band_energies_from_grams",

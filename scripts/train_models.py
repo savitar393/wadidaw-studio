@@ -222,9 +222,32 @@ def main() -> None:
         action="store_true",
         help="Use *_openl3_samples.json manifests produced by scripts/build_openl3_cache.py.",
     )
+    parser.add_argument(
+        "--panns",
+        action="store_true",
+        help="Use *_panns_samples.json manifests produced by scripts/build_panns_cache.py "
+             "(M2 and other models that read cached audio features).",
+    )
+    parser.add_argument(
+        "--yamnet",
+        action="store_true",
+        help="Use *_yamnet_samples.json manifests produced by scripts/build_yamnet_cache.py "
+             "(M2 with the frozen YAMNet audio encoder).",
+    )
+    parser.add_argument(
+        "--m2-backend",
+        choices=("yamnet", "panns", "cnn14"),
+        default=None,
+        help="Override the M2 audio backend (default: yamnet/panns when the matching "
+             "cache flag is set, else cnn14).",
+    )
     parser.add_argument("--run-prefix", default="")
     parser.add_argument("--overwrite", action="store_true")
     args = parser.parse_args()
+
+    cache_flags = [bool(args.openl3), bool(args.panns), bool(args.yamnet)]
+    if sum(cache_flags) > 1:
+        parser.error("Only one of --openl3, --panns, --yamnet may be used at a time.")
 
     if args.openl3:
         args.train_manifest = SAMPLES_ROOT / "train_openl3_samples.json"
@@ -232,10 +255,35 @@ def main() -> None:
         args.test_human_manifest = SAMPLES_ROOT / "test_human_openl3_samples.json"
         args.test_synthetic_manifest = SAMPLES_ROOT / "test_synthetic_openl3_samples.json"
 
+    if args.panns:
+        args.train_manifest = SAMPLES_ROOT / "train_panns_samples.json"
+        args.val_manifest = SAMPLES_ROOT / "validation_panns_samples.json"
+        args.test_human_manifest = SAMPLES_ROOT / "test_human_panns_samples.json"
+        args.test_synthetic_manifest = SAMPLES_ROOT / "test_synthetic_panns_samples.json"
+        required = (args.train_manifest, args.val_manifest)
+        missing = [str(path) for path in required if not path.is_file()]
+        if missing:
+            parser.error(
+                "--panns requires cached PANNs manifests. Missing: "
+                + ", ".join(missing)
+                + ". Run `python -m scripts.build_panns_cache` first."
+            )
+
+    if args.yamnet:
+        args.train_manifest = SAMPLES_ROOT / "train_yamnet_samples.json"
+        args.val_manifest = SAMPLES_ROOT / "validation_yamnet_samples.json"
+        args.test_human_manifest = SAMPLES_ROOT / "test_human_yamnet_samples.json"
+        args.test_synthetic_manifest = SAMPLES_ROOT / "test_synthetic_yamnet_samples.json"
+        required = (args.train_manifest, args.val_manifest)
+        missing = [str(path) for path in required if not path.is_file()]
+        if missing:
+            parser.error(
+                "--yamnet requires cached YAMNet manifests. Missing: "
+                + ", ".join(missing)
+                + ". Run `python -m scripts.build_yamnet_cache` first."
+            )
+
     args.out_dir.mkdir(parents=True, exist_ok=True)
-    per_seed_path = args.out_dir / "per_seed_results.csv"
-    main_csv_path = args.out_dir / "main_results.csv"
-    m1_csv_path = args.out_dir / "m1_results.csv"
 
     existing_per_seed = _load_csv_rows(per_seed_path)
     existing_baseline_models = {
@@ -262,6 +310,21 @@ def main() -> None:
     if args.hidden_dim is not None:
         model_kwargs["hidden_dim"] = args.hidden_dim
 
+    base_model_kwargs: dict[str, object] = {}
+    if args.dropout is not None:
+        base_model_kwargs["dropout"] = args.dropout
+    if args.hidden_dim is not None:
+        base_model_kwargs["hidden_dim"] = args.hidden_dim
+
+    m2_backend = args.m2_backend
+    if m2_backend is None:
+        if args.yamnet:
+            m2_backend = "yamnet"
+        elif args.panns:
+            m2_backend = "panns"
+        else:
+            m2_backend = "cnn14"
+
     for model_name in args.models:
         result_model_key = f"{prefix}{model_name}"
         result_title = (
@@ -273,6 +336,9 @@ def main() -> None:
 
         for seed in args.seeds:
             run_name = f"{prefix}{model_name}_seed{seed}"
+            model_kwargs = dict(base_model_kwargs)
+            if model_name == "m2":
+                model_kwargs["audio_backend"] = m2_backend
             cfg = TrainConfig(
                 model_name=model_name,
                 run_name=run_name,
@@ -323,52 +389,27 @@ def main() -> None:
                     )
                 )
 
-    # Merge into existing CSV tables without overwriting prior models/runs
-    merged_per_seed = _merge_csv_rows(
-        existing_per_seed,
-        baseline_rows,
-        key_fields=("model", "eval_split", "seed"),
-        overwrite_existing=args.overwrite,
-    )
-    merged_per_seed = _merge_csv_rows(
-        merged_per_seed,
-        run_rows,
-        key_fields=("model", "eval_split", "seed"),
-        overwrite_existing=True,
-    )
-    _write_csv_rows(per_seed_path, merged_per_seed)
+    # Save per-run and aggregated CSV tables as specified in Section 10.3 & 15.4
+    per_seed_path = args.out_dir / "per_seed_results.csv"
+    with per_seed_path.open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(all_rows[0].keys()))
+        writer.writeheader()
+        writer.writerows(all_rows)
 
-    # Aggregate only newly added/updated models & baselines, then merge into main_results.csv
-    updated_models = trained_model_keys | {str(r["model"]) for r in baseline_rows}
-    rows_to_aggregate = [r for r in merged_per_seed if str(r["model"]) in updated_models]
-    new_summary_rows = aggregate_seed_rows(rows_to_aggregate)
+    summary_rows = aggregate_seed_rows(all_rows)
+    main_csv_path = args.out_dir / "main_results.csv"
+    with main_csv_path.open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(summary_rows[0].keys()))
+        writer.writeheader()
+        writer.writerows(summary_rows)
 
-    existing_main = _load_csv_rows(main_csv_path)
-    merged_main = _merge_csv_rows(
-        existing_main,
-        new_summary_rows,
-        key_fields=("model", "eval_split"),
-        overwrite_existing=True,
-    )
-    _write_csv_rows(main_csv_path, merged_main)
-
-    # Only update m1_results.csv when an M1 model/ablation was actually run
-    if any(m.startswith("m1") for m in args.models):
-        m1_summary = [
-            r
-            for r in new_summary_rows
-            if str(r["model"]).startswith("m1")
-            or str(r["model"]).startswith(f"{prefix}m1")
-            or str(r["model"]) in ("no_op", "dsp_equal_loudness")
-        ]
-        existing_m1 = _load_csv_rows(m1_csv_path)
-        merged_m1 = _merge_csv_rows(
-            existing_m1,
-            m1_summary,
-            key_fields=("model", "eval_split"),
-            overwrite_existing=True,
-        )
-        _write_csv_rows(m1_csv_path, merged_m1)
+    m1_rows = [r for r in summary_rows if str(r["model"]).startswith("m1") or str(r["model"]).startswith("no_op") or str(r["model"]).startswith("dsp")]
+    if m1_rows:
+        m1_csv_path = args.out_dir / "m1_results.csv"
+        with m1_csv_path.open("w", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=list(m1_rows[0].keys()))
+            writer.writeheader()
+            writer.writerows(m1_rows)
 
     print("\n=== SUMMARY TABLE (MEAN ± STD ACROSS SEEDS) ===")
     for row in new_summary_rows:

@@ -3,7 +3,8 @@
 Implements Section 6.3, 6.5, 6.6, 6.7, and 6.8 of dokumentasi.md:
 - `LateFusionScratchModel` (M1): Scratch shared-stem CNN + Text Encoder -> Concat + MLP -> g* (4)
   Supports `ablation_mode` in `("multimodal", "audio_only", "text_only")`.
-- `LateFusionPretrainedModel` (M2): Frozen/Multi-scale CNN14-style backbone + Text Encoder -> Concat + MLP -> g* (4).
+- `LateFusionPretrainedModel` (M2): Frozen YAMNet (pretrained) + Text Encoder -> Concat + MLP -> g* (4).
+  Cached audio backends: `yamnet` (default) and `panns`; legacy `cnn14`.
 - `CrossAttentionGainModel` (M4): Audio stem-temporal tokens (Keys/Values) + Text clause tokens (Queries)
   via Multihead Cross-Attention -> Stem-Query Pooling -> MLP -> g* (4).
 - `FiLMConditionedModel` (M5): Feature-wise Linear Modulation (gamma * feature_map + beta) conditioned
@@ -26,6 +27,7 @@ from wadidaw.models.audio_cnn import (
     SharedStemAudioCNN,
     StemFrameTokenizer,
 )
+from wadidaw.models.panns_encoder import PANNS_EMBED_DIM
 from wadidaw.models.structured import StructuredTwoBranchModel
 from wadidaw.models.text_encoder import (
     TEXT_EMBED_DIM,
@@ -113,7 +115,21 @@ class LateFusionScratchModel(nn.Module):
 
 
 class LateFusionPretrainedModel(nn.Module):
-    """M2: Late Fusion with frozen multi-scale spectral backbone (CNN14-style)."""
+    """M2: Late Fusion with a *frozen pretrained* audio encoder + frozen text encoder.
+
+    Three audio backends are supported:
+
+    - ``audio_backend="yamnet"`` (default recommendation): consumes cached frozen
+      YAMNet features of shape ``(B, 4, yamnet_embed_dim + 1)``.  Pooled frame
+      embeddings (mean or mean+max) plus a per-stem broadband loudness column.
+    - ``audio_backend="panns"``: consumes cached frozen PANNs CNN14 features of
+      shape ``(B, 4, panns_embed_dim + 1)`` (embedding plus loudness column).
+    - ``audio_backend="cnn14"`` (legacy): runs the project's frozen
+      ``MultiScaleSpectralBackbone`` on log-mel audio directly.
+
+    For cached backends the trailing loudness column keeps the input level `g0`
+    observable even though the pretrained embedding is largely gain-invariant.
+    """
 
     model_code = "m2"
 
@@ -126,17 +142,43 @@ class LateFusionPretrainedModel(nn.Module):
         freeze_audio_backbone: bool = True,
         pretrained_checkpoint: Path | str | None = None,
         text_backend: str = "subword",
+        audio_backend: str = "cnn14",
+        panns_embed_dim: int = PANNS_EMBED_DIM,
+        yamnet_embed_dim: int = 2 * 1024,
+        use_level_features: bool = True,
+        panns_checkpoint: Path | str | None = None,
     ) -> None:
         super().__init__()
-        self.audio_encoder = MultiScaleSpectralBackbone(
-            embed_dim=audio_embed_dim,
-            freeze_backbone=freeze_audio_backbone,
-            checkpoint_path=pretrained_checkpoint,
-        )
+        self.audio_backend = str(audio_backend).lower()
+        self.panns_embed_dim = int(panns_embed_dim)
+        self.yamnet_embed_dim = int(yamnet_embed_dim)
+        self.use_level_features = bool(use_level_features)
+
+        if self.audio_backend in ("panns", "yamnet"):
+            self.audio_input_key = self.audio_backend
+            self.cached_embed_dim = (
+                self.panns_embed_dim if self.audio_backend == "panns" else self.yamnet_embed_dim
+            )
+            audio_dim = 4 * self.cached_embed_dim
+            if self.use_level_features:
+                audio_dim += 4
+        elif self.audio_backend == "cnn14":
+            self.audio_input_key = "audio"
+            self.audio_encoder = MultiScaleSpectralBackbone(
+                embed_dim=audio_embed_dim,
+                freeze_backbone=freeze_audio_backbone,
+                checkpoint_path=pretrained_checkpoint,
+            )
+            audio_dim = 4 * audio_embed_dim
+        else:
+            raise ValueError(
+                f"Invalid audio_backend '{audio_backend}'. Expected 'yamnet', 'panns' or 'cnn14'."
+            )
+
         self.text_encoder = TextEncoderWrapper(backend=text_backend, embed_dim=text_embed_dim)
 
         self.fusion_mlp = nn.Sequential(
-            nn.Linear(4 * audio_embed_dim + text_embed_dim, hidden_dim),
+            nn.Linear(audio_dim + text_embed_dim, hidden_dim),
             nn.LayerNorm(hidden_dim),
             nn.GELU(),
             nn.Dropout(dropout),
@@ -144,6 +186,27 @@ class LateFusionPretrainedModel(nn.Module):
             nn.GELU(),
             nn.Linear(hidden_dim // 2, 4),
         )
+
+    def _audio_features(self, audio: torch.Tensor) -> torch.Tensor:
+        if self.audio_backend == "cnn14":
+            return self.audio_encoder(audio)  # (B, 4 * audio_embed_dim)
+
+        if audio.ndim != 3 or audio.shape[1] != 4:
+            raise ValueError(
+                f"M2 cached-feature backend '{self.audio_backend}' expects features "
+                f"with shape (B, 4, D), got {tuple(audio.shape)}."
+            )
+        dim = self.cached_embed_dim
+        emb = audio[..., :dim].reshape(audio.shape[0], -1)
+        if not self.use_level_features:
+            return emb
+        if audio.shape[-1] <= dim:
+            raise ValueError(
+                f"Cached {self.audio_backend} features are missing the loudness column. "
+                f"Rebuild the cache with scripts/build_{self.audio_backend}_cache.py."
+            )
+        level_db = audio[..., dim]  # (B, 4)
+        return torch.cat((emb, level_db), dim=-1)
 
     def forward(
         self,
@@ -153,7 +216,7 @@ class LateFusionPretrainedModel(nn.Module):
         clamp_output: bool = False,
     ) -> dict[str, torch.Tensor]:
         device = audio.device
-        a_flat = self.audio_encoder(audio)  # (B, 4 * audio_embed_dim)
+        a_flat = self._audio_features(audio)
         t_emb = self.text_encoder.encode_sentences(prompts, device=device)  # (B, 384)
 
         g_pred = self.fusion_mlp(torch.cat((a_flat, t_emb), dim=-1))

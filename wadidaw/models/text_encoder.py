@@ -230,6 +230,7 @@ class TextEncoderWrapper(nn.Module):
         self._hf_model = None
         self._hf_tokenizer = None
         self._indobert_model = None
+        self._hf_sentence_cache: dict[str, torch.Tensor] = {}
 
         if self.backend == "huggingface":
             try:
@@ -290,13 +291,21 @@ class TextEncoderWrapper(nn.Module):
             pooled = (tokens * mask_f).sum(dim=1) / mask_f.sum(dim=1).clamp(min=1.0)
             return F.normalize(pooled, dim=-1)
         if self._hf_model is not None:
-            emb = self._hf_model.encode(
-                list(prompts),
-                convert_to_tensor=True,
-                normalize_embeddings=True,
-                show_progress_bar=False,
+            keys = [str(p) for p in prompts]
+            missing = [k for k in dict.fromkeys(keys) if k not in self._hf_sentence_cache]
+            if missing:
+                emb = self._hf_model.encode(
+                    missing,
+                    convert_to_tensor=True,
+                    normalize_embeddings=True,
+                    show_progress_bar=False,
+                )
+                emb = emb.detach().to(device="cpu", dtype=torch.float32)
+                for idx, text in enumerate(missing):
+                    self._hf_sentence_cache[text] = emb[idx].clone()
+            return torch.stack([self._hf_sentence_cache[k] for k in keys], dim=0).to(
+                device=device, dtype=torch.float32
             )
-            return emb.to(device=device, dtype=torch.float32)
         return self.subword_encoder.encode_sentences(prompts, device=device)
 
     @torch.no_grad()

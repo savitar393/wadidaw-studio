@@ -1,0 +1,4 @@
+eval_split,condition,n_samples,peak_dbfs_mean,peak_dbfs_max,clipping_rate_mean_pct,clipping_rate_max_pct,samples_with_clipping_pct
+test_human,m2_pred,600,-1.579,6.476,0.0021,0.1563,19.33
+test_human,no_op,600,-2.029,0.001,0.0,0.0001,3.5
+test_human,true_gain,600,-1.274,5.216,0.0041,0.2161,25.5

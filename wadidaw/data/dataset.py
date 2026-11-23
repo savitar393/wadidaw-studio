@@ -304,6 +304,7 @@ class MusdbMultimodalDataset(Dataset):
         self.root_dir = Path(root_dir)
         self.cache_in_memory = cache_in_memory
         self._npy_cache: dict[str, tuple[np.ndarray, np.ndarray]] = {}
+        self._feature_cache: dict[str, np.ndarray] = {}
         if isinstance(samples_or_path, (Path, str)):
             path = Path(samples_or_path)
             if not path.exists():
@@ -394,4 +395,33 @@ class MusdbMultimodalDataset(Dataset):
                 openl3_arr = np.concatenate((openl3_arr, pad), axis=1)
             item["openl3"] = torch.from_numpy(openl3_arr)
 
+        panns_rel = record.get("panns_path")
+        if panns_rel:
+            item["panns"] = self._load_cached_features(record, "panns", index)
+
+        yamnet_rel = record.get("yamnet_path")
+        if yamnet_rel:
+            item["yamnet"] = self._load_cached_features(record, "yamnet", index)
+
         return item
+
+    def _load_cached_features(
+        self, record: dict[str, object], prefix: str, index: int
+    ) -> torch.Tensor:
+        """Load one ``(4, D)`` row from a cached pretrained-feature ``.npy``."""
+        rel = str(record[f"{prefix}_path"])
+        if rel not in self._feature_cache:
+            self._feature_cache[rel] = np.load(self.root_dir / rel, mmap_mode=None)
+        arr = self._feature_cache[rel]
+        row_index = int(record.get(f"{prefix}_index", index))
+        if row_index >= len(arr):
+            raise IndexError(
+                f"{prefix}_index {row_index} out of range for {rel} ({len(arr)} rows)."
+            )
+        row = np.asarray(arr[row_index], dtype=np.float32)
+        if row.ndim != 2 or row.shape[0] != 4:
+            raise ValueError(
+                f"Expected cached {prefix} features with shape (4, D) at row "
+                f"{row_index} of {rel}, got {row.shape}."
+            )
+        return torch.from_numpy(row)
