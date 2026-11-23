@@ -71,11 +71,16 @@ class MultimodalModelsAndTrainingTests(unittest.TestCase):
         self.active_mask[2, 0] = False  # Test silent stem masking on sample 2
 
     def test_all_registered_models_forward_and_backward(self) -> None:
+        inputs = {
+            "audio": self.audio,
+            "openl3": torch.randn(self.batch_size, 4, 80, 512),
+        }
         for model_name in sorted(MODEL_REGISTRY.keys()):
             with self.subTest(model_name=model_name):
                 model = build_model(model_name)
                 model.train()
-                out = model(self.audio, self.prompts, active_mask=self.active_mask)
+                audio = inputs[getattr(model, "audio_input_key", "audio")]
+                out = model(audio, self.prompts, active_mask=self.active_mask)
                 self.assertIn("gains_pred", out)
                 g_pred = out["gains_pred"]
                 self.assertEqual(tuple(g_pred.shape), (self.batch_size, 4))

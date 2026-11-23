@@ -131,6 +131,49 @@ def aggregate_seed_rows(rows: list[dict[str, object]]) -> list[dict[str, object]
     return summary_rows
 
 
+def _load_csv_rows(csv_path: Path) -> list[dict[str, object]]:
+    if not csv_path.is_file():
+        return []
+    with csv_path.open("r", newline="") as f:
+        return list(csv.DictReader(f))
+
+
+def _merge_csv_rows(
+    existing_rows: list[dict[str, object]],
+    new_rows: list[dict[str, object]],
+    key_fields: tuple[str, ...],
+    overwrite_existing: bool = True,
+) -> list[dict[str, object]]:
+    """Merge new CSV rows into existing rows without losing prior models/runs.
+
+    Existing row order is preserved; unseen keys are appended at the bottom.
+    """
+    merged = [dict(r) for r in existing_rows]
+    index_by_key = {
+        tuple(str(r[k]) for k in key_fields): idx
+        for idx, r in enumerate(merged)
+    }
+    for row in new_rows:
+        key = tuple(str(row[k]) for k in key_fields)
+        if key in index_by_key:
+            if overwrite_existing:
+                merged[index_by_key[key]] = dict(row)
+        else:
+            index_by_key[key] = len(merged)
+            merged.append(dict(row))
+    return merged
+
+
+def _write_csv_rows(csv_path: Path, rows: list[dict[str, object]]) -> None:
+    if not rows:
+        return
+    fieldnames = list(rows[0].keys())
+    with csv_path.open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Train and evaluate multimodal gain staging models on MUSDB18-HQ."
@@ -242,12 +285,30 @@ def main() -> None:
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
 
-    print("Evaluating non-learning DSP baselines...")
-    all_rows = evaluate_baselines_table(
-        val_manifest=args.val_manifest,
-        test_human_manifest=args.test_human_manifest,
-        batch_size=args.batch_size * 2,
-    )
+    existing_per_seed = _load_csv_rows(per_seed_path)
+    existing_baseline_models = {
+        str(r["model"]) for r in existing_per_seed if str(r.get("seed")) == "deterministic"
+    }
+
+    if args.overwrite or not {"no_op", "random", "dsp_equal_loudness"}.issubset(existing_baseline_models):
+        print("Evaluating non-learning DSP baselines...")
+        baseline_rows = evaluate_baselines_table(
+            val_manifest=args.val_manifest,
+            test_human_manifest=args.test_human_manifest,
+            batch_size=args.batch_size * 2,
+        )
+    else:
+        baseline_rows = []
+
+    run_rows: list[dict[str, object]] = []
+    prefix = f"{args.run_prefix}_" if args.run_prefix else ""
+    trained_model_keys: set[str] = set()
+
+    model_kwargs: dict[str, object] = {}
+    if args.dropout is not None:
+        model_kwargs["dropout"] = args.dropout
+    if args.hidden_dim is not None:
+        model_kwargs["hidden_dim"] = args.hidden_dim
 
     base_model_kwargs: dict[str, object] = {}
     if args.dropout is not None:
@@ -265,8 +326,15 @@ def main() -> None:
             m2_backend = "cnn14"
 
     for model_name in args.models:
+        result_model_key = f"{prefix}{model_name}"
+        result_title = (
+            f"{MODEL_REGISTRY[model_name]} [{args.run_prefix}]"
+            if args.run_prefix
+            else MODEL_REGISTRY[model_name]
+        )
+        trained_model_keys.add(result_model_key)
+
         for seed in args.seeds:
-            prefix = f"{args.run_prefix}_" if args.run_prefix else ""
             run_name = f"{prefix}{model_name}_seed{seed}"
             model_kwargs = dict(base_model_kwargs)
             if model_name == "m2":
@@ -291,30 +359,30 @@ def main() -> None:
                 overwrite=args.overwrite,
             )
             res = train_one_run(cfg)
-            all_rows.append(
+            run_rows.append(
                 _flatten_metric_row(
-                    model_name,
-                    MODEL_REGISTRY[model_name],
+                    result_model_key,
+                    result_title,
                     "validation",
                     seed,
                     res["validation"],
                 )
             )
             if res.get("test_human") is not None:
-                all_rows.append(
+                run_rows.append(
                     _flatten_metric_row(
-                        model_name,
-                        MODEL_REGISTRY[model_name],
+                        result_model_key,
+                        result_title,
                         "test_human",
                         seed,
                         res["test_human"],
                     )
                 )
             if res.get("test_synthetic") is not None:
-                all_rows.append(
+                run_rows.append(
                     _flatten_metric_row(
-                        model_name,
-                        MODEL_REGISTRY[model_name],
+                        result_model_key,
+                        result_title,
                         "test_synthetic",
                         seed,
                         res["test_synthetic"],
@@ -344,7 +412,7 @@ def main() -> None:
             writer.writerows(m1_rows)
 
     print("\n=== SUMMARY TABLE (MEAN ± STD ACROSS SEEDS) ===")
-    for row in summary_rows:
+    for row in new_summary_rows:
         print(
             f"{row['model']:16s} | {row['eval_split']:14s} | "
             f"MAE={row['mae_db_mean']:.3f}±{row['mae_db_std']:.3f} dB | "
