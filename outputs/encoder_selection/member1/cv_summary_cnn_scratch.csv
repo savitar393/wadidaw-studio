@@ -1,0 +1,2 @@
+trial,params,cv_mae_mean,cv_mae_std,cv_rmse_mean
+1,"{""dropout_audio"": 0.2, ""lr_scratch"": 0.001, ""wd_audio"": 0.0001}",0.0888,0.018,0.2755
