@@ -57,6 +57,116 @@ CACHE_ROOT = ROOT / "data" / "cache" / "logmel"
 SAMPLES_ROOT = ROOT / "data" / "prompts"
 
 
+_GPU_LOG_MEL_VALIDATED: bool | None = (
+    None  # None = belum dites, True = OK, False = paksa CPU
+)
+
+
+def _infer_mel_params() -> dict[str, int]:
+    """Ambil param mel dari features.py kalau ada; fallback ke default yang umum."""
+    from wadidaw.data import features as _f
+
+    return dict(
+        sample_rate=int(getattr(_f, "SAMPLE_RATE_RAW", 16000)),
+        n_fft=int(getattr(_f, "N_FFT", 1024)),
+        hop_length=int(getattr(_f, "HOP_LENGTH", 320)),
+        n_mels=int(getattr(_f, "N_MELS", 64)),
+    )
+
+
+_MEL_TF_CACHE: dict[str, "torch.nn.Module"] = {}
+
+
+def _get_mel_transform(device_str: str):
+    import torchaudio
+
+    if device_str in _MEL_TF_CACHE:
+        return _MEL_TF_CACHE[device_str]
+    p = _infer_mel_params()
+    tf = torchaudio.transforms.MelSpectrogram(
+        sample_rate=p["sample_rate"],
+        n_fft=p["n_fft"],
+        hop_length=p["hop_length"],
+        n_mels=p["n_mels"],
+    ).to(torch.device(device_str))
+    _MEL_TF_CACHE[device_str] = tf
+    return tf
+
+
+def _compute_logmel_batch_gpu(
+    stems_np: np.ndarray,  # (B, 4, N)
+    device: str,
+    use_amp: bool,
+    reference_func,  # wadidaw.data.features.extract_logmel_stems
+) -> np.ndarray | None:
+    """Try batched GPU log-mel. Return (B, 4, 64, 800) ndarray, or None → caller falls back to CPU."""
+    global _GPU_LOG_MEL_VALIDATED
+    if _GPU_LOG_MEL_VALIDATED is False:
+        return None
+    if not torch.cuda.is_available() or not str(device).startswith("cuda"):
+        return None
+
+    dev = torch.device(device)
+    try:
+        tf = _get_mel_transform(str(dev))
+    except Exception as e:
+        print(f"[warn] GPU mel init failed: {e}")
+        _GPU_LOG_MEL_VALIDATED = False
+        return None
+
+    amp_on = bool(use_amp and dev.type == "cuda")
+    try:
+        x = torch.from_numpy(stems_np.astype(np.float32)).to(dev, non_blocking=True)
+        with torch.cuda.amp.autocast(enabled=amp_on):
+            with torch.no_grad():
+                mel = tf(x)  # (B, 4, n_mels, T)
+                logmel = 10.0 * torch.log10(mel.clamp_min(1e-10))  # → dBFS
+        result = logmel.float().cpu().numpy()
+    except Exception as e:
+        print(f"[warn] GPU mel compute failed: {e}")
+        _GPU_LOG_MEL_VALIDATED = False
+        return None
+
+    if result.shape[1:] != (4, 64, 800):
+        print(
+            f"[warn] GPU mel shape {result.shape[1:]} != (4, 64, 800); "
+            f"CPU fallback. Sesuaikan N_FFT/HOP_LENGTH/N_MELS di features.py "
+            f"atau dataset.py jika perlu."
+        )
+        _GPU_LOG_MEL_VALIDATED = False
+        return None
+
+    # One-time validation: bandingkan excerpt pertama dengan features.extract_logmel_stems
+    if _GPU_LOG_MEL_VALIDATED is None:
+        try:
+            ref = np.asarray(
+                reference_func(stems_np[0].astype(np.float32)), dtype=np.float32
+            )
+            if ref.shape != result.shape[1:]:
+                print(
+                    f"[warn] features shape {ref.shape} != GPU {result.shape[1:]}; "
+                    f"CPU fallback."
+                )
+                _GPU_LOG_MEL_VALIDATED = False
+                return None
+            max_diff = float(np.abs(ref - result[0]).max())
+            if max_diff > 0.5:
+                print(
+                    f"[warn] GPU log-mel mismatch vs features: max|Δ|={max_diff:.2f} dB. "
+                    f"CPU fallback. Samakan N_FFT/HOP_LENGTH/N_MELS/SAMPLE_RATE."
+                )
+                _GPU_LOG_MEL_VALIDATED = False
+                return None
+            print(f"[gpu] log-mel validated vs features (max|Δ|={max_diff:.3f} dB)")
+            _GPU_LOG_MEL_VALIDATED = True
+        except Exception as e:
+            print(f"[warn] GPU validation error: {e}; CPU fallback.")
+            _GPU_LOG_MEL_VALIDATED = False
+            return None
+
+    return result
+
+
 def extract_and_cache_song_excerpts(
     song_member: dict[str, object],
     split: str,
@@ -66,68 +176,104 @@ def extract_and_cache_song_excerpts(
     n_excerpts: int = 10,
     dtype: str = "float16",
     overwrite: bool = False,
+    # ---- new (CUDA) ----
+    device: str = "cpu",
+    batch_size: int = 32,
+    use_amp: bool = False,
 ) -> list[dict[str, object]]:
     """Extract and cache `(4, 64, 800)` log-mel `.npy` files for one song's excerpts."""
     mroot = Path(musdb_root)
     croot = Path(cache_root) / split
     croot.mkdir(parents=True, exist_ok=True)
-
     song_dir = mroot / str(song_member["relative_dir"])
+
     excerpts = select_active_excerpts_for_song(
         song_dir,
         n_excerpts=n_excerpts,
         duration_sec=EXCERPT_DURATION_SEC,
     )
 
-    cached_excerpts: list[dict[str, object]] = []
-    for ex in excerpts:
+    # 1) Determine which excerpts still need computing
+    meta: dict[int, tuple[str, Path]] = {}
+    needs: list[int] = []
+    for i, ex in enumerate(excerpts):
         ex_idx = int(ex["excerpt_index"])
         stem_id = f"{split}_{song_number:04d}_ex{ex_idx:02d}"
         npy_path = (croot / f"{stem_id}.npy").resolve()
+        meta[i] = (stem_id, npy_path)
+        if not npy_path.exists() or overwrite:
+            needs.append(i)
+
+    # 2) Load stem audio + fresh loudness only for excerpts being rebuilt
+    audio_buffers: list[np.ndarray] = []
+    loudness_map: dict[int, list[float]] = {}
+    for i in needs:
+        ex = excerpts[i]
+        start_frame = int(ex["start_frame_44k"])
+        frames_44k = int(ex["frames_44k"])
+        stems_16k = []
+        for stem_name in STEM_NAMES:
+            wav_path = song_dir / f"{stem_name}.wav"
+            audio_44k, sr = sf.read(
+                wav_path,
+                start=start_frame,
+                frames=frames_44k,
+                dtype="float32",
+            )
+            stems_16k.append(resample_to_16k_mono(audio_44k, orig_sr=sr))
+        arr = np.stack(stems_16k, axis=0)  # (4, N)
+        audio_buffers.append(arr)
+        loudness_map[i] = [float(x) for x in measure_loudness_db(arr)]
+
+    # 3) Compute log-mel — GPU batch first, CPU fallback if validation fails
+    if audio_buffers:
+        batch_np = np.stack(audio_buffers, axis=0)  # (B, 4, N)
+        logmel_all = _compute_logmel_batch_gpu(
+            batch_np,
+            device,
+            use_amp,
+            reference_func=extract_logmel_stems,
+        )
+        if logmel_all is None:
+            logmel_all = np.stack(
+                [extract_logmel_stems(a).astype(np.float32) for a in audio_buffers],
+                axis=0,
+            )
+        logmel_all = logmel_all.astype(np.dtype(dtype))
+        for b_idx, i in enumerate(needs):
+            _, npy_path = meta[i]
+            np.save(npy_path, logmel_all[b_idx])
+
+    # 4) Build excerpt records (same schema as before)
+    cached_excerpts: list[dict[str, object]] = []
+    for i, ex in enumerate(excerpts):
+        stem_id, npy_path = meta[i]
         try:
             rel_npy_path = npy_path.relative_to(ROOT).as_posix()
         except ValueError:
             rel_npy_path = npy_path.as_posix()
 
-        start_frame = int(ex["start_frame_44k"])
-        frames_44k = int(ex["frames_44k"])
-
-        if not npy_path.exists() or overwrite:
-            stems_16k = []
-            for stem_name in STEM_NAMES:
-                wav_path = song_dir / f"{stem_name}.wav"
-                audio_44k, sr = sf.read(
-                    wav_path,
-                    start=start_frame,
-                    frames=frames_44k,
-                    dtype="float32",
-                )
-                mono_16k = resample_to_16k_mono(audio_44k, orig_sr=sr)
-                stems_16k.append(mono_16k)
-
-            stems_16k_arr = np.stack(stems_16k, axis=0)
-            loudness_16k = measure_loudness_db(stems_16k_arr)
-            logmel_db = extract_logmel_stems(stems_16k_arr)
-            np.save(npy_path, logmel_db.astype(np.dtype(dtype)))
-            loudness_raw = [round(float(x), 4) for x in loudness_16k]
-        else:
-            loudness_raw = list(ex["loudness_raw_db"])
-
+        loudness_raw = (
+            [round(float(x), 4) for x in loudness_map[i]]
+            if i in loudness_map
+            else list(ex["loudness_raw_db"])
+        )
         active_mask = [bool(float(x) > ACTIVE_THRESHOLD_DB) for x in loudness_raw]
-        cached_excerpts.append({
-            "excerpt_id": stem_id,
-            "song": str(song_member["song"]),
-            "artist": str(song_member["artist"]),
-            "split": split,
-            "excerpt_index": ex_idx,
-            "excerpt_start_sec": float(ex["excerpt_start_sec"]),
-            "duration_sec": float(ex["duration_sec"]),
-            "audio_path": rel_npy_path,
-            "loudness_raw_db": loudness_raw,
-            "active_mask": active_mask,
-            "all_stems_active": bool(all(active_mask)),
-        })
-
+        cached_excerpts.append(
+            {
+                "excerpt_id": stem_id,
+                "song": str(song_member["song"]),
+                "artist": str(song_member["artist"]),
+                "split": split,
+                "excerpt_index": int(ex["excerpt_index"]),
+                "excerpt_start_sec": float(ex["excerpt_start_sec"]),
+                "duration_sec": float(ex["duration_sec"]),
+                "audio_path": rel_npy_path,
+                "loudness_raw_db": loudness_raw,
+                "active_mask": active_mask,
+                "all_stems_active": bool(all(active_mask)),
+            }
+        )
     return cached_excerpts
 
 
@@ -185,7 +331,9 @@ def build_split_samples(
 
     for ex_pos, ex in enumerate(cached_excerpts):
         for p_offset in range(n_prompts_per_excerpt):
-            pref_idx = (ex_pos * n_prompts_per_excerpt + p_offset) % len(MIXING_PROFILES)
+            pref_idx = (ex_pos * n_prompts_per_excerpt + p_offset) % len(
+                MIXING_PROFILES
+            )
             profile, targets = _choose_valid_profile_and_g0(
                 loudness_raw_db=ex["loudness_raw_db"],
                 preferred_profile_idx=pref_idx,
@@ -208,23 +356,25 @@ def build_split_samples(
 
             p_idx = p_offset + 1
             sample_id = f"{ex['excerpt_id']}_p{p_idx:02d}"
-            samples.append({
-                "id": sample_id,
-                "song": ex["song"],
-                "artist": ex["artist"],
-                "split": split,
-                "excerpt_start_sec": ex["excerpt_start_sec"],
-                "duration_sec": ex["duration_sec"],
-                "audio_path": ex["audio_path"],
-                "g0_db": g0_list,
-                "loudness_raw_db": ex["loudness_raw_db"],
-                "loudness_db": loudness_list,
-                "balance_target": balance_list,
-                "gains_db": gains_list,
-                "active_mask": active_list,
-                "prompt": p_info["prompt"],
-                "prompt_template": p_info["prompt_template"],
-            })
+            samples.append(
+                {
+                    "id": sample_id,
+                    "song": ex["song"],
+                    "artist": ex["artist"],
+                    "split": split,
+                    "excerpt_start_sec": ex["excerpt_start_sec"],
+                    "duration_sec": ex["duration_sec"],
+                    "audio_path": ex["audio_path"],
+                    "g0_db": g0_list,
+                    "loudness_raw_db": ex["loudness_raw_db"],
+                    "loudness_db": loudness_list,
+                    "balance_target": balance_list,
+                    "gains_db": gains_list,
+                    "active_mask": active_list,
+                    "prompt": p_info["prompt"],
+                    "prompt_template": p_info["prompt_template"],
+                }
+            )
 
     return samples
 
@@ -264,23 +414,27 @@ def build_human_test_samples(
                 clip_bounds=(GAIN_MIN_DB, GAIN_MAX_DB),
             )
 
-        samples.append({
-            "id": f"{ex['excerpt_id']}_{h_item['id']}",
-            "song": ex["song"],
-            "artist": ex["artist"],
-            "split": "test_human",
-            "excerpt_start_sec": ex["excerpt_start_sec"],
-            "duration_sec": ex["duration_sec"],
-            "audio_path": ex["audio_path"],
-            "g0_db": [round(float(x), 4) for x in targets["g0_db"]],
-            "loudness_raw_db": ex["loudness_raw_db"],
-            "loudness_db": [round(float(x), 4) for x in targets["loudness_db"]],
-            "balance_target": [round(float(x), 4) for x in targets["balance_target"]],
-            "gains_db": [round(float(x), 4) for x in targets["gains_db"]],
-            "active_mask": [bool(x) for x in targets["active_mask"]],
-            "prompt": h_item["prompt"],
-            "prompt_template": h_item["profile_hint"],
-        })
+        samples.append(
+            {
+                "id": f"{ex['excerpt_id']}_{h_item['id']}",
+                "song": ex["song"],
+                "artist": ex["artist"],
+                "split": "test_human",
+                "excerpt_start_sec": ex["excerpt_start_sec"],
+                "duration_sec": ex["duration_sec"],
+                "audio_path": ex["audio_path"],
+                "g0_db": [round(float(x), 4) for x in targets["g0_db"]],
+                "loudness_raw_db": ex["loudness_raw_db"],
+                "loudness_db": [round(float(x), 4) for x in targets["loudness_db"]],
+                "balance_target": [
+                    round(float(x), 4) for x in targets["balance_target"]
+                ],
+                "gains_db": [round(float(x), 4) for x in targets["gains_db"]],
+                "active_mask": [bool(x) for x in targets["active_mask"]],
+                "prompt": h_item["prompt"],
+                "prompt_template": h_item["profile_hint"],
+            }
+        )
 
     return samples
 
@@ -333,10 +487,14 @@ class MusdbMultimodalDataset(Dataset):
         else:
             npy_path = self.root_dir / rel_path
             raw_arr = np.load(npy_path)
-            raw_mel_power = np.power(
-                10.0,
-                np.clip(raw_arr.astype(np.float32), -100.0, 20.0) / 10.0,
-            ).mean(axis=-1).astype(np.float32)
+            raw_mel_power = (
+                np.power(
+                    10.0,
+                    np.clip(raw_arr.astype(np.float32), -100.0, 20.0) / 10.0,
+                )
+                .mean(axis=-1)
+                .astype(np.float32)
+            )
             if self.cache_in_memory:
                 self._npy_cache[rel_path] = (raw_arr, raw_mel_power)
 
@@ -368,7 +526,9 @@ class MusdbMultimodalDataset(Dataset):
             "prompt_template": str(record["prompt_template"]),
             "g0_db": torch.from_numpy(g0_db),
             "loudness_db": torch.tensor(record["loudness_db"], dtype=torch.float32),
-            "balance_target": torch.tensor(record["balance_target"], dtype=torch.float32),
+            "balance_target": torch.tensor(
+                record["balance_target"], dtype=torch.float32
+            ),
             "gains_db": torch.tensor(record["gains_db"], dtype=torch.float32),
             "active_mask": torch.from_numpy(active_mask),
             # Optional static panning target; defaults to centre until pan labels exist.

@@ -3,9 +3,13 @@
 from __future__ import annotations
 
 import argparse
+import inspect
 import json
+import multiprocessing as mp
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
+
+import torch
 
 from wadidaw.data.dataset import (
     CACHE_ROOT,
@@ -23,9 +27,56 @@ from wadidaw.data.musdb import (
 from wadidaw.data.prompts import save_prompt_banks
 
 
-def _process_one_song(task: tuple[dict[str, object], str, int, Path, Path, int, str, bool]) -> list[dict[str, object]]:
-    member, split, song_number, musdb_root, cache_root, n_excerpts, dtype, overwrite = task
-    return extract_and_cache_song_excerpts(
+# Deteksi sekali apakah extractor menerima kwargs GPU-related.
+_EXTRACT_PARAMS = set(inspect.signature(extract_and_cache_song_excerpts).parameters)
+_SUPPORTS_DEVICE_KW = {"device", "batch_size", "use_amp"}.issubset(_EXTRACT_PARAMS)
+
+
+def _configure_torch(device: str) -> None:
+    if device.startswith("cuda"):
+        torch.backends.cudnn.benchmark = True
+        try:
+            torch.set_float32_matmul_precision("high")
+        except Exception:
+            pass
+
+
+def _resolve_device(name: str) -> str:
+    if name == "auto":
+        return "cuda" if torch.cuda.is_available() else "cpu"
+    if name.startswith("cuda") and not torch.cuda.is_available():
+        print(f"[warn] {name} diminta tapi CUDA tidak tersedia -> fallback ke CPU")
+        return "cpu"
+    return name
+
+
+def _process_one_song(
+    task: tuple[
+        dict[str, object], str, int, Path, Path, int, str, bool, str, int, bool
+    ],
+) -> list[dict[str, object]]:
+    (
+        member,
+        split,
+        song_number,
+        musdb_root,
+        cache_root,
+        n_excerpts,
+        dtype,
+        overwrite,
+        device,
+        batch_size,
+        use_amp,
+    ) = task
+
+    # Round-robin GPU per worker kalau >1 GPU.
+    if device.startswith("cuda") and torch.cuda.is_available():
+        n_gpu = torch.cuda.device_count()
+        if n_gpu > 1:
+            device = f"cuda:{song_number % n_gpu}"
+        _configure_torch(device)
+
+    kwargs = dict(
         song_member=member,
         split=split,
         song_number=song_number,
@@ -35,6 +86,9 @@ def _process_one_song(task: tuple[dict[str, object], str, int, Path, Path, int, 
         dtype=dtype,
         overwrite=overwrite,
     )
+    if _SUPPORTS_DEVICE_KW:
+        kwargs.update(device=device, batch_size=batch_size, use_amp=use_amp)
+    return extract_and_cache_song_excerpts(**kwargs)
 
 
 def main() -> None:
@@ -47,12 +101,68 @@ def main() -> None:
     parser.add_argument("--samples-root", type=Path, default=SAMPLES_ROOT)
     parser.add_argument("--excerpts-per-song", type=int, default=10)
     parser.add_argument("--prompts-per-excerpt", type=int, default=4)
-    parser.add_argument("--max-songs", type=int, default=None, help="Optional cap per split for quick runs.")
+    parser.add_argument(
+        "--max-songs",
+        type=int,
+        default=None,
+        help="Optional cap per split for quick runs.",
+    )
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--seed", type=int, default=2026)
     parser.add_argument("--dtype", choices=("float16", "float32"), default="float16")
     parser.add_argument("--overwrite", action="store_true")
+    # ---- CUDA / throughput flags ----
+    parser.add_argument(
+        "--device",
+        default="auto",
+        help="'auto' | 'cpu' | 'cuda' | 'cuda:N' (default: auto)",
+    )
+    parser.add_argument(
+        "--batch-size",
+        type=int,
+        default=32,
+        help="Batch size untuk GPU mel extraction (diabaikan di CPU).",
+    )
+    parser.add_argument(
+        "--amp", action="store_true", help="Enable torch.cuda.amp autocast (CUDA only)."
+    )
+    parser.add_argument(
+        "--start-method",
+        choices=("spawn", "fork", "forkserver"),
+        default="spawn",
+        help="Multiprocessing start method; 'spawn' aman untuk CUDA.",
+    )
     args = parser.parse_args()
+
+    device = _resolve_device(args.device)
+    use_amp = bool(args.amp and device.startswith("cuda"))
+    _configure_torch(device)
+
+    if device.startswith("cuda"):
+        n_gpu = torch.cuda.device_count()
+        total_vram = (
+            sum(torch.cuda.get_device_properties(i).total_memory for i in range(n_gpu))
+            / 1e9
+        )
+        print(
+            f"[build] device={device} | gpus={n_gpu} | total_vram={total_vram:.1f} GB | "
+            f"amp={use_amp} | batch={args.batch_size} | workers={args.workers}"
+        )
+        if args.workers > 1:
+            print(
+                f"[build] perhatian: {args.workers} worker → {args.workers} CUDA context. "
+                f"Turunkan --workers kalau VRAM OOM."
+            )
+        if not _SUPPORTS_DEVICE_KW:
+            print(
+                "[warn] extract_and_cache_song_excerpts() tidak menerima "
+                "device/batch_size/use_amp; flag GPU akan diabaikan di worker. "
+                "Lihat patch #2 di bawah."
+            )
+    else:
+        print(
+            f"[build] device=cpu | workers={args.workers} (tidak ada GPU acceleration)"
+        )
 
     if not args.manifest.exists():
         create_musdb_split_manifest(
@@ -65,6 +175,9 @@ def main() -> None:
     save_prompt_banks(args.samples_root)
 
     cached_by_split: dict[str, list[dict[str, object]]] = {}
+
+    # spawn: CUDA-safe di Linux (fork + CUDA sering hang / error "Cannot re-initialize CUDA").
+    mp_ctx = mp.get_context(args.start_method)
 
     for split in ("train", "validation", "test"):
         members = list(manifest["splits"][split])
@@ -81,14 +194,22 @@ def main() -> None:
                 args.excerpts_per_song,
                 args.dtype,
                 args.overwrite,
+                device,
+                args.batch_size,
+                use_amp,
             )
             for idx, member in enumerate(members, start=1)
         ]
 
-        print(f"Extracting {split} log-mel cache ({len(tasks)} songs x {args.excerpts_per_song} excerpts)...")
+        print(
+            f"Extracting {split} log-mel cache "
+            f"({len(tasks)} songs × {args.excerpts_per_song} excerpts) on {device}..."
+        )
         excerpts_list: list[dict[str, object]] = []
         if args.workers > 1 and len(tasks) > 1:
-            with ProcessPoolExecutor(max_workers=args.workers) as pool:
+            with ProcessPoolExecutor(
+                max_workers=args.workers, mp_context=mp_ctx
+            ) as pool:
                 for song_excerpts in pool.map(_process_one_song, tasks):
                     excerpts_list.extend(song_excerpts)
         else:
@@ -113,7 +234,11 @@ def main() -> None:
             seed=args.seed + seed_offsets[split],
             perturb_g0=True,
         )
-        out_name = f"{split}_samples.json" if split != "test" else "test_synthetic_samples.json"
+        out_name = (
+            f"{split}_samples.json"
+            if split != "test"
+            else "test_synthetic_samples.json"
+        )
         out_path = args.samples_root / out_name
         out_path.write_text(json.dumps(samples, indent=2, ensure_ascii=False) + "\n")
         print(f"Saved {len(samples):4d} multimodal samples -> {out_path}")
@@ -124,7 +249,9 @@ def main() -> None:
         perturb_g0=True,
     )
     human_out_path = args.samples_root / "test_human_samples.json"
-    human_out_path.write_text(json.dumps(human_test_samples, indent=2, ensure_ascii=False) + "\n")
+    human_out_path.write_text(
+        json.dumps(human_test_samples, indent=2, ensure_ascii=False) + "\n"
+    )
     print(f"Saved {len(human_test_samples):4d} human test samples -> {human_out_path}")
 
 
