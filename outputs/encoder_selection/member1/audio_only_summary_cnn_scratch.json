@@ -1,0 +1,182 @@
+{
+  "encoder": "cnn_scratch",
+  "member": 1,
+  "mode": "audio_only",
+  "params": {
+    "lr_scratch": 0.001,
+    "wd_audio": 0.0001,
+    "dropout_audio": 0.2
+  },
+  "n_folds": 5,
+  "n_seeds": 1,
+  "mae_db_mean": 2.2215,
+  "mae_db_std": 0.0103,
+  "rmse_db_mean": 2.6137,
+  "rows": [
+    {
+      "seed": 42,
+      "fold": 0,
+      "sample_count": 640,
+      "mae_db": 2.2209,
+      "rmse_db": 2.6144,
+      "bias_db": -0.0009,
+      "max_error_db": 6.1731,
+      "r2": 0.6919,
+      "pearson_r": 0.8319,
+      "spearman_rho": 0.8083,
+      "success_rate_1db": 7.81,
+      "mae_per_stem_db": {
+        "vocals": 2.1761,
+        "drums": 2.1633,
+        "bass": 1.8557,
+        "other": 2.6656
+      },
+      "rmse_per_stem_db": {
+        "vocals": 2.498,
+        "drums": 2.6064,
+        "bass": 2.3093,
+        "other": 2.9801
+      },
+      "band_mae_db": 1.3466,
+      "band_mse_norm": 0.018332,
+      "worst_band_error_db": 2.327,
+      "log_spectral_distance_db": 1.6216,
+      "success_rate_band_001": 30.0,
+      "balance_mae_db": 2.2207,
+      "intent_direction_acc": 38.21,
+      "instruction_adherence": 6.56
+    },
+    {
+      "seed": 42,
+      "fold": 1,
+      "sample_count": 640,
+      "mae_db": 2.2367,
+      "rmse_db": 2.6291,
+      "bias_db": -0.0006,
+      "max_error_db": 5.8838,
+      "r2": 0.6554,
+      "pearson_r": 0.8103,
+      "spearman_rho": 0.7878,
+      "success_rate_1db": 8.75,
+      "mae_per_stem_db": {
+        "vocals": 2.1333,
+        "drums": 2.2373,
+        "bass": 1.9146,
+        "other": 2.6618
+      },
+      "rmse_per_stem_db": {
+        "vocals": 2.4813,
+        "drums": 2.6735,
+        "bass": 2.3444,
+        "other": 2.975
+      },
+      "band_mae_db": 1.4184,
+      "band_mse_norm": 0.020359,
+      "worst_band_error_db": 2.4098,
+      "log_spectral_distance_db": 1.6742,
+      "success_rate_band_001": 29.06,
+      "balance_mae_db": 2.2367,
+      "intent_direction_acc": 37.83,
+      "instruction_adherence": 5.62
+    },
+    {
+      "seed": 42,
+      "fold": 2,
+      "sample_count": 640,
+      "mae_db": 2.2276,
+      "rmse_db": 2.6215,
+      "bias_db": -0.003,
+      "max_error_db": 5.6656,
+      "r2": 0.6719,
+      "pearson_r": 0.8198,
+      "spearman_rho": 0.7881,
+      "success_rate_1db": 7.5,
+      "mae_per_stem_db": {
+        "vocals": 2.128,
+        "drums": 2.2001,
+        "bass": 1.8499,
+        "other": 2.7322
+      },
+      "rmse_per_stem_db": {
+        "vocals": 2.4514,
+        "drums": 2.6269,
+        "bass": 2.3077,
+        "other": 3.042
+      },
+      "band_mae_db": 1.4469,
+      "band_mse_norm": 0.020807,
+      "worst_band_error_db": 2.3899,
+      "log_spectral_distance_db": 1.7464,
+      "success_rate_band_001": 28.75,
+      "balance_mae_db": 2.2285,
+      "intent_direction_acc": 38.3,
+      "instruction_adherence": 5.62
+    },
+    {
+      "seed": 42,
+      "fold": 3,
+      "sample_count": 640,
+      "mae_db": 2.2156,
+      "rmse_db": 2.6075,
+      "bias_db": -0.0011,
+      "max_error_db": 5.907,
+      "r2": 0.6668,
+      "pearson_r": 0.8166,
+      "spearman_rho": 0.7904,
+      "success_rate_1db": 8.91,
+      "mae_per_stem_db": {
+        "vocals": 2.1549,
+        "drums": 2.1849,
+        "bass": 1.8638,
+        "other": 2.6587
+      },
+      "rmse_per_stem_db": {
+        "vocals": 2.4915,
+        "drums": 2.624,
+        "bass": 2.2931,
+        "other": 2.9739
+      },
+      "band_mae_db": 1.3807,
+      "band_mse_norm": 0.01912,
+      "worst_band_error_db": 2.3448,
+      "log_spectral_distance_db": 1.6565,
+      "success_rate_band_001": 31.25,
+      "balance_mae_db": 2.2161,
+      "intent_direction_acc": 36.35,
+      "instruction_adherence": 5.78
+    },
+    {
+      "seed": 42,
+      "fold": 4,
+      "sample_count": 640,
+      "mae_db": 2.2066,
+      "rmse_db": 2.5961,
+      "bias_db": -0.0003,
+      "max_error_db": 6.3336,
+      "r2": 0.7171,
+      "pearson_r": 0.8468,
+      "spearman_rho": 0.8281,
+      "success_rate_1db": 9.38,
+      "mae_per_stem_db": {
+        "vocals": 2.2018,
+        "drums": 2.137,
+        "bass": 1.9086,
+        "other": 2.5787
+      },
+      "rmse_per_stem_db": {
+        "vocals": 2.5418,
+        "drums": 2.5664,
+        "bass": 2.3281,
+        "other": 2.9139
+      },
+      "band_mae_db": 1.3798,
+      "band_mse_norm": 0.019204,
+      "worst_band_error_db": 2.3514,
+      "log_spectral_distance_db": 1.6704,
+      "success_rate_band_001": 30.16,
+      "balance_mae_db": 2.2066,
+      "intent_direction_acc": 36.66,
+      "instruction_adherence": 6.56
+    }
+  ]
+}
