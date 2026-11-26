@@ -1,0 +1,53 @@
+{
+  "encoder": "ast",
+  "mode": "audio_only",
+  "seed": 42,
+  "fold": 0,
+  "params": {
+    "lr_audio": 0.0001,
+    "wd_audio": 0.0001,
+    "dropout_audio": 0.2
+  },
+  "member": 2,
+  "env": {
+    "torch": "2.14.1+cu130",
+    "device": "cuda",
+    "gpu": "NVIDIA L4",
+    "cuda": "13.0"
+  },
+  "trainable_params": 210861189,
+  "train_sec": 2729.7,
+  "best_epoch": 6,
+  "checkpoint": null,
+  "validation": {
+    "sample_count": 640,
+    "mae_db": 2.2165,
+    "rmse_db": 2.6157,
+    "bias_db": -0.001,
+    "max_error_db": 6.0795,
+    "r2": 0.6916,
+    "pearson_r": 0.8317,
+    "spearman_rho": 0.8087,
+    "success_rate_1db": 7.81,
+    "mae_per_stem_db": {
+      "vocals": 2.1453,
+      "drums": 2.1631,
+      "bass": 1.8543,
+      "other": 2.6807
+    },
+    "rmse_per_stem_db": {
+      "vocals": 2.481,
+      "drums": 2.601,
+      "bass": 2.3184,
+      "other": 2.9968
+    },
+    "band_mae_db": 1.3484,
+    "band_mse_norm": 0.018423,
+    "worst_band_error_db": 2.3293,
+    "log_spectral_distance_db": 1.6232,
+    "success_rate_band_001": 31.25,
+    "balance_mae_db": 2.2162,
+    "intent_direction_acc": 38.41,
+    "instruction_adherence": 6.09
+  }
+}
