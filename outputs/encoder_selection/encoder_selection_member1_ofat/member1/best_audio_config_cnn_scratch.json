@@ -1,0 +1,56 @@
+{
+  "encoder": "cnn_scratch",
+  "member": 1,
+  "mode": "bimodal",
+  "params": {
+    "lr_scratch": 0.002,
+    "wd_audio": 0.0001,
+    "dropout_audio": 0.1
+  },
+  "val_mae": 1.9751,
+  "val_rmse": 2.5123,
+  "cv_mae_mean": 1.9751,
+  "cv_mae_std": 0.0,
+  "cv_rmse_mean": 2.5123,
+  "n_folds": 1,
+  "tuning_seed": 42,
+  "n_trials": 8,
+  "fold_metrics": [
+    {
+      "seed": 42,
+      "fold": 0,
+      "sample_count": 800,
+      "mae_db": 1.9751,
+      "rmse_db": 2.5123,
+      "bias_db": -0.018,
+      "max_error_db": 8.106,
+      "r2": 0.7392,
+      "pearson_r": 0.8697,
+      "spearman_rho": 0.8488,
+      "success_rate_1db": 13.12,
+      "mae_per_stem_db": {
+        "vocals": 1.8074,
+        "drums": 2.1207,
+        "bass": 1.98,
+        "other": 1.9924
+      },
+      "rmse_per_stem_db": {
+        "vocals": 2.2664,
+        "drums": 2.5893,
+        "bass": 2.4438,
+        "other": 2.7263
+      },
+      "band_mae_db": 1.0399,
+      "band_mse_norm": 0.013433,
+      "worst_band_error_db": 1.8936,
+      "log_spectral_distance_db": 1.317,
+      "success_rate_band_001": 55.88,
+      "balance_mae_db": 1.9794,
+      "intent_direction_acc": 58.41,
+      "instruction_adherence": 8.75,
+      "stage": 1,
+      "knob": "lr_scratch",
+      "value": 0.002
+    }
+  ]
+}

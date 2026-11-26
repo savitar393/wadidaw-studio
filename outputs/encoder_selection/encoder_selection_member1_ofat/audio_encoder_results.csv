@@ -1,0 +1,4 @@
+encoder,member,cv_mae_mean,cv_mae_std,cv_rmse_mean,test_human_mae_mean,test_human_mae_std,test_synthetic_mae_mean,test_synthetic_mae_std,n_seeds,params,text_params
+ast,2,1.0396,0.9671,1.3664,,,,,,"{""dropout_audio"": 0.2, ""lr_audio"": 0.0001, ""wd_audio"": 0.0001}",{}
+mert,3,1.2343,0.8973,1.5601,,,,,,"{""dropout_audio"": 0.2, ""lr_audio"": 0.0001, ""wd_audio"": 0.0001}",{}
+cnn_scratch,1,1.9751,0.0,2.5123,,,,,,"{""dropout_audio"": 0.1, ""lr_scratch"": 0.002, ""wd_audio"": 0.0001}",{}
